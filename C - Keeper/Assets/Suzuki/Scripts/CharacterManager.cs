@@ -15,6 +15,8 @@ public class CharacterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(character1);
+        Debug.Log(character2);
+
     }
 }
