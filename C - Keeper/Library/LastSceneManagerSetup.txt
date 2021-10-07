@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/Suzuki/Scene/New Scene.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
