@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Suzuki/Scene/New Scene.unity
+    guid: 589adf760a2f12f42b7e001123425127
+  - enabled: 1
     path: Assets/Project/Scenes/PrototypeScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

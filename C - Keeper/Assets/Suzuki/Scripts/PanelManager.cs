@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PanelManager : MonoBehaviour
@@ -51,7 +52,7 @@ public class PanelManager : MonoBehaviour
             //Debug.Log(Selected[1]);
 
             // Ÿ‚ÌƒV[ƒ“
-
+            SceneManager.LoadScene("PrototypeScene");
         }
     }
 
