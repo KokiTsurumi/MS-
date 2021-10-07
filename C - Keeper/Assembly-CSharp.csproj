@@ -53,15 +53,14 @@
     <UnityVersion>2020.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Matsumoto\test.cs" />
     <Compile Include="Assets\Suzuki\Scripts\CharacterPanel.cs" />
     <Compile Include="Assets\Project\Scripts\Timer.cs" />
     <Compile Include="Assets\Okahara\CharacterSelectSC.cs" />
     <Compile Include="Assets\Suzuki\Scripts\PanelManager.cs" />
     <Compile Include="Assets\Okahara\SampleSC.cs" />
-    <Compile Include="Assets\Matsumoto\NewBehaviourScript.cs" />
     <Compile Include="Assets\Suzuki\Scripts\CharacterManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Title.cs" />
+    <Compile Include="Assets\Matsumoto\buttonsize.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
