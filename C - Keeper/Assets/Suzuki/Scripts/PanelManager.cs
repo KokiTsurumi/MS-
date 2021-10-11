@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PanelManager : MonoBehaviour
 {
     public GameObject CharacterManager;
+    [SerializeField, Range(1, 5)]
+    private int rank;
 
     private const int PANEL_MAX = 5;
     private GameObject[] Panels = new GameObject[PANEL_MAX];
@@ -51,7 +54,7 @@ public class PanelManager : MonoBehaviour
             //Debug.Log(Selected[1]);
 
             // éüÇÃÉVÅ[Éì
-
+            SceneManager.LoadScene("PrototypeScene");
         }
     }
 
@@ -70,6 +73,7 @@ public class PanelManager : MonoBehaviour
         for(int i = 0; i < PANEL_MAX; i++)
         {
             Panels[i] = Instantiate((GameObject)Resources.Load("Panel"));
+            Panels[i].GetComponent<CharacterPanel>().SetRank(rank);
         }
 
         for (int i = 0; i < 2; i++)

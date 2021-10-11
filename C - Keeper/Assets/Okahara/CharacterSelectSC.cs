@@ -18,7 +18,7 @@ public class CharacterSelectSC : MonoBehaviour
 
     void Start()
     {
-        
+        this.gameObject.SetActive(false);
     }
 
     void Update()
@@ -41,5 +41,9 @@ public class CharacterSelectSC : MonoBehaviour
          * Characterにタグがあればキャラクターオブジェクトに限定できる
          * if(selectCharacterObj.tag == 'Character')とか
          */
+    }
+    public void CharacterSelectUIStart()
+    {
+        this.gameObject.SetActive(true);
     }
 }
