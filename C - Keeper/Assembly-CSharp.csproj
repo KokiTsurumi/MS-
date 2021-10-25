@@ -65,7 +65,6 @@
     <Compile Include="Assets\Okahara\SampleSC.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\CharacterManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
-    <Compile Include="Assets\Okahara\NewBehaviourScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
