@@ -55,8 +55,10 @@
   <ItemGroup>
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterManager.cs" />
     <Compile Include="Assets\Okahara\GameMainCameraSC.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Character\CharacterData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\WorldManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\CharacterPanel.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\tmp\CharaTest.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Robot\RobotBase.cs" />
     <Compile Include="Assets\Okahara\CursorManagerSC.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterBase.cs" />
@@ -69,11 +71,11 @@
     <Compile Include="Assets\Okahara\SingletonSC.cs" />
     <Compile Include="Assets\Matsumoto\buttonsize.cs" />
     <Compile Include="Assets\Okahara\SampleSC.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\tmp\JsonTest.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\tmpCharacterManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Character\CharacterData.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\tmp\JsonTest.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\tmp\CharaTest.cs" />
+    <Compile Include="Assets\Okahara\CharacterSelectDataSC.cs" />
+    <Compile Include="Assets\Okahara\ChoiceHumanCanvasSC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
