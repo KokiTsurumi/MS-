@@ -14,7 +14,7 @@ public class CursorManagerSC : SingletonMonoBehaviour<CursorManagerSC>
         if(isDoubleClickStart)
         {
             doubleClickTime += Time.deltaTime;
-            if(doubleClickTime < 0.2f)
+            if(doubleClickTime < 0.3f)
             {
                 if (Input.GetMouseButtonDown(0)){
 
