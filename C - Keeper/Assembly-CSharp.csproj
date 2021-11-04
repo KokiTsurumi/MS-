@@ -53,8 +53,12 @@
     <UnityVersion>2020.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Suzuki\Scripts\World\WorldManager.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Character\CharacterManager.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Character\CharacterData.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Character\WorldManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\CharacterPanel.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\tmp\CharaTest.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Character\CharacterBase.cs" />
     <Compile Include="Assets\Project\Scripts\Timer.cs" />
     <Compile Include="Assets\Okahara\CharacterSelectSC.cs" />
     <Compile Include="Assets\Matsumoto\CurrentSelected.cs" />
@@ -63,10 +67,12 @@
     <Compile Include="Assets\Suzuki\Scripts\tmp\PanelManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Island\Island.cs" />
     <Compile Include="Assets\Matsumoto\buttonsize.cs" />
-    <Compile Include="Assets\Okahara\SampleSC.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\tmp\CharacterManager.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
     <Compile Include="Assets\Matsumoto\Timeido.cs" />
+    <Compile Include="Assets\Okahara\SampleSC.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\tmp\JsonTest.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\tmp\tmpCharacterManager.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

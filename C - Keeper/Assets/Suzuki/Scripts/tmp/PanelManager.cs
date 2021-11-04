@@ -47,8 +47,8 @@ public class PanelManager : MonoBehaviour
 
         if(Selected[1] != null)
         {
-            CharacterManager.GetComponent<CharacterManager>().character1 = Selected[0];
-            CharacterManager.GetComponent<CharacterManager>().character2 = Selected[1];
+            CharacterManager.GetComponent<tmpCharacterManager>().character1 = Selected[0];
+            CharacterManager.GetComponent<tmpCharacterManager>().character2 = Selected[1];
 
             //Debug.Log(Selected[0]);
             //Debug.Log(Selected[1]);

@@ -16,16 +16,18 @@ public class CharacterBase : MonoBehaviour
     // タッグ機能の種類
     public enum TAG_LIST
     {
-        TAG_NULL,               // 特殊技能なし
+        TAG_NULL,                   // 特殊技能なし
 
-        TAG_ROBOTICS,           // ロボット工学
-        TAG_CLEANING,           // 清掃
-        TAG_NATURERESEARCH,     // 自然調査
-        TAG_PLASTICMANUFACTURE, // プラスチック製造
-        TAG_FUELOILCOLLECTION,  // 重油回収
+        TAG_ROBOTICS,               // ロボット工学
+        TAG_CLEANING,               // 清掃
+        TAG_NATURE_RESEARCH,        // 自然調査
+        TAG_PLASTIC_MANUFACTURE,    // プラスチック製造
+        TAG_FUELOIL_COLLECTION,     // 重油回収
 
-        TAG_MAX,                // タッグ機能の最大要素数
+        TAG_MAX,                    // タッグ機能の最大要素数
     }
+
+
 
     // メンバ変数
     [SerializeField, Range(0, 5)]
@@ -34,11 +36,10 @@ public class CharacterBase : MonoBehaviour
     public string       name;                                               // 名前
     public int          age;                                                // 年齢
     public TAG_LIST     tag = TAG_LIST.TAG_NULL;                            // タッグ機能
-    public float        productionSpeed;                                    // 生産速度(秒)
-    public float        investigationSpeed;                                 // 調査速度(秒)
-    public Image        CharacterImage;                                     // キャラクターの画像
+    public Image        characterImage;                                     // キャラクターの画像
 
     public int          popularityRank;                                     // 知名度ランク
+
 
 
     // 各種パラメータ生成関数
@@ -82,6 +83,27 @@ public class CharacterBase : MonoBehaviour
         }
     }
 
+    // ランク(数値)をランク(アルファベット)に変換する関数
+    public string RankTransfer(int Param)
+    {
+        string tmp;
+
+        if (Param <= 0)
+            tmp = "E";
+        else if (Param == 1)
+            tmp = "D";
+        else if (Param == 2)
+            tmp = "C";
+        else if (Param == 3)
+            tmp = "B";
+        else if (Param == 4)
+            tmp = "A";
+        else
+            tmp = "S";
+
+        return tmp;
+    }
+
     // 名前生成関数
     public void NameGenerator()
     {
@@ -105,7 +127,7 @@ public class CharacterBase : MonoBehaviour
     // 年齢生成関数
     public void AgeGenerator()
     {
-        age = Random.Range(0, 101);
+        age = Random.Range(18, 61);
     }
 
     // タッグ機能生成関数
@@ -164,19 +186,21 @@ public class CharacterBase : MonoBehaviour
         AgeGenerator();
         TagGenerator();
 
-        Debug.Log(research);
-        Debug.Log(production);
-        Debug.Log(management);
-        Debug.Log(investigation);
-        Debug.Log(name);
-        Debug.Log(age);
-        Debug.Log(tag);
+        // デバッグ用
+        Debug.Log("研究：" + RankTransfer(research) + "  |  Parameter：" + research);
+        Debug.Log("生産：" + RankTransfer(production) + "  |  Parameter：" + production);
+        Debug.Log("管理：" + RankTransfer(management) + "  |  Parameter：" + management);
+        Debug.Log("調査：" + RankTransfer(investigation) + "  |  Parameter：" + investigation);
+        Debug.Log("名前：" + name);
+        Debug.Log("年齢：" + age);
+        Debug.Log("タッグ機能：" + tag);
 
     }
 
     // Update is called once per frame
     protected void Update()
     {
+        // デバッグ用
         if(Input.GetKeyDown(KeyCode.Space))
         {
             popularityRank = GameObject.Find("WorldManager").GetComponent<WorldManager>().GetPopularityRank();
@@ -185,14 +209,14 @@ public class CharacterBase : MonoBehaviour
             NameGenerator();
             AgeGenerator();
             TagGenerator();
-
-            Debug.Log(research);
-            Debug.Log(production);
-            Debug.Log(management);
-            Debug.Log(investigation);
-            Debug.Log(name);
-            Debug.Log(age);
-            Debug.Log(tag);
+            
+            Debug.Log("研究：" + RankTransfer(research) + "  |  Parameter：" + research);
+            Debug.Log("生産：" + RankTransfer(production) + "  |  Parameter：" + production);
+            Debug.Log("管理：" + RankTransfer(management) + "  |  Parameter：" + management);
+            Debug.Log("調査：" + RankTransfer(investigation) + "  |  Parameter：" + investigation);
+            Debug.Log("名前：" + name);
+            Debug.Log("年齢：" + age);
+            Debug.Log("タッグ機能：" + tag);
         }
     }
 }
