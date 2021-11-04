@@ -28,14 +28,14 @@ public class WorldManager : MonoBehaviour
     void Start()
     {
         // デバッグ
-        Debug.Log(popularityRank);
+        //Debug.Log(popularityRank);
     }
 
     // Update is called once per frame
     void Update()
     {
         // デバッグ
-        if (Input.GetKeyDown(KeyCode.Space))
-            IncreasePopularityRank();
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //    IncreasePopularityRank();
     }
 }
