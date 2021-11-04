@@ -83,27 +83,6 @@ public class CharacterBase : MonoBehaviour
         }
     }
 
-    // ランク(数値)をランク(アルファベット)に変換する関数
-    public string RankTransfer(int Param)
-    {
-        string tmp;
-
-        if (Param <= 0)
-            tmp = "E";
-        else if (Param == 1)
-            tmp = "D";
-        else if (Param == 2)
-            tmp = "C";
-        else if (Param == 3)
-            tmp = "B";
-        else if (Param == 4)
-            tmp = "A";
-        else
-            tmp = "S";
-
-        return tmp;
-    }
-
     // 名前生成関数
     public void NameGenerator()
     {
@@ -178,7 +157,7 @@ public class CharacterBase : MonoBehaviour
     protected void Start()
     {
         // 知名度ランク取得
-        popularityRank = GameObject.Find("WorldManager").GetComponent<WorldManager>().GetPopularityRank();
+        popularityRank = WorldManager.Instance.GetPopularityRank();
 
 
         ParamGenerator();
@@ -187,10 +166,10 @@ public class CharacterBase : MonoBehaviour
         TagGenerator();
 
         // デバッグ用
-        Debug.Log("研究：" + RankTransfer(research) + "  |  Parameter：" + research);
-        Debug.Log("生産：" + RankTransfer(production) + "  |  Parameter：" + production);
-        Debug.Log("管理：" + RankTransfer(management) + "  |  Parameter：" + management);
-        Debug.Log("調査：" + RankTransfer(investigation) + "  |  Parameter：" + investigation);
+        Debug.Log("研究：" + CharacterManager.Instance.RankTransfer(research) + "  |  Parameter：" + research);
+        Debug.Log("生産：" + CharacterManager.Instance.RankTransfer(production) + "  |  Parameter：" + production);
+        Debug.Log("管理：" + CharacterManager.Instance.RankTransfer(management) + "  |  Parameter：" + management);
+        Debug.Log("調査：" + CharacterManager.Instance.RankTransfer(investigation) + "  |  Parameter：" + investigation);
         Debug.Log("名前：" + name);
         Debug.Log("年齢：" + age);
         Debug.Log("タッグ機能：" + tag);
@@ -210,10 +189,10 @@ public class CharacterBase : MonoBehaviour
             AgeGenerator();
             TagGenerator();
             
-            Debug.Log("研究：" + RankTransfer(research) + "  |  Parameter：" + research);
-            Debug.Log("生産：" + RankTransfer(production) + "  |  Parameter：" + production);
-            Debug.Log("管理：" + RankTransfer(management) + "  |  Parameter：" + management);
-            Debug.Log("調査：" + RankTransfer(investigation) + "  |  Parameter：" + investigation);
+            Debug.Log("研究：" + CharacterManager.Instance.RankTransfer(research) + "  |  Parameter：" + research);
+            Debug.Log("生産：" + CharacterManager.Instance.RankTransfer(production) + "  |  Parameter：" + production);
+            Debug.Log("管理：" + CharacterManager.Instance.RankTransfer(management) + "  |  Parameter：" + management);
+            Debug.Log("調査：" + CharacterManager.Instance.RankTransfer(investigation) + "  |  Parameter：" + investigation);
             Debug.Log("名前：" + name);
             Debug.Log("年齢：" + age);
             Debug.Log("タッグ機能：" + tag);

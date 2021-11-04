@@ -23,8 +23,7 @@ public class RobotBase : MonoBehaviour
     public SPECIALSKILL_LIST specialSkill;  // 特殊技能
 
     public Image robotImage;                // ロボットの画像
-
-    public GameObject CharacterManager;     // CharacterManager取得用
+    
 
     // パラメータ生成関数
     public void ParamGenerator()

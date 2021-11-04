@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WorldManager : MonoBehaviour
+public class WorldManager : SingletonMonoBehaviour<WorldManager>
 {
     [SerializeField, Range(1, 5)] private int popularityRank = 1;   // ’m–¼“xƒ‰ƒ“ƒN
 

@@ -70,12 +70,12 @@
     <Compile Include="Assets\Suzuki\Scripts\Island\Island.cs" />
     <Compile Include="Assets\Okahara\SingletonSC.cs" />
     <Compile Include="Assets\Matsumoto\buttonsize.cs" />
+    <Compile Include="Assets\Okahara\CharacterSelectDataSC.cs" />
+    <Compile Include="Assets\Okahara\ChoiceHumanCanvasSC.cs" />
     <Compile Include="Assets\Okahara\SampleSC.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\JsonTest.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\tmpCharacterManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
-    <Compile Include="Assets\Okahara\CharacterSelectDataSC.cs" />
-    <Compile Include="Assets\Okahara\ChoiceHumanCanvasSC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterManager : MonoBehaviour
+public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
 {
     // メンバ変数
     public List<GameObject> CharacterList = new List<GameObject>();     // 保有している人材のリスト
     public GameObject[] SelectedCharacter = new GameObject[2];          // 選択されたキャラクター
 
+    public GameObject characterPrefab;
+    public GameObject list;
 
     // 二人の研究値の平均を返す関数
     public int GetReserchAverage(CharacterData chara1, CharacterData chara2)
@@ -115,15 +117,34 @@ public class CharacterManager : MonoBehaviour
         return sec;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    // ランク(数値)をランク(アルファベット)に変換する関数
+    public string RankTransfer(int Param)
     {
-        
+        string tmp;
+
+        if (Param <= 0)
+            tmp = "E";
+        else if (Param == 1)
+            tmp = "D";
+        else if (Param == 2)
+            tmp = "C";
+        else if (Param == 3)
+            tmp = "B";
+        else if (Param == 4)
+            tmp = "A";
+        else
+            tmp = "S";
+
+        return tmp;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        for(int i = 0; i < 5; i++)
+        {
+            GameObject obj = Instantiate(characterPrefab);
+            obj.transform.parent = list.transform;
+            CharacterList.Add(obj);
+        }
     }
 }
