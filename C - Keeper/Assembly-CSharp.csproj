@@ -60,25 +60,28 @@
     <Compile Include="Assets\Suzuki\Scripts\tmp\CharacterPanel.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\CharaTest.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Robot\RobotBase.cs" />
-    <Compile Include="Assets\Okahara\CursorManagerSC.cs" />
+    <Compile Include="Assets\Project\Scripts\MouseManagerSC.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterBase.cs" />
     <Compile Include="Assets\Project\Scripts\Timer.cs" />
-    <Compile Include="Assets\Okahara\CharacterSelectSC.cs" />
+    <Compile Include="Assets\Okahara\Investigation\CharacterSelectSC.cs" />
     <Compile Include="Assets\Kawano\Script\MoveTexture.cs" />
     <Compile Include="Assets\Project\Scripts\TypeMoveTexture.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\PanelManager.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Island\Island.cs" />
-    <Compile Include="Assets\Okahara\SingletonSC.cs" />
+    <Compile Include="Assets\Project\Scripts\SingletonSC.cs" />
     <Compile Include="Assets\Matsumoto\buttonsize.cs" />
-    <Compile Include="Assets\Okahara\CharacterSelectDataSC.cs" />
-    <Compile Include="Assets\Okahara\ChoiceHumanCanvasSC.cs" />
-    <Compile Include="Assets\Okahara\SampleSC.cs" />
+    <Compile Include="Assets\Okahara\Investigation\CharacterSelectDataSC.cs" />
+    <Compile Include="Assets\Okahara\Investigation\ChoiceHumanCanvasSC.cs" />
+    <Compile Include="Assets\Okahara\Sample\SampleSC.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\JsonTest.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\tmpCharacterManager.cs" />
-    <Compile Include="Assets\Okahara\choiceHumanSC.cs" />
+    <Compile Include="Assets\Okahara\Investigation\choiceHumanSC.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotData.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotManager.cs" />
+    <Compile Include="Assets\Project\Scripts\EasingSC.cs" />
+    <Compile Include="Assets\Matsumoto\CurrentSelected.cs" />
+    <Compile Include="Assets\Matsumoto\Timeido.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
