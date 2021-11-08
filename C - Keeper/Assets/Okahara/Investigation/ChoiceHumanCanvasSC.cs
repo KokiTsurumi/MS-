@@ -54,7 +54,7 @@ public class ChoiceHumanCanvasSC : MonoBehaviour
     public void Choice1OnClick()
     {
         //ダブルクリックでキャラ選択
-        if(CursorManagerSC.Instance.OnDoubleClick())
+        if(MouseManagerSC.Instance.OnDoubleClick())
         {
             ListDisplay();
             setCharacterFrag = true;
@@ -71,7 +71,7 @@ public class ChoiceHumanCanvasSC : MonoBehaviour
     public void Choice2OnClick()
     {
         //ダブルクリックでキャラ選択
-        if(CursorManagerSC.Instance.OnDoubleClick())
+        if(MouseManagerSC.Instance.OnDoubleClick())
         {
             ListDisplay();
             setCharacterFrag = false;
