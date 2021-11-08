@@ -75,8 +75,10 @@
     <Compile Include="Assets\Okahara\SampleSC.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\JsonTest.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\tmpCharacterManager.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
     <Compile Include="Assets\Okahara\choiceHumanSC.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotData.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

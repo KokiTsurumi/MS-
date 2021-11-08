@@ -23,6 +23,8 @@ public class CharacterBase : MonoBehaviour
         TAG_NATURE_RESEARCH,        // 自然調査
         TAG_PLASTIC_MANUFACTURE,    // プラスチック製造
         TAG_FUELOIL_COLLECTION,     // 重油回収
+        TAG_PLASTIC_RESEARCH,       // プラスチック研究
+        TAG_BATTERY_MANUFACTURE,    // バッテリー製造
 
         TAG_MAX,                    // タッグ機能の最大要素数
     }
@@ -165,15 +167,14 @@ public class CharacterBase : MonoBehaviour
         AgeGenerator();
         TagGenerator();
 
-        // デバッグ用
-        Debug.Log("研究：" + CharacterManager.Instance.RankTransfer(research) + "  |  Parameter：" + research);
-        Debug.Log("生産：" + CharacterManager.Instance.RankTransfer(production) + "  |  Parameter：" + production);
-        Debug.Log("管理：" + CharacterManager.Instance.RankTransfer(management) + "  |  Parameter：" + management);
-        Debug.Log("調査：" + CharacterManager.Instance.RankTransfer(investigation) + "  |  Parameter：" + investigation);
-        Debug.Log("名前：" + name);
-        Debug.Log("年齢：" + age);
-        Debug.Log("タッグ機能：" + tag);
-
+        //// デバッグ用
+        //Debug.Log("研究：" + CharacterManager.Instance.RankTransfer(research) + "  |  Parameter：" + research);
+        //Debug.Log("生産：" + CharacterManager.Instance.RankTransfer(production) + "  |  Parameter：" + production);
+        //Debug.Log("管理：" + CharacterManager.Instance.RankTransfer(management) + "  |  Parameter：" + management);
+        //Debug.Log("調査：" + CharacterManager.Instance.RankTransfer(investigation) + "  |  Parameter：" + investigation);
+        //Debug.Log("名前：" + name);
+        //Debug.Log("年齢：" + age);
+        //Debug.Log("タッグ機能：" + tag);
     }
 
     // Update is called once per frame

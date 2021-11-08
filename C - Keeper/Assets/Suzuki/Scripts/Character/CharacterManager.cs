@@ -11,6 +11,8 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
     public GameObject characterPrefab;
     public GameObject list;
 
+
+
     // 二人の研究値の平均を返す関数
     public int GetReserchAverage(CharacterData chara1, CharacterData chara2)
     {
@@ -138,6 +140,8 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
         return tmp;
     }
 
+
+
     private void Start()
     {
         for(int i = 0; i < 5; i++)
@@ -145,6 +149,18 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
             GameObject obj = Instantiate(characterPrefab);
             obj.transform.parent = list.transform;
             CharacterList.Add(obj);
+        }
+
+        SelectedCharacter[0] = CharacterList[0];
+        SelectedCharacter[1] = CharacterList[1];
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SelectedCharacter[0] = CharacterList[0];
+            SelectedCharacter[1] = CharacterList[1];
         }
     }
 }
