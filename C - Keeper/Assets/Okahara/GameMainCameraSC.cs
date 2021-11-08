@@ -7,6 +7,7 @@ public class GameMainCameraSC : MonoBehaviour
     [SerializeField]
     GameObject centerIsland;
 
+    //lerpVector
     Vector3 startPositon;
     Vector3 endPositon;
 
@@ -19,80 +20,108 @@ public class GameMainCameraSC : MonoBehaviour
     [SerializeField]
     float zoomSpeed;
 
-    float moveCurrent = 0.0f;
-    float zoomCurrent = 0.0f;
+    //float moveCurrent = 0.0f;
+    //float zoomCurrent = 0.0f;
+
+    float currentTime = 0.0f;
 
     //float distance;
 
     float cameraZ;
 
+    [SerializeField]    
     float cameraZoomSize = 2.5f;
-    float cameraZoomDefault;
+
+    float cameraZDefault;
+
+    enum CameraState
+    {
+        DEFAULT,
+        ZOOM,
+        TRANSLATE
+    };
+
+    CameraState cameraState = CameraState.DEFAULT;
 
     void Start()
     {
         cameraZ = transform.position.z;
-        cameraZoomDefault = Camera.main.orthographicSize;
+        cameraZDefault = Camera.main.orthographicSize;
     }
 
     void Update()
     {
-        if(CursorManagerSC.Instance.OnDoubleClick())
+        if(MouseManagerSC.Instance.OnDoubleClick())
         {
-            if(CursorManagerSC.Instance.GetCursorOnObject() == null)
+            if(MouseManagerSC.Instance.GetCursorOnObject() == null)
             {
                 LerpTranslationCenter();
             }
-            else if(CursorManagerSC.Instance.GetCursorOnObject() == centerIsland)
+            else if(MouseManagerSC.Instance.GetCursorOnObject() == centerIsland)
             {
                 LerpTransLationZoom();
             }
         }
 
-        if (move)
+        if(move)
         {
-            moveCurrent += Time.deltaTime * translateSpeed;// / distance;
+            currentTime += Time.deltaTime * translateSpeed;// /distance;
 
-            transform.position = Vector3.Slerp(startPositon, endPositon, moveCurrent);
+            transform.position = Vector3.Slerp(startPositon, endPositon, currentTime);
 
 
             if (Vector3.Distance(transform.position, endPositon) <= 0.0f)
             {
                 move = false;
-                moveCurrent = 0.0f;
+                currentTime = 0.0f;
 
                 transform.position = endPositon;
             }
 
         }
 
-        if(zoom)
+        //if(zoom)
+        //{
+        //    ZoomIn();
+        //}
+
+        if (cameraState == CameraState.ZOOM)
+            ZoomIn();
+    }
+
+
+    void ZoomIn()
+    {
+        
+
+        currentTime += Time.deltaTime * zoomSpeed;
+
+        float sinIn = EasingSC.SineInOut(currentTime, 0.5f, cameraZoomSize, cameraZDefault);
+        //float sinIn = EasingSC.SineInOut(currentTime, 0.5f, cameraZDefault, cameraZoomSize);
+        Camera.main.orthographicSize = sinIn;
+        //Camera.main.orthographicSize = Mathf.Lerp(cameraZDefault, cameraZoomSize, currentTime);
+
+        if (currentTime >= 0.5f)
         {
-            zoomCurrent += Time.deltaTime * zoomSpeed;
+            zoom = false;
+            currentTime = 0.0f;
 
-            Camera.main.orthographicSize = Mathf.Lerp(cameraZoomDefault, cameraZoomSize, zoomCurrent);
-
-            if(Camera.main.orthographicSize - cameraZoomSize <= 0.0f)
-            {
-                zoom = false;
-                zoomCurrent = 0.0f;
-
-                Camera.main.orthographicSize = cameraZoomSize;
-            }
+            Camera.main.orthographicSize = cameraZoomSize;
+            cameraState = CameraState.DEFAULT;
         }
     }
 
     //島をクリックしたとき、島オブジェクトが呼び出すEventTrigger
     public void LerpTranslation()
     {
-        if (!CursorManagerSC.Instance.OnDoubleClick()) return;
+        if (!MouseManagerSC.Instance.OnDoubleClick()) return;
 
         if (!move && !zoom)
             move = true;
         else
             return;
 
-        Vector3 targetPosition = CursorManagerSC.Instance.GetCursorOnObject().transform.position;
+        Vector3 targetPosition = MouseManagerSC.Instance.GetCursorOnObject().transform.position;
         Vector3 cameraPosition = Camera.main.gameObject.transform.position;
 
         startPositon =  new Vector3(cameraPosition.x, cameraPosition.y,cameraZ);
@@ -118,11 +147,8 @@ public class GameMainCameraSC : MonoBehaviour
 
     public void LerpTransLationZoom()
     {
-        if (!zoom)
-            zoom = true;
-        else
-            return;
+        if (cameraState != CameraState.DEFAULT) return;
 
-        //Camera.main.orthographicSize = cameraZoomSize;
+        cameraState = CameraState.ZOOM;
     }
 }

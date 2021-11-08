@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CursorManagerSC : SingletonMonoBehaviour<CursorManagerSC>
+public class MouseManagerSC : SingletonMonoBehaviour<MouseManagerSC>
 {
     bool isDoubleClickStart = false;
     float doubleClickTime;
