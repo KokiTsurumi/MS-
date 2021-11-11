@@ -1866,7 +1866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5f2ceac9993a0459be98f682e048b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  investigationUI: {fileID: 2026462602}
+  investigationUI: {fileID: 9072552553470615346}
 --- !u!1 &1956885279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,11 +1990,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &2026462602 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2581361960028512780, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
-  m_PrefabInstance: {fileID: 2085197176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2026632435
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,7 +2202,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038699001}
   m_CullTransparentMesh: 1
---- !u!1001 &2085197176
+--- !u!1001 &6790013700051402046
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2264,3 +2259,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+--- !u!1 &9072552553470615346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2581361960028512780, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+  m_PrefabInstance: {fileID: 6790013700051402046}
+  m_PrefabAsset: {fileID: 0}

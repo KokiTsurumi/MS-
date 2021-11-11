@@ -21,20 +21,20 @@ public class CurrentSelected : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             // TryCatch文でNull対応
-            try
-            {
-                // 子供のコンポーネントにアクセスしたいのでいったん変数に格納
-                selectedObj = eventSystem.currentSelectedGameObject.gameObject;
+            //try
+            //{
+            //    // 子供のコンポーネントにアクセスしたいのでいったん変数に格納
+            //    selectedObj = eventSystem.currentSelectedGameObject.gameObject;
 
-                // ボタンの子供のTextコンポーネントからtextデータを取得
-                image.sprite = selectedObj.GetComponentInChildren<Image>().sprite;
-            }
-            // 例外処理的なやつ
-            catch (NullReferenceException ex)
-            {
-                // なにも選択されない場合に
-                //image.sprite = "akiemon.png";
-            }
+            //    // ボタンの子供のTextコンポーネントからtextデータを取得
+            //    image.sprite = selectedObj.GetComponentInChildren<Image>().sprite;
+            //}
+            //// 例外処理的なやつ
+            //catch (NullReferenceException ex)
+            //{
+            //    // なにも選択されない場合に
+            //    //image.sprite = "akiemon.png";
+            //}
         }
     }
 }

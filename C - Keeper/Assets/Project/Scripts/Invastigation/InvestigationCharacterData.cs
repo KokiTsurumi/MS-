@@ -2,29 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
-public class CharacterSelectDataSC : MonoBehaviour
+public class InvestigationCharacterData : MonoBehaviour
 {
     [SerializeField]
-    Text nameText, rRank,pRank,mRank,iRank;
+    Text nameText, rRank, pRank, mRank, iRank;
 
-    public ChoiceHumanCanvasSC canvas;
+    public InvestigationCanvas canvas;
 
     string charaName;
     public string GetName => charaName;
 
-    
+
     int research;//å§ãÜ
     int production;//ê∂éY
     int management;//ä«óù
     int investigation;//í≤ç∏
 
+    
+
     void Start()
     {
-        Button button = this.gameObject.GetComponent<Button>();
-        button.onClick.AddListener(canvas.SelectCharacterObject);
     }
+
+
 
 
     public int GetResearch => research;
@@ -32,7 +33,7 @@ public class CharacterSelectDataSC : MonoBehaviour
     public int GetManagement => management;
     public int GetInvestigation => investigation;
 
-    public void SetData(string n,int r, int p,int m,int inv)
+    public void SetData(string n, int r, int p, int m, int inv)
     {
         research = r;
         production = p;
@@ -45,8 +46,19 @@ public class CharacterSelectDataSC : MonoBehaviour
         mRank.text = CharacterManager.Instance.RankTransfer(m);
         iRank.text = CharacterManager.Instance.RankTransfer(inv);
         nameText.text = charaName;
-
     }
 
-    
+ 
+
+    public void onClick()
+    {
+        canvas.CharaDataBack();
+    }
+
+    public void Create()
+    {
+        GameObject root = transform.root.gameObject;
+        canvas = root.transform.GetChild(0).GetComponent<InvestigationCanvas>();
+
+    }
 }

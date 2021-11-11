@@ -1,13 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MouseManagerSC : SingletonMonoBehaviour<MouseManagerSC>
 {
+    [SerializeField]
+    GameObject cursorGameObject;
+    [SerializeField]
+    GameObject cursorUI;
+
     bool isDoubleClickStart = false;
     float doubleClickTime;
-
     bool doubleClick = false;
+
+   
+
 
     void Update()
     {
@@ -47,16 +56,61 @@ public class MouseManagerSC : SingletonMonoBehaviour<MouseManagerSC>
 
         if(hit.collider != null)
         {
+            cursorGameObject = hit.collider.gameObject;
             return hit.collider.gameObject;
         }
         else
         {
+            cursorGameObject = null;
             return null;
         }
     }
 
+    public GameObject GetCursorOnButton()
+    {
+        //EventSystem eventSystem = EventSystem.current;
+        GameObject obj = EventSystem.current.currentSelectedGameObject;
+        
+        if (obj == null)
+        {
+            return null;
+
+        }
+
+
+
+        return obj;
+        //if (obj != null)
+        //    cursorUI = obj;
+
+        //return obj;
+        //return cursorUI;
+    }
+
+    public void GetButtonList()
+    {
+        List<RaycastResult> results = new List<RaycastResult>();
+        PointerEventData pointerEventData = new PointerEventData(EventSystem.current); ;
+        EventSystem.current.RaycastAll(pointerEventData, results);
+        foreach(RaycastResult target in results)
+        {
+            Debug.Log(target.gameObject.name);
+        }
+    }
+
+
+    //public void SetCursorUI(GameObject obj)
+    //{
+    //    cursorUI = obj;
+    //}
+
     public bool OnDoubleClick()
     {
         return doubleClick;
+    }
+
+    public GameObject GetCurrentSelectedGameObject()
+    {
+        return EventSystem.current.currentSelectedGameObject;
     }
 }

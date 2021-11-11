@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2472326008768354945}
   - component: {fileID: 975971783294790002}
   - component: {fileID: 7871370191167422737}
-  - component: {fileID: 6751574845320524491}
+  - component: {fileID: 3551841481738116145}
   m_Layer: 5
-  m_Name: CharacterSelectUI
+  m_Name: SelectCharacterUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,19 +127,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 3551841481738116145}
+        m_TargetAssemblyTypeName: InvestigationCharacterData, Assembly-CSharp
+        m_MethodName: onClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6751574845320524491
+--- !u!114 &3551841481738116145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1140392178638372115}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08864fc8052d64c479a43c989c437159, type: 3}
+  m_Script: {fileID: 11500000, guid: 49b11fa25666bac47858fece88f218bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 6062705430170487074}
@@ -156,7 +156,7 @@ MonoBehaviour:
   pRank: {fileID: 6062705430631652312}
   mRank: {fileID: 6062705431637923206}
   iRank: {fileID: 6062705430126051857}
-  canvas: {fileID: 6584219888582161111, guid: 008449c3f6101354d91b70a833669b47, type: 3}
+  canvas: {fileID: 0}
 --- !u!1 &3727413099323511621
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +501,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u304A\u540D\u524D\u3092\u3064\u3089\u3064\u3089\u3068"
+  m_Text: "\u304A\u540D\u524D"
 --- !u!1 &6062705430188220038
 GameObject:
   m_ObjectHideFlags: 0
