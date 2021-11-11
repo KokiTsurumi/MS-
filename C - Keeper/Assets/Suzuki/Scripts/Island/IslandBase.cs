@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Island : MonoBehaviour
+public class IslandBase : MonoBehaviour
 {
+    // メンバ変数
     [SerializeField, Range(0, 100)] private int pollutionLevel = 100;   // 汚染度(0%～100%)
-    [SerializeField] private bool checkInvestigated = false;            // 島の調査が完了しているかのフラグ
-    [SerializeField] private Text pollutionLevelText;                   // 島の汚染度を表示するためのText
+    [SerializeField] protected bool checkInvestigated = false;          // 島の調査が完了しているかのフラグ
+    [SerializeField] protected Text pollutionLevelText;                 // 島の汚染度を表示するためのText
 
     // 島が調査済かどうかを返す関数
     public bool GetCheckInvastigate()
@@ -23,13 +24,13 @@ public class Island : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (checkInvestigated)// 調査済
             pollutionLevelText.text = "海洋汚染度：" + pollutionLevel.ToString() + "%";

@@ -97,7 +97,7 @@ public class CharacterBase : MonoBehaviour
         int rand2 = Random.Range(0, inputJson.FamilyNameList.Length);   // 姓
 
         // 名前合成
-        name = inputJson.FirstNameList[rand1] + " " + inputJson.FamilyNameList[rand2];
+        name = inputJson.FamilyNameList[rand1] + " " + inputJson.FirstNameList[rand2];
 
         // デバッグ用
         //Debug.Log(name);

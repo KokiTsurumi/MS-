@@ -98,7 +98,7 @@ public class RobotBase : MonoBehaviour
         if (clean <= 0)             // E
             name2 = "Prototype";
         else if (clean == 1)        // D
-            name2 = "GT/Mk.I";
+            name2 = "Mk.I";
         else if (clean == 2)        // C
             name2 = "Mk.II";
         else if (clean == 3)        // B
