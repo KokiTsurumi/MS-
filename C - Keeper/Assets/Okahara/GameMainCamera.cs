@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class GameMainCamera : MonoBehaviour
 {
-    [SerializeField]
     GameObject centerIsland;
 
- 
-    [SerializeField]
     Animator actionCanvasAnimator;
 
-    //[SerializeField]
-    //GameObject investigationCanvas;
 
     [Header("カメラ移動パラメータ――――――――――――")]
 
@@ -44,9 +39,10 @@ public class GameMainCamera : MonoBehaviour
 
     enum TransState
     {
-        DEFAULT,
-        TRANSLATE,
-        TRANSLATE_CENTER
+        DEFAULT,            //拠点島
+        TRANSLATE,          //各島移動
+        TRANSLATE_CENTER,   //拠点島移動
+        STAY                //各島
     }
 
     [SerializeField]
@@ -54,7 +50,8 @@ public class GameMainCamera : MonoBehaviour
     [SerializeField]
     TransState transState = TransState.DEFAULT;
 
-    GameObject target;
+    [SerializeField]
+    GameObject targetIsland;
 
     Vector3 startPositon;
     Vector3 endPositon;
@@ -66,10 +63,14 @@ public class GameMainCamera : MonoBehaviour
 
     float cameraZ;
 
+    [SerializeField]
     GameObject buttonCurrent;
 
     void Start()
     {
+        actionCanvasAnimator = GameObject.Find("ActionCanvas").GetComponent<Animator>();
+        centerIsland = GameObject.Find("Island_center");
+
         cameraZ = transform.position.z;
         cameraOrthSizeDefault = Camera.main.orthographicSize;
     }
@@ -82,7 +83,7 @@ public class GameMainCamera : MonoBehaviour
         if (MouseManagerSC.Instance.OnDoubleClick() && MouseManagerSC.Instance.GetCursorOnButton() == null)
         {
          
-            if(cursorObj.tag == "BackGround" && zoomState == ZoomState.STAY)
+            if(cursorObj.tag == "BackGround" && zoomState == ZoomState.STAY && transState != TransState.STAY)
             {
                 zoomState = ZoomState.ZOOM_OUT;
                 Debug.Log("ZoomOut");
@@ -94,6 +95,7 @@ public class GameMainCamera : MonoBehaviour
             else if(cursorObj.tag == "Center Island" && zoomState != ZoomState.STAY)
             {
                 zoomState = ZoomState.ZOOM_IN;
+                targetIsland = centerIsland;
             }
         }
 
@@ -106,7 +108,7 @@ public class GameMainCamera : MonoBehaviour
     }
 
 
-    public void ZoomIn()
+    void ZoomIn()
     {
 
         if (zoomState != ZoomState.ZOOM_IN) return;
@@ -135,7 +137,7 @@ public class GameMainCamera : MonoBehaviour
         }
     }
 
-    public void ZoomOut()
+    void ZoomOut()
     {
         if (zoomState != ZoomState.ZOOM_OUT) return;
 
@@ -154,6 +156,13 @@ public class GameMainCamera : MonoBehaviour
 
             Camera.main.orthographicSize = cameraOrthSizeDefault;
             zoomState = ZoomState.DEFAULT;
+
+            //調査中であればその島にタイマーを表示し、カメラを移動させる
+            //if()
+            //{
+            //    //タイマー表示
+            //}
+
         }
     }
 
@@ -174,7 +183,7 @@ public class GameMainCamera : MonoBehaviour
         {
             transCurrentTime = 0.0f;
             Camera.main.transform.position = endPositon;
-            transState = TransState.DEFAULT;
+            transState = TransState.STAY;
 
             if(endPositon != centerIsland.transform.position)
             {
@@ -201,7 +210,10 @@ public class GameMainCamera : MonoBehaviour
         if (transCurrentTime >= transTime)
         {
             transCurrentTime = 0.0f;
-            //Camera.main.transform.position = centerIsland.transform.position;
+            Vector3 centerPos = centerIsland.transform.position;
+            centerPos.z = cameraZ;
+
+            Camera.main.transform.position = centerPos;
             transState = TransState.DEFAULT;
         }
     }
@@ -221,23 +233,29 @@ public class GameMainCamera : MonoBehaviour
     {
 
         transState = TransState.TRANSLATE;
-        target = MouseManagerSC.Instance.GetCursorOnObject();
+        targetIsland = MouseManagerSC.Instance.GetCursorOnObject();
 
-        Vector3 targetPosition = target.transform.position;
+        Vector3 targetPosition = targetIsland.transform.position;
         Vector3 cameraPosition = Camera.main.gameObject.transform.position;
        
         startPositon = new Vector3(cameraPosition.x, cameraPosition.y, cameraZ);
         endPositon = new Vector3(targetPosition.x, targetPosition.y, cameraZ);
     }
 
-    void TranslateCenter()
+    public void TranslateCenter()
     {
         transState = TransState.TRANSLATE_CENTER;
+        targetIsland = centerIsland;
 
-        Vector3 targetPosition = centerIsland.transform.position;
+        Vector3 targetPosition = targetIsland.transform.position;
         Vector3 cameraPosition = Camera.main.gameObject.transform.position;
 
         startPositon = new Vector3(cameraPosition.x, cameraPosition.y, cameraZ);
         endPositon = new Vector3(targetPosition.x, targetPosition.y, cameraZ);
+    }
+
+    public void ZoomOutClick()
+    {
+        zoomState = ZoomState.ZOOM_OUT;
     }
 }

@@ -1,13 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InvestigationCanvas : MonoBehaviour
+public class SelectCanvasInterface : MonoBehaviour
 {
     [SerializeField]
-    GameObject charaSimpleDataUI;//ƒLƒƒƒ‰ƒf[ƒ^ŠÈˆÕ•\¦UI
+    GameObject charaSimpleDataUI;//ã‚­ãƒ£ãƒ©ãƒ‡ãƒ¼ã‚¿ç°¡æ˜“è¡¨ç¤ºUI
 
     [SerializeField]
     GameObject selectCharaPrefab;
@@ -15,7 +15,7 @@ public class InvestigationCanvas : MonoBehaviour
     [SerializeField]
     GameObject charaListParent;
 
-    
+
     [SerializeField]
     GameObject ListUI;//UI
 
@@ -24,7 +24,7 @@ public class InvestigationCanvas : MonoBehaviour
 
     List<GameObject> CharaList;
 
-    [SerializeField]    
+    [SerializeField]
     GameObject[] selectChara = new GameObject[2];
     int selectCharacterFrag;
 
@@ -32,7 +32,7 @@ public class InvestigationCanvas : MonoBehaviour
 
     public GameObject select = null;
 
-    bool setCharacterFrag;//ˆêl–Ú‚©“ñl–Ú‚ğ”»’f‚·‚éƒtƒ‰ƒO
+    bool setCharacterFrag;//ä¸€äººç›®ã‹äºŒäººç›®ã‚’åˆ¤æ–­ã™ã‚‹ãƒ•ãƒ©ã‚°
 
     [SerializeField]
     SelectScrollbar charaListScrollbar;
@@ -50,7 +50,7 @@ public class InvestigationCanvas : MonoBehaviour
 
     public void DisplayCharaList()
     {
-        if (! MouseManagerSC.Instance.OnDoubleClick()) return;
+        if (!MouseManagerSC.Instance.OnDoubleClick()) return;
 
         ListUI.SetActive(true);
 
@@ -69,15 +69,15 @@ public class InvestigationCanvas : MonoBehaviour
         selectCharacterFrag = 1;
     }
 
-    
+
     public void CharacterDicision()
     {
-        
+
         SetCharactarData();
 
         ListUI.SetActive(false);
 
-        if (selectChara[0].GetComponent<SelectCharacterData>().GetSelectGameObject() != null 
+        if (selectChara[0].GetComponent<SelectCharacterData>().GetSelectGameObject() != null
             &&
             selectChara[1].GetComponent<SelectCharacterData>().GetSelectGameObject() != null)
         {
@@ -90,7 +90,7 @@ public class InvestigationCanvas : MonoBehaviour
     {
         GameObject setChara = selectChara[selectCharacterFrag];
 
-        //ƒf[ƒ^ƒZƒbƒg
+        //ãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆ
         setChara.GetComponent<SelectCharacterData>().SetData(ref select);
 
 
@@ -99,7 +99,7 @@ public class InvestigationCanvas : MonoBehaviour
 
     public void CharaDataBack()
     {
-        select =  MouseManagerSC.Instance.GetCurrentSelectedGameObject();
+        select = MouseManagerSC.Instance.GetCurrentSelectedGameObject();
     }
 
     public void SimpleCharaDataDisplay()
@@ -109,23 +109,23 @@ public class InvestigationCanvas : MonoBehaviour
 
         SelectCharacterData data = selectChara[selectCharacterFrag].GetComponent<SelectCharacterData>();
 
-        string name = data.GetData<InvestigationCharacterData>().GetName;
-        int r = data.GetData<InvestigationCharacterData>().GetResearch;
-        int p = data.GetData<InvestigationCharacterData>().GetProduction;
-        int m = data.GetData<InvestigationCharacterData>().GetManagement;
-        int inv = data.GetData<InvestigationCharacterData>().GetInvestigation;
+        string name = data.GetData<ProductionCharacterData>().GetName;
+        int r = data.GetData<ProductionCharacterData>().GetResearch;
+        int p = data.GetData<ProductionCharacterData>().GetProduction;
+        int m = data.GetData<ProductionCharacterData>().GetManagement;
+        int inv = data.GetData<ProductionCharacterData>().GetInvestigation;
 
         charaSimpleDataUI.GetComponent<InvestigationCharacterData>().SetData(name, r, p, m, inv);
     }
 
     public void StartButton()
     {
-        //ƒ^ƒbƒOŒvZˆ—
-        //ƒ^ƒCƒ}[ŒvZˆ—
-        //“‡‚ÌƒXƒNƒŠƒvƒg“à‚É‚ ‚é’²¸Ï‚İ‚Ìbool‚ğturei‰˜õ“x•\¦‚É—˜—pj
+        //ã‚¿ãƒƒã‚°è¨ˆç®—å‡¦ç†
+        //ã‚¿ã‚¤ãƒãƒ¼è¨ˆç®—å‡¦ç†
+        //å³¶ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆå†…ã«ã‚ã‚‹èª¿æŸ»æ¸ˆã¿ã®boolã‚’tureï¼ˆæ±šæŸ“åº¦è¡¨ç¤ºã«åˆ©ç”¨ï¼‰
 
-        this.transform.parent.gameObject.SetActive(false);
-        //selectCharacter‰Šú‰»
+        this.gameObject.SetActive(false);
+
     }
 
     public void SelectCancel()
@@ -137,7 +137,7 @@ public class InvestigationCanvas : MonoBehaviour
     {
         CharaList = CharacterManager.Instance.CharacterList;
 
-        //ƒŠƒXƒg¶¬
+        //ãƒªã‚¹ãƒˆç”Ÿæˆ
         for (int i = 0; i < CharaList.Count; i++)
         {
             GameObject obj = (GameObject)Instantiate(selectCharaPrefab);

@@ -387,8 +387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cdf456d9153d91458eeab758c1853df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerIsland: {fileID: 1603599566}
-  actionCanvasAnimator: {fileID: 1956885280}
   translateSpeed: 0.3
   transTime: 0.3
   zoomSpeed: 1
@@ -396,6 +394,8 @@ MonoBehaviour:
   zoomTime: 0.5
   zoomState: 0
   transState: 0
+  targetIsland: {fileID: 0}
+  buttonCurrent: {fileID: 0}
 --- !u!1 &475031545
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +575,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 643823008}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 308533415}
+        m_TargetAssemblyTypeName: GameMainCamera, Assembly-CSharp
+        m_MethodName: ActionClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &643823008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2218,6 +2230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Investigation
       objectReference: {fileID: 0}
+    - target: {fileID: 2581361960028512780, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2581361960028513267, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2260,6 +2276,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2581361960028513267, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 308533415}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 308533415}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TranslateCenter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ZoomOutClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameMainCamera, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: GameMainCamera, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986695780659292016, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921228255091041220, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921228256317928282, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921228256317928282, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

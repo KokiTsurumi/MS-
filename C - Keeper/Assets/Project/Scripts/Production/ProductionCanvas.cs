@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InvestigationCanvas : MonoBehaviour
+public class ProductionCanvas : MonoBehaviour
 {
     [SerializeField]
     GameObject charaSimpleDataUI;//キャラデータ簡易表示UI
@@ -109,11 +109,11 @@ public class InvestigationCanvas : MonoBehaviour
 
         SelectCharacterData data = selectChara[selectCharacterFrag].GetComponent<SelectCharacterData>();
 
-        string name = data.GetData<InvestigationCharacterData>().GetName;
-        int r = data.GetData<InvestigationCharacterData>().GetResearch;
-        int p = data.GetData<InvestigationCharacterData>().GetProduction;
-        int m = data.GetData<InvestigationCharacterData>().GetManagement;
-        int inv = data.GetData<InvestigationCharacterData>().GetInvestigation;
+        string name = data.GetData<ProductionCharacterData>().GetName;
+        int r = data.GetData<ProductionCharacterData>().GetResearch;
+        int p = data.GetData<ProductionCharacterData>().GetProduction;
+        int m = data.GetData<ProductionCharacterData>().GetManagement;
+        int inv = data.GetData<ProductionCharacterData>().GetInvestigation;
 
         charaSimpleDataUI.GetComponent<InvestigationCharacterData>().SetData(name, r, p, m, inv);
     }
@@ -124,8 +124,8 @@ public class InvestigationCanvas : MonoBehaviour
         //タイマー計算処理
         //島のスクリプト内にある調査済みのboolをture（汚染度表示に利用）
 
-        this.transform.parent.gameObject.SetActive(false);
-        //selectCharacter初期化
+        this.gameObject.SetActive(false);
+
     }
 
     public void SelectCancel()

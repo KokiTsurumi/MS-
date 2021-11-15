@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InvestigationScrollbar : MonoBehaviour
+public class SelectScrollbar : MonoBehaviour
 {
     [SerializeField]
     float value = 1.0f;
