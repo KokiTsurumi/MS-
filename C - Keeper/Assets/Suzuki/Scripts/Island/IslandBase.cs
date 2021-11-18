@@ -11,6 +11,10 @@ public class IslandBase : MonoBehaviour
     [SerializeField] protected bool checkInvestigated = false;          // 島の調査が完了しているかのフラグ
     [SerializeField] protected Text pollutionLevelText;                 // 島の汚染度を表示するためのText
 
+    public GameObject timer;
+
+    
+
     // 島が調査済かどうかを返す関数
     public bool GetCheckInvastigate()
     {
@@ -22,6 +26,8 @@ public class IslandBase : MonoBehaviour
     {
         checkInvestigated = true;
     }
+
+
 
     // Start is called before the first frame update
     protected void Start()

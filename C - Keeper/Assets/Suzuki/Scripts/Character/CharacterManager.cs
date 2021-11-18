@@ -42,9 +42,9 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
     }
 
     // 生産にかかる時間(秒)を計算して渡す関数
-    public int CalcProductionTime(CharacterData chara1, CharacterData chara2)
+    public float CalcProductionTime(CharacterData chara1, CharacterData chara2)
     {
-        int sec = 0;
+        float sec = 0;
 
         if (chara1.tag == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH && chara2.tag == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH) // タッグ機能あり
         {
@@ -81,9 +81,9 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
     }
 
     // 調査にかかる時間(秒)を計算して渡す関数
-    public int CalcInvestigationTime(CharacterData chara1, CharacterData chara2)
+    public float CalcInvestigationTime(CharacterData chara1, CharacterData chara2)
     {
-        int sec = 0;
+        float sec = 0;
 
         if (chara1.tag == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH && chara2.tag == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH) // タッグ機能あり
         {
