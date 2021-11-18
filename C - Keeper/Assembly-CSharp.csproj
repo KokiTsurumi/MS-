@@ -54,11 +54,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Production\ProductionCanvas.cs" />
     <Compile Include="Assets\Okahara\GameMainCamera.cs" />
     <Compile Include="Assets\Project\Scripts\Invastigation\SelectCharacterData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterData.cs" />
     <Compile Include="Assets\Okahara\ActionButtonInterface.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\WorldManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Invastigation\ActionCharacterData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\CharacterPanel.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Island\IslandManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\CharaTest.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Assets\Kawano\Script\MoveTexture.cs" />
     <Compile Include="Assets\Project\Scripts\TypeMoveTexture.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\PanelManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Production\ProductionCharacterData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Robot\RobotManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Island\IslandBase.cs" />
     <Compile Include="Assets\Project\Scripts\SingletonSC.cs" />
@@ -82,14 +85,11 @@
     <Compile Include="Assets\Okahara\Sample\SampleSC.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Robot\RobotData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\JsonTest.cs" />
+    <Compile Include="Assets\Project\Scripts\Invastigation\SelectCanvasInterface.cs" />
     <Compile Include="Assets\Project\Scripts\Invastigation\InvestigationCanvas.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\tmpCharacterManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
     <Compile Include="Assets\Project\Scripts\EasingSC.cs" />
-    <Compile Include="Assets\Project\Scripts\Production\ProductionCanvas.cs" />
-    <Compile Include="Assets\Project\Scripts\Production\ProductionCharacterData.cs" />
-    <Compile Include="Assets\Project\Scripts\Invastigation\ActionCharacterData.cs" />
-    <Compile Include="Assets\Project\Scripts\Invastigation\SelectCanvasInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
