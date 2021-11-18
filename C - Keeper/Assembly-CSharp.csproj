@@ -46,56 +46,6 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
-<<<<<<< HEAD
-  <PropertyGroup>
-    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
-    <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
-    <UnityVersion>2020.3.18f1</UnityVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Assets\Suzuki\Scripts\Character\CharacterManager.cs" />
-    <Compile Include="Assets\Project\Scripts\Production\ProductionCanvas.cs" />
-    <Compile Include="Assets\Okahara\GameMainCamera.cs" />
-    <Compile Include="Assets\Project\Scripts\Invastigation\SelectCharacterData.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Character\CharacterData.cs" />
-    <Compile Include="Assets\Okahara\ActionButtonInterface.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Character\WorldManager.cs" />
-    <Compile Include="Assets\Project\Scripts\Invastigation\ActionCharacterData.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\tmp\CharacterPanel.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Island\IslandManager.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\tmp\CharaTest.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotBase.cs" />
-    <Compile Include="Assets\Project\Scripts\MouseManagerSC.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Character\CharacterBase.cs" />
-    <Compile Include="Assets\Project\Scripts\Timer\Timer.cs" />
-    <Compile Include="Assets\Okahara\Investigation.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Island\IslandData.cs" />
-    <Compile Include="Assets\Matsumoto\CurrentSelected.cs" />
-    <Compile Include="Assets\Kawano\Script\MoveTexture.cs" />
-    <Compile Include="Assets\Project\Scripts\TypeMoveTexture.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\tmp\PanelManager.cs" />
-    <Compile Include="Assets\Project\Scripts\Production\ProductionCharacterData.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotManager.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Island\IslandBase.cs" />
-    <Compile Include="Assets\Project\Scripts\SingletonSC.cs" />
-    <Compile Include="Assets\Project\Scripts\Invastigation\InvestigationCharacterData.cs" />
-    <Compile Include="Assets\Matsumoto\buttonsize.cs" />
-    <Compile Include="Assets\Project\Scripts\Invastigation\SelectScrollbar.cs" />
-    <Compile Include="Assets\Matsumoto\Timeido.cs" />
-    <Compile Include="Assets\Okahara\Sample\SampleSC.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotData.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\tmp\JsonTest.cs" />
-    <Compile Include="Assets\Project\Scripts\Invastigation\SelectCanvasInterface.cs" />
-    <Compile Include="Assets\Project\Scripts\Invastigation\InvestigationCanvas.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\tmp\tmpCharacterManager.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
-    <Compile Include="Assets\Project\Scripts\EasingSC.cs" />
-  </ItemGroup>
-=======
->>>>>>> 4470f19125cb903e2977a8aca98407453c972ab7
   <ItemGroup>
      <Compile Include="Assets\Suzuki\Scripts\Character\CharacterManager.cs" />
      <Compile Include="Assets\Project\Scripts\Production\ProductionCanvas.cs" />
