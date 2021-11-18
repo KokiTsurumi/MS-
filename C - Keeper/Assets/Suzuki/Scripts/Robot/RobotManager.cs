@@ -27,9 +27,9 @@ public class RobotManager : SingletonMonoBehaviour<RobotManager>
     }
 
     // 清掃にかかる時間(秒)を計算して渡す関数
-    public int CalcCleanTime(RobotData robot1, RobotData robot2)
+    public float CalcCleanTime(RobotData robot1, RobotData robot2)
     {
-        int sec = 0;
+        float sec = 0;
 
         if (robot1.specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_LARGE_CAPACITY_BATTERY || robot2.specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_LARGE_CAPACITY_BATTERY) // どちらかがバッテリーお化け(仮)を持ってる場合
         {
