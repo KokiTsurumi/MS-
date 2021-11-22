@@ -23,7 +23,6 @@ public class Production : ActionButtonInterface
     {
 
 
-        //研究値から生産できるロボットを計算
         
 
 

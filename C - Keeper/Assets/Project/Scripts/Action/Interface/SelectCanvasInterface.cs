@@ -17,18 +17,21 @@ public class SelectCanvasInterface : MonoBehaviour
 
 
     [SerializeField]
-    GameObject ListUI;
+    protected GameObject ListUI;
 
     [SerializeField]
-    GameObject startButton;
+    protected GameObject startButton;
 
     [SerializeField]
     List<GameObject> CharaList;
 
     [SerializeField]
+    protected List<GameObject> RobotList;
+
+    [SerializeField]
     GameObject[] selectChara = new GameObject[2];
     
-    int selectCharacterFrag;//0→一人目、1→二人目
+    int selectFrag;//0→一人目、1→二人目
 
 
     [SerializeField]
@@ -36,9 +39,9 @@ public class SelectCanvasInterface : MonoBehaviour
     GameObject select = null;
 
     [SerializeField]
-    SelectScrollbar charaListScrollbar;
+    protected SelectScrollbar listScrollbar;
 
-    public void Initialize()
+    virtual public void Initialize()
     {
 
         CharaList = CharacterManager.Instance.CharacterList;
@@ -55,14 +58,14 @@ public class SelectCanvasInterface : MonoBehaviour
 
         ListUI.SetActive(true);
 
-        charaListScrollbar.ScrollbarPositionReset();
+        listScrollbar.ScrollbarPositionReset();
     }
 
 
 
-    public void Selected_1(){ selectCharacterFrag = 0; }
+    public void Selected_1(){ selectFrag = 0; }
 
-    public void Selected_2(){ selectCharacterFrag = 1; }
+    public void Selected_2(){ selectFrag = 1; }
 
 
     virtual public void CharacterDicision()
@@ -81,7 +84,7 @@ public class SelectCanvasInterface : MonoBehaviour
 
     virtual public void SetCharactarData()
     {
-        GameObject setChara = selectChara[selectCharacterFrag];
+        GameObject setChara = selectChara[selectFrag];
 
         //データセット
         setChara.GetComponent<SelectCharacterDataInterface>().SetData(ref select);
@@ -97,7 +100,7 @@ public class SelectCanvasInterface : MonoBehaviour
 
     public void SimpleCharaDataDisplay()
     {
-        SelectCharacterDataInterface data = selectChara[selectCharacterFrag].GetComponent<SelectCharacterDataInterface>();
+        SelectCharacterDataInterface data = selectChara[selectFrag].GetComponent<SelectCharacterDataInterface>();
         if (data.GetSelectGameObject() == null) return;
 
         string name = data.GetName();
