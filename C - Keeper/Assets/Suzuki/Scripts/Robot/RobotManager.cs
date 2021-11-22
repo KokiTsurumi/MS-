@@ -91,7 +91,9 @@ public class RobotManager : SingletonMonoBehaviour<RobotManager>
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject obj = Instantiate(RobotPrefab);
+        obj.transform.parent = list.transform;
+        RobotList.Add(obj);
     }
 
     // Update is called once per frame
