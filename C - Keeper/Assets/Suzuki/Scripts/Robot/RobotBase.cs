@@ -34,11 +34,11 @@ public class RobotBase : MonoBehaviour
     public void ParamGenerator()
     {
         // ê¥ë|
-        float cleanAverage = (CharacterManager.Instance.SelectedCharacter[0].GetComponent<CharacterBase>().research + CharacterManager.Instance.SelectedCharacter[1].GetComponent<CharacterBase>().research) / 2;
+        float cleanAverage = (CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().research + CharacterManager.Instance.selectedCharacter[1].GetComponent<CharacterBase>().research) / 2;
         clean = Mathf.CeilToInt(cleanAverage);
 
         // ãÏìÆéûä‘
-        float batteryAverage = (CharacterManager.Instance.SelectedCharacter[0].GetComponent<CharacterBase>().management + CharacterManager.Instance.SelectedCharacter[1].GetComponent<CharacterBase>().management) / 2;
+        float batteryAverage = (CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().management + CharacterManager.Instance.selectedCharacter[1].GetComponent<CharacterBase>().management) / 2;
         battery = Mathf.CeilToInt(batteryAverage);
     }
 
@@ -46,8 +46,8 @@ public class RobotBase : MonoBehaviour
     public void SpecialSkillGenerator()
     {
         CharacterBase.TAG_LIST tag1, tag2;
-        tag1 = CharacterManager.Instance.SelectedCharacter[0].GetComponent<CharacterBase>().tag;
-        tag2 = CharacterManager.Instance.SelectedCharacter[1].GetComponent<CharacterBase>().tag;
+        tag1 = CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().tag;
+        tag2 = CharacterManager.Instance.selectedCharacter[1].GetComponent<CharacterBase>().tag;
 
         if (tag1 == CharacterBase.TAG_LIST.TAG_ROBOTICS && tag2 == CharacterBase.TAG_LIST.TAG_CLEANING || tag1 == CharacterBase.TAG_LIST.TAG_CLEANING && tag2 == CharacterBase.TAG_LIST.TAG_ROBOTICS)                               // ÉçÉ{ÉbÉgçHäw & ê¥ë|
         {

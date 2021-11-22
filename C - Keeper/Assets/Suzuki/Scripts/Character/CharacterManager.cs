@@ -5,8 +5,8 @@ using UnityEngine;
 public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
 {
     // メンバ変数
-    public List<GameObject> CharacterList = new List<GameObject>();     // 保有している人材のリスト
-    public GameObject[] SelectedCharacter = new GameObject[2];          // 選択されたキャラクター
+    public List<GameObject> characterList = new List<GameObject>();     // 保有している人材のリスト
+    public GameObject[] selectedCharacter = new GameObject[2];          // 選択されたキャラクター
 
     public GameObject characterPrefab;
     public GameObject list;
@@ -148,19 +148,19 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
         {
             GameObject obj = Instantiate(characterPrefab);
             obj.transform.parent = list.transform;
-            CharacterList.Add(obj);
+            characterList.Add(obj);
         }
 
-        SelectedCharacter[0] = CharacterList[0];
-        SelectedCharacter[1] = CharacterList[1];
+        selectedCharacter[0] = characterList[0];
+        selectedCharacter[1] = characterList[1];
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SelectedCharacter[0] = CharacterList[0];
-            SelectedCharacter[1] = CharacterList[1];
+            selectedCharacter[0] = characterList[0];
+            selectedCharacter[1] = characterList[1];
         }
     }
 }

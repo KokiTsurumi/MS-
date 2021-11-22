@@ -1,0 +1,2 @@
+D:\Folders\4年生科目\AT4C, GP41\GP41\プロジェクト\C - Keeper\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\Folders\4年生科目\AT4C, GP41\GP41\プロジェクト\C - Keeper\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

@@ -4,9 +4,28 @@ using UnityEngine;
 
 public class IslandManager : SingletonMonoBehaviour<IslandManager>
 {
-    public GameObject currentIsland;
+    // メンバ変数
+    public List<GameObject> islandList = new List<GameObject>();    // 島のリスト
+
+    [SerializeField, Range(0, 100)]
+    public float totalPollutionLevel;                               // 全体の汚染度
+
+    public GameObject currentIsland;                                // 現在選択中の島
 
 
+
+    // 全体の汚染度を計算する関数
+    public void CheckTotalPollutionLevel()
+    {
+        float tmp = 0;
+
+        foreach(GameObject island in islandList)
+        {
+            tmp += island.GetComponent<IslandBase>().GetPollutionLevel();
+        }
+
+        totalPollutionLevel = tmp / islandList.Count;
+    }
 
     // 現在の島を返す関数
     public GameObject GetCurrentIsland()

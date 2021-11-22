@@ -29,6 +29,12 @@ public class IslandBase : MonoBehaviour
 
     
 
+    // “‡‚Ì‰˜õ“x‚ğæ“¾‚·‚éŠÖ”
+    public int GetPollutionLevel()
+    {
+        return pollutionLevel;
+    }
+
     // “‡‚ª’²¸Ï‚©‚Ç‚¤‚©‚ğ•Ô‚·ŠÖ”
     public bool GetCheckInvastigate()
     {

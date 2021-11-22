@@ -44,7 +44,7 @@ public class SelectCanvasInterface : MonoBehaviour
     virtual public void Initialize()
     {
 
-        CharaList = CharacterManager.Instance.CharacterList;
+        CharaList = CharacterManager.Instance.characterList;
 
         CreateCharaList();
 
@@ -121,7 +121,7 @@ public class SelectCanvasInterface : MonoBehaviour
 
     public void CreateCharaList()
     {
-        CharaList = CharacterManager.Instance.CharacterList;
+        CharaList = CharacterManager.Instance.characterList;
 
         //リスト生成
         for (int i = 0; i < CharaList.Count; i++)
