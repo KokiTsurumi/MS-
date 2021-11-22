@@ -8,7 +8,7 @@ public class CleaningCanvas : SelectCanvasInterface
 {
     public override void Initialize()
     {
-        RobotList = RobotManager.Instance.RobotList;
+        RobotList = RobotManager.Instance.robotList;
 
         CreateRobitList();
 

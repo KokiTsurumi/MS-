@@ -5,9 +5,9 @@ using UnityEngine;
 public class RobotManager : SingletonMonoBehaviour<RobotManager>
 {
     // メンバ変数
-    public List<GameObject> RobotList = new List<GameObject>();     // 保有しているロボットのリスト
+    public List<GameObject> robotList = new List<GameObject>();     // 保有しているロボットのリスト
 
-    public GameObject RobotPrefab;
+    public GameObject robotPrefab;
     public GameObject list;
 
 
@@ -91,9 +91,9 @@ public class RobotManager : SingletonMonoBehaviour<RobotManager>
     // Start is called before the first frame update
     void Start()
     {
-        GameObject obj = Instantiate(RobotPrefab);
+        GameObject obj = Instantiate(robotPrefab);
         obj.transform.parent = list.transform;
-        RobotList.Add(obj);
+        robotList.Add(obj);
     }
 
     // Update is called once per frame
@@ -101,14 +101,14 @@ public class RobotManager : SingletonMonoBehaviour<RobotManager>
     {
         if(Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            GameObject obj = Instantiate(RobotPrefab);
+            GameObject obj = Instantiate(robotPrefab);
             obj.transform.parent = list.transform;
-            RobotList.Add(obj);
+            robotList.Add(obj);
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            RobotList.Clear();
+            robotList.Clear();
         }
     }
 }
