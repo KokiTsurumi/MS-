@@ -29,7 +29,8 @@ public class WorldManager : SingletonMonoBehaviour<WorldManager>
     // タイマーセット関数
     public void SetTimer(float sec, Vector3 position)
     {
-        IslandManager.Instance.currentIsland.GetComponent<IslandBase>().timer.GetComponent<Timer>().TimerStart(sec);
+        IslandManager.Instance.currentIsland.GetComponent<IslandBase>().timer.GetComponent<Timer>().TimerStart(sec);            // 時間
+        IslandManager.Instance.currentIsland.GetComponent<IslandBase>().timer.GetComponent<Transform>().position = position;    // 位置
     }
 
 

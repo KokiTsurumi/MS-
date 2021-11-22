@@ -6,12 +6,26 @@ using UnityEngine.UI;
 
 public class IslandBase : MonoBehaviour
 {
+    // 島が抱えてる問題
+    public enum PROBLEM_LIST
+    {
+        PROBLEM_TRASH,      // ゴミ問題
+        PROBLEM_PLASTIC,    // プラスチック問題
+        PROBLEM_FUELOIL,    // 重油問題
+
+        PROBLEM_MAX,        // 問題の種類の最大数
+    }
+
+
+
     // メンバ変数
     [SerializeField, Range(0, 100)] private int pollutionLevel = 100;   // 汚染度(0%～100%)
     [SerializeField] protected bool checkInvestigated = false;          // 島の調査が完了しているかのフラグ
     [SerializeField] protected Text pollutionLevelText;                 // 島の汚染度を表示するためのText
 
-    public GameObject timer;
+    public PROBLEM_LIST problem;                                        // 島が抱えてる問題
+
+    public GameObject timer;                                            // タイマーオブジェクト
 
     
 
