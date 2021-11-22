@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class CleaningRobotData : ActionCharacterInterface
+public class CleaningRobotData : ActionRobotInterface
 {
 
 }

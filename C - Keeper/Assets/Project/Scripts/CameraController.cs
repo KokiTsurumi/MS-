@@ -10,6 +10,9 @@ public class CameraController : MonoBehaviour
     GameObject centerIsland;
 
     [SerializeField]
+    public GameObject backButton;
+
+    [SerializeField]
     float zoomSpeed = 1.0f;
     [SerializeField]
     float zoomTime = 0.5f;
@@ -28,13 +31,13 @@ public class CameraController : MonoBehaviour
 
     float transCurrentTime = 0;
     Vector3 centerIslandPos;
-    GameObject targetIsland;
+
+    public GameObject targetIsland;
 
     Vector3 startPos;
     Vector3 endPos;
 
 
-    //bool choiceIsland = false;
 
     enum ZoomState
     {
@@ -59,8 +62,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     TransState transState = TransState.CENTER;
 
-    //[SerializeField]
-    //GameObject buttonCurrent;
+ 
 
     [SerializeField]
     bool action = false;
@@ -81,6 +83,8 @@ public class CameraController : MonoBehaviour
         actionCanvasAnimator = GameObject.Find("ActionCanvas").GetComponent<Animator>();
         cameraZ = transform.position.z;
         cameraOrthSizeDefault = Camera.main.orthographicSize;
+
+        backButton.SetActive(false);
     }
 
     void Update()
@@ -98,7 +102,10 @@ public class CameraController : MonoBehaviour
 
         if (zoomState != ZoomState.IN) return;
         if (transState == TransState.CHOICE)
+        {
             transState = TransState.CENTER;
+            action = false;
+        }
 
         zoomCurrentTime += Time.deltaTime * zoomSpeed;
 
@@ -200,7 +207,9 @@ public class CameraController : MonoBehaviour
 
         transState = TransState.TRANSLATE_ISLAND;
 
+
         targetIsland = MouseManager.Instance.GetCursorOnObject();
+        IslandManager.Instance.SetCurrentIsland(targetIsland);
         Vector3 tarPos = targetIsland.transform.position;
         Vector3 camPos = Camera.main.transform.position;
 
@@ -214,6 +223,7 @@ public class CameraController : MonoBehaviour
         if (!MouseManager.Instance.OnDoubleClickGameObject()) return;
         if (MouseManager.Instance.GetCurrentSelectedGameObject() != null) return;
         targetIsland = centerIsland;
+        IslandManager.Instance.SetCurrentIsland(targetIsland);
 
         if(zoomState == ZoomState.DEFAULT)
             zoomState = ZoomState.IN;
@@ -248,7 +258,7 @@ public class CameraController : MonoBehaviour
     //作業が完了して拠点島に移動
     public void TranslateCenterIsland()
     {
-
+        action = false;
         zoomState = ZoomState.OUT;
 
         Vector3 tarPos = centerIslandPos;

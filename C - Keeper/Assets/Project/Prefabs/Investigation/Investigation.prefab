@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 3792231337373386437}
   - component: {fileID: 3792231337373386436}
   m_Layer: 5
-  m_Name: CelectButton
+  m_Name: SelectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1231,7 +1231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ae4160b39d32245a78fef100bc59fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 1
 --- !u!1 &3792231337453018014
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,7 +2789,7 @@ MonoBehaviour:
   - {fileID: 3792231338784819921}
   - {fileID: 3792231338037839929}
   select: {fileID: 0}
-  charaListScrollbar: {fileID: 3792231337416106641}
+  listScrollbar: {fileID: 3792231337416106641}
 --- !u!1 &3792231338669348562
 GameObject:
   m_ObjectHideFlags: 0

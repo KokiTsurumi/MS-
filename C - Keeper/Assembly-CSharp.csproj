@@ -99,6 +99,9 @@
     <Compile Include="Assets\Project\Scripts\Action\Interface\ActionRobotInterface.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\tmpCharacterManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\ActionButton\Cleaning.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\Interface\SelectRobotData.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\ActionButton\Information.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

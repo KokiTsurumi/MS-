@@ -8,13 +8,14 @@ public class Production : ActionButtonInterface
     [SerializeField]
     GameObject productionUI;
 
-    //bool doing = false;
 
     GameObject canvas;
 
     
     override public void ActionStart()
     {
+        cameraController.backButton.SetActive(true);
+
         canvas = (GameObject)Instantiate(productionUI);
         canvas.transform.GetChild(0).GetComponent<ProductionCanvas>().Initialize();
     }
@@ -22,8 +23,8 @@ public class Production : ActionButtonInterface
     public override void ActionEnd()
     {
 
+        cameraController.backButton.SetActive(false);
 
-        
 
 
         Destroy(canvas);

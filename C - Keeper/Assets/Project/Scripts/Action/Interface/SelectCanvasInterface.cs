@@ -25,8 +25,6 @@ public class SelectCanvasInterface : MonoBehaviour
     [SerializeField]
     List<GameObject> CharaList;
 
-    [SerializeField]
-    protected List<GameObject> RobotList;
 
     [SerializeField]
     GameObject[] selectChara = new GameObject[2];
