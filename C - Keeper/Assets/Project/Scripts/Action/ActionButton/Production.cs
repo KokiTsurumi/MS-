@@ -9,15 +9,13 @@ public class Production : ActionButtonInterface
     GameObject productionUI;
 
 
-    GameObject canvas;
-
     
     override public void ActionStart()
     {
         cameraController.backButton.SetActive(true);
 
         canvas = (GameObject)Instantiate(productionUI);
-        canvas.transform.GetChild(0).GetComponent<ProductionCanvas>().Initialize();
+        canvas.transform.GetComponent<ProductionCanvas>().Initialize();
     }
 
     public override void ActionEnd()
@@ -31,5 +29,7 @@ public class Production : ActionButtonInterface
 
         cameraController.ActionButtonRepop();
     }
+
+    
 
 }

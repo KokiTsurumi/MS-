@@ -11,7 +11,7 @@ public class Investigation : ActionButtonInterface
 
     bool doing = false;
 
-    GameObject canvas;
+  
   
     override public void ActionStart() 
     {
@@ -23,7 +23,7 @@ public class Investigation : ActionButtonInterface
     {
         cameraController.backButton.SetActive(true);
         canvas = (GameObject)Instantiate(investigationUI);
-        canvas.transform.GetChild(0).GetComponent<InvestigationCanvas>().Initialize();
+        canvas.transform.GetComponent<InvestigationCanvas>().Initialize();
 
     }
 

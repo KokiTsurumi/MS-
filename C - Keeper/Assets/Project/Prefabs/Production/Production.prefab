@@ -312,7 +312,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 560584640805602536}
+      - m_Target: {fileID: 1524593774981987593}
         m_TargetAssemblyTypeName: SelectCanvasInterface, Assembly-CSharp
         m_MethodName: Selected_2
         m_Mode: 1
@@ -324,7 +324,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 560584640805602536}
+      - m_Target: {fileID: 1524593774981987593}
         m_TargetAssemblyTypeName: SelectCanvasInterface, Assembly-CSharp
         m_MethodName: DisplayCharaList
         m_Mode: 1
@@ -336,8 +336,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 560584640805602536}
-        m_TargetAssemblyTypeName: ProductionCanvas, Assembly-CSharp
+      - m_Target: {fileID: 1524593774981987593}
+        m_TargetAssemblyTypeName: SelectCanvasInterface, Assembly-CSharp
         m_MethodName: SimpleCharaDataDisplay
         m_Mode: 1
         m_Arguments:
@@ -1041,6 +1041,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 560584640535415380}
+  - component: {fileID: 1524593774981987593}
   m_Layer: 0
   m_Name: Production
   m_TagString: Untagged
@@ -1065,6 +1066,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1524593774981987593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560584640535415387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0295e96e698b44eb37b45c7376961b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charaSimpleDataUI: {fileID: 560584641020785182}
+  charaPrefab: {fileID: 1140392178638372115, guid: ae220d8f8f573ee47989c2137098d188, type: 3}
+  charaListParent: {fileID: 560584640370784199}
+  ListUI: {fileID: 560584641860783160}
+  startButton: {fileID: 560584640976108621}
+  selectChara:
+  - {fileID: 560584641498988119}
+  - {fileID: 560584640061026798}
+  select: {fileID: 0}
+  listScrollbar: {fileID: 560584641619578991}
+  startAnimationCanvas: {fileID: 0}
+  mainCanvas: {fileID: 560584640805602543}
+  RobotCanvas: {fileID: 6630973427059897866}
 --- !u!1 &560584640607925718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,7 +1261,6 @@ GameObject:
   - component: {fileID: 560584640805602539}
   - component: {fileID: 560584640805602538}
   - component: {fileID: 560584640805602537}
-  - component: {fileID: 560584640805602536}
   m_Layer: 5
   m_Name: ProductionCanvas
   m_TagString: Untagged
@@ -1328,30 +1353,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &560584640805602536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560584640805602543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc0295e96e698b44eb37b45c7376961b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charaSimpleDataUI: {fileID: 560584641020785182}
-  charaPrefab: {fileID: 1140392178638372115, guid: ae220d8f8f573ee47989c2137098d188, type: 3}
-  charaListParent: {fileID: 560584640370784199}
-  ListUI: {fileID: 560584641860783160}
-  startButton: {fileID: 560584640976108621}
-  CharaList: []
-  selectChara:
-  - {fileID: 560584641498988119}
-  - {fileID: 560584640061026798}
-  select: {fileID: 0}
-  listScrollbar: {fileID: 560584641619578991}
-  RobotCanvas: {fileID: 6630973427059897866}
 --- !u!1 &560584640870790770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,8 +1474,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 560584640805602536}
-        m_TargetAssemblyTypeName: ProductionCanvas, Assembly-CSharp
+      - m_Target: {fileID: 1524593774981987593}
+        m_TargetAssemblyTypeName: SelectCanvasInterface, Assembly-CSharp
         m_MethodName: CharacterDicision
         m_Mode: 1
         m_Arguments:
@@ -1764,7 +1765,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 560584640805602536}
+      - m_Target: {fileID: 1524593774981987593}
         m_TargetAssemblyTypeName: ProductionCanvas, Assembly-CSharp
         m_MethodName: StartButton
         m_Mode: 1
@@ -1897,7 +1898,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 560584640805602536}
+      - m_Target: {fileID: 1524593774981987593}
         m_TargetAssemblyTypeName: SelectCanvasInterface, Assembly-CSharp
         m_MethodName: SelectCancel
         m_Mode: 1
@@ -2476,7 +2477,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 560584640805602536}
+      - m_Target: {fileID: 1524593774981987593}
         m_TargetAssemblyTypeName: SelectCanvasInterface, Assembly-CSharp
         m_MethodName: Selected_1
         m_Mode: 1
@@ -2488,7 +2489,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 560584640805602536}
+      - m_Target: {fileID: 1524593774981987593}
         m_TargetAssemblyTypeName: SelectCanvasInterface, Assembly-CSharp
         m_MethodName: DisplayCharaList
         m_Mode: 1
@@ -2500,8 +2501,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 560584640805602536}
-        m_TargetAssemblyTypeName: ProductionCanvas, Assembly-CSharp
+      - m_Target: {fileID: 1524593774981987593}
+        m_TargetAssemblyTypeName: SelectCanvasInterface, Assembly-CSharp
         m_MethodName: SimpleCharaDataDisplay
         m_Mode: 1
         m_Arguments:
@@ -3591,7 +3592,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 560584640805602536}
+      - m_Target: {fileID: 1524593774981987593}
         m_TargetAssemblyTypeName: ProductionCanvas, Assembly-CSharp
         m_MethodName: CloseRobotCanvas
         m_Mode: 1

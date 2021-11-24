@@ -9,8 +9,6 @@ public class Cleaning : ActionButtonInterface
     GameObject cleaningUI;
 
 
-    GameObject canvas;
-
     override public void ActionStart()
     {
         cameraController.ZoomOut();
@@ -21,7 +19,7 @@ public class Cleaning : ActionButtonInterface
     {
         cameraController.backButton.SetActive(true);
         canvas = (GameObject)Instantiate(cleaningUI);
-        canvas.transform.GetChild(0).GetComponent<CleaningCanvas>().Initialize();
+        canvas.transform.GetComponent<CleaningCanvas>().Initialize();
 
     }
 

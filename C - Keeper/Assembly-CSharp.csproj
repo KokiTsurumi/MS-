@@ -55,8 +55,10 @@
   <ItemGroup>
     <Compile Include="Assets\Project\Scripts\Action\ActionButton\Investigation.cs" />
     <Compile Include="Assets\Matsumoto\Pollution_Degree.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\ActionButton\Information.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterManager.cs" />
     <Compile Include="Assets\Project\Scripts\Action\ActionButton\Production.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\ActionButton\Cleaning.cs" />
     <Compile Include="Assets\Project\Scripts\Action\InvastigationCanvas\InvestigationSelectCharacterData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\WorldManager.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="Assets\Project\Scripts\Action\SelectScrollbar.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Island\IslandBase.cs" />
     <Compile Include="Assets\Matsumoto\buttonsize.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\Interface\SelectRobotData.cs" />
     <Compile Include="Assets\Project\Scripts\Action\InvastigationCanvas\InvestigationCharacterData.cs" />
     <Compile Include="Assets\Matsumoto\Name_Value.cs" />
     <Compile Include="Assets\Project\Scripts\Easing.cs" />
@@ -99,9 +102,7 @@
     <Compile Include="Assets\Project\Scripts\Action\Interface\ActionRobotInterface.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\tmpCharacterManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\ActionButton\Cleaning.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\Interface\SelectRobotData.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\ActionButton\Information.cs" />
+    <Compile Include="Assets\Okahara\ActionStartAnimatinUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

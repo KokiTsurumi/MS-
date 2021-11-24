@@ -88,6 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1689519780328768829}
+  - component: {fileID: 2547434074825031370}
   m_Layer: 0
   m_Name: Cleaning
   m_TagString: Untagged
@@ -111,6 +112,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2547434074825031370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689519780328768828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd4c48b5e8dcd543ae26c699293a6f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotSimpleDataUI: {fileID: 3792231336870392953}
+  robotPrefab: {fileID: 1140392178638372115, guid: e72cc3a8ac4d83a45b3e1b5aba176210, type: 3}
+  robotListParent: {fileID: 3792231337126740830}
+  ListUI: {fileID: 3792231338036217342}
+  startButton: {fileID: 3792231337798023628}
+  RobotList: []
+  selectRobot: {fileID: 3792231338784819921}
+  select: {fileID: 0}
+  listScrollbar: {fileID: 3792231337416106641}
 --- !u!1 &2775051621611880665
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +851,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2180560549391181683}
+      - m_Target: {fileID: 2547434074825031370}
         m_TargetAssemblyTypeName: CleaningCanvas, Assembly-CSharp
         m_MethodName: SelectCancel
         m_Mode: 1
@@ -962,7 +984,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2180560549391181683}
+      - m_Target: {fileID: 2547434074825031370}
         m_TargetAssemblyTypeName: CleaningCanvas, Assembly-CSharp
         m_MethodName: RobotDicision
         m_Mode: 1
@@ -1610,7 +1632,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2180560549391181683}
+      - m_Target: {fileID: 2547434074825031370}
         m_TargetAssemblyTypeName: CleaningCanvas, Assembly-CSharp
         m_MethodName: StartButton
         m_Mode: 1
@@ -2154,7 +2176,6 @@ GameObject:
   - component: {fileID: 3792231338663545209}
   - component: {fileID: 3792231338663545208}
   - component: {fileID: 3792231338663545191}
-  - component: {fileID: 2180560549391181683}
   m_Layer: 5
   m_Name: CleaningCanvas
   m_TagString: Untagged
@@ -2246,27 +2267,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2180560549391181683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3792231338663545189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd4c48b5e8dcd543ae26c699293a6f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robotSimpleDataUI: {fileID: 3792231336870392953}
-  robotPrefab: {fileID: 1140392178638372115, guid: e72cc3a8ac4d83a45b3e1b5aba176210, type: 3}
-  robotListParent: {fileID: 3792231337126740830}
-  ListUI: {fileID: 3792231338036217342}
-  startButton: {fileID: 3792231337798023628}
-  RobotList: []
-  selectRobot: {fileID: 3792231338784819921}
-  select: {fileID: 0}
-  listScrollbar: {fileID: 3792231337416106641}
 --- !u!1 &3792231338669348562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,7 +2464,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2180560549391181683}
+      - m_Target: {fileID: 2547434074825031370}
         m_TargetAssemblyTypeName: CleaningCanvas, Assembly-CSharp
         m_MethodName: DisplayCharaList
         m_Mode: 1
@@ -2476,7 +2476,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2180560549391181683}
+      - m_Target: {fileID: 2547434074825031370}
         m_TargetAssemblyTypeName: CleaningCanvas, Assembly-CSharp
         m_MethodName: SimpleRobotDataDisplay
         m_Mode: 1

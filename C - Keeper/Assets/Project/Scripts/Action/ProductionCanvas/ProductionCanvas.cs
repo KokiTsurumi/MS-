@@ -20,6 +20,7 @@ public class ProductionCanvas : SelectCanvasInterface
         //DisplayCreateRobot();
         RobotCanvas.SetActive(true);
 
+        //Camera.main.GetComponent<CameraController>().GetCurrntAction().ActionEnd();
     }
 
     void DisplayCreateRobot()
@@ -29,6 +30,11 @@ public class ProductionCanvas : SelectCanvasInterface
 
     public void CloseRobotCanvas()
     {
-        base.StartButton();
+        //base.StartButton();
+
+        //RobotCanvas.SetActive(false);
+
+        //Destroy(this.gameObject);
+        cameraController.ActionEnd();
     }
 }

@@ -45,7 +45,7 @@ public class ActionRobotInterface : MonoBehaviour
     public void Create()
     {
         GameObject root = transform.root.gameObject;
-        canvas = root.transform.GetChild(0).GetComponent<CleaningCanvas>();
+        canvas = root.transform.GetComponent<CleaningCanvas>();
     }
 
 }

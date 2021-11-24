@@ -103,6 +103,9 @@ public class CleaningCanvas : MonoBehaviour
 
     virtual public void StartButton()
     {
+        //タイマー計算　
+        //汚染度変化計算
+        
         Camera.main.GetComponent<CameraController>().GetCurrntAction().ActionEnd();
     }
 

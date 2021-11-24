@@ -7,6 +7,9 @@ using UnityEngine.EventSystems;
 public class ActionButtonInterface : MonoBehaviour
 {
     protected CameraController cameraController;
+
+    protected GameObject canvas;
+
     protected void Start()
     {
         cameraController = Camera.main.GetComponent<CameraController>(); 
@@ -15,4 +18,5 @@ public class ActionButtonInterface : MonoBehaviour
     virtual public void ActionStart() { }
     virtual public void ActionEnd() { }
     virtual public void DisplayUI() { }
+
 }

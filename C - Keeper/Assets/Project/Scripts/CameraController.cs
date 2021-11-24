@@ -207,6 +207,8 @@ public class CameraController : MonoBehaviour
 
         transState = TransState.TRANSLATE_ISLAND;
 
+        //実行中のタイマー非表示
+
 
         targetIsland = MouseManager.Instance.GetCursorOnObject();
         IslandManager.Instance.SetCurrentIsland(targetIsland);
@@ -294,6 +296,8 @@ public class CameraController : MonoBehaviour
     public void IslandChoice()
     {
         transState = TransState.CHOICE;
+
+        //実行中のタイマー表示
     }
 
     public ActionButtonInterface GetCurrntAction()

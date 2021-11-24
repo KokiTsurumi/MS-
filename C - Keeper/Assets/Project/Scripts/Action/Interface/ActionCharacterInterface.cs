@@ -47,7 +47,7 @@ public class ActionCharacterInterface : MonoBehaviour
     public void Create() 
     {
         GameObject root = transform.root.gameObject;
-        canvas = root.transform.GetChild(0).GetComponent<SelectCanvasInterface>();
+        canvas = root.transform.GetComponent<SelectCanvasInterface>();
     }
 
 }
