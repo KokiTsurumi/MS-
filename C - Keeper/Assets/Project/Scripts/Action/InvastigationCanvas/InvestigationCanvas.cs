@@ -21,10 +21,14 @@ public class InvestigationCanvas : SelectCanvasInterface
             //島のスクリプト内にある調査済みのboolをture（汚染度表示に利用）
             GameObject target = IslandManager.Instance.GetCurrentIsland();
 
-            //タッグ計算処理
-            //target.GetComponent<IslandBase>()
+            //キャラクターセット
+            CharacterData set1 = selectChara[0].GetComponent<SelectCharacterDataInterface>().GetOriginal().GetComponent<CharacterData>();
+            CharacterData set2 = selectChara[1].GetComponent<SelectCharacterDataInterface>().GetOriginal().GetComponent<CharacterData>();            //タッグ計算処理
+            float time = CharacterManager.Instance.CalcInvestigationTime(set1, set2);
+
+
             //タイマー計算処理
-            target.GetComponent<IslandBase>().StartInvestigate(5.0f);//5.0fは仮
+            target.GetComponent<IslandBase>().StartInvestigate(time);
 
 
             //カメラ移動

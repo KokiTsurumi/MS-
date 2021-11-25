@@ -70,6 +70,9 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     GameObject actionGameObject;
 
+    [SerializeField]
+    Canvas gameMaimCanvas;
+
     void Start()
     {
 
@@ -107,6 +110,8 @@ public class CameraController : MonoBehaviour
             action = false;
         }
 
+        gameMaimCanvas.enabled = false;
+
         zoomCurrentTime += Time.deltaTime * zoomSpeed;
 
         float easing = Easing.SineInOut(zoomCurrentTime, zoomTime, cameraOrthSizeDefault, cameraZoomSize);
@@ -131,8 +136,8 @@ public class CameraController : MonoBehaviour
                     GameObject island = IslandManager.Instance.islandList[i];
                     island.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
                 }
-
             }
+
         }
 
     }
@@ -168,6 +173,9 @@ public class CameraController : MonoBehaviour
                 GameObject island = IslandManager.Instance.islandList[i];
                 island.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
             }
+
+            gameMaimCanvas.enabled = true;
+
         }
     }
 
