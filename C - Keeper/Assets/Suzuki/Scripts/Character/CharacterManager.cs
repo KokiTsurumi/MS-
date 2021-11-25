@@ -6,6 +6,7 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
 {
     // メンバ変数
     public List<GameObject> characterList = new List<GameObject>();     // 保有している人材のリスト
+    public List<GameObject> candidateList = new List<GameObject>();     // 人材を雇う時の候補リスト
     public GameObject[] selectedCharacter = new GameObject[2];          // 選択されたキャラクター
 
     public GameObject characterPrefab;
@@ -139,6 +140,27 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
 
         return tmp;
     }
+
+    // 候補リストに5人生成する関数
+    public void CreateCandidateCharacter()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            candidateList.Add(Instantiate(characterPrefab));
+        }
+    }
+
+
+    // 候補リストから2人選ぶ関数
+    public void HireCharacter(GameObject character1, GameObject character2)
+    {
+        characterList.Add(character1);  // 1人目
+        characterList.Add(character2);  // 2人目
+
+        characterList.Clear();          // 選ばれなかった人材を削除
+    }
+
+
 
 
 

@@ -40,6 +40,8 @@ public class CharacterBase : MonoBehaviour
     public TAG_LIST     tag = TAG_LIST.TAG_NULL;                            // タッグ機能
     public Image        characterImage;                                     // キャラクターの画像
 
+    public string       profile;                                            // プロフィール用
+
     public int          popularityRank;                                     // 知名度ランク
 
 
