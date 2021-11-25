@@ -15,11 +15,11 @@ D:/4年　MS/C - Keeper
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-55956
+57617
 Successfully changed project path to: D:/4年　MS/C - Keeper
 D:/4年　MS/C - Keeper
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 50.25 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 42.42 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.18f1 (a7d1c678663c)
 [Subsystems] Discovering subsystems at path D:/2020.3.18f1/Editor/Data/Resources/UnitySubsystems
@@ -35,77 +35,77 @@ Initialize mono
 Mono path[0] = 'D:/2020.3.18f1/Editor/Data/Managed'
 Mono path[1] = 'D:/2020.3.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/2020.3.18f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56796
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56340
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/2020.3.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001684 seconds.
+Registered in 0.001164 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 46.69 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 48.34 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.039 seconds
+- Completed reload, in  0.970 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1039ms)
-		BeginReloadAssembly (53ms)
+	ReloadAssembly (970ms)
+		BeginReloadAssembly (50ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (430ms)
-			LoadAssemblies (53ms)
+		EndReloadAssembly (422ms)
+			LoadAssemblies (50ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (162ms)
+			SetupTypeCache (149ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (32ms)
-			SetupLoadedEditorAssemblies (165ms)
+			SetupLoadedEditorAssemblies (172ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (47ms)
-				BeforeProcessingInitializeOnLoad (9ms)
+				RefreshPlugins (48ms)
+				BeforeProcessingInitializeOnLoad (11ms)
 				ProcessInitializeOnLoadAttributes (78ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002943 seconds.
+Registered in 0.003009 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 47.73 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 44.94 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.143 seconds
+- Completed reload, in  0.988 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1144ms)
-		BeginReloadAssembly (173ms)
+	ReloadAssembly (989ms)
+		BeginReloadAssembly (135ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (23ms)
-		EndReloadAssembly (913ms)
-			LoadAssemblies (102ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (802ms)
+			LoadAssemblies (84ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (311ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (56ms)
-			SetupLoadedEditorAssemblies (319ms)
+			SetupTypeCache (267ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (298ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (48ms)
-				BeforeProcessingInitializeOnLoad (61ms)
-				ProcessInitializeOnLoadAttributes (192ms)
-				ProcessInitializeOnLoadMethodAttributes (12ms)
-				AfterProcessingInitializeOnLoad (2ms)
+				RefreshPlugins (45ms)
+				BeforeProcessingInitializeOnLoad (55ms)
+				ProcessInitializeOnLoadAttributes (177ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
@@ -117,7 +117,7 @@ System memory in use before: 182.5 MB.
 System memory in use after: 182.6 MB.
 
 Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 2612.
-Total: 3.646100 ms (FindLiveObjects: 0.316500 ms CreateObjectMapping: 0.128200 ms MarkObjects: 3.177900 ms  DeleteObjects: 0.022400 ms)
+Total: 3.563400 ms (FindLiveObjects: 0.330500 ms CreateObjectMapping: 0.111400 ms MarkObjects: 3.053900 ms  DeleteObjects: 0.066600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -131,57 +131,433 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Project/Textures/ロボ
-  artifactKey: Guid(95091a2f5a9e9a94fa38366531908a25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ using Guid(95091a2f5a9e9a94fa38366531908a25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f18fd1d97cf75581a32b5236a19d82cd') in 0.010606 seconds 
-  Import took 0.014126 seconds .
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00033.png
+  artifactKey: Guid(fa8dbc65eef272e49bd2e4acbe13462a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00033.png using Guid(fa8dbc65eef272e49bd2e4acbe13462a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e280a242e5d11f484234902b0da0307a') in 0.151272 seconds 
+  Import took 0.154546 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000269 seconds.
-  path: Assets/Project/Textures/ロボ/未来ロボ 1.png
-  artifactKey: Guid(a2e74cf1952770d438cfbb6c8cbdc801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/未来ロボ 1.png using Guid(a2e74cf1952770d438cfbb6c8cbdc801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd198b80efab80366c5713647fcc33618') in 0.168528 seconds 
-  Import took 0.173439 seconds .
+  Time since last request: 0.000253 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00013.png
+  artifactKey: Guid(3ff27297ea77a3549b649d16f3c31379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00013.png using Guid(3ff27297ea77a3549b649d16f3c31379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb92e952c2ba8b37ce91c90ddeaa1e4b') in 0.014554 seconds 
+  Import took 0.018010 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000254 seconds.
-  path: Assets/Project/Textures/ロボ/未来ロボ 2.png
-  artifactKey: Guid(ba55c5f6e4ae68c46b66fd8b211a39db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/未来ロボ 2.png using Guid(ba55c5f6e4ae68c46b66fd8b211a39db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f7e3c003c5dc8e6e3368003aa72d5a7') in 0.021236 seconds 
-  Import took 0.024737 seconds .
+  Time since last request: 0.000250 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00020.png
+  artifactKey: Guid(e5b4e9b50587f414e8227332fa9cf13b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00020.png using Guid(e5b4e9b50587f414e8227332fa9cf13b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a61b38758e49db56eedf3716ef80353') in 0.012079 seconds 
+  Import took 0.015305 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000249 seconds.
-  path: Assets/Project/Textures/ロボ/未来ロボ 1.png
-  artifactKey: Guid(a2e74cf1952770d438cfbb6c8cbdc801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/未来ロボ 1.png using Guid(a2e74cf1952770d438cfbb6c8cbdc801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd198b80efab80366c5713647fcc33618') in 0.018617 seconds 
-  Import took 0.022824 seconds .
+  Time since last request: 0.000303 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00042.png
+  artifactKey: Guid(9ebec1c0d0d198f4f9597e312e75798e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00042.png using Guid(9ebec1c0d0d198f4f9597e312e75798e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19c9386c844acbf78cbe6b95f6235320') in 0.011588 seconds 
+  Import took 0.014561 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00015.png
+  artifactKey: Guid(bcd499e6d0b05ae468af730e01b0b0c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00015.png using Guid(bcd499e6d0b05ae468af730e01b0b0c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97d5268d638c08fafa6d8c9f61357612') in 0.012673 seconds 
+  Import took 0.016328 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00008.png
+  artifactKey: Guid(804965ff6f4822c4493d9599daef6cc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00008.png using Guid(804965ff6f4822c4493d9599daef6cc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3e4eba371f378411de2905de192c334') in 0.015501 seconds 
+  Import took 0.019431 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00046.png
+  artifactKey: Guid(1953bad0a1ba5f04894dcbf56b2144b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00046.png using Guid(1953bad0a1ba5f04894dcbf56b2144b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '310256d45ac59b4f86a36b01f1fe896a') in 0.016965 seconds 
+  Import took 0.021439 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000405 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00032.png
+  artifactKey: Guid(5e06e9b8eaf49484fbde8429ae90552e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00032.png using Guid(5e06e9b8eaf49484fbde8429ae90552e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9addf1ce8a02b6b4bce5f70cf04797bd') in 0.018514 seconds 
+  Import took 0.023018 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00023.png
+  artifactKey: Guid(3f974dddb3790464ea7552a004bb3aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00023.png using Guid(3f974dddb3790464ea7552a004bb3aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d79d36f87a707fc6de737c8d65ab0fb') in 0.014591 seconds 
+  Import took 0.018855 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00024.png
+  artifactKey: Guid(02a971eac2815754a812989efaaee9e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00024.png using Guid(02a971eac2815754a812989efaaee9e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53d239e8f17a04e51e79357e5e5429be') in 0.015058 seconds 
+  Import took 0.019090 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00040.png
+  artifactKey: Guid(bda5926fa7bf4bc42b72774d20d2b1b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00040.png using Guid(bda5926fa7bf4bc42b72774d20d2b1b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1dec56f769a15061a9c4f7160c64822') in 0.014186 seconds 
+  Import took 0.018033 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00029.png
+  artifactKey: Guid(9b294d1eb62572b468f99087da69c319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00029.png using Guid(9b294d1eb62572b468f99087da69c319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7f04bdade3f5d4188fe290524bf0683') in 0.012183 seconds 
+  Import took 0.015325 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00014.png
+  artifactKey: Guid(77cb53b17fa09464d95caff1a14db78d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00014.png using Guid(77cb53b17fa09464d95caff1a14db78d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55f14f8ef2695fe5df9d86d93b48acbb') in 0.012665 seconds 
+  Import took 0.015754 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00041.png
+  artifactKey: Guid(e6df682f8ddceba48ae7ab0a5a39a7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00041.png using Guid(e6df682f8ddceba48ae7ab0a5a39a7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce3c3703986e4aa8e4ad7e0ba9a29985') in 0.012009 seconds 
+  Import took 0.015276 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00016.png
+  artifactKey: Guid(7a35888a8bc777a44b2d0a2087266363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00016.png using Guid(7a35888a8bc777a44b2d0a2087266363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc7cb511490f4fc0d5397efb101d4c6c') in 0.013943 seconds 
+  Import took 0.018143 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000365 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00047.png
+  artifactKey: Guid(71b2c43d08c473a4b9c58a4832097f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00047.png using Guid(71b2c43d08c473a4b9c58a4832097f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dced93979b15d9572389a835bd98b53') in 0.012364 seconds 
+  Import took 0.015356 seconds .
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000248 seconds.
-  path: Assets/Project/Textures/ロボ/未来ロボ 2.png
-  artifactKey: Guid(ba55c5f6e4ae68c46b66fd8b211a39db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/未来ロボ 2.png using Guid(ba55c5f6e4ae68c46b66fd8b211a39db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f7e3c003c5dc8e6e3368003aa72d5a7') in 0.017127 seconds 
-  Import took 0.020238 seconds .
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00026.png
+  artifactKey: Guid(d7960f8650c8f634a92bc94aa738277c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00026.png using Guid(d7960f8650c8f634a92bc94aa738277c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e134adabebe0c38ba6079d44d4f85082') in 0.012804 seconds 
+  Import took 0.016077 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.890096 seconds.
-  path: Assets/Project/Textures/UI/U背景
-  artifactKey: Guid(af6e6dac8ab035848a1828b96d98aea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/UI/U背景 using Guid(af6e6dac8ab035848a1828b96d98aea1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d210dcd8ccda665986744eaf1340fb9') in 0.006676 seconds 
-  Import took 0.011239 seconds .
+  Time since last request: 0.000278 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00022.png
+  artifactKey: Guid(c76cbedd45b380a418d1b1512bc60f85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00022.png using Guid(c76cbedd45b380a418d1b1512bc60f85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91a1bb1e6214337625f00c0ffb35c18b') in 0.017262 seconds 
+  Import took 0.020933 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 32.349681 seconds.
-  path: Assets/Project/Textures/UI/U背景/UI背景.png
-  artifactKey: Guid(4ae836066dd9b3248bcdc42fb4ab7aae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/UI/U背景/UI背景.png using Guid(4ae836066dd9b3248bcdc42fb4ab7aae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3aa74e47d2d8eafc3a656195867f4692') in 0.018795 seconds 
-  Import took 0.022411 seconds .
+  Time since last request: 0.000233 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00035.png
+  artifactKey: Guid(bde9061174e55d14797fd04318b28a25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00035.png using Guid(bde9061174e55d14797fd04318b28a25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9eaec6f3a182296675c798aca12636f') in 0.020088 seconds 
+  Import took 0.023724 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000355 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00027.png
+  artifactKey: Guid(749d576bc3b9bbe48809319f3e301fc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00027.png using Guid(749d576bc3b9bbe48809319f3e301fc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a78c9ba8e1042c71f4c4eb8be9fc4e08') in 0.011230 seconds 
+  Import took 0.014565 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000327 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00002.png
+  artifactKey: Guid(44f144f641c6e4e4e8e9492813d20916) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00002.png using Guid(44f144f641c6e4e4e8e9492813d20916) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0081ea37721e1b956fc33620a7a9f825') in 0.011912 seconds 
+  Import took 0.015155 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000456 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00045.png
+  artifactKey: Guid(fa4ac0b503fc80244a03e6f38c58b8e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00045.png using Guid(fa4ac0b503fc80244a03e6f38c58b8e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6d439d192332d765972fc75fc2c9d28') in 0.011071 seconds 
+  Import took 0.014115 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00030.png
+  artifactKey: Guid(d41bd0ba1aa3e0f46abcc7bca82f197f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00030.png using Guid(d41bd0ba1aa3e0f46abcc7bca82f197f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a259c1b81b45c4807b883ab074a92b49') in 0.014035 seconds 
+  Import took 0.017330 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00018.png
+  artifactKey: Guid(b4a9f369d49d97e44a45f881b15ac0aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00018.png using Guid(b4a9f369d49d97e44a45f881b15ac0aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52ac3c3b21308558d4ad8c6034ea108e') in 0.011879 seconds 
+  Import took 0.014844 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00043.png
+  artifactKey: Guid(82fe1193aa4b7f843afff8c02bb864fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00043.png using Guid(82fe1193aa4b7f843afff8c02bb864fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cb03c2c5ac830298aeb51e31b0cdb60') in 0.012418 seconds 
+  Import took 0.015583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00051.png
+  artifactKey: Guid(578ccb6cd1a5b25448b588348aca9737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00051.png using Guid(578ccb6cd1a5b25448b588348aca9737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb203b9cd98e124d8b34b4513d65c7df') in 0.015645 seconds 
+  Import took 0.020068 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00017.png
+  artifactKey: Guid(f5a1998caea22da44a2b3379c48a5064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00017.png using Guid(f5a1998caea22da44a2b3379c48a5064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8924eae69d1684124c163f47d5f484b9') in 0.016106 seconds 
+  Import took 0.020680 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00050.png
+  artifactKey: Guid(4f28899132f2b7246831dae1af434cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00050.png using Guid(4f28899132f2b7246831dae1af434cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bf3e7af009a9853017068e2420b1ef8') in 0.014805 seconds 
+  Import took 0.018961 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000413 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00019.png
+  artifactKey: Guid(45e5e38b9c8073a4ca6189f641cd1bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00019.png using Guid(45e5e38b9c8073a4ca6189f641cd1bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e1ad24138850cc4f78d30ec8b498704') in 0.015713 seconds 
+  Import took 0.019341 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00005.png
+  artifactKey: Guid(3c0de8ff7d29e054aba3ba8fbaa2aff7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00005.png using Guid(3c0de8ff7d29e054aba3ba8fbaa2aff7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e3b892c5bbe06db0a61df1a9cfb0933') in 0.015755 seconds 
+  Import took 0.019327 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00036.png
+  artifactKey: Guid(e380551d5aa16fc45b832484966deb98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00036.png using Guid(e380551d5aa16fc45b832484966deb98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4a13354ddc39ca98e7e1346259cf9a0') in 0.014083 seconds 
+  Import took 0.018065 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00012.png
+  artifactKey: Guid(1b4def250d139f846aa1144e65084be2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00012.png using Guid(1b4def250d139f846aa1144e65084be2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '676a38bd2bc640aab2f84fda6df94c2f') in 0.013522 seconds 
+  Import took 0.017394 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000391 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00039.png
+  artifactKey: Guid(86fc3441d1b6848429ac8ef60a69813e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00039.png using Guid(86fc3441d1b6848429ac8ef60a69813e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b973e02b85662564e5db1c413606fb0') in 0.011062 seconds 
+  Import took 0.014286 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00037.png
+  artifactKey: Guid(696789fd6ff013f4489c48150f69a9c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00037.png using Guid(696789fd6ff013f4489c48150f69a9c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52bf7380fec4aba32d845ec9d36e8d36') in 0.011678 seconds 
+  Import took 0.015387 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00049.png
+  artifactKey: Guid(5e9d51bfd9dd21b42b5702dda6f0ac0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00049.png using Guid(5e9d51bfd9dd21b42b5702dda6f0ac0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af1a22f2dbadd69e5a40334af123f248') in 0.012162 seconds 
+  Import took 0.015595 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00044.png
+  artifactKey: Guid(d930ceae71cba8c449f6304a01a23695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00044.png using Guid(d930ceae71cba8c449f6304a01a23695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ccebb2047f51f3bce7ffbba8c595b64') in 0.013561 seconds 
+  Import took 0.017007 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000320 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00003.png
+  artifactKey: Guid(1227a7e7ba31abe408ef0465da39fe2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00003.png using Guid(1227a7e7ba31abe408ef0465da39fe2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21d5938e5fa6a318af2813ef7f8f5a46') in 0.014060 seconds 
+  Import took 0.017743 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00006.png
+  artifactKey: Guid(51b067cf247323148bda555f936d6452) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00006.png using Guid(51b067cf247323148bda555f936d6452) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51081c050cb8bef22fb9ac100da81341') in 0.012824 seconds 
+  Import took 0.016305 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00021.png
+  artifactKey: Guid(6a081de99be81554f903450810a9939e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00021.png using Guid(6a081de99be81554f903450810a9939e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd066fbfb17db7fc3861f6ea93e029cef') in 0.015807 seconds 
+  Import took 0.020698 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000347 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00025.png
+  artifactKey: Guid(c384bf57db0970f46b0db9ac8407eca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00025.png using Guid(c384bf57db0970f46b0db9ac8407eca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8890b51cbf6940f528a58c728bdabdaa') in 0.014049 seconds 
+  Import took 0.019880 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00031.png
+  artifactKey: Guid(4a080672e12cab24daee3e9aa903c5d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00031.png using Guid(4a080672e12cab24daee3e9aa903c5d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8717e86b273df10db04699bf9c1f6e5') in 0.014199 seconds 
+  Import took 0.017686 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00048.png
+  artifactKey: Guid(217934afc6d6b1c459e5931a70d3cfaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00048.png using Guid(217934afc6d6b1c459e5931a70d3cfaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2de06d0a1d447d2afc3163767a1df3d2') in 0.015660 seconds 
+  Import took 0.021124 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00009.png
+  artifactKey: Guid(9dd510b538bf88746beba092b4a687cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00009.png using Guid(9dd510b538bf88746beba092b4a687cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cba523cd12c4769a7d2a7935524705aa') in 0.013260 seconds 
+  Import took 0.017407 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000427 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00034.png
+  artifactKey: Guid(81494d942b7570e4d93d1b8c9b354041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00034.png using Guid(81494d942b7570e4d93d1b8c9b354041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c6d15d5d8df8daa7b61e3ae95b16427') in 0.012790 seconds 
+  Import took 0.017094 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00007.png
+  artifactKey: Guid(8200ad737c5cc854ab5da263f903e153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00007.png using Guid(8200ad737c5cc854ab5da263f903e153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2bf1ea5444a12e76ff57e7223fe2298') in 0.014643 seconds 
+  Import took 0.018195 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000328 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00010.png
+  artifactKey: Guid(c13b8181b11ef2b499fd5e27c1e84448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00010.png using Guid(c13b8181b11ef2b499fd5e27c1e84448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54fed5e3568acb210295bbfc93b05de2') in 0.012726 seconds 
+  Import took 0.016132 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00000.png
+  artifactKey: Guid(380b88f6788c8514fab4219c6762066d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00000.png using Guid(380b88f6788c8514fab4219c6762066d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94869ee7606ff0926eec81d57064746c') in 0.013946 seconds 
+  Import took 0.017784 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00004.png
+  artifactKey: Guid(c431c800bfd599645a995e8db8501d1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00004.png using Guid(c431c800bfd599645a995e8db8501d1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6804738ca916a978a5fe299cd2a41b58') in 0.013498 seconds 
+  Import took 0.017541 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000322 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00052.png
+  artifactKey: Guid(bf8e262fd4f61354ea07733df31f4693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00052.png using Guid(bf8e262fd4f61354ea07733df31f4693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3923856a561396a3678fb7140cdc781') in 0.016301 seconds 
+  Import took 0.022033 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00038.png
+  artifactKey: Guid(36ba665aa22121a498987f93b7d8f9e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00038.png using Guid(36ba665aa22121a498987f93b7d8f9e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '647a238f1123c03f127485bcda922ef3') in 0.014807 seconds 
+  Import took 0.019195 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00052.png
+  artifactKey: Guid(bf8e262fd4f61354ea07733df31f4693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00052.png using Guid(bf8e262fd4f61354ea07733df31f4693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3923856a561396a3678fb7140cdc781') in 0.010506 seconds 
+  Import took 0.014144 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00028.png
+  artifactKey: Guid(076fe0ebfc5a09449a9e4c520d8fbc1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00028.png using Guid(076fe0ebfc5a09449a9e4c520d8fbc1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b9318687632377495673ae40da0c0c0') in 0.015370 seconds 
+  Import took 0.018989 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00001.png
+  artifactKey: Guid(d41061de87e23624ba928e98346962c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00001.png using Guid(d41061de87e23624ba928e98346962c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c919d617aad9c8c9c78a321bb4b54da2') in 0.012677 seconds 
+  Import took 0.015749 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00011.png
+  artifactKey: Guid(e3e5bde9b7ae1b94f8339807b4a7517d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/吹き出しアニメ―ション/生産開始３_00011.png using Guid(e3e5bde9b7ae1b94f8339807b4a7517d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0aac0969b1502db6c32a2936f5efec9') in 0.012588 seconds 
+  Import took 0.015919 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
