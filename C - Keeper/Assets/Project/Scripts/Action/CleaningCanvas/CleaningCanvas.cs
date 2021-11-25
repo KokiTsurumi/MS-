@@ -37,7 +37,7 @@ public class CleaningCanvas : MonoBehaviour
     [SerializeField]
     protected SelectScrollbar listScrollbar;
 
-    virtual public void Initialize()
+    public void Initialize()
     {
 
         RobotList = RobotManager.Instance.robotList;
@@ -60,7 +60,7 @@ public class CleaningCanvas : MonoBehaviour
 
 
 
-    virtual public void RobotDicision()
+    public void RobotDicision()
     {
         SetRobotData();
 
@@ -98,15 +98,26 @@ public class CleaningCanvas : MonoBehaviour
         int b = data.GetBattery();
         RobotBase.SPECIALSKILL_LIST skl = data.GetSkill();
 
-        robotSimpleDataUI.GetComponent<ActionRobotInterface>().SetData(name, c,b,skl);
+        robotSimpleDataUI.GetComponent<ActionRobotInterface>().SetData(name, c,b,skl,null);
     }
 
-    virtual public void StartButton()
+    public void StartButton()
     {
+        Camera.main.GetComponent<CameraController>().GetCurrntAction().ActionEnd();
+
+
         //タイマー計算　
         //汚染度変化計算
-        
-        Camera.main.GetComponent<CameraController>().GetCurrntAction().ActionEnd();
+        //selectRobot
+        //※今は一つのRobotを利用
+        RobotManager.Instance.selectedRobot[0] = selectRobot.GetComponent<SelectRobotData>().GetOriginal();
+        RobotManager.Instance.selectedRobot[1] = selectRobot.GetComponent<SelectRobotData>().GetOriginal();
+
+        IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().CalcRemoveRate();
+
+        IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().StartClean(3.0f);
+
+        StartCoroutine(ActionEnd());
     }
 
     public void SelectCancel() { ListUI.SetActive(false); }
@@ -132,8 +143,17 @@ public class CleaningCanvas : MonoBehaviour
             int b = data.battery;
             RobotBase.SPECIALSKILL_LIST skl = data.specialSkill;
 
-            obj.GetComponent<ActionRobotInterface>().SetData(name, c,b,skl);
+            obj.GetComponent<ActionRobotInterface>().SetData(name, c,b,skl,RobotManager.Instance.robotList[i].gameObject);
             obj.GetComponent<ActionRobotInterface>().Create();
         }
+    }
+
+    IEnumerator ActionEnd()
+    {
+        //数秒後にカメラを戻す
+        yield return new WaitForSeconds(1.0f);
+
+        //base.StartButton();
+
     }
 }

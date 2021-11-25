@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class ActionCharacterInterface : MonoBehaviour
 {
     [SerializeField]
-    Text nameText, rRank, pRank, mRank, iRank;
+    protected Text nameText, rRank, pRank, mRank, iRank;
 
     SelectCanvasInterface canvas;
+
+    public GameObject originalGameObject;
 
     string charaName;
     int research;//研究
@@ -24,7 +26,7 @@ public class ActionCharacterInterface : MonoBehaviour
     public int GetManagement => management;
     public int GetInvestigation => investigation;
 
-    public void SetData(string n, int r, int p, int m, int inv)
+    public void SetData(string n, int r, int p, int m, int inv,GameObject original)
     {
         research = r;
         production = p;
@@ -37,6 +39,7 @@ public class ActionCharacterInterface : MonoBehaviour
         mRank.text = CharacterManager.Instance.RankTransfer(m);
         iRank.text = CharacterManager.Instance.RankTransfer(inv);
         nameText.text = charaName;
+        originalGameObject = original;
     }
 
     public void onClick()
@@ -49,5 +52,6 @@ public class ActionCharacterInterface : MonoBehaviour
         GameObject root = transform.root.gameObject;
         canvas = root.transform.GetComponent<SelectCanvasInterface>();
     }
+
 
 }

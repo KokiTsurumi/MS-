@@ -12,11 +12,11 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     public GameObject backButton;
 
-    [SerializeField]
+    //[SerializeField]
     float zoomSpeed = 1.0f;
-    [SerializeField]
+    //[SerializeField]
     float zoomTime = 0.5f;
-    [SerializeField]
+    //[SerializeField]
     float cameraZoomSize = 2.5f;
 
     float cameraOrthSizeDefault;
@@ -24,15 +24,15 @@ public class CameraController : MonoBehaviour
     float cameraZ;
 
 
-    [SerializeField]
+    //[SerializeField]
     float transSpeed = 1.0f;
-    [SerializeField]
+    //[SerializeField]
     float transTime = 0.5f;
 
     float transCurrentTime = 0;
     Vector3 centerIslandPos;
 
-    public GameObject targetIsland;
+    //public GameObject targetIsland;
 
     Vector3 startPos;
     Vector3 endPos;
@@ -122,6 +122,17 @@ public class CameraController : MonoBehaviour
                 actionCanvasAnimator.SetBool("popOut", true);
             else if (transState == TransState.ISLAND)
                 DisplayUI();
+
+            if(transState == TransState.CENTER)
+            {
+                //タイマー非表示
+                for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
+                {
+                    GameObject island = IslandManager.Instance.islandList[i];
+                    island.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
+                }
+
+            }
         }
 
     }
@@ -150,6 +161,13 @@ public class CameraController : MonoBehaviour
 
             if (transState == TransState.ISLAND)
                 transState = TransState.TRANSLATE_CENTER;
+
+            //タイマー表示
+            for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
+            {
+                GameObject island = IslandManager.Instance.islandList[i];
+                island.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
+            }
         }
     }
 
@@ -205,14 +223,23 @@ public class CameraController : MonoBehaviour
     {
         if (transState != TransState.CHOICE) return;
 
-        transState = TransState.TRANSLATE_ISLAND;
+        //調査を押したときに調査済なら反応させない
+        GameObject island = MouseManager.Instance.GetCursorOnObject();
+        if (island.GetComponent<IslandBase>().state != IslandBase.STATE_ISLAND.STATE_UNINVESTIGATED
+            &&
+            actionGameObject.name == "Investigation")
+        {
+            Debug.Log(island.name + "は調査済です");
+            return;
+        }
 
-        //実行中のタイマー非表示
 
 
-        targetIsland = MouseManager.Instance.GetCursorOnObject();
-        IslandManager.Instance.SetCurrentIsland(targetIsland);
-        Vector3 tarPos = targetIsland.transform.position;
+            
+            transState = TransState.TRANSLATE_ISLAND;
+
+        IslandManager.Instance.SetCurrentIsland(island);
+        Vector3 tarPos = IslandManager.Instance.GetCurrentIsland().transform.position;
         Vector3 camPos = Camera.main.transform.position;
 
         startPos = new Vector3(camPos.x, camPos.y, cameraZ);
@@ -224,13 +251,12 @@ public class CameraController : MonoBehaviour
         //transState = TransState.TRANSLATE_CENTER;
         if (!MouseManager.Instance.OnDoubleClickGameObject()) return;
         if (MouseManager.Instance.GetCurrentSelectedGameObject() != null) return;
-        targetIsland = centerIsland;
-        IslandManager.Instance.SetCurrentIsland(targetIsland);
+        IslandManager.Instance.SetCurrentIsland(MouseManager.Instance.GetCursorOnObject());
 
         if(zoomState == ZoomState.DEFAULT)
             zoomState = ZoomState.IN;
 
-        Vector3 tarPos = targetIsland.transform.position;
+        Vector3 tarPos = IslandManager.Instance.GetCurrentIsland().transform.position;
         Vector3 camPos = Camera.main.transform.position;
 
         startPos = new Vector3(camPos.x, camPos.y, cameraZ);
@@ -297,7 +323,6 @@ public class CameraController : MonoBehaviour
     {
         transState = TransState.CHOICE;
 
-        //実行中のタイマー表示
     }
 
     public ActionButtonInterface GetCurrntAction()

@@ -15,7 +15,7 @@ public class ActionRobotInterface : MonoBehaviour
     int battery;
     RobotBase.SPECIALSKILL_LIST skill;
 
-
+    public GameObject originalGameObject;
     public bool isSelected { get; set; } = false;
 
     public string GetName => robotName;
@@ -24,7 +24,7 @@ public class ActionRobotInterface : MonoBehaviour
 
     public RobotBase.SPECIALSKILL_LIST GetSkill => skill;
 
-    public void SetData(string name, int c,int b,RobotBase.SPECIALSKILL_LIST skl)
+    public void SetData(string name, int c,int b,RobotBase.SPECIALSKILL_LIST skl,GameObject original)
     {
         robotName = name;
         clean = c;
@@ -35,7 +35,7 @@ public class ActionRobotInterface : MonoBehaviour
         cRank.text = RobotManager.Instance.RankTransfer(c);
         bRank.text = RobotManager.Instance.RankTransfer(b);
         skillName.text = skill.ToString();
-
+        originalGameObject = original;
     }
     public void onClick()
     {

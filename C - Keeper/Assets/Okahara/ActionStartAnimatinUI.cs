@@ -8,7 +8,6 @@ public class ActionStartAnimatinUI : MonoBehaviour
 
     void AnimationEndCallBack()
     {
-        Debug.Log("callback");
         callBack = true;
     }
 

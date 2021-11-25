@@ -19,11 +19,12 @@ public class InvestigationCanvas : SelectCanvasInterface
             startAnimationCanvas.SetActive(false);
 
             //島のスクリプト内にある調査済みのboolをture（汚染度表示に利用）
-            GameObject target = cameraController.targetIsland;
+            GameObject target = IslandManager.Instance.GetCurrentIsland();
 
             //タッグ計算処理
+            //target.GetComponent<IslandBase>()
             //タイマー計算処理
-            target.GetComponent<IslandBase>().StartInvestigate(5.0f);
+            target.GetComponent<IslandBase>().StartInvestigate(5.0f);//5.0fは仮
 
 
             //カメラ移動
@@ -50,7 +51,6 @@ public class InvestigationCanvas : SelectCanvasInterface
 
     IEnumerator ActionEnd()
     {
-        Debug.Log("コルーチン開始");
         //数秒後にカメラを戻す
         yield return new WaitForSeconds(1.0f);
 
