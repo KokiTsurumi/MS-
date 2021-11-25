@@ -23,7 +23,7 @@ public class InvestigationCanvas : SelectCanvasInterface
 
             //タッグ計算処理
             //タイマー計算処理
-            WorldManager.Instance.SetTimer(5.0f, target.transform.position);
+            target.GetComponent<IslandBase>().StartInvestigate(5.0f);
 
 
             //カメラ移動

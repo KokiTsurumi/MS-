@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
-    
+    public delegate void CallBack();
+    private CallBack callBack;
+
     Image Gage;
 
     [SerializeField]
@@ -33,6 +36,9 @@ public class Timer : MonoBehaviour
         if(currentTime <=0 )
         {
             start = false;
+
+            if (callBack != null)
+                callBack();
         }
         
     }
@@ -41,6 +47,13 @@ public class Timer : MonoBehaviour
     {
         start = true;
         currentTime = countTime = setTime;
+    }
+
+    public void TimerStart(float setTime, CallBack cb)
+    {
+        start = true;
+        currentTime = countTime = setTime;
+        callBack = cb;
     }
 
     public float GetCurrentTime() => currentTime;

@@ -19,11 +19,11 @@ public class IslandBase : MonoBehaviour
     // 島の状態(ステートマシン)
     public enum STATE_ISLAND
     {
-        STATE_UNINVESTIGATED,
-        STATE_INVESTIGATING,
-        STATE_INVESTIGATED,
-        STATE_CLEANING,
-        STATE_CLEANED,
+        STATE_UNINVESTIGATED,   // 未調査
+        STATE_INVESTIGATING,    // 調査中
+        STATE_INVESTIGATED,     // 調査済
+        STATE_CLEANING,         // 清掃中
+        STATE_CLEANED,          // 清掃済
     }
 
 
@@ -63,7 +63,7 @@ public class IslandBase : MonoBehaviour
     }
 
     // 島の除去率を計算する関数
-    public void CalcRemoveRate()
+    public int CalcRemoveRate()
     {
         RobotData robot1 = RobotManager.Instance.selectedRobot[0].GetComponent<RobotData>();    // ロボット１
         RobotData robot2 = RobotManager.Instance.selectedRobot[1].GetComponent<RobotData>();    // ロボット２
@@ -204,18 +204,50 @@ public class IslandBase : MonoBehaviour
             removeRate = 10;
         else
             removeRate = 5;
+
+        return removeRate;
     }
 
     // 除去率から汚染度を減少させる関数
-    public void RemovePollution()
+    public void RemovePollution(int removeRate)
     {
         pollutionLevel -= removeRate;
+        IslandManager.Instance.CheckTotalPollutionLevel();
     }
 
-    // タイマーセット関数
+    // 調査開始関数
+    public void StartInvestigate(float time)
+    {
+        timer.GetComponent<Timer>().TimerStart(time, FinishInvestigate);
+        state = STATE_ISLAND.STATE_INVESTIGATING;
+        timer.SetActive(true);
+    }
 
+    // 調査終了関数
+    private void FinishInvestigate()
+    {
+        timer.SetActive(false);
+        state = STATE_ISLAND.STATE_INVESTIGATED;
+    }
 
+    // 調査開始関数
+    public void StartClean(float time)
+    {
+        timer.GetComponent<Timer>().TimerStart(time, FinishClean);
+        state = STATE_ISLAND.STATE_CLEANING;
+        timer.SetActive(true);
+    }
 
+    // 調査終了関数
+    private void FinishClean()
+    {
+        timer.SetActive(false);
+        CalcRemoveRate();
+        RemovePollution(removeRate);
+
+        if(pollutionLevel <= 0)
+            state = STATE_ISLAND.STATE_CLEANED;
+    }
 
     // Start is called before the first frame update
     protected void Start()
