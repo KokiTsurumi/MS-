@@ -16,6 +16,11 @@ public class ProductionCanvas : SelectCanvasInterface
     public override void StartButton()
     {
         //研究値から生産できるロボットを計算
+        CharacterManager.Instance.selectedCharacter[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().GetOriginal();
+        CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().GetOriginal();
+        
+        //ロボットを生成（引数でGameObjectListを渡してもらえるとありがたし）
+        //GameObject[] = RobotManager.Instance.
 
         //DisplayCreateRobot();
         RobotCanvas.SetActive(true);

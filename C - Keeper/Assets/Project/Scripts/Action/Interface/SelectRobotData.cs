@@ -63,4 +63,9 @@ public class SelectRobotData : MonoBehaviour
     {
         return data.GetSkill;
     }
+
+    public GameObject GetOriginal()
+    {
+        return data.originalGameObject;
+    }
 }

@@ -12,6 +12,7 @@ public class SelectCharacterDataInterface : MonoBehaviour
 
     ActionCharacterInterface data;
 
+
     virtual public void SetData(ref GameObject obj)
     {
         data = obj.GetComponent<ActionCharacterInterface>();
@@ -67,5 +68,10 @@ public class SelectCharacterDataInterface : MonoBehaviour
     public int GetInvestigation()
     {
         return data.GetInvestigation;
+    }
+
+    public GameObject GetOriginal()
+    {
+        return data.originalGameObject;
     }
 }

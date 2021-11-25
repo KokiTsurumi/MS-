@@ -7,7 +7,7 @@ public class Pollution_Degree : MonoBehaviour
 {
 
     Slider pollutionSlider;
-    IslandManager islandManager;
+    //IslandManager islandManager;
     float maxDegree = 100.0f;   //èÚâªìx100%
     float nowDegree = 50.0f;     //åªç›ÇÃèÚâªìx
 
@@ -23,7 +23,9 @@ public class Pollution_Degree : MonoBehaviour
 
     void Update()
     {
-        islandManager.totalPollutionLevel = pollutionSlider.value;
+        //islandManager.totalPollutionLevel = pollutionSlider.value;
+
+        pollutionSlider.value = 100 - IslandManager.Instance.totalPollutionLevel;
     }
 
 

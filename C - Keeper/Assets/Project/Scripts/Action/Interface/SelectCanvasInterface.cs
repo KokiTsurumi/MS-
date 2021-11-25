@@ -26,7 +26,7 @@ public class SelectCanvasInterface : MonoBehaviour
 
 
     [SerializeField]
-    GameObject[] selectChara = new GameObject[2];
+    protected GameObject[] selectChara = new GameObject[2];
     
     int selectFrag;//0→一人目、1→二人目
 
@@ -119,7 +119,7 @@ public class SelectCanvasInterface : MonoBehaviour
         int m = data.GetManagement();
         int inv = data.GetInvestigation();
 
-        charaSimpleDataUI.GetComponent<ActionCharacterInterface>().SetData(name, r, p, m, inv);
+        charaSimpleDataUI.GetComponent<ActionCharacterInterface>().SetData(name, r, p, m, inv,null);
     }
 
     virtual public void StartButton(){}
@@ -149,7 +149,7 @@ public class SelectCanvasInterface : MonoBehaviour
             int inv = data.investigation;
             string name = data.name;
 
-            obj.GetComponent<ActionCharacterInterface>().SetData(name, r, p, m, inv);
+            obj.GetComponent<ActionCharacterInterface>().SetData(name, r, p, m, inv,CharaList[i]);
             obj.GetComponent<ActionCharacterInterface>().Create();
         }
     }
