@@ -50,18 +50,6 @@ public class IslandBase : MonoBehaviour
         return pollutionLevel;
     }
 
-    // 島が調査済かどうかを返す関数
-    public bool GetCheckInvastigate()
-    {
-        return checkInvestigated;
-    }
-
-    // 調査完了フラグをtrueにする関数
-    public void CompleteInvastigate()
-    {
-        checkInvestigated = true;
-    }
-
     // 島の除去率を計算する関数
     public int CalcRemoveRate()
     {
@@ -228,6 +216,7 @@ public class IslandBase : MonoBehaviour
     {
         timer.SetActive(false);
         state = STATE_ISLAND.STATE_INVESTIGATED;
+        checkInvestigated = true;
     }
 
     // 調査開始関数
@@ -245,7 +234,7 @@ public class IslandBase : MonoBehaviour
         CalcRemoveRate();
         RemovePollution(removeRate);
 
-        if(pollutionLevel <= 0)
+        if (pollutionLevel <= 0)
             state = STATE_ISLAND.STATE_CLEANED;
     }
 
