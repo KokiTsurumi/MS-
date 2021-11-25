@@ -39,6 +39,27 @@ public class IslandManager : SingletonMonoBehaviour<IslandManager>
         currentIsland = island;
     }
 
+    // ランク(数値)をランク(アルファベット)に変換する関数
+    public string RankTransfer(int Param)
+    {
+        string tmp;
+
+        if (Param <= 0)
+            tmp = "E";
+        else if (Param == 1)
+            tmp = "D";
+        else if (Param == 2)
+            tmp = "C";
+        else if (Param == 3)
+            tmp = "B";
+        else if (Param == 4)
+            tmp = "A";
+        else
+            tmp = "S";
+
+        return tmp;
+    }
+
 
 
     // Start is called before the first frame update

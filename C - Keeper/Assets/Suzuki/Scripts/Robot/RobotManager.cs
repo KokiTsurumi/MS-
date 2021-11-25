@@ -6,6 +6,7 @@ public class RobotManager : SingletonMonoBehaviour<RobotManager>
 {
     // メンバ変数
     public List<GameObject> robotList = new List<GameObject>();     // 保有しているロボットのリスト
+    public GameObject[] selectedRobot = new GameObject[2];          // 選択されたロボット
 
     public GameObject robotPrefab;
     public GameObject list;
