@@ -22,11 +22,8 @@ public class SelectCanvasInterface : MonoBehaviour
     [SerializeField]
     protected GameObject startButton;
 
-    [SerializeField]
     List<GameObject> CharaList;
 
-    [SerializeField]
-    protected List<GameObject> RobotList;
 
     [SerializeField]
     GameObject[] selectChara = new GameObject[2];
@@ -41,15 +38,28 @@ public class SelectCanvasInterface : MonoBehaviour
     [SerializeField]
     protected SelectScrollbar listScrollbar;
 
+    [SerializeField]
+    protected GameObject startAnimationCanvas;
+
+    [SerializeField]
+    protected GameObject mainCanvas;
+
+    protected CameraController cameraController;
+
     virtual public void Initialize()
     {
+        cameraController = Camera.main.GetComponent<CameraController>();
 
         CharaList = CharacterManager.Instance.characterList;
 
         CreateCharaList();
 
         startButton.SetActive(false);
+
+        if(startAnimationCanvas != null)
+            startAnimationCanvas.SetActive(false);
         ListUI.SetActive(false);
+        
     }
 
     public void DisplayCharaList()
@@ -112,10 +122,7 @@ public class SelectCanvasInterface : MonoBehaviour
         charaSimpleDataUI.GetComponent<ActionCharacterInterface>().SetData(name, r, p, m, inv);
     }
 
-    virtual public void StartButton()
-    {
-        Camera.main.GetComponent<CameraController>().GetCurrntAction().ActionEnd();
-    }
+    virtual public void StartButton(){}
 
     public void SelectCancel(){ ListUI.SetActive(false);}
 

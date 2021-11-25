@@ -15,12 +15,12 @@ public class ProductionCanvas : SelectCanvasInterface
     }
     public override void StartButton()
     {
-        //base.StartButton();
-
         //研究値から生産できるロボットを計算
 
         //DisplayCreateRobot();
         RobotCanvas.SetActive(true);
+
+        //Camera.main.GetComponent<CameraController>().GetCurrntAction().ActionEnd();
     }
 
     void DisplayCreateRobot()
@@ -30,6 +30,11 @@ public class ProductionCanvas : SelectCanvasInterface
 
     public void CloseRobotCanvas()
     {
-        base.StartButton();
+        //base.StartButton();
+
+        //RobotCanvas.SetActive(false);
+
+        //Destroy(this.gameObject);
+        cameraController.ActionEnd();
     }
 }

@@ -196,7 +196,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4621094912140092495}
   - component: {fileID: 4621094912140092489}
-  - component: {fileID: 4621094912140092494}
+  - component: {fileID: 549715084544519564}
+  - component: {fileID: 1653829785}
   m_Layer: 5
   m_Name: Pollution_Degree
   m_TagString: Untagged
@@ -276,7 +277,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4621094912140092494}
+      - m_Target: {fileID: 549715084544519564}
         m_TargetAssemblyTypeName: Pollution_Degree, Assembly-CSharp
         m_MethodName: Method
         m_Mode: 1
@@ -288,7 +289,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4621094912140092494
+      - m_Target: {fileID: 1653829785}
+        m_TargetAssemblyTypeName: IslandManager, Assembly-CSharp
+        m_MethodName: CheckTotalPollutionLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &549715084544519564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,3 +313,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb59652da26e1a4cb1cbc89d3e63e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1653829785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4621094912140092492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92eaf0304e6d8c4b82f642567b370e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  islandList: []
+  totalPollutionLevel: 0
+  currentIsland: {fileID: 0}

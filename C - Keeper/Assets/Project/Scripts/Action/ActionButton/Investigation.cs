@@ -8,38 +8,32 @@ public class Investigation : ActionButtonInterface
     [SerializeField]
     GameObject investigationUI;
 
-    //CameraController cameraController;
 
     bool doing = false;
 
-    GameObject canvas;
+  
   
     override public void ActionStart() 
     {
-        //investigationUI.SetActive(true);
-        //investigationUI.transform.GetChild(0).GetComponent<InvestigationCanvas>().CreateCharaList();
         cameraController.ZoomOut();
         cameraController.IslandChoice();
     }
 
     public override void DisplayUI()
     {
+        cameraController.backButton.SetActive(true);
         canvas = (GameObject)Instantiate(investigationUI);
-
-        canvas.transform.GetChild(0).GetComponent<InvestigationCanvas>().Initialize();
+        canvas.transform.GetComponent<InvestigationCanvas>().Initialize();
 
     }
 
     public override void ActionEnd()
     {
+
+        cameraController.backButton.SetActive(false);
+
         //カメラを拠点島に戻す
         cameraController.TranslateCenterIsland();
-
-
-        //タッグ計算処理
-        //タイマー計算処理
-        //島のスクリプト内にある調査済みのboolをture（汚染度表示に利用）
-        
 
 
         Destroy(canvas);

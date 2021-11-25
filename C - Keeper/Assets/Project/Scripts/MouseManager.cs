@@ -140,7 +140,11 @@ public class MouseManager : SingletonMonoBehaviour<MouseManager>
 
     public GameObject GetCursorOnObject()
     {
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+
+        RaycastHit2D hit = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction,15.0f);
+        //RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
         if (hit.collider != null)
         {

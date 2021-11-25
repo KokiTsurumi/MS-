@@ -7,23 +7,23 @@ public class Pollution_Degree : MonoBehaviour
 {
 
     Slider pollutionSlider;
+    IslandManager islandManager;
+    float maxDegree = 100.0f;   //浄化度100%
+    float nowDegree = 50.0f;     //現在の浄化度
 
     void Start()
     {
-
         pollutionSlider = GetComponent<Slider>();
-
-         float maxDegree = 100.0f;   //浄化度100%
-         float nowDegree = 0.0f;     //現在の浄化度
-
 
         //浄化度の最大値の設定
         pollutionSlider.maxValue = maxDegree;
 
-        //現在値の設定
-        pollutionSlider.value = nowDegree;
+    }
 
 
+    void Update()
+    {
+        islandManager.totalPollutionLevel = pollutionSlider.value;
     }
 
 
