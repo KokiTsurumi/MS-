@@ -11,6 +11,8 @@ public class RobotManager : SingletonMonoBehaviour<RobotManager>
     public GameObject robotPrefab;
     public GameObject list;
 
+    public Sprite robotSprite;                                      // ロボットの画像
+
 
 
     // 二機の清掃値の平均を返す関数

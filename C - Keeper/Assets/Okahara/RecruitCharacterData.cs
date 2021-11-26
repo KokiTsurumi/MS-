@@ -60,7 +60,7 @@ public class RecruitCharacterData : ActionCharacterInterface
         this.original = original;
 
         nameText.text = data.name;
-        charaImage = data.characterImage;
+        charaImage = data.characterSprite;
         //profileText.text = data.profileText.text;
         rRank.text = CharacterManager.Instance.RankTransfer(data.research);
         pRank.text = CharacterManager.Instance.RankTransfer(data.production);

@@ -38,8 +38,8 @@ public class CharacterBase : MonoBehaviour
     public string       name;                                               // 名前
     public int          age;                                                // 年齢
     public TAG_LIST     tag = TAG_LIST.TAG_NULL;                            // タッグ機能
-    public Image        characterImage;                                     // キャラクターの画像
-
+    public Sprite       characterSprite;                                    // キャラクターの画像
+    
     public string       profile;                                            // プロフィール用
 
     public int          popularityRank;                                     // 知名度ランク
@@ -151,6 +151,30 @@ public class CharacterBase : MonoBehaviour
             else
                 tag = TAG_LIST.TAG_NULL;
         }
+    }
+
+    // キャラクターの画像を設定する関数
+    public void SetCharacterSprite()                                
+    {
+        string directoryPath = "Assets/Project/Textures/人材NPC";   // キャラクター画像の入ったパスを指定
+        List<Sprite> spriteList = new List<Sprite>();               // 取得したキャラクター画像を保持するリスト
+
+        // キャラクター画像の全取得
+        string[] filePathArray = System.IO.Directory.GetFiles(directoryPath, "*.png", System.IO.SearchOption.AllDirectories);
+
+        // 取得したファイルからアセットのみリストに追加
+        foreach(string filePath in filePathArray)
+        {
+            Sprite sprite = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(filePath);
+            if (sprite != null)
+                spriteList.Add(sprite);
+
+            Debug.Log(sprite);
+        }
+
+        // キャラクター画像をランダムで決定
+        int index = Random.Range(0, spriteList.Count + 1);
+        characterSprite = spriteList[index];
     }
 
 
