@@ -67,7 +67,7 @@ public class RecruitCharacterData : MonoBehaviour
         CharacterBase data = obj.GetComponent<CharacterBase>();
 
         nameText.text = data.name;
-        charaImage = data.characterImage;
+        charaImage.sprite = data.characterSprite;
         profileText.text = data.profile;
         rRank.text = CharacterManager.Instance.RankTransfer(data.research);
         pRank.text = CharacterManager.Instance.RankTransfer(data.production);
