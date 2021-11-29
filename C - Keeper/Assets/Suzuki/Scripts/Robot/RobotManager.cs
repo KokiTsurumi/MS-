@@ -97,7 +97,7 @@ public class RobotManager : SingletonMonoBehaviour<RobotManager>
 
         spriteList = Resources.LoadAll<Sprite>(directoryPath);   // ロボット画像を全て取得
 
-        // キャラクター画像をランダムで決定
+        // ロボット画像をランダムで決定
         int index = Random.Range(0, spriteList.Length);
         robotSprite = spriteList[index];
     }
