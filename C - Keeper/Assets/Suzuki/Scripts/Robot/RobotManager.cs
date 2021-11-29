@@ -89,11 +89,26 @@ public class RobotManager : SingletonMonoBehaviour<RobotManager>
         return tmp;
     }
 
-    public void GenerateRobot()
+    // ロボットの画像を設定する関数
+    public void SetRobotSprite()
+    {
+        string directoryPath = "ロボ";    　// ロボット画像の入ったパスを指定
+        Sprite[] spriteList;                // 取得したロボット画像を保持するリスト
+
+        spriteList = Resources.LoadAll<Sprite>(directoryPath);   // ロボット画像を全て取得
+
+        // キャラクター画像をランダムで決定
+        int index = Random.Range(0, spriteList.Length);
+        robotSprite = spriteList[index];
+    }
+
+    public GameObject GenerateRobot()
     {
         GameObject obj = Instantiate(robotPrefab);
         obj.transform.parent = list.transform;
         robotList.Add(obj);
+
+        return obj;
     }
 
 

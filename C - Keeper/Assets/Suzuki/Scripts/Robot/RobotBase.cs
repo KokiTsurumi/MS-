@@ -26,7 +26,7 @@ public class RobotBase : MonoBehaviour
     public SPECIALSKILL_LIST specialSkill;  // 特殊技能
     public string name;                     // 名前
 
-    public Image robotImage;                // ロボットの画像
+    public Sprite robotSprite;              // ロボットの画像
     
 
 
