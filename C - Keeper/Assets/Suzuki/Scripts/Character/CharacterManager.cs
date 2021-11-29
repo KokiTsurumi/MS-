@@ -160,7 +160,13 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
         characterList.Clear();          // 選ばれなかった人材を削除
     }
 
-
+    // キャラクター生成関数
+    public void GenerateCharacter()
+    {
+        GameObject obj = Instantiate(characterPrefab);
+        obj.transform.parent = list.transform;
+        characterList.Add(obj);
+    }
 
 
 
@@ -168,9 +174,7 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
     {
         for(int i = 0; i < 5; i++)
         {
-            GameObject obj = Instantiate(characterPrefab);
-            obj.transform.parent = list.transform;
-            characterList.Add(obj);
+            GenerateCharacter();
         }
 
         selectedCharacter[0] = characterList[0];

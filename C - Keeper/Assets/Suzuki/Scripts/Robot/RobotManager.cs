@@ -89,14 +89,19 @@ public class RobotManager : SingletonMonoBehaviour<RobotManager>
         return tmp;
     }
 
+    public void GenerateRobot()
+    {
+        GameObject obj = Instantiate(robotPrefab);
+        obj.transform.parent = list.transform;
+        robotList.Add(obj);
+    }
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject obj = Instantiate(robotPrefab);
-        obj.transform.parent = list.transform;
-        robotList.Add(obj);
+        GenerateRobot();
     }
 
     // Update is called once per frame
@@ -104,9 +109,7 @@ public class RobotManager : SingletonMonoBehaviour<RobotManager>
     {
         if(Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            GameObject obj = Instantiate(robotPrefab);
-            obj.transform.parent = list.transform;
-            robotList.Add(obj);
+            GenerateRobot();
         }
 
         if (Input.GetKeyDown(KeyCode.A))
