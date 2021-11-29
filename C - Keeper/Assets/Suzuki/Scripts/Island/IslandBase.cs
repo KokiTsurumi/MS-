@@ -219,24 +219,28 @@ public class IslandBase : MonoBehaviour
         checkInvestigated = true;
     }
 
-    // 調査開始関数
+    // 清掃開始関数
     public void StartClean(float time)
     {
         timer.GetComponent<Timer>().TimerStart(time, FinishClean);
         state = STATE_ISLAND.STATE_CLEANING;
         timer.SetActive(true);
+        pollutionLevelText.gameObject.SetActive(false);
     }
 
-    // 調査終了関数
+    // 清掃終了関数
     private void FinishClean()
     {
         timer.SetActive(false);
         CalcRemoveRate();
         RemovePollution(removeRate);
+        pollutionLevelText.gameObject.SetActive(true);
 
         if (pollutionLevel <= 0)
             state = STATE_ISLAND.STATE_CLEANED;
     }
+
+
 
     // Start is called before the first frame update
     protected void Start()

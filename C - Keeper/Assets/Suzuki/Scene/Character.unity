@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: list
       value: 
       objectReference: {fileID: 1361240002}
+    - target: {fileID: 1264690811553455053, guid: d5b06c769e7670e4c8a73a5b47f39f6f, type: 3}
+      propertyPath: robotPrefab
+      value: 
+      objectReference: {fileID: 9017877439045658276, guid: 5a3a80d81a0c9d34295f8899fefd5cf6, type: 3}
     - target: {fileID: 3872010135492953502, guid: d5b06c769e7670e4c8a73a5b47f39f6f, type: 3}
       propertyPath: m_Name
       value: RobotManager

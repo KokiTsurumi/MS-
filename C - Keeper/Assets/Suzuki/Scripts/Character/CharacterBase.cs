@@ -33,16 +33,16 @@ public class CharacterBase : MonoBehaviour
 
     // メンバ変数
     [SerializeField, Range(0, 5)]
-    public int          research, production, management, investigation;    // パラメータ(research:研究, production:生産, management:管理, investigation:調査)(0～5:E～S)
+    public int research, production, management, investigation;    // パラメータ(research:研究, production:生産, management:管理, investigation:調査)(0～5:E～S)
 
-    public string       name;                                               // 名前
-    public int          age;                                                // 年齢
-    public TAG_LIST     tag = TAG_LIST.TAG_NULL;                            // タッグ機能
-    public Sprite       characterSprite;                                    // キャラクターの画像
-    
-    public string       profile;                                            // プロフィール用
+    public string name;                                               // 名前
+    public int age;                                                // 年齢
+    public TAG_LIST tag = TAG_LIST.TAG_NULL;                            // タッグ機能
+    public Sprite characterSprite;                                    // キャラクターの画像
 
-    public int          popularityRank;                                     // 知名度ランク
+    public string profile;                                            // プロフィール用
+
+    public int popularityRank;                                     // 知名度ランク
 
 
 
@@ -52,38 +52,38 @@ public class CharacterBase : MonoBehaviour
         // ランクによって変動
         if (popularityRank <= 1)
         {
-            research        = Random.Range(0, 2);
-            production      = Random.Range(0, 2);
-            management      = Random.Range(0, 2);
-            investigation   = Random.Range(0, 2);
+            research = Random.Range(0, 2);
+            production = Random.Range(0, 2);
+            management = Random.Range(0, 2);
+            investigation = Random.Range(0, 2);
         }
         else if (popularityRank == 2)
         {
-            research        = Random.Range(0, 3);
-            production      = Random.Range(0, 3);
-            management      = Random.Range(0, 3);
-            investigation   = Random.Range(0, 3);
+            research = Random.Range(0, 3);
+            production = Random.Range(0, 3);
+            management = Random.Range(0, 3);
+            investigation = Random.Range(0, 3);
         }
         else if (popularityRank == 3)
         {
-            research        = Random.Range(1, 4);
-            production      = Random.Range(1, 4);
-            management      = Random.Range(1, 4);
-            investigation   = Random.Range(1, 4);
+            research = Random.Range(1, 4);
+            production = Random.Range(1, 4);
+            management = Random.Range(1, 4);
+            investigation = Random.Range(1, 4);
         }
         else if (popularityRank == 4)
         {
-            research        = Random.Range(2, 5);
-            production      = Random.Range(2, 5);
-            management      = Random.Range(2, 5);
-            investigation   = Random.Range(2, 5);
+            research = Random.Range(2, 5);
+            production = Random.Range(2, 5);
+            management = Random.Range(2, 5);
+            investigation = Random.Range(2, 5);
         }
         else
         {
-            research        = Random.Range(3, 6);
-            production      = Random.Range(3, 6);
-            management      = Random.Range(3, 6);
-            investigation   = Random.Range(3, 6);
+            research = Random.Range(3, 6);
+            production = Random.Range(3, 6);
+            management = Random.Range(3, 6);
+            investigation = Random.Range(3, 6);
         }
     }
 
@@ -91,8 +91,8 @@ public class CharacterBase : MonoBehaviour
     public void NameGenerator()
     {
         // jsonファイルから名前データを読み込み
-        string      inputString = Resources.Load<TextAsset>("jsontest").ToString();
-        InputJson   inputJson   = JsonUtility.FromJson<InputJson>(inputString);     // デシリアライズ
+        string inputString = Resources.Load<TextAsset>("jsontest").ToString();
+        InputJson inputJson = JsonUtility.FromJson<InputJson>(inputString);     // デシリアライズ
 
         // ランダム数生成
         int rand1 = Random.Range(0, inputJson.FirstNameList.Length);    // 名
@@ -154,30 +154,17 @@ public class CharacterBase : MonoBehaviour
     }
 
     // キャラクターの画像を設定する関数
-    public void SetCharacterSprite()                                
+    public void SetCharacterSprite()
     {
-        string directoryPath = "Assets/Project/Textures/人材NPC";   // キャラクター画像の入ったパスを指定
-        List<Sprite> spriteList = new List<Sprite>();               // 取得したキャラクター画像を保持するリスト
+        string directoryPath = "人材NPC";   // キャラクター画像の入ったパスを指定
+        Sprite[] spriteList;                // 取得したキャラクター画像を保持するリスト
 
-        // キャラクター画像の全取得
-        string[] filePathArray = System.IO.Directory.GetFiles(directoryPath, "*.png", System.IO.SearchOption.AllDirectories);
-
-        // 取得したファイルからアセットのみリストに追加
-        foreach(string filePath in filePathArray)
-        {
-            Sprite sprite = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(filePath);
-            if (sprite != null)
-                spriteList.Add(sprite);
-
-            Debug.Log(sprite);
-        }
+        spriteList = Resources.LoadAll<Sprite>(directoryPath);   // キャラクター画像を全て取得
 
         // キャラクター画像をランダムで決定
-        int index = Random.Range(0, spriteList.Count + 1);
+        int index = Random.Range(0, spriteList.Length);
         characterSprite = spriteList[index];
     }
-
-
 
 
 
@@ -192,6 +179,7 @@ public class CharacterBase : MonoBehaviour
         NameGenerator();
         AgeGenerator();
         TagGenerator();
+        SetCharacterSprite();
 
         //// デバッグ用
         //Debug.Log("研究：" + CharacterManager.Instance.RankTransfer(research) + "  |  Parameter：" + research);
@@ -215,7 +203,8 @@ public class CharacterBase : MonoBehaviour
             NameGenerator();
             AgeGenerator();
             TagGenerator();
-            
+            SetCharacterSprite();
+
             Debug.Log("研究：" + CharacterManager.Instance.RankTransfer(research) + "  |  Parameter：" + research);
             Debug.Log("生産：" + CharacterManager.Instance.RankTransfer(production) + "  |  Parameter：" + production);
             Debug.Log("管理：" + CharacterManager.Instance.RankTransfer(management) + "  |  Parameter：" + management);
