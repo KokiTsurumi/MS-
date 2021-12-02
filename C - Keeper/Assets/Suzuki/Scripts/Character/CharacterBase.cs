@@ -5,9 +5,22 @@ using UnityEngine.UI;
 
 // jsonファイル取得用クラス
 [System.Serializable]
-public class InputJson
+public class InputJsonIntroductionList
 {
-    public string[] FamilyNameList; 
+    public string[] Null;
+    public string[] Robotics; 
+    public string[] Cleaning;
+    public string[] NatureResearch;
+    public string[] PlasticManufacture;
+    public string[] FueloilCollection;
+    public string[] PlasticResearch;
+    public string[] BatteryManufacture;
+}
+
+[System.Serializable]
+public class InputJsonNameList
+{
+    public string[] FamilyNameList;
     public string[] FirstNameList;
 }
 
@@ -35,12 +48,12 @@ public class CharacterBase : MonoBehaviour
     [SerializeField, Range(0, 5)]
     public int research, production, management, investigation;    // パラメータ(research:研究, production:生産, management:管理, investigation:調査)(0～5:E～S)
 
-    public string name;                                               // 名前
+    public string name;                                            // 名前
     public int age;                                                // 年齢
-    public TAG_LIST tag = TAG_LIST.TAG_NULL;                            // タッグ機能
-    public Sprite characterSprite;                                    // キャラクターの画像
+    public TAG_LIST tag = TAG_LIST.TAG_NULL;                       // タッグ機能
+    public Sprite characterSprite;                                 // キャラクターの画像
 
-    public string profile;                                            // プロフィール用
+    public string introduction;                                    // 紹介文
 
     public int popularityRank;                                     // 知名度ランク
 
@@ -91,8 +104,8 @@ public class CharacterBase : MonoBehaviour
     public void NameGenerator()
     {
         // jsonファイルから名前データを読み込み
-        string inputString = Resources.Load<TextAsset>("jsontest").ToString();
-        InputJson inputJson = JsonUtility.FromJson<InputJson>(inputString);     // デシリアライズ
+        string inputString = Resources.Load<TextAsset>("jsonFiles/jsonNameList").ToString();
+        InputJsonNameList inputJson = JsonUtility.FromJson<InputJsonNameList>(inputString);     // デシリアライズ
 
         // ランダム数生成
         int rand1 = Random.Range(0, inputJson.FirstNameList.Length);    // 名
@@ -166,6 +179,56 @@ public class CharacterBase : MonoBehaviour
         characterSprite = spriteList[index];
     }
 
+    // 紹介文を生成する関数
+    public void IntroductionGenerator()
+    {
+        // jsonファイルから紹介文データを読み込み
+        string inputString = Resources.Load<TextAsset>("jsonFiles/jsonIntroductionList").ToString();
+        InputJsonIntroductionList inputJson = JsonUtility.FromJson<InputJsonIntroductionList>(inputString);     // デシリアライズ
+        
+        // タッグ機能から紹介文を決める
+        if(tag == TAG_LIST.TAG_ROBOTICS)
+        {
+            int rand1 = Random.Range(0, inputJson.Robotics.Length);
+            introduction = inputJson.Robotics[rand1];
+        }
+        else if(tag == TAG_LIST.TAG_CLEANING)
+        {
+            int rand1 = Random.Range(0, inputJson.Cleaning.Length);
+            introduction = inputJson.Cleaning[rand1];
+        }
+        else if (tag == TAG_LIST.TAG_NATURE_RESEARCH)
+        {
+            int rand1 = Random.Range(0, inputJson.NatureResearch.Length);
+            introduction = inputJson.NatureResearch[rand1];
+        }
+        else if (tag == TAG_LIST.TAG_PLASTIC_MANUFACTURE)
+        {
+            int rand1 = Random.Range(0, inputJson.PlasticManufacture.Length);
+            introduction = inputJson.PlasticManufacture[rand1];
+        }
+        else if (tag == TAG_LIST.TAG_FUELOIL_COLLECTION)
+        {
+            int rand1 = Random.Range(0, inputJson.FueloilCollection.Length);
+            introduction = inputJson.FueloilCollection[rand1];
+        }
+        else if (tag == TAG_LIST.TAG_PLASTIC_RESEARCH)
+        {
+            int rand1 = Random.Range(0, inputJson.PlasticResearch.Length);
+            introduction = inputJson.PlasticResearch[rand1];
+        }
+        else if (tag == TAG_LIST.TAG_BATTERY_MANUFACTURE)
+        {
+            int rand1 = Random.Range(0, inputJson.BatteryManufacture.Length);
+            introduction = inputJson.BatteryManufacture[rand1];
+        }
+        else
+        {
+            int rand1 = Random.Range(0, inputJson.Null.Length);
+            introduction = inputJson.Null[rand1];
+        }
+    }
+
 
 
     // Start is called before the first frame update
@@ -174,12 +237,13 @@ public class CharacterBase : MonoBehaviour
         // 知名度ランク取得
         popularityRank = WorldManager.Instance.GetPopularityRank();
 
-
+        // 各種生成
         ParamGenerator();
         NameGenerator();
         AgeGenerator();
         TagGenerator();
         SetCharacterSprite();
+        IntroductionGenerator();
 
         //// デバッグ用
         //Debug.Log("研究：" + CharacterManager.Instance.RankTransfer(research) + "  |  Parameter：" + research);
@@ -204,6 +268,7 @@ public class CharacterBase : MonoBehaviour
             AgeGenerator();
             TagGenerator();
             SetCharacterSprite();
+            IntroductionGenerator();
 
             Debug.Log("研究：" + CharacterManager.Instance.RankTransfer(research) + "  |  Parameter：" + research);
             Debug.Log("生産：" + CharacterManager.Instance.RankTransfer(production) + "  |  Parameter：" + production);
