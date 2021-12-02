@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -47,75 +47,75 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.9</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2020.3.18f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Project\Scripts\Action\ActionButton\Investigation.cs" />
-    <Compile Include="Assets\Matsumoto\Pollution_Degree.cs" />
     <Compile Include="Assets\Project\Scripts\Action\ActionButton\Information.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Character\CharacterManager.cs" />
     <Compile Include="Assets\Project\Scripts\Action\ActionButton\Production.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\ActionButton\Cleaning.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\InvastigationCanvas\InvestigationSelectCharacterData.cs" />
-    <Compile Include="Assets\Okahara\ActionStartAnimatinUI.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\WorldManager.cs" />
-    <Compile Include="Assets\Project\Scripts\BGScroll\tesScloole.cs" />
-    <Compile Include="Assets\Okahara\RecruitCharacterData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\CharacterPanel.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Island\IslandManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\CharaTest.cs" />
     <Compile Include="Assets\Project\Scripts\Singleton.cs" />
     <Compile Include="Assets\Project\Scripts\Action\CleaningCanvas\CleaningRobotData.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotBase.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\ActionButton\ActionButtonInterface.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\CleaningCanvas\CleaningSelectRobotData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterBase.cs" />
-    <Compile Include="Assets\Project\Scripts\Timer\Timer.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\CleaningCanvas\CleaningCanvas.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\Interface\ActionCharacterInterface.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Island\IslandData.cs" />
     <Compile Include="Assets\Okahara\MenuCanvas.cs" />
-    <Compile Include="Assets\Matsumoto\CurrentSelected.cs" />
-    <Compile Include="Assets\Kawano\Script\MoveTexture.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\ProductionCanvas\ProductionCanvas.cs" />
-    <Compile Include="Assets\Project\Scripts\TypeMoveTexture.cs" />
-    <Compile Include="Assets\Project\Scripts\SceneSeni\seni.cs" />
     <Compile Include="Assets\Project\Scripts\Action\ProductionCanvas\ProductionCharacterData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\PanelManager.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\ProductionCanvas\ProductionSelectCharacterData.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotManager.cs" />
     <Compile Include="Assets\Project\Scripts\Action\SelectScrollbar.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Island\IslandBase.cs" />
     <Compile Include="Assets\Kawano\Script\kariMoveobutu.cs" />
     <Compile Include="Assets\Okahara\RecruitCanvas.cs" />
     <Compile Include="Assets\Okahara\TextFader\CharLimiter.cs" />
-    <Compile Include="Assets\Matsumoto\buttonsize.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\SelectRobotData.cs" />
     <Compile Include="Assets\Okahara\TextFader\TextFader.cs" />
     <Compile Include="Assets\Project\Scripts\Action\InvastigationCanvas\InvestigationCharacterData.cs" />
     <Compile Include="Assets\Matsumoto\Name_Value.cs" />
-    <Compile Include="Assets\Project\Scripts\Easing.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\InvastigationCanvas\InvestigationCanvas.cs" />
-    <Compile Include="Assets\Project\Scripts\MouseManager.cs" />
     <Compile Include="Assets\Okahara\TutorialManager.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\Interface\SelectCanvasInterface.cs" />
-    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotData.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\SelectCharacterDataInterface.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\JsonTest.cs" />
     <Compile Include="Assets\Kawano\Script\LoopMotion.cs" />
     <Compile Include="Assets\Project\Scripts\ButtonAnimation.cs" />
     <Compile Include="Assets\Okahara\CreateRobotData.cs" />
     <Compile Include="Assets\Project\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Okahara\TextFader\CharFader.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\ActionRobotInterface.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\tmpCharacterManager.cs" />
+    <Compile Include="Assets\Matsumoto\Pollution_Degree.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Character\CharacterManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\ActionButton\Cleaning.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\InvastigationCanvas\InvestigationSelectCharacterData.cs" />
+    <Compile Include="Assets\Okahara\ActionStartAnimatinUI.cs" />
+    <Compile Include="Assets\Project\Scripts\BGScroll\tesScloole.cs" />
+    <Compile Include="Assets\Okahara\RecruitCharacterData.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotBase.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\ActionButton\ActionButtonInterface.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\CleaningCanvas\CleaningSelectRobotData.cs" />
+    <Compile Include="Assets\Project\Scripts\Timer\Timer.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\CleaningCanvas\CleaningCanvas.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\Interface\ActionCharacterInterface.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Island\IslandData.cs" />
+    <Compile Include="Assets\Matsumoto\CurrentSelected.cs" />
+    <Compile Include="Assets\Kawano\Script\MoveTexture.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\ProductionCanvas\ProductionCanvas.cs" />
+    <Compile Include="Assets\Project\Scripts\TypeMoveTexture.cs" />
+    <Compile Include="Assets\Project\Scripts\SceneSeni\seni.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\ProductionCanvas\ProductionSelectCharacterData.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotManager.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Island\IslandBase.cs" />
+    <Compile Include="Assets\Matsumoto\Island_Pollution_Degree.cs" />
+    <Compile Include="Assets\Matsumoto\buttonsize.cs" />
+    <Compile Include="Assets\Project\Scripts\Easing.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\InvastigationCanvas\InvestigationCanvas.cs" />
+    <Compile Include="Assets\Project\Scripts\MouseManager.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\Interface\SelectCanvasInterface.cs" />
+    <Compile Include="Assets\Suzuki\Scripts\Robot\RobotData.cs" />
+    <Compile Include="Assets\Okahara\TextFader\CharFader.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
     <Compile Include="Assets\Kawano\Script\Test.cs" />
-    <Compile Include="Assets\Matsumoto\Island_Pollution_Degree.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -339,6 +339,12 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>D:\Unity\2020.3.18f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.6.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:\Unity\2020.3.18f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -685,23 +691,11 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>D:\Unity\2020.3.18f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEngineBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="PsdPlugin">
-      <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -709,26 +703,26 @@
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.IK.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    <Reference Include="VSSettingsProvider">
+      <HintPath>Library\ScriptAssemblies\VSSettingsProvider.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -742,38 +736,11 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.State">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.Core">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
