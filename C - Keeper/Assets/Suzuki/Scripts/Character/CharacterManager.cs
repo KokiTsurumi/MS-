@@ -150,7 +150,6 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
         }
     }
 
-
     // 候補リストから2人選ぶ関数
     public void HireCharacter(GameObject character1, GameObject character2)
     {

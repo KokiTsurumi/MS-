@@ -68,7 +68,7 @@ public class RecruitCharacterData : MonoBehaviour
 
         nameText.text = data.name;
         charaImage.sprite = data.characterSprite;
-        profileText.text = data.profile;
+        profileText.text = data.introduction;
         rRank.text = CharacterManager.Instance.RankTransfer(data.research);
         pRank.text = CharacterManager.Instance.RankTransfer(data.production);
         mRank.text = CharacterManager.Instance.RankTransfer(data.management);
