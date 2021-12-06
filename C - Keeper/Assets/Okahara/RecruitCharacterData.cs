@@ -15,20 +15,22 @@ public class RecruitCharacterData : MonoBehaviour
     [SerializeField]
     Image charaImage;
 
-    GameObject original;
+    [System.NonSerialized]
+    public GameObject original;
 
+    [System.NonSerialized]
     public bool selected = false;
 
 
-    void Start()
-    {
-        selected = false;
-    }
+    //void Start()
+    //{
+    //    selected = false;
+    //}
 
-    void Update()
-    {
+    //void Update()
+    //{
         
-    }
+    //}
 
     public void SetCharacterData(RecruitCharacterData data)
     {
@@ -43,13 +45,13 @@ public class RecruitCharacterData : MonoBehaviour
          */
 
         nameText.text = data.nameText.text;
-        charaImage = data.charaImage;
+        charaImage.sprite = data.charaImage.sprite;
         profileText.text = data.profileText.text;
         rRank.text = data.rRank.text;
         pRank.text = data.pRank.text;
         mRank.text = data.mRank.text;
         iRank.text = data.iRank.text;
-        selected = data.selected;
+        //selected = data.selected;
     }
 
     public void SetCharacterData(GameObject obj)
@@ -77,11 +79,11 @@ public class RecruitCharacterData : MonoBehaviour
         original = obj;
     }
 
-    public GameObject GetOriginal => original;
+    //public GameObject GetOriginal => original;
 
-    public void SetOriginal(GameObject set)
-    {
-        original = set;
-        return;
-    }
+    //public void SetOriginal(GameObject set)
+    //{
+    //    original = set;
+    //    return;
+    //}
 }

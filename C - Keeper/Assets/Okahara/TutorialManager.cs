@@ -3,50 +3,182 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialManager : MonoBehaviour
+public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 {
-    // Start is called before the first frame update
     [SerializeField]
     GameObject navigatorText;
     
 
-    List<string> textList;
+    //List<string> textList;
 
-    int listNumber = 0;
+    //int listNumber = 0;
 
+
+    [SerializeField]
+    GameObject tutorialCanvas;
 
     [SerializeField]
     GameObject recruitCanvas;
 
     [SerializeField]
-    GameObject tutorialCanvas;
+    GameObject investigationCanvas;
 
+    [SerializeField]
+    GameObject productionCanvas;
+
+
+    public enum TutorialState
+    {
+        No,
+        Investigation,
+        Production,
+        Cleanning
+    }
+
+    public TutorialState tutorialState = TutorialState.No;
+
+
+    StepList stepList;
+
+
+
+    delegate void UpdateFunc();
+    UpdateFunc updateFunc;
+
+    delegate void Coroutine();
 
     void Start()
     {
-        textList = new List<string>();
-        //テキストデータを読み込めるようにする
         //なぜか違う文字がちらつくバグも修正する
-        textList.Add("文章1\n文章1");
-        textList.Add("文章2\n");
-        textList.Add("文章3\n");
-        textList.Add("文章4\n");
+
+        recruitCanvas.SetActive(false);
+
+
+        stepList = new StepList(navigatorText);
+
+
+        stepList.AddListFunc(TutorialStart);
+        stepList.AddListText("人材を選択します");
+        stepList.AddListFunc(RecruitStart);
+        stepList.AddListFunc(RecruitEnd);
+        stepList.AddListText("次は調査を行います");
+        stepList.AddListFunc(InvestigationZoomIn);
+        stepList.AddListFunc(InvestigationStart);
+        stepList.AddListFunc(InvestigationEnd);
+        stepList.AddListText("調査完了です\n次は生産を行いましょうw");
+        stepList.AddListFunc(ProductionPopOut);
+        stepList.AddListFunc(ProductionStart);
+
+
+        updateFunc = TutorialUpdateNull;
+
+
+        //文章を表示
+        //関数を実行
+        //それを一つの変数に入れたい
+        //数字をインクリメントしてステップ進行
 
 
 
-        tutorialCanvas.SetActive(false);
 
+        StartCoroutine(CoroutineTimer(0.5f,TutorialStart));
+
+    }
+
+    void Update()
+    {
+        
+        updateFunc();
+
+    }
+
+
+    
+
+    void TutorialUpdateNull()
+    {
+      
+    }
+
+    void TutorialStart()
+    {
+        tutorialCanvas.SetActive(true);
+        stepList.Next();
+        stepList.Step();
 
         //最初に選択する人材を生成
         CharacterManager.Instance.CreateCandidateCharacter();
-
-        StartCoroutine(Coroutine());        
     }
 
-    // Update is called once per frame
-    void Update()
+    void RecruitStart()
     {
-        navigatorText.GetComponent<Text>().text = textList[listNumber];
+        tutorialCanvas.SetActive(false);
+
+
+        recruitCanvas.GetComponent<RecruitCanvas>().DisplayRecruitCharacterList();
+        recruitCanvas.SetActive(true);
+    }
+
+    void RecruitEnd()
+    {
+        tutorialCanvas.SetActive(true);
+        stepList.Next();
+        stepList.Step();
+    }
+
+    void InvestigationZoomIn()
+    {
+        tutorialCanvas.SetActive(false);
+        tutorialState = TutorialState.Investigation;
+        Camera.main.GetComponent<CameraController>().ZoomIn();
+
+        //stepList.Next();
+    }
+
+    void InvestigationStart()
+    {
+        Instantiate(investigationCanvas).GetComponent<InvestigationCanvas>().Initialize();
+
+        updateFunc = InvestigationUpdate;
+    }
+
+    void InvestigationUpdate()
+    {
+
+        GameObject island = IslandManager.Instance.GetCurrentIsland();
+
+        if (island.GetComponent<IslandBase>().state == IslandBase.STATE_ISLAND.STATE_INVESTIGATED)
+        {
+            updateFunc = TutorialUpdateNull;
+
+
+            stepList.Next();
+            StartCoroutine(CoroutineTimer(0.5f, stepList.Step));
+        }
+    }
+
+    void InvestigationEnd()
+    {
+
+        //updateFunc = InvestigationEndUpdate;
+        stepList.Next();
+        stepList.Step();
+        tutorialCanvas.SetActive(true);
+
+    }
+
+    void ProductionPopOut()
+    {
+        tutorialCanvas.SetActive(false);
+        tutorialState = TutorialState.Production;
+        Camera.main.GetComponent<CameraController>().ZoomIn();
+    }
+
+    void ProductionStart()
+    {
+
+        Instantiate(productionCanvas).GetComponent<ProductionCanvas>().Initialize();
+        //tutorialState = TutorialState.Production;
     }
 
     //最初に雇うキャラクターを表示させる
@@ -55,18 +187,105 @@ public class TutorialManager : MonoBehaviour
         //キャンバスSetActive true
     }
 
-    public void OnClickNextText()
+    //public void OnClickNextText()
+    //{
+
+    //    stepList.NextStep();
+    //}
+
+    IEnumerator CoroutineTimer(float time,Coroutine coroutine)
     {
-        listNumber += 1;
-        navigatorText.GetComponent<Text>().text = textList[listNumber];
-        navigatorText.GetComponent<TextFader>().enabled = true;
+        yield return new WaitForSeconds(time);
+        coroutine();
     }
 
-    IEnumerator Coroutine()
+    public void NextStep()
     {
-
-        yield return new WaitForSeconds(0.5f);
-
-        recruitCanvas.GetComponent<RecruitCanvas>().DisplayRecruitCharacterList();
+        stepList.Next();
+        stepList.Step();
     }
+
+    
+
+}
+
+class StepList
+{
+    List<StepInterface> stepList;
+
+    GameObject text;
+
+    int number = 0;
+
+    public StepList(GameObject text)
+    {
+        stepList = new List<StepInterface>();
+        this.text = text;
+    }
+
+    public void AddListFunc(StepFunc.Func func)
+    {
+        stepList.Add(new StepFunc(func));
+    }
+
+    public void AddListText(string str)
+    {
+        stepList.Add(new StepText(text, str));
+    }
+
+    public void Step()
+    {
+        stepList[number].Step();
+        //Debug.Log(number);
+    }
+
+    public void Next()
+    {
+        number++;
+    }
+}
+
+
+
+class StepText : StepInterface
+{
+    GameObject text;
+    string str;
+
+    public StepText(GameObject text,string str)
+    {
+        this.text = text;
+        this.str = str;
+    }
+
+    override public void Step()
+    {
+        //表示
+        text.GetComponent<Text>().text = str;
+        text.GetComponent<TextFader>().enabled = true;
+    }
+}
+
+class StepFunc : StepInterface
+{
+    public delegate void Func();
+    Func func;
+
+    public StepFunc(Func func)
+    {
+        this.func = func;
+    }
+
+    override public void Step()
+    {
+        func();
+    }
+}
+
+
+
+class StepInterface
+{
+    public StepInterface(){}
+    virtual public void Step(){}
 }

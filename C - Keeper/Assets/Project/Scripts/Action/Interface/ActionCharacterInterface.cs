@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class ActionCharacterInterface : MonoBehaviour
 {
-    [SerializeField]
-    protected Text nameText, rRank, pRank, mRank, iRank;
-
     SelectCanvasInterface canvas;
 
+    [SerializeField]
+    protected Text nameText, rRank, pRank, mRank, iRank;
+    [SerializeField]
+    Image charaImage;
+
+    [System.NonSerialized]
     public GameObject originalGameObject;
 
     string charaName;
@@ -20,13 +23,16 @@ public class ActionCharacterInterface : MonoBehaviour
 
     public bool isSelected { get; set; } = false;
 
+    //[System.NonSerialized]
     public string GetName => charaName;
     public int GetResearch => research;
     public int GetProduction => production;
     public int GetManagement => management;
     public int GetInvestigation => investigation;
+    public Sprite GetSprite => charaImage.sprite;
 
-    public void SetData(string n, int r, int p, int m, int inv,GameObject original)
+   
+    public void SetData(string n, int r, int p, int m, int inv,GameObject original,Sprite sprite)
     {
         research = r;
         production = p;
@@ -39,6 +45,7 @@ public class ActionCharacterInterface : MonoBehaviour
         mRank.text = CharacterManager.Instance.RankTransfer(m);
         iRank.text = CharacterManager.Instance.RankTransfer(inv);
         nameText.text = charaName;
+        charaImage.sprite = sprite;
         originalGameObject = original;
     }
 

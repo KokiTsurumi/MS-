@@ -156,7 +156,7 @@ MonoBehaviour:
   pRank: {fileID: 6062705430631652312}
   mRank: {fileID: 6062705431637923206}
   iRank: {fileID: 6062705430126051857}
-  originalGameObject: {fileID: 0}
+  charaImage: {fileID: 3727413099698760835}
 --- !u!1 &3727413099323511621
 GameObject:
   m_ObjectHideFlags: 0

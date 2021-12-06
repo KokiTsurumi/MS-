@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionStartAnimatinUI : MonoBehaviour
+public class AnimationCallBack : MonoBehaviour
 {
     bool callBack = false;
 

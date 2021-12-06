@@ -12,11 +12,8 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     public GameObject backButton;
 
-    //[SerializeField]
     float zoomSpeed = 1.0f;
-    //[SerializeField]
     float zoomTime = 0.5f;
-    //[SerializeField]
     float cameraZoomSize = 2.5f;
 
     float cameraOrthSizeDefault;
@@ -24,20 +21,17 @@ public class CameraController : MonoBehaviour
     float cameraZ;
 
 
-    //[SerializeField]
     float transSpeed = 1.0f;
-    //[SerializeField]
     float transTime = 0.5f;
 
     float transCurrentTime = 0;
     Vector3 centerIslandPos;
 
-    //public GameObject targetIsland;
 
     Vector3 startPos;
     Vector3 endPos;
 
-
+    
 
     enum ZoomState
     {
@@ -123,20 +117,22 @@ public class CameraController : MonoBehaviour
 
             zoomState = ZoomState.STAY;
 
-            if (transState == TransState.CENTER)
-                actionCanvasAnimator.SetBool("popOut", true);
-            else if (transState == TransState.ISLAND)
-                DisplayUI();
-
+            //タイマー非表示
             if(transState == TransState.CENTER)
             {
-                //タイマー非表示
                 for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
                 {
                     GameObject island = IslandManager.Instance.islandList[i];
                     island.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
                 }
             }
+
+            //ポップアップ表示非表示
+            if (transState == TransState.CENTER)
+                actionCanvasAnimator.SetBool("popOut", true);
+            else if (transState == TransState.ISLAND)
+                DisplayUI();
+
 
         }
 
@@ -290,6 +286,11 @@ public class CameraController : MonoBehaviour
         zoomState = ZoomState.OUT;
     }
 
+    public void ZoomIn()
+    {
+        zoomState = ZoomState.IN;
+    }
+
 
     //作業が完了して拠点島に移動
     public void TranslateCenterIsland()
@@ -307,8 +308,39 @@ public class CameraController : MonoBehaviour
 
     public void ActionStart()
     {
-        action = true;
+        TutorialManager.TutorialState tutorialState = TutorialManager.Instance.tutorialState;
+        if (tutorialState != TutorialManager.TutorialState.No)
+        {
 
+            IslandManager.Instance.SetCurrentIsland(centerIsland);
+
+            if (MouseManager.Instance.GetCurrentSelectedGameObject().name == "Investigation")
+            {
+                if (tutorialState == TutorialManager.TutorialState.Investigation)
+                {
+                    TutorialManager.Instance.NextStep();
+                    action = true;
+                    actionCanvasAnimator.SetBool("popOut", false);
+                    return;
+                }
+
+            }
+            else if (MouseManager.Instance.GetCurrentSelectedGameObject().name == "Production")
+            {
+                if (tutorialState == TutorialManager.TutorialState.Production)
+                {
+                    TutorialManager.Instance.NextStep();
+                    action = true;
+                    actionCanvasAnimator.SetBool("popOut", false);
+                    return;
+                }
+
+            }
+
+            return;
+        }
+
+        action = true;
         actionCanvasAnimator.SetBool("popOut", false);
 
         actionGameObject = MouseManager.Instance.GetCurrentSelectedGameObject();

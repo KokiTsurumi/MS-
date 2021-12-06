@@ -13,7 +13,7 @@ public class InvestigationCanvas : SelectCanvasInterface
         if (endToggle) return;
 
         //アニメ終了時
-        if (startAnimationCanvas.GetComponent<ActionStartAnimatinUI>().GetCallBack == true)
+        if (startAnimationCanvas.GetComponent<AnimationCallBack>().GetCallBack == true)
         {
             endToggle = true;
             startAnimationCanvas.SetActive(false);
@@ -22,17 +22,28 @@ public class InvestigationCanvas : SelectCanvasInterface
             GameObject target = IslandManager.Instance.GetCurrentIsland();
 
             //キャラクターセット
-            CharacterData set1 = selectChara[0].GetComponent<SelectCharacterDataInterface>().GetOriginal().GetComponent<CharacterData>();
-            CharacterData set2 = selectChara[1].GetComponent<SelectCharacterDataInterface>().GetOriginal().GetComponent<CharacterData>();            //タッグ計算処理
+            CharacterData set1 = selectChara[0].GetComponent<SelectCharacterDataInterface>().data.originalGameObject.GetComponent<CharacterData>();
+            CharacterData set2 = selectChara[1].GetComponent<SelectCharacterDataInterface>().data.originalGameObject.GetComponent<CharacterData>();            //タッグ計算処理
             float time = CharacterManager.Instance.CalcInvestigationTime(set1, set2);
 
 
-            //タイマー計算処理
-            target.GetComponent<IslandBase>().StartInvestigate(time);
+            if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Investigation)
+            {
+                //タイマー計算処理
+                target.GetComponent<IslandBase>().StartInvestigate(2.0f);//固定
+                Destroy(this.gameObject);
 
+                //TutorialManager.Instance.NextStep();
+            }
+            else
+            {
+                //タイマー計算処理
+                target.GetComponent<IslandBase>().StartInvestigate(time);
 
-            //カメラ移動
-            StartCoroutine(ActionEnd());
+                //カメラ移動
+                StartCoroutine(ActionEnd());
+            }
+
         }
     }
 
