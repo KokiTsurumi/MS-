@@ -153,10 +153,16 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
     // 候補リストから2人選ぶ関数
     public void HireCharacter(GameObject character1, GameObject character2)
     {
-        characterList.Add(character1);  // 1人目
-        characterList.Add(character2);  // 2人目
+        GameObject chara1 = Instantiate(character1);
+        GameObject chara2 = Instantiate(character2);
 
-        characterList.Clear();          // 選ばれなかった人材を削除
+        chara1.transform.parent = list.transform;
+        chara2.transform.parent = list.transform;
+
+        characterList.Add(Instantiate(character1));  // 1人目
+        characterList.Add(Instantiate(character2));  // 2人目
+
+        candidateList.Clear();          // 選ばれなかった人材を削除
     }
 
     // キャラクター生成関数
