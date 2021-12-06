@@ -61,7 +61,7 @@ public class seni : MonoBehaviour
         {
             seni.FadeOut();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             seni.FadeIn();
         }
