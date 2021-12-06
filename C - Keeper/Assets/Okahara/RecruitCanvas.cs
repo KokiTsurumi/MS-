@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RecruitCanvas : MonoBehaviour
 {
-    // Start is called before the first frame update
+
 
     [SerializeField]
     GameObject recruitCharacterPrefab;
@@ -21,14 +21,11 @@ public class RecruitCanvas : MonoBehaviour
     int dispListNumber = 0;
 
     [SerializeField]
-    GameObject selectCanvas;
+    GameObject createCharacterCanvas;
 
     GameObject[] selectChara = new GameObject[2];
 
-    //[SerializeField]
-    //Button selectButton;
-    //[SerializeField]
-    //Button backButton;
+    
 
     [SerializeField]
     Toggle toggle;
@@ -36,51 +33,21 @@ public class RecruitCanvas : MonoBehaviour
     void Start()
     {
         //test
-        selectCanvas.SetActive(false);
+        createCharacterCanvas.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
 
-        //if(selectChara[0] != null && selectChara[1] != null)
-        //{
-        //    selectCanvas.SetActive(true);
-        //}
-
-        //if (recruitList[dispListNumber].GetComponent<RecruitCharacterData>().selected)
-        //{
-        //    selectButton.enabled = false;
-        //    backButton.enabled = true;
-        //}
-        //else
-        //{
-        //    selectButton.enabled = true;
-        //    backButton.enabled = false;
-        //}
-
-        //if(displayCharacter.GetComponent<RecruitCharacterData>().selected)
-        //{
-        //    toggle.isOn = true;
-        //}
-        //else
-        //{
-        //    toggle.isOn = false;
-
-        //}
-
+       
     }
 
 
     public void DisplayRecruitCharacterList()
     {
         //Character生成
-
-
-
         //Character取得
 
-        //CharacterManager.Instance.characterList.Countは仮状態
         //採用候補と従業員リストは分ける
         for (int i = 0; i < CharacterManager.Instance.candidateList.Count; i++)
         {
@@ -89,12 +56,10 @@ public class RecruitCanvas : MonoBehaviour
             //Characterデータセット
             //for文
             GameObject recruitChara = (GameObject)Instantiate(recruitCharacterPrefab);
-
             recruitChara.GetComponent<RecruitCharacterData>().SetCharacterData(original);
-            recruitChara.transform.parent = charactersParent.transform;
+            recruitChara.transform.SetParent(charactersParent.transform,false);
+
             recruitList.Add(recruitChara);
-
-
 
         }
 
@@ -106,65 +71,97 @@ public class RecruitCanvas : MonoBehaviour
 
     public void OnClickLeftButton()
     {
+        recruitList[dispListNumber].GetComponent<RecruitCharacterData>().selected = toggle.isOn;
+        
+
         if (dispListNumber != 0)
             dispListNumber -= 1;
         else
-            dispListNumber = recruitList.Count;//最大値
+            dispListNumber = recruitList.Count - 1;//最大値
 
         displayCharacter.GetComponent<RecruitCharacterData>().SetCharacterData(recruitList[dispListNumber].GetComponent<RecruitCharacterData>());
+        toggle.isOn = recruitList[dispListNumber].GetComponent<RecruitCharacterData>().selected;
     }
 
     public void OnClickRightButton()
     {
+        recruitList[dispListNumber].GetComponent<RecruitCharacterData>().selected = toggle.isOn;
+
+
         if (dispListNumber != recruitList.Count - 1)
             dispListNumber += 1;
         else
             dispListNumber = 0;
 
         displayCharacter.GetComponent<RecruitCharacterData>().SetCharacterData(recruitList[dispListNumber].GetComponent<RecruitCharacterData>());
+        toggle.isOn = recruitList[dispListNumber].GetComponent<RecruitCharacterData>().selected;
+
     }
 
     public void OnClickSelectToggle()
     {
 
-        //recruitList[dispListNumber].GetComponent<RecruitCharacterData>().selected = true;
-
-        //if (selectChara[0] == null)
-        //{
-        //    selectChara[0] = recruitList[dispListNumber].GetComponent<RecruitCharacterData>().GetOriginal;
-        //}
-        //else if (selectChara[1] == null)
-        //{
-        //    selectChara[1] = recruitList[dispListNumber].GetComponent<RecruitCharacterData>().GetOriginal;
-
-        //}
-        //else if(selectChara[0] == recruitList[dispListNumber].GetComponent<RecruitCharacterData>().GetOriginal)
-        //{
-
-        //}
-
-        //recruitList[dispListNumber].GetComponent<RecruitCharacterData>().button;
-        //bool set = recruitList[dispListNumber].GetComponent<RecruitCharacterData>().toggle.isOn;
-        //recruitList[dispListNumber].GetComponent<RecruitCharacterData>().toggle.isOn != set ;
-        bool set = recruitList[dispListNumber].GetComponent<RecruitCharacterData>().selected;
-        recruitList[dispListNumber].GetComponent<RecruitCharacterData>().selected = !set;
-
+        bool set = toggle.isOn;
+        recruitList[dispListNumber].GetComponent<RecruitCharacterData>().selected = set;
         displayCharacter.GetComponent<RecruitCharacterData>().SetCharacterData(recruitList[dispListNumber].GetComponent<RecruitCharacterData>());
 
+
+        int cnt = 0;
+
+
+        foreach (GameObject obj in recruitList)
+        {
+            if (obj.GetComponent<RecruitCharacterData>().selected == true)
+            {
+                selectChara[cnt] = obj.GetComponent<RecruitCharacterData>().original;
+                cnt++;
+            }
+
+        }
+
+        if (cnt >= 2)
+        {
+            
+            createCharacterCanvas.SetActive(true);
+            this.gameObject.SetActive(false);
+
+
+            //キャラクターデータをセット
+            createCharacterCanvas.transform.GetChild(1).GetComponent<RecruitCharacterData>().SetCharacterData(selectChara[0]);
+            createCharacterCanvas.transform.GetChild(2).GetComponent<RecruitCharacterData>().SetCharacterData(selectChara[1]);
+
+            return;
+            //selectCanvas.SetActive(true);
+        }
     }
 
-    //public void OnClickBackButton()
-    //{
-    //    displayCharacter.GetComponent<RecruitCharacterData>().selected = false;
-    //}
-
-    public void SelectCharacter()
+    public void OnClickBackButton()
     {
-        //if(selectChara[0] == null)
-        //{
-        //    selectChara[0] = recruitList[dispListNumber].GetComponent<RecruitCharacterData>().GetOriginal;
-        //}
 
+        createCharacterCanvas.SetActive(false);
+        this.gameObject.SetActive(true);
+
+        foreach(GameObject obj in recruitList)
+        {
+            obj.GetComponent<RecruitCharacterData>().selected = false;
+        }
+
+        toggle.isOn = false;
+    }
+
+    public void OnClickStartButton()
+    {
+        this.gameObject.SetActive(false);
+        createCharacterCanvas.SetActive(false);
+
+
+        CharacterManager.Instance.HireCharacter(
+            selectChara[0],
+            selectChara[1]);
+
+
+        //数秒時間を置いた方がいい
+        TutorialManager.Instance.NextStep();
 
     }
 }

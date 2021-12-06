@@ -113,9 +113,25 @@ public class CleaningCanvas : MonoBehaviour
         RobotManager.Instance.selectedRobot[0] = selectRobot.GetComponent<SelectRobotData>().GetOriginal();
         RobotManager.Instance.selectedRobot[1] = selectRobot.GetComponent<SelectRobotData>().GetOriginal();
 
-        IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().CalcRemoveRate();
+        GameObject island = IslandManager.Instance.GetCurrentIsland();
+        int removeRate = island.GetComponent<IslandBase>().CalcRemoveRate();
 
-        IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().StartClean(3.0f);
+
+        string clean = RobotManager.Instance.RankTransfer(RobotManager.Instance.selectedRobot[0].GetComponent<RobotBase>().clean);
+        string  battery = RobotManager.Instance.RankTransfer(RobotManager.Instance.selectedRobot[0].GetComponent<RobotBase>().battery);
+        Debug.Log("ロボット性能【清掃】" + clean);
+        Debug.Log("ロボット性能【駆動時間】" + battery);
+        //Debug.Log("清掃時間" + time);
+        island.GetComponent<IslandBase>().StartClean(1);
+
+        //もし清掃が100％完了していたら
+        //"!"アイコン表示→クリックされたらカメラ移動→海開放アニメーション
+        if (island.GetComponent<IslandBase>().GetPollutionLevel() >= 100)
+        {
+            Debug.Log("島　清掃　完了　！！");
+        }
+
+
 
         StartCoroutine(ActionEnd());
     }
