@@ -96,6 +96,10 @@ public class CameraController : MonoBehaviour
         //タイマー非表示
         if (transState == TransState.CENTER && zoomState == ZoomState.DEFAULT)
         {
+            GameObject island = IslandManager.Instance.GetCurrentIsland();
+
+            //if(island.GetComponent<IslandBase>().state == IslandBase.STATE_ISLAND.STATE_INVESTIGATED)
+
             //タイマー表示
             for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
             {
