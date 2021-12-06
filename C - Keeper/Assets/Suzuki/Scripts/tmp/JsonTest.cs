@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[System.Serializable]
-//public class InputJson
-//{
-//    public string[] FamilyNameList;
-//    public string[] FirstNameList;
-//}
+[System.Serializable]
+public class InputJson
+{
+    public string[] FamilyNameList;
+    public string[] FirstNameList;
+}
 
 
 public class JsonTest : MonoBehaviour

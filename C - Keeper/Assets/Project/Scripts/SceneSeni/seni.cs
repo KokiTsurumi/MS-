@@ -14,15 +14,10 @@ public class seni : MonoBehaviour
     private static float alpha = 0.0f;//α値
 
     public static bool isFadeOut = false;//フェードアウトフラグ
-
-    //フェードしたい時間（単位は秒）
+    public static bool isFadeIn = false;//フェードアウトフラグ
+    //フェードしたい時間（8で割ってる）
     private static float fadeTime = 0.2f;
 
-    //遷移先のシーン番号
-    public static int nextScene;
-
-    //フェード用のCanvasとImage生成
-    // Start is called before the first frame update
     static void Init()
     {
         //SceneManager.GetActiveScene().buildIndex
@@ -34,14 +29,21 @@ public class seni : MonoBehaviour
         
         fadeCanvas.sortingOrder = 10;//最前面になるよう
 
-        //フェード用のImage生成
+        //フェード用の板生成
         fadeImage = new GameObject("ImageFade").AddComponent<Image>();
         fadeImage.transform.SetParent(fadeCanvas.transform, false);
         fadeImage.rectTransform.anchoredPosition = Vector3.zero;
 
-        fadeImage.rectTransform.sizeDelta = new Vector2(9999, 9999);
+        fadeImage.rectTransform.sizeDelta = new Vector2(3000, 3000);
     }
 
+
+    public static void FadeIn()
+    {
+        if (fadeImage == null) Init();
+        fadeImage.color = Color.black;
+        isFadeIn = true;
+    }
     private static void FadeOut()
     {
    
@@ -59,7 +61,27 @@ public class seni : MonoBehaviour
         {
             seni.FadeOut();
         }
-            if (isFadeOut)
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            seni.FadeIn();
+        }
+        if (isFadeIn)
+        {
+            //経過時間から透明度計算
+            alpha -= Time.deltaTime / fadeTime/8;
+
+            //フェードイン終了判定
+            if (alpha <= 0.0f)
+            {
+                isFadeIn = false;
+                alpha = 0.0f;
+                fadeCanvas.enabled = false;
+            }
+
+            //フェード用Imageの色・透明度設定
+            fadeImage.color = new Color(0.0f, 0.0f, 0.0f, alpha);
+        }
+        else if (isFadeOut)
         {
             //経過時間から透明度計算
             alpha += Time.deltaTime / fadeTime/8;
