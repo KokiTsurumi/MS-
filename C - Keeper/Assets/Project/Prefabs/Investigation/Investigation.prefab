@@ -54,7 +54,6 @@ MonoBehaviour:
   selectChara:
   - {fileID: 3792231338784819921}
   - {fileID: 3792231338037839929}
-  select: {fileID: 0}
   listScrollbar: {fileID: 3792231337416106641}
   startAnimationCanvas: {fileID: 1888382352725147890}
   mainCanvas: {fileID: 3792231338663545189}
@@ -433,7 +432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3792231336870392955}
-  - component: {fileID: 3792231336870392954}
+  - component: {fileID: 1784898653194156713}
   m_Layer: 5
   m_Name: CharacterData
   m_TagString: Untagged
@@ -467,7 +466,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3792231336870392954
+--- !u!114 &1784898653194156713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,7 +475,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3792231336870392953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c52beebed940841b4e702145a0d0f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 787d5e3938ddd1f46a4475acddae893b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 3792231337604426324}
@@ -2320,7 +2319,7 @@ GameObject:
   - component: {fileID: 3792231338037839933}
   - component: {fileID: 3792231338037839932}
   - component: {fileID: 3792231338037839931}
-  - component: {fileID: 3792231338037839930}
+  - component: {fileID: 3864130359078856968}
   m_Layer: 5
   m_Name: Select_2
   m_TagString: Untagged
@@ -2466,7 +2465,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3792231338037839930
+--- !u!114 &3864130359078856968
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2475,7 +2474,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3792231338037839929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52b0ee65e22ed0f4db1c407f8c418f98, type: 3}
+  m_Script: {fileID: 11500000, guid: aaa3807fd2c692a42a9c7d5afe536209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3792231338106482210
@@ -3014,7 +3013,7 @@ GameObject:
   - component: {fileID: 3792231338784819925}
   - component: {fileID: 3792231338784819924}
   - component: {fileID: 3792231338784819923}
-  - component: {fileID: 3792231338784819922}
+  - component: {fileID: 925439433128799506}
   m_Layer: 5
   m_Name: Select_1
   m_TagString: Untagged
@@ -3160,7 +3159,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3792231338784819922
+--- !u!114 &925439433128799506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3169,7 +3168,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3792231338784819921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52b0ee65e22ed0f4db1c407f8c418f98, type: 3}
+  m_Script: {fileID: 11500000, guid: aaa3807fd2c692a42a9c7d5afe536209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4474764644567343424

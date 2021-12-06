@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 560584640061026794}
   - component: {fileID: 560584640061026793}
   - component: {fileID: 560584640061026792}
-  - component: {fileID: 560584640061026799}
+  - component: {fileID: 1838811467489846420}
   m_Layer: 5
   m_Name: Select_2
   m_TagString: Untagged
@@ -348,7 +348,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &560584640061026799
+--- !u!114 &1838811467489846420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 560584640061026798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e692162459158244acfe79f25142a03, type: 3}
+  m_Script: {fileID: 11500000, guid: aaa3807fd2c692a42a9c7d5afe536209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &560584640207918654
@@ -1087,7 +1087,6 @@ MonoBehaviour:
   selectChara:
   - {fileID: 560584641498988119}
   - {fileID: 560584640061026798}
-  select: {fileID: 0}
   listScrollbar: {fileID: 560584641619578991}
   startAnimationCanvas: {fileID: 1055054613335781259}
   mainCanvas: {fileID: 560584640805602543}
@@ -1921,7 +1920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 560584641020785176}
-  - component: {fileID: 560584641020785183}
+  - component: {fileID: 7195615293664819802}
   m_Layer: 5
   m_Name: CharacterData
   m_TagString: Untagged
@@ -1955,7 +1954,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &560584641020785183
+--- !u!114 &7195615293664819802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1964,7 +1963,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 560584641020785182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e35f8fcb301d294880fc625a2393d52, type: 3}
+  m_Script: {fileID: 11500000, guid: 787d5e3938ddd1f46a4475acddae893b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 560584641349116038}
@@ -2371,7 +2370,7 @@ GameObject:
   - component: {fileID: 560584641498988115}
   - component: {fileID: 560584641498988114}
   - component: {fileID: 560584641498988113}
-  - component: {fileID: 560584641498988112}
+  - component: {fileID: 3420657267232632555}
   m_Layer: 5
   m_Name: Select_1
   m_TagString: Untagged
@@ -2517,7 +2516,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &560584641498988112
+--- !u!114 &3420657267232632555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2526,7 +2525,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 560584641498988119}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e692162459158244acfe79f25142a03, type: 3}
+  m_Script: {fileID: 11500000, guid: aaa3807fd2c692a42a9c7d5afe536209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &560584641507741960

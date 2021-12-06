@@ -90,6 +90,28 @@ public class CameraController : MonoBehaviour
         UpdateZoomOut();
         UpdateTranslation();
         UpdateTranslationCenter();
+
+
+        //カメラが俯瞰の時、Timer、Icon、海開放アニメーションを突っ込む
+        //タイマー非表示
+        if (transState == TransState.CENTER && zoomState == ZoomState.DEFAULT)
+        {
+            //タイマー表示
+            for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
+            {
+                GameObject island = IslandManager.Instance.islandList[i];
+                island.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
+            {
+                GameObject island = IslandManager.Instance.islandList[i];
+                island.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
+            }
+        }
+
     }
 
     void UpdateZoomIn()
@@ -117,15 +139,15 @@ public class CameraController : MonoBehaviour
 
             zoomState = ZoomState.STAY;
 
-            //タイマー非表示
-            if(transState == TransState.CENTER)
-            {
-                for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
-                {
-                    GameObject island = IslandManager.Instance.islandList[i];
-                    island.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
-                }
-            }
+            ////タイマー非表示
+            //if(transState == TransState.CENTER)
+            //{
+            //    for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
+            //    {
+            //        GameObject island = IslandManager.Instance.islandList[i];
+            //        island.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
+            //    }
+            //}
 
             //ポップアップ表示非表示
             if (transState == TransState.CENTER)
@@ -163,12 +185,12 @@ public class CameraController : MonoBehaviour
             if (transState == TransState.ISLAND)
                 transState = TransState.TRANSLATE_CENTER;
 
-            //タイマー表示
-            for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
-            {
-                GameObject island = IslandManager.Instance.islandList[i];
-                island.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
-            }
+            ////タイマー表示
+            //for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
+            //{
+            //    GameObject island = IslandManager.Instance.islandList[i];
+            //    island.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
+            //}
 
             gameMaimCanvas.enabled = true;
 
@@ -354,6 +376,7 @@ public class CameraController : MonoBehaviour
         actionGameObject.GetComponent<ActionButtonInterface>().ActionEnd();
     }
 
+    
     public void DisplayUI()
     {
         actionGameObject.GetComponent<ActionButtonInterface>().DisplayUI();

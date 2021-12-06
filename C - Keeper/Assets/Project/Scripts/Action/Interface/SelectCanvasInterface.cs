@@ -31,8 +31,7 @@ public class SelectCanvasInterface : MonoBehaviour
     int selectFrag;//0→一人目、1→二人目
 
 
-    [SerializeField]
-
+    [System.NonSerialized]
     GameObject select = null;
 
     [SerializeField]

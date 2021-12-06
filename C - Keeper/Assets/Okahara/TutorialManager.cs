@@ -2,20 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 {
+
     [SerializeField]
-    GameObject navigatorText;
-    
-
-    //List<string> textList;
-
-    //int listNumber = 0;
+    bool tutorialStart = false;
 
 
     [SerializeField]
-    GameObject tutorialCanvas;
+    GameObject tutorialCanvasPrefab;
 
     [SerializeField]
     GameObject recruitCanvas;
@@ -27,14 +24,29 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     GameObject productionCanvas;
 
 
+    GameObject navigatorText;
+    GameObject tutorialCanvas;
+
+
     public enum TutorialState
     {
+        /// <summary>
+        /// チュートリアル未開始
+        /// </summary>
         No,
+        /// <summary>
+        /// 調査中
+        /// </summary>
         Investigation,
+        /// <summary>
+        /// 生産中
+        /// </summary>
         Production,
+        /// <summary>
+        /// 清掃中
+        /// </summary>
         Cleanning
     }
-
     public TutorialState tutorialState = TutorialState.No;
 
 
@@ -49,13 +61,54 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void Start()
     {
+
         //なぜか違う文字がちらつくバグも修正する
+        //チュートリアル開始
+        //StartCoroutine(CoroutineTimer(0.5f,TutorialStart));
 
-        recruitCanvas.SetActive(false);
 
 
+
+        updateFunc = TutorialUpdateNull;
+
+
+        //文章を表示
+        //関数を実行
+        //それを一つの変数に入れたい
+        //数字をインクリメントしてステップ進行
+
+
+
+    }
+
+    void Update()
+    {
+        if (tutorialStart)
+        {
+            StartCoroutine(CoroutineTimer(0.5f, TutorialStart));
+            tutorialStart = false;
+        }
+
+
+        updateFunc();
+    }
+
+
+    
+
+    void TutorialUpdateNull()
+    {
+      
+    }
+
+    void TutorialStart()
+    {
+        //tutorialCanvas.SetActive(true);
+        GameObject canvas = (GameObject)Instantiate(tutorialCanvasPrefab);
+        canvas.transform.SetParent(this.transform);
+
+        navigatorText = canvas.transform.GetChild(1).GetChild(1).gameObject;
         stepList = new StepList(navigatorText);
-
 
         stepList.AddListFunc(TutorialStart);
         stepList.AddListText("人材を選択します");
@@ -69,40 +122,14 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.AddListFunc(ProductionPopOut);
         stepList.AddListFunc(ProductionStart);
 
+        //EventTriggerセット
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerClick;
+        entry.callback.AddListener((eventDate) => NextStep());
+        canvas.transform.GetChild(1).GetComponent<EventTrigger>().triggers.Add(entry);
 
-        updateFunc = TutorialUpdateNull;
+        tutorialCanvas = canvas;
 
-
-        //文章を表示
-        //関数を実行
-        //それを一つの変数に入れたい
-        //数字をインクリメントしてステップ進行
-
-
-
-
-        StartCoroutine(CoroutineTimer(0.5f,TutorialStart));
-
-    }
-
-    void Update()
-    {
-        
-        updateFunc();
-
-    }
-
-
-    
-
-    void TutorialUpdateNull()
-    {
-      
-    }
-
-    void TutorialStart()
-    {
-        tutorialCanvas.SetActive(true);
         stepList.Next();
         stepList.Step();
 

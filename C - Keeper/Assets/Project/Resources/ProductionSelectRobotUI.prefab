@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2472326008768354945}
   - component: {fileID: 975971783294790002}
   - component: {fileID: 7871370191167422737}
-  - component: {fileID: 7242214589870476450}
+  - component: {fileID: 8778816931663642966}
   m_Layer: 5
   m_Name: ProductionSelectRobotUI
   m_TagString: Untagged
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7242214589870476450}
-        m_TargetAssemblyTypeName: ProductionCharacterData, Assembly-CSharp
+      - m_Target: {fileID: 8778816931663642966}
+        m_TargetAssemblyTypeName: ActionCharacterInterface, Assembly-CSharp
         m_MethodName: onClick
         m_Mode: 1
         m_Arguments:
@@ -139,7 +139,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7242214589870476450
+--- !u!114 &8778816931663642966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1140392178638372115}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e35f8fcb301d294880fc625a2393d52, type: 3}
+  m_Script: {fileID: 11500000, guid: 787d5e3938ddd1f46a4475acddae893b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 6062705430170487074}

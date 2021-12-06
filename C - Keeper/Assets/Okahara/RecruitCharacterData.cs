@@ -8,7 +8,6 @@ public class RecruitCharacterData : MonoBehaviour
     [SerializeField]
     Text nameText, rRank, pRank, mRank, iRank;
 
-
     [SerializeField]
     Text profileText;
 
@@ -22,28 +21,8 @@ public class RecruitCharacterData : MonoBehaviour
     public bool selected = false;
 
 
-    //void Start()
-    //{
-    //    selected = false;
-    //}
-
-    //void Update()
-    //{
-        
-    //}
-
     public void SetCharacterData(RecruitCharacterData data)
     {
-        /*
-         * name
-         * image
-         * profile
-         * researchRank
-         * productionRank
-         * managementRank
-         * investigationRank
-         */
-
         nameText.text = data.nameText.text;
         charaImage.sprite = data.charaImage.sprite;
         profileText.text = data.profileText.text;
@@ -51,21 +30,11 @@ public class RecruitCharacterData : MonoBehaviour
         pRank.text = data.pRank.text;
         mRank.text = data.mRank.text;
         iRank.text = data.iRank.text;
-        //selected = data.selected;
     }
 
     public void SetCharacterData(GameObject obj)
     {
-        /*
-         * name
-         * image
-         * profile
-         * researchRank
-         * productionRank
-         * managementRank
-         * investigationRank
-         */
-
+       
         CharacterBase data = obj.GetComponent<CharacterBase>();
 
         nameText.text = data.name;
@@ -78,12 +47,4 @@ public class RecruitCharacterData : MonoBehaviour
 
         original = obj;
     }
-
-    //public GameObject GetOriginal => original;
-
-    //public void SetOriginal(GameObject set)
-    //{
-    //    original = set;
-    //    return;
-    //}
 }

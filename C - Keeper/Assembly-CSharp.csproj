@@ -64,8 +64,6 @@
     <Compile Include="Assets\Project\Scripts\Singleton.cs" />
     <Compile Include="Assets\Project\Scripts\Action\CleaningCanvas\CleaningRobotData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterBase.cs" />
-    <Compile Include="Assets\Okahara\MenuCanvas.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\ProductionCanvas\ProductionCharacterData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\PanelManager.cs" />
     <Compile Include="Assets\Project\Scripts\Action\SelectScrollbar.cs" />
     <Compile Include="Assets\Kawano\Script\kariMoveobutu.cs" />
@@ -73,7 +71,6 @@
     <Compile Include="Assets\Okahara\TextFader\CharLimiter.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\SelectRobotData.cs" />
     <Compile Include="Assets\Okahara\TextFader\TextFader.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\InvastigationCanvas\InvestigationCharacterData.cs" />
     <Compile Include="Assets\Matsumoto\Name_Value.cs" />
     <Compile Include="Assets\Okahara\TutorialManager.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\SelectCharacterDataInterface.cs" />
@@ -87,7 +84,6 @@
     <Compile Include="Assets\Matsumoto\Pollution_Degree.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterManager.cs" />
     <Compile Include="Assets\Project\Scripts\Action\ActionButton\Cleaning.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\InvastigationCanvas\InvestigationSelectCharacterData.cs" />
     <Compile Include="Assets\Okahara\AnimationCallBack.cs" />
     <Compile Include="Assets\Project\Scripts\BGScroll\tesScloole.cs" />
     <Compile Include="Assets\Okahara\RecruitCharacterData.cs" />
@@ -103,7 +99,6 @@
     <Compile Include="Assets\Project\Scripts\Action\ProductionCanvas\ProductionCanvas.cs" />
     <Compile Include="Assets\Project\Scripts\TypeMoveTexture.cs" />
     <Compile Include="Assets\Project\Scripts\SceneSeni\seni.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\ProductionCanvas\ProductionSelectCharacterData.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Robot\RobotManager.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Island\IslandBase.cs" />
     <Compile Include="Assets\Matsumoto\Island_Pollution_Degree.cs" />

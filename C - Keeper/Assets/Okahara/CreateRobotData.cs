@@ -14,7 +14,6 @@ public class CreateRobotData : MonoBehaviour
     [SerializeField]
     Text seinouRankText;
 
-
     [SerializeField]
     Text skillText;
 
