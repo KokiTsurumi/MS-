@@ -5071,7 +5071,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1261330971
@@ -8490,6 +8490,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf523ae49f2df4341b3c1481f9bcc35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infoCount: 0
+  placementCount: 0
+  researchCount: 0
+  cleaningCount: 0
+  productionCount: 0
+  myRank: 0
   numberImage: {fileID: 1292385260904549020}
   frameImage: {fileID: 7144684413742587667}
   numberSprite:
@@ -8504,11 +8510,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 769a810847b42fc48a2673aeaa8cb304, type: 3}
   - {fileID: 21300000, guid: 28237995a37caad44970f06b5701892b, type: 3}
   - {fileID: 21300000, guid: 23568cea341e44f4f9f0492fffb9a3e4, type: 3}
-  infoCount: 0
-  placementCount: 0
-  researchCount: 0
-  cleaningCount: 0
-  productionCount: 0
 --- !u!1 &2091987230
 GameObject:
   m_ObjectHideFlags: 0

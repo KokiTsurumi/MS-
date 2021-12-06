@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Name_Value : MonoBehaviour
+public class Name_Value : SingletonMonoBehaviour<Name_Value>
 {
+    //各項目の設定
+    public int infoCount, placementCount, researchCount, cleaningCount, productionCount;
+    public int myRank;
 
-    //public Image[] image = nsew Image[2];
+    //public Image[] image = new Image[2];
     [SerializeField] Image numberImage;
     [SerializeField] Image frameImage;
     //private Sprite sprite;
@@ -17,9 +20,9 @@ public class Name_Value : MonoBehaviour
     [SerializeField]
     Sprite[] frameSprite = new Sprite[5];
 
-    public int infoCount, placementCount, researchCount, cleaningCount, productionCount;    //各項目のカウント
 
-    // Use this for initialization
+
+    // 最初のランク設定
     void Start()
     {
         /*=========================  ランク1  ===========================*/
@@ -28,53 +31,106 @@ public class Name_Value : MonoBehaviour
         //image.sprite = rankSprite[0];
         numberImage.sprite = numberSprite[0];
         frameImage.sprite = frameSprite[0];
+        myRank = 1;
 
     }
 
-    // Update is called once per frame
-    void Update()
+    //情報を一通り終えた時に呼び出す関数
+    public void PlusInfoCount()
     {
-        /*=========================  ランク2  ===========================*/
-        //すべての項目を一通り終了した(チュートリアルが完了した)時
-        if ((infoCount ==1) && (placementCount == 1) && (researchCount == 1) && (cleaningCount == 1) && (productionCount == 1))
-        {
-            //sprite = Resources.Load<Sprite>("character2");
-            //image = this.GetComponent<Image>();
-            numberImage.sprite = numberSprite[1];
-        frameImage.sprite = frameSprite[1];
-
-        }
-
-        /*=========================  ランク3  ===========================*/
-        if ((infoCount == 2) && (placementCount == 2) && (researchCount == 2) && (cleaningCount == 2) && (productionCount == 2))
-        {
-            //sprite = Resources.Load<Sprite>("character3");
-            //image = this.GetComponent<Image>();
-            //image.sprite = numberSprite[2];
-            numberImage.sprite = numberSprite[2];
-            frameImage.sprite = frameSprite[2];
-
-        }
-
-        /*=========================  ランク4  ===========================*/
-        if ((infoCount == 3) && (placementCount == 3) && (researchCount == 3) && (cleaningCount == 3) && (productionCount == 3))
-        {
-            //sprite = Resources.Load<Sprite>("character4");
-            //image = this.GetComponent<Image>();
-            //image.sprite = numberSprite[3];
-            numberImage.sprite = numberSprite[3];
-            frameImage.sprite = frameSprite[3];
-
-        }
-        /*=========================  ランク5  ===========================*/
-        if ((infoCount == 4) && (placementCount == 4) && (researchCount == 4) && (cleaningCount == 4) && (productionCount == 4))
-        {
-            //sprite = Resources.Load<Sprite>("character5");
-            //image = this.GetComponent<Image>();
-            //image.sprite = numberSprite[4];
-            numberImage.sprite = numberSprite[4];
-            frameImage.sprite = frameSprite[4];
-
-        }
+        infoCount += 1;
     }
+
+    //人材配置を一通り終えた時に呼び出す関数
+    public void PlusPlacementCountt()
+    {
+        placementCount += 1;
+    }
+
+    //調査を一通り終えた時に呼び出す関数
+    public void PlusResearchCount()
+    {
+        researchCount += 1;
+    }
+
+    //清掃を一通り終えた時に呼び出す関数
+    public void PlusCleaningCount()
+    {
+        cleaningCount += 1;
+    }
+
+    //生産を一通り終えた時に呼び出す関数
+    public void PlusProductionCount()
+    {
+        productionCount += 1;
+    }
+
+
+    //ランクが上がるかどうか確かめる関数 
+    public void RankConfirm()
+    {
+        /*=========================  ランク2になる時  ===========================*/
+        //すべての項目を一通り終了した(チュートリアルが完了した)時
+        if (myRank == 1)
+        {
+            
+            if ((placementCount == 1) && (researchCount == 1) && (cleaningCount == 1) && (productionCount == 1))
+            {
+                //sprite = Resources.Load<Sprite>("character2");
+                //image = this.GetComponent<Image>();
+                numberImage.sprite = numberSprite[1];
+                frameImage.sprite = frameSprite[1];
+                myRank = 2;
+            }
+        }
+
+        /*=========================  ランク3になる時  ===========================*/
+        if (myRank == 2)
+        {
+            
+            if ((infoCount == 1) && (placementCount == 2) && (researchCount == 2) && (cleaningCount == 2))
+            {
+                //sprite = Resources.Load<Sprite>("character3");
+                //image = this.GetComponent<Image>();
+                //image.sprite = numberSprite[2];
+                numberImage.sprite = numberSprite[2];
+                frameImage.sprite = frameSprite[2];
+                myRank = 3;
+
+            }
+        }
+
+        /*=========================  ランク4になる時  ===========================*/
+        if (myRank == 3)
+        {
+            
+            if ((placementCount == 4) &&  (cleaningCount == 4) && (productionCount == 3))
+            {
+                //sprite = Resources.Load<Sprite>("character4");
+                //image = this.GetComponent<Image>();
+                //image.sprite = numberSprite[3];
+                numberImage.sprite = numberSprite[3];
+                frameImage.sprite = frameSprite[3];
+                myRank = 4;
+
+            }
+        }
+
+        /*=========================  ランク5になる時  ===========================*/
+        if (myRank == 4)
+        {
+            
+            if ((placementCount == 7) && (productionCount == 6))
+            {
+                //sprite = Resources.Load<Sprite>("character5");
+                //image = this.GetComponent<Image>();
+                //image.sprite = numberSprite[4];
+                numberImage.sprite = numberSprite[4];
+                frameImage.sprite = frameSprite[4];
+                myRank = 5;
+            }
+        }
+       
+    }
+    
 }
