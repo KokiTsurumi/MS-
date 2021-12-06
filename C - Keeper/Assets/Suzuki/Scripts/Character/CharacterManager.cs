@@ -156,11 +156,19 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
         GameObject chara1 = Instantiate(character1);
         GameObject chara2 = Instantiate(character2);
 
+        chara1.name = character1.name;
+        chara2.name = character2.name;
+
         chara1.transform.parent = list.transform;
         chara2.transform.parent = list.transform;
 
-        characterList.Add(Instantiate(character1));  // 1人目
-        characterList.Add(Instantiate(character2));  // 2人目
+        characterList.Add(chara1);  // 1人目
+        characterList.Add(chara2);  // 2人目
+
+        foreach(GameObject chara in candidateList)
+        {
+            Destroy(chara);
+        }
 
         candidateList.Clear();          // 選ばれなかった人材を削除
     }

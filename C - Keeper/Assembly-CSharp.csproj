@@ -67,6 +67,7 @@
     <Compile Include="Assets\Suzuki\Scripts\tmp\PanelManager.cs" />
     <Compile Include="Assets\Project\Scripts\Action\SelectScrollbar.cs" />
     <Compile Include="Assets\Kawano\Script\kariMoveobutu.cs" />
+    <Compile Include="Assets\Okahara\ExMarkIcon.cs" />
     <Compile Include="Assets\Okahara\RecruitCanvas.cs" />
     <Compile Include="Assets\Okahara\TextFader\CharLimiter.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\SelectRobotData.cs" />

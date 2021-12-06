@@ -101,11 +101,11 @@ public class CameraController : MonoBehaviour
             //if(island.GetComponent<IslandBase>().state == IslandBase.STATE_ISLAND.STATE_INVESTIGATED)
 
             //タイマー表示
-            for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
-            {
-                GameObject island = IslandManager.Instance.islandList[i];
-                island.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
-            }
+            //for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
+            //{
+            //    GameObject island = IslandManager.Instance.islandList[i];
+            //    island.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
+            //}
         }
         else
         {
