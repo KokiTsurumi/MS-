@@ -31,8 +31,7 @@ public class SelectCanvasInterface : MonoBehaviour
     int selectFrag;//0→一人目、1→二人目
 
 
-    [SerializeField]
-
+    [System.NonSerialized]
     GameObject select = null;
 
     [SerializeField]
@@ -113,13 +112,14 @@ public class SelectCanvasInterface : MonoBehaviour
         SelectCharacterDataInterface data = selectChara[selectFrag].GetComponent<SelectCharacterDataInterface>();
         if (data.GetSelectGameObject() == null) return;
 
-        string name = data.GetName();
-        int r = data.GetResearch();
-        int p = data.GetProduction();
-        int m = data.GetManagement();
-        int inv = data.GetInvestigation();
+        string name = data.data.GetName;
+        int r = data.data.GetResearch;
+        int p = data.data.GetProduction;
+        int m = data.data.GetManagement;
+        int inv = data.data.GetInvestigation;
+        Sprite sprite = data.data.GetSprite;
 
-        charaSimpleDataUI.GetComponent<ActionCharacterInterface>().SetData(name, r, p, m, inv,null);
+        charaSimpleDataUI.GetComponent<ActionCharacterInterface>().SetData(name, r, p, m, inv,null,sprite);
     }
 
     virtual public void StartButton(){}
@@ -139,7 +139,7 @@ public class SelectCanvasInterface : MonoBehaviour
 
             CharacterData data = CharaList[i].GetComponent<CharacterData>();
 
-            obj.transform.SetParent(charaListParent.transform);
+            obj.transform.SetParent(charaListParent.transform,false);
             obj.name = "CharaData[" + data.name + "]";
 
 
@@ -148,8 +148,9 @@ public class SelectCanvasInterface : MonoBehaviour
             int m = data.management;
             int inv = data.investigation;
             string name = data.name;
+            Sprite sprite = data.characterSprite;
 
-            obj.GetComponent<ActionCharacterInterface>().SetData(name, r, p, m, inv,CharaList[i]);
+            obj.GetComponent<ActionCharacterInterface>().SetData(name, r, p, m, inv,CharaList[i],sprite);
             obj.GetComponent<ActionCharacterInterface>().Create();
         }
     }

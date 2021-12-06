@@ -7,10 +7,10 @@ using UnityEngine.EventSystems;
 public class SelectCharacterDataInterface : MonoBehaviour
 {
     protected GameObject selectGameObject = null;
-
     protected GameObject beforeSelectGameObject = null;
 
-    ActionCharacterInterface data;
+    [System.NonSerialized]
+    public ActionCharacterInterface data;
 
 
     virtual public void SetData(ref GameObject obj)
@@ -50,33 +50,5 @@ public class SelectCharacterDataInterface : MonoBehaviour
         return selectGameObject;
     }
 
-    public string GetName()
-    {
-        return data.GetName;
-    }
-
-    public int GetResearch()
-    {
-        return data.GetResearch;
-    }
-
-    public int GetProduction()
-    {
-        return data.GetProduction;
-    }
-
-    public int GetManagement()
-    {
-        return data.GetManagement;
-    }
-
-    public int GetInvestigation()
-    {
-        return data.GetInvestigation;
-    }
-
-    public GameObject GetOriginal()
-    {
-        return data.originalGameObject;
-    }
+  
 }
