@@ -1069,6 +1069,7 @@ MonoBehaviour:
   pollutionRank: 0
   checkInvestigated: 0
   pollutionLevelText: {fileID: 967417588}
+  InvestigateCompleteText: {fileID: 0}
   problem: 0
   state: 0
   timer: {fileID: 923915691}
@@ -2773,6 +2774,7 @@ MonoBehaviour:
   pollutionRank: 0
   checkInvestigated: 0
   pollutionLevelText: {fileID: 666040358}
+  InvestigateCompleteText: {fileID: 0}
   problem: 0
   state: 0
   timer: {fileID: 563831169}
@@ -3887,6 +3889,7 @@ MonoBehaviour:
   pollutionRank: 0
   checkInvestigated: 0
   pollutionLevelText: {fileID: 1158203638}
+  InvestigateCompleteText: {fileID: 0}
   problem: 0
   state: 0
   timer: {fileID: 69159404}
@@ -4410,6 +4413,7 @@ MonoBehaviour:
   pollutionRank: 0
   checkInvestigated: 0
   pollutionLevelText: {fileID: 1849480870}
+  InvestigateCompleteText: {fileID: 0}
   problem: 0
   state: 0
   timer: {fileID: 1942844400}
@@ -4596,6 +4600,7 @@ MonoBehaviour:
   pollutionRank: 0
   checkInvestigated: 0
   pollutionLevelText: {fileID: 155328579}
+  InvestigateCompleteText: {fileID: 0}
   problem: 0
   state: 0
   timer: {fileID: 656331655}
@@ -4751,7 +4756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba5f96cf54ee804aaaa9fab4fd1d35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialStart: 1
+  tutorialStart: 0
   tutorialCanvasPrefab: {fileID: 3715063630727291506, guid: 42bd4c08ad5adeb4abdea19a45e01c50, type: 3}
   recruitCanvas: {fileID: 1678859067}
   investigationCanvas: {fileID: 1689519780328768828, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}

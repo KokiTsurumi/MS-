@@ -110,15 +110,14 @@ public class CleaningCanvas : MonoBehaviour
         //汚染度変化計算
         //selectRobot
         //※今は一つのRobotを利用
-        RobotManager.Instance.selectedRobot[0] = selectRobot.GetComponent<SelectRobotData>().GetOriginal();
-        RobotManager.Instance.selectedRobot[1] = selectRobot.GetComponent<SelectRobotData>().GetOriginal();
+        RobotManager.Instance.selectedRobot = selectRobot.GetComponent<SelectRobotData>().GetOriginal();
 
         GameObject island = IslandManager.Instance.GetCurrentIsland();
         int removeRate = island.GetComponent<IslandBase>().CalcRemoveRate();
 
 
-        string clean = RobotManager.Instance.RankTransfer(RobotManager.Instance.selectedRobot[0].GetComponent<RobotBase>().clean);
-        string  battery = RobotManager.Instance.RankTransfer(RobotManager.Instance.selectedRobot[0].GetComponent<RobotBase>().battery);
+        string clean = RobotManager.Instance.RankTransfer(RobotManager.Instance.selectedRobot.GetComponent<RobotBase>().clean);
+        string  battery = RobotManager.Instance.RankTransfer(RobotManager.Instance.selectedRobot.GetComponent<RobotBase>().battery);
         Debug.Log("ロボット性能【清掃】" + clean);
         Debug.Log("ロボット性能【駆動時間】" + battery);
         //Debug.Log("清掃時間" + time);
