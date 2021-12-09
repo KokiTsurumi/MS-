@@ -362,6 +362,15 @@ public class CameraController : MonoBehaviour
                 }
 
             }
+            else if(MouseManager.Instance.GetCurrentSelectedGameObject().name == "Cleaning")
+            {
+                if(tutorialState == TutorialManager.TutorialState.Cleanning)
+                {
+                    TutorialManager.Instance.NextStep();
+                    action = true;
+                    actionCanvasAnimator.SetBool("popOut", false);
+                }
+            }
 
             return;
         }

@@ -11,18 +11,11 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     bool tutorialStart = false;
 
 
-    [SerializeField]
-    GameObject tutorialCanvasPrefab;
-
-    [SerializeField]
-    GameObject recruitCanvas;
-
-    [SerializeField]
-    GameObject investigationCanvas;
-
-    [SerializeField]
-    GameObject productionCanvas;
-
+    [SerializeField] GameObject tutorialCanvasPrefab;
+    [SerializeField] GameObject recruitCanvas;
+    [SerializeField] GameObject investigationCanvas;
+    [SerializeField] GameObject productionCanvas;
+    [SerializeField] GameObject cleaningCanvas;
 
     GameObject navigatorText;
     GameObject tutorialCanvas;
@@ -121,6 +114,14 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.AddListText("調査完了です\n次は生産を行いましょうw");
         stepList.AddListFunc(ProductionPopOut);
         stepList.AddListFunc(ProductionStart);
+        stepList.AddListFunc(ProductionEnd);
+        stepList.AddListText("清掃を行います");
+        stepList.AddListFunc(CleaningPopOut);
+        stepList.AddListFunc(CleaningStart);
+        stepList.AddListFunc(RankUp);
+        stepList.AddListText("知名度ランク上がったよ");
+        
+        
 
         //EventTriggerセット
         EventTrigger.Entry entry = new EventTrigger.Entry();
@@ -186,8 +187,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void InvestigationEnd()
     {
-
-        //updateFunc = InvestigationEndUpdate;
         stepList.Next();
         stepList.Step();
         tutorialCanvas.SetActive(true);
@@ -205,20 +204,44 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
 
         Instantiate(productionCanvas).GetComponent<ProductionCanvas>().Initialize();
-        //tutorialState = TutorialState.Production;
     }
 
-    //最初に雇うキャラクターを表示させる
-    public void RecruitCharacterDisplay()
+    void ProductionEnd()
     {
-        //キャンバスSetActive true
+        stepList.Next();
+        stepList.Step();
+        tutorialCanvas.SetActive(true);
+
     }
 
-    //public void OnClickNextText()
-    //{
+    void CleaningPopOut()
+    {
+        tutorialCanvas.SetActive(false);
+        tutorialState = TutorialState.Cleanning;
+        Camera.main.GetComponent<CameraController>().ZoomIn();
+    }
 
-    //    stepList.NextStep();
-    //}
+    void CleaningStart()
+    {
+        Instantiate(cleaningCanvas).GetComponent<CleaningCanvas>().Initialize();
+    }
+    
+    void CleaningEnd()
+    {
+        stepList.Next();
+        stepList.Step();
+        tutorialCanvas.SetActive(true);
+    }
+
+    void RankUp()
+    {
+        Name_Value.Instance.PlusCleaningCount();
+        Name_Value.Instance.PlusPlacementCountt();
+        Name_Value.Instance.PlusProductionCount();
+        Name_Value.Instance.PlusResearchCount();
+
+        NextStep();
+    }
 
     IEnumerator CoroutineTimer(float time,Coroutine coroutine)
     {
@@ -231,8 +254,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.Next();
         stepList.Step();
     }
-
-    
 
 }
 

@@ -4756,11 +4756,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba5f96cf54ee804aaaa9fab4fd1d35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialStart: 0
+  tutorialStart: 1
   tutorialCanvasPrefab: {fileID: 3715063630727291506, guid: 42bd4c08ad5adeb4abdea19a45e01c50, type: 3}
   recruitCanvas: {fileID: 1678859067}
   investigationCanvas: {fileID: 1689519780328768828, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
   productionCanvas: {fileID: 560584640535415387, guid: ad8133ccd871a7943b5e73b0e3ab8cc4, type: 3}
+  cleaningCanvas: {fileID: 1689519780328768828, guid: 6dea4c906eed11344b554331d6cdfe11, type: 3}
   tutorialState: 0
 --- !u!1 &1827169808
 GameObject:
@@ -5905,7 +5906,7 @@ GameObject:
   - component: {fileID: 2026632437}
   - component: {fileID: 2026632440}
   m_Layer: 5
-  m_Name: Clearning
+  m_Name: Cleaning
   m_TagString: Action UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

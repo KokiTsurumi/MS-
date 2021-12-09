@@ -42,21 +42,21 @@ public class ProductionCanvas : SelectCanvasInterface
 
             setRobot.SetData(data.name, data.clean, data.battery, data.specialSkill, null);
 
+            GameObject island = IslandManager.Instance.GetCurrentIsland();
 
             if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
             {
                 //タイマー計算処理
-                //target.GetComponent<IslandBase>().StartInvestigate(0);//固定?
+                island.GetComponent<IslandBase>().StartProduction(0, CreateRobotCanvas);
 
-                RobotCanvas.SetActive(true);
 
             }
             else
             {
 
-                //float time = RobotManager.Instance.CalcCleanTime(data, data);
                 //タイマー計算処理
-                //target.GetComponent<IslandBase>().start(time);
+                float time = CharacterManager.Instance.CalcProductionTime();
+                island.GetComponent<IslandBase>().StartProduction(time, CreateRobotCanvas);
 
             }
 
@@ -88,14 +88,11 @@ public class ProductionCanvas : SelectCanvasInterface
 
     public void CloseRobotCanvas()
     {
-        //base.StartButton();
-
-        //RobotCanvas.SetActive(false);
-
-        //Destroy(this.gameObject);
-
+        
         if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
         {
+            Debug.Log("productionEnd");
+            TutorialManager.Instance.NextStep();
             Destroy(this.gameObject);
         }
         else
@@ -104,5 +101,11 @@ public class ProductionCanvas : SelectCanvasInterface
 
         }
 
+    }
+
+    public void CreateRobotCanvas()
+    {
+        IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().timer.SetActive(false);
+        RobotCanvas.SetActive(true);
     }
 }

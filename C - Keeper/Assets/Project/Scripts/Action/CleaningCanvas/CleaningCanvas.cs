@@ -103,36 +103,39 @@ public class CleaningCanvas : MonoBehaviour
 
     public void StartButton()
     {
-        Camera.main.GetComponent<CameraController>().GetCurrntAction().ActionEnd();
 
 
-        //タイマー計算　
-        //汚染度変化計算
-        //selectRobot
-        //※今は一つのRobotを利用
         RobotManager.Instance.selectedRobot = selectRobot.GetComponent<SelectRobotData>().GetOriginal();
 
         GameObject island = IslandManager.Instance.GetCurrentIsland();
         int removeRate = island.GetComponent<IslandBase>().CalcRemoveRate();
 
 
-        string clean = RobotManager.Instance.RankTransfer(RobotManager.Instance.selectedRobot.GetComponent<RobotBase>().clean);
-        string  battery = RobotManager.Instance.RankTransfer(RobotManager.Instance.selectedRobot.GetComponent<RobotBase>().battery);
-        Debug.Log("ロボット性能【清掃】" + clean);
-        Debug.Log("ロボット性能【駆動時間】" + battery);
-        //Debug.Log("清掃時間" + time);
-        island.GetComponent<IslandBase>().StartClean(1);
-
-        //もし清掃が100％完了していたら
-        //"!"アイコン表示→クリックされたらカメラ移動→海開放アニメーション
-        if (island.GetComponent<IslandBase>().GetPollutionLevel() >= 100)
+        if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Cleanning)
         {
-            Debug.Log("島　清掃　完了　！！");
+            island.GetComponent<IslandBase>().StartClean(3.0f);
+            //this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
+            TutorialManager.Instance.NextStep();
+        }
+        else
+        {
+            float time = RobotManager.Instance.CalcCleanTime();
+
+            island.GetComponent<IslandBase>().StartClean(time);
+
+            //もし清掃が100％完了していたら
+            //"!"アイコン表示→クリックされたらカメラ移動→海開放アニメーション
+            if (island.GetComponent<IslandBase>().GetPollutionLevel() >= 100)
+            {
+                Debug.Log("島　清掃　完了　！！");
+            }
+
+            StartCoroutine(ActionEnd());
+
         }
 
 
-
-        StartCoroutine(ActionEnd());
     }
 
     public void SelectCancel() { ListUI.SetActive(false); }
@@ -165,6 +168,8 @@ public class CleaningCanvas : MonoBehaviour
 
     IEnumerator ActionEnd()
     {
+        Camera.main.GetComponent<CameraController>().GetCurrntAction().ActionEnd();
+
         //数秒後にカメラを戻す
         yield return new WaitForSeconds(1.0f);
 
