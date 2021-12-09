@@ -113,7 +113,7 @@ public class CleaningCanvas : MonoBehaviour
 
         if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Cleanning)
         {
-            island.GetComponent<IslandBase>().StartClean(3.0f);
+            island.GetComponent<IslandBase>().StartClean(3.0f,null);
             //this.gameObject.SetActive(false);
             Destroy(this.gameObject);
             TutorialManager.Instance.NextStep();
@@ -122,7 +122,7 @@ public class CleaningCanvas : MonoBehaviour
         {
             float time = RobotManager.Instance.CalcCleanTime();
 
-            island.GetComponent<IslandBase>().StartClean(time);
+            island.GetComponent<IslandBase>().StartClean(time,null);
 
             //もし清掃が100％完了していたら
             //"!"アイコン表示→クリックされたらカメラ移動→海開放アニメーション
