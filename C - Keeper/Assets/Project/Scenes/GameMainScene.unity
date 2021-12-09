@@ -3318,6 +3318,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7660927164006433256, guid: d82e1a36ef8c8eb498112161dd5ba499, type: 3}
+      propertyPath: roopTime
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660927164006433256, guid: d82e1a36ef8c8eb498112161dd5ba499, type: 3}
       propertyPath: popularityRank
       value: 5
       objectReference: {fileID: 0}

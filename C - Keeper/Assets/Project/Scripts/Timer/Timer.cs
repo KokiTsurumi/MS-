@@ -56,6 +56,13 @@ public class Timer : MonoBehaviour
         callBack = cb;
     }
 
+    public void TimerStart(float setTime, CallBack cb1, CallBack cb2)
+    {
+        start = true;
+        currentTime = countTime = setTime;
+        callBack = cb1 + cb2;
+    }
+
     public float GetCurrentTime() => currentTime;
 
 }
