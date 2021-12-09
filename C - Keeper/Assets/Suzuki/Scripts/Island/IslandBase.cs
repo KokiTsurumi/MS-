@@ -239,9 +239,9 @@ public class IslandBase : MonoBehaviour
     /// ê¥ë|äJénä÷êî
     /// </summary>
     /// <param name="time">éûä‘</param>
-    public void StartClean(float time)
+    public void StartClean(float time, Timer.CallBack callback)
     {
-        timer.GetComponent<Timer>().TimerStart(time, FinishClean);
+        timer.GetComponent<Timer>().TimerStart(time, FinishClean, callback);
         state = STATE_ISLAND.STATE_CLEANING;
         timer.SetActive(true);
         pollutionLevelText.gameObject.SetActive(false);
