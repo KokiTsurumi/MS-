@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class IslandBase : MonoBehaviour
 {
-    // 島が抱えてる問題
+    /// <summary>
+    /// 島が抱えてる問題の種類
+    /// </summary>
     public enum PROBLEM_LIST
     {
         PROBLEM_TRASH,      // ゴミ問題
@@ -16,7 +18,9 @@ public class IslandBase : MonoBehaviour
         PROBLEM_MAX,        // 問題の種類の最大数
     }
 
-    // 島の状態(ステートマシン)
+    /// <summary>
+    /// 島の状態(ステートマシン)
+    /// </summary>
     public enum STATE_ISLAND
     {
         STATE_UNINVESTIGATED,   // 未調査
@@ -33,6 +37,7 @@ public class IslandBase : MonoBehaviour
     [SerializeField, Range(0, 5)] private int pollutionRank = 0;        // 汚染ランク(0～5:E～S)
     [SerializeField] protected bool checkInvestigated = false;          // 島の調査が完了しているかのフラグ
     [SerializeField] protected Text pollutionLevelText;                 // 島の汚染度を表示するためのText
+    [SerializeField] protected Text InvestigateCompleteText;            // 調査終了時に表示させるText
 
     int removeRate;                                                     // 除去率
 
@@ -44,25 +49,26 @@ public class IslandBase : MonoBehaviour
 
 
 
-    // 島の汚染度を取得する関数
+    /// <summary>
+    /// 島の汚染度を取得する関数
+    /// </summary>
+    /// <returns>島の汚染度</returns>
     public int GetPollutionLevel()
     {
         return pollutionLevel;
     }
 
-    // 島の除去率を計算する関数
+    /// <summary>
+    /// 島の除去率を計算する関数
+    /// </summary>
+    /// <returns>汚染除去率</returns>
     public int CalcRemoveRate()
     {
-        RobotData robot1 = RobotManager.Instance.selectedRobot[0].GetComponent<RobotData>();    // ロボット１
-        RobotData robot2 = RobotManager.Instance.selectedRobot[1].GetComponent<RobotData>();    // ロボット２
-
-        int cleanAverage = RobotManager.Instance.GetCleanAverage(robot1, robot2);               // ロボットの清掃値の平均
-
         int robotEffectRate = 0;                                                                // ロボットの影響率
         removeRate = 0;                                                                         // 除去率
 
         // ロボットの影響率の設定
-        if (cleanAverage <= 0)
+        if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().clean <= 0)
         {
             if (pollutionRank <= 0)
                 robotEffectRate = 50;
@@ -77,7 +83,7 @@ public class IslandBase : MonoBehaviour
             else
                 robotEffectRate = 5;
         }
-        else if (cleanAverage == 1)
+        else if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().clean == 1)
         {
             if (pollutionRank <= 0)
                 robotEffectRate = 60;
@@ -92,7 +98,7 @@ public class IslandBase : MonoBehaviour
             else
                 robotEffectRate = 10;
         }
-        else if (cleanAverage == 2)
+        else if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().clean == 2)
         {
             if (pollutionRank <= 0)
                 robotEffectRate = 70;
@@ -107,7 +113,7 @@ public class IslandBase : MonoBehaviour
             else
                 robotEffectRate = 20;
         }
-        else if (cleanAverage == 3)
+        else if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().clean == 3)
         {
             if (pollutionRank <= 0)
                 robotEffectRate = 80;
@@ -122,7 +128,7 @@ public class IslandBase : MonoBehaviour
             else
                 robotEffectRate = 30;
         }
-        else if (cleanAverage == 4)
+        else if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().clean == 4)
         {
             if (pollutionRank <= 0)
                 robotEffectRate = 90;
@@ -154,13 +160,13 @@ public class IslandBase : MonoBehaviour
         }
 
         // 特殊技能と島の問題が一致したときのボーナス影響率
-        if (robot1.specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_SPECIALIZED_FOR_CLEANING && problem == PROBLEM_LIST.PROBLEM_TRASH || robot2.specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_SPECIALIZED_FOR_CLEANING && problem == PROBLEM_LIST.PROBLEM_TRASH)
+        if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_SPECIALIZED_FOR_CLEANING && problem == PROBLEM_LIST.PROBLEM_TRASH)
             robotEffectRate += 20;  // 清掃特化＆ゴミ問題
         
-        if (robot1.specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_PLASTIC_ONLY && problem == PROBLEM_LIST.PROBLEM_PLASTIC || robot2.specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_PLASTIC_ONLY && problem == PROBLEM_LIST.PROBLEM_PLASTIC)
+        if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_PLASTIC_ONLY && problem == PROBLEM_LIST.PROBLEM_PLASTIC)
             robotEffectRate += 20;  // プラスチック専用＆プラスチック問題
         
-        if (robot1.specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_OIL_COLLECTION && problem == PROBLEM_LIST.PROBLEM_FUELOIL || robot2.specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_OIL_COLLECTION && problem == PROBLEM_LIST.PROBLEM_FUELOIL)
+        if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_OIL_COLLECTION && problem == PROBLEM_LIST.PROBLEM_FUELOIL)
             robotEffectRate += 20;  // 油回収＆重油問題
 
         // ロボットの影響率から汚染除去率の設定
@@ -196,14 +202,20 @@ public class IslandBase : MonoBehaviour
         return removeRate;
     }
 
-    // 除去率から汚染度を減少させる関数
+    /// <summary>
+    /// 除去率から汚染度を減少させる関数
+    /// </summary>
+    /// <param name="removeRate">除去率</param>
     public void RemovePollution(int removeRate)
     {
         pollutionLevel -= removeRate;
         IslandManager.Instance.CheckTotalPollutionLevel();
     }
 
-    // 調査開始関数
+    /// <summary>
+    /// 調査開始関数
+    /// </summary>
+    /// <param name="time">時間</param>
     public void StartInvestigate(float time)
     {
         timer.GetComponent<Timer>().TimerStart(time, FinishInvestigate);
@@ -211,15 +223,22 @@ public class IslandBase : MonoBehaviour
         timer.SetActive(true);
     }
 
-    // 調査終了関数
+    /// <summary>
+    /// 調査終了関数
+    /// </summary>
     private void FinishInvestigate()
     {
         timer.SetActive(false);
         state = STATE_ISLAND.STATE_INVESTIGATED;
         checkInvestigated = true;
+        InvestigateCompleteText.gameObject.SetActive(true);
+        icon.SetActive(true);
     }
 
-    // 清掃開始関数
+    /// <summary>
+    /// 清掃開始関数
+    /// </summary>
+    /// <param name="time">時間</param>
     public void StartClean(float time)
     {
         timer.GetComponent<Timer>().TimerStart(time, FinishClean);
@@ -228,7 +247,9 @@ public class IslandBase : MonoBehaviour
         pollutionLevelText.gameObject.SetActive(false);
     }
 
-    // 清掃終了関数
+    /// <summary>
+    /// 清掃終了関数
+    /// </summary>
     private void FinishClean()
     {
         timer.SetActive(false);
@@ -240,12 +261,34 @@ public class IslandBase : MonoBehaviour
             state = STATE_ISLAND.STATE_CLEANED;
     }
 
+    /// <summary>
+    /// 生産開始関数
+    /// </summary>
+    /// <param name="time">時間</param>
+    public void StartProduction(float time, Timer.CallBack callback)
+    {
+        timer.GetComponent<Timer>().TimerStart(time, callback);
+        timer.SetActive(true);
+        pollutionLevelText.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// 生産終了関数
+    /// </summary>
+    private void FinishProduction()
+    {
+        timer.SetActive(false);
+        CalcRemoveRate();
+        RemovePollution(removeRate);
+        pollutionLevelText.gameObject.SetActive(true);
+    }
 
 
     // Start is called before the first frame update
     protected void Start()
     {
-        
+        InvestigateCompleteText.gameObject.SetActive(false);
+        icon.SetActive(false);
     }
 
     // Update is called once per frame

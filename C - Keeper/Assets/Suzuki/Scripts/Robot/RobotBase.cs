@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class RobotBase : MonoBehaviour
 {
-    // 特殊技能
+    /// <summary>
+    /// 特殊技能
+    /// </summary>
     public enum SPECIALSKILL_LIST
     {
         SPECIALSKILL_NULL,
@@ -27,10 +29,12 @@ public class RobotBase : MonoBehaviour
     public string name;                     // 名前
 
     public Sprite robotSprite;              // ロボットの画像
-    
 
 
-    // パラメータ生成関数
+
+    /// <summary>
+    /// 各種パラメータ生成関数
+    /// </summary>
     public void ParamGenerator()
     {
         // 清掃
@@ -42,7 +46,9 @@ public class RobotBase : MonoBehaviour
         battery = Mathf.CeilToInt(batteryAverage);
     }
 
-    // 特殊技能生成関数
+    /// <summary>
+    /// 特殊技能生成関数
+    /// </summary>
     public void SpecialSkillGenerator()
     {
         CharacterBase.TAG_LIST tag1, tag2;
@@ -75,7 +81,9 @@ public class RobotBase : MonoBehaviour
         }   
     }
 
-    // 名前生成関数
+    /// <summary>
+    /// 名前生成関数
+    /// </summary>
     public void NameGenerator()
     {
         string name1, name2;

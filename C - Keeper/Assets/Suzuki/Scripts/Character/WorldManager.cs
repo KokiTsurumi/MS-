@@ -8,7 +8,9 @@ public class WorldManager : SingletonMonoBehaviour<WorldManager>
 
 
 
-    // 知名度ランクを上げる関数
+    /// <summary>
+    /// 知名度ランクを上げる関数
+    /// </summary>
     public void IncreasePopularityRank()
     {
         popularityRank++;
@@ -20,18 +22,14 @@ public class WorldManager : SingletonMonoBehaviour<WorldManager>
         Debug.Log(popularityRank);
     }
 
-    // 現在の知名度ランクを返す関数
+    /// <summary>
+    /// 現在の知名度ランクを返す関数
+    /// </summary>
+    /// <returns>知名度ランク</returns>
     public int GetPopularityRank()
     {
         return popularityRank;
     }
-
-    // タイマーセット関数
-    //public void SetTimer(float sec, Vector3 position)
-    //{
-    //    IslandManager.Instance.currentIsland.GetComponent<IslandBase>().timer.GetComponent<Timer>().TimerStart(sec);            // 時間
-    //    IslandManager.Instance.currentIsland.GetComponent<IslandBase>().timer.GetComponent<Transform>().position = position;    // 位置
-    //}
 
 
 

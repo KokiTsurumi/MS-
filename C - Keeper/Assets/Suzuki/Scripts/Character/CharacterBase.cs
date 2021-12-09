@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// jsonファイル取得用クラス
+/// <summary>
+/// キャラクター紹介文データのjsonファイル取得用クラス
+/// </summary>
 [System.Serializable]
 public class InputJsonIntroductionList
 {
@@ -17,6 +19,9 @@ public class InputJsonIntroductionList
     public string[] BatteryManufacture;
 }
 
+/// <summary>
+/// キャラクター名前データのjsonファイル取得用クラス
+/// </summary>
 [System.Serializable]
 public class InputJsonNameList
 {
@@ -26,7 +31,9 @@ public class InputJsonNameList
 
 public class CharacterBase : MonoBehaviour
 {
-    // タッグ機能の種類
+    /// <summary>
+    /// タッグ機能の種類
+    /// </summary>
     public enum TAG_LIST
     {
         TAG_NULL,                   // 特殊技能なし
@@ -59,7 +66,9 @@ public class CharacterBase : MonoBehaviour
 
 
 
-    // 各種パラメータ生成関数
+    /// <summary>
+    /// 各種パラメータ生成関数
+    /// </summary>
     public void ParamGenerator()
     {
         // ランクによって変動
@@ -100,7 +109,9 @@ public class CharacterBase : MonoBehaviour
         }
     }
 
-    // 名前生成関数
+    /// <summary>
+    /// 名前生成関数
+    /// </summary>
     public void NameGenerator()
     {
         // jsonファイルから名前データを読み込み
@@ -120,13 +131,17 @@ public class CharacterBase : MonoBehaviour
         //Log(inputJson.FamilyNameList.Length);
     }
 
-    // 年齢生成関数
+    /// <summary>
+    /// 年齢生成関数
+    /// </summary>
     public void AgeGenerator()
     {
         age = Random.Range(18, 61);
     }
 
-    // タッグ機能生成関数
+    /// <summary>
+    /// タッグ機能生成関数
+    /// </summary>
     public void TagGenerator()
     {
         float percentage = Random.Range(0f, 100f);
@@ -166,7 +181,9 @@ public class CharacterBase : MonoBehaviour
         }
     }
 
-    // キャラクターの画像を設定する関数
+    /// <summary>
+    /// キャラクターの画像を設定する関数
+    /// </summary>
     public void SetCharacterSprite()
     {
         string directoryPath = "人材NPC";   // キャラクター画像の入ったパスを指定
@@ -179,7 +196,9 @@ public class CharacterBase : MonoBehaviour
         characterSprite = spriteList[index];
     }
 
-    // 紹介文を生成する関数
+    /// <summary>
+    /// 紹介文を生成する関数
+    /// </summary>
     public void IntroductionGenerator()
     {
         // jsonファイルから紹介文データを読み込み

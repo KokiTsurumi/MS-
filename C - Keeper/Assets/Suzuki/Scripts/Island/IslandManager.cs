@@ -10,11 +10,13 @@ public class IslandManager : SingletonMonoBehaviour<IslandManager>
     [SerializeField, Range(0, 100)]
     public float totalPollutionLevel;                               // 全体の汚染度
 
-    public GameObject currentIsland;                                // 現在選択中の島
+    private GameObject currentIsland;                               // 現在選択中の島
 
 
 
-    // 全体の汚染度を計算する関数
+    /// <summary>
+    /// 全体の汚染度を計算する関数
+    /// </summary>
     public void CheckTotalPollutionLevel()
     {
         float tmp = 0;
@@ -27,19 +29,29 @@ public class IslandManager : SingletonMonoBehaviour<IslandManager>
         totalPollutionLevel = tmp / islandList.Count;
     }
 
-    // 現在の島を返す関数
+    /// <summary>
+    /// 現在の島を返す関数
+    /// </summary>
+    /// <returns>現在選んでいる島</returns>
     public GameObject GetCurrentIsland()
     {
         return currentIsland;
     }
 
-    // 現在の島をセットする関数
+    /// <summary>
+    /// 現在の島をセットする関数
+    /// </summary>
+    /// <param name="island">選びたい島</param>
     public void SetCurrentIsland(GameObject island)
     {
         currentIsland = island;
     }
 
-    // ランク(数値)をランク(アルファベット)に変換する関数
+    /// <summary>
+    /// ランク(数値)をランク(アルファベット)に変換する関数
+    /// </summary>
+    /// <param name="Param">島の汚染度ランク</param>
+    /// <returns>ランクに応じたアルファベット</returns>
     public string RankTransfer(int Param)
     {
         string tmp;
