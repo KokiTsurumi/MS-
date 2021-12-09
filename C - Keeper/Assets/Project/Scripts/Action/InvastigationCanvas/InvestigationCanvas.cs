@@ -22,10 +22,11 @@ public class InvestigationCanvas : SelectCanvasInterface
             GameObject target = IslandManager.Instance.GetCurrentIsland();
 
             //キャラクターセット
-            CharacterData set1 = selectChara[0].GetComponent<SelectCharacterDataInterface>().data.originalGameObject.GetComponent<CharacterData>();
-            CharacterData set2 = selectChara[1].GetComponent<SelectCharacterDataInterface>().data.originalGameObject.GetComponent<CharacterData>();            //タッグ計算処理
-            float time = CharacterManager.Instance.CalcInvestigationTime(set1, set2);
+            CharacterManager.Instance.characterList[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
+            CharacterManager.Instance.characterList[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;            //タッグ計算処理
+            float time = CharacterManager.Instance.CalcInvestigationTime();
 
+            CharacterManager.Instance.UseCharacter();
 
             if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Investigation)
             {
