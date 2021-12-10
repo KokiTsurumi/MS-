@@ -917,7 +917,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000061035156, y: 225.00012}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &560584640370784193
 MonoBehaviour:
@@ -1087,6 +1087,7 @@ MonoBehaviour:
   selectChara:
   - {fileID: 560584641498988119}
   - {fileID: 560584640061026798}
+  select: {fileID: 0}
   listScrollbar: {fileID: 560584641619578991}
   startAnimationCanvas: {fileID: 1055054613335781259}
   mainCanvas: {fileID: 560584640805602543}
@@ -1268,7 +1269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &560584640805602532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1966,6 +1967,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787d5e3938ddd1f46a4475acddae893b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  research: 0
+  production: 0
+  management: 0
+  investigation: 0
+  name: 
+  age: 0
+  tag: 0
+  characterSprite: {fileID: 0}
+  introduction: 
+  popularityRank: 0
   nameText: {fileID: 560584641349116038}
   rRank: {fileID: 560584639948839643}
   pRank: {fileID: 560584640214905548}
@@ -2561,7 +2572,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2955,7 +2966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &560584641860783161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3444,15 +3455,15 @@ GameObject:
   - component: {fileID: 5820128796252751273}
   - component: {fileID: 2987102220328571339}
   - component: {fileID: 7262878347638406109}
-  - component: {fileID: 9128371706110530276}
   - component: {fileID: 7738175266374261189}
+  - component: {fileID: 1944371644511015391}
   m_Layer: 0
   m_Name: StartAnimationCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8850308035692294576
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3460,7 +3471,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055054613335781259}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
@@ -3534,25 +3545,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!95 &9128371706110530276
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055054613335781259}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cfc2ac544a2e0554d842eac2d721ae3b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &7738175266374261189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3565,6 +3557,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316d58047c4ef904a90b028fcee232bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1944371644511015391
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055054613335781259}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a961705da009b084198bb0dfa9d7b68e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1576410383597077932
 GameObject:
   m_ObjectHideFlags: 0
@@ -4279,7 +4290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9046583231063946264
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4587,7 +4598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e1f4d793ae2ed0841bf3812f8c03df9b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

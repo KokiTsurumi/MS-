@@ -25,6 +25,8 @@ public class InvestigationCanvas : SelectCanvasInterface
 
             CharacterManager.Instance.characterList[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
             CharacterManager.Instance.characterList[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
+            Debug.Log("使われたキャラは" + CharacterManager.Instance.characterList[0].GetComponent<CharacterData>().name);
+            Debug.Log("使われたキャラは" + CharacterManager.Instance.characterList[1].GetComponent<CharacterData>().name);
             CharacterManager.Instance.UseCharacter();
 
             float time = CharacterManager.Instance.CalcInvestigationTime();

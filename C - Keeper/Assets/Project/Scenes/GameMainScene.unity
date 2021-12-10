@@ -5035,7 +5035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba5f96cf54ee804aaaa9fab4fd1d35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialStart: 1
+  tutorialStart: 0
   tutorialCanvasPrefab: {fileID: 3715063630727291506, guid: 42bd4c08ad5adeb4abdea19a45e01c50, type: 3}
   recruitCanvasPrefab: {fileID: 1438636289383010366, guid: 23eb1934a0f84ec4682814da760951b8, type: 3}
   investigationCanvasPrefab: {fileID: 1689519780328768828, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}

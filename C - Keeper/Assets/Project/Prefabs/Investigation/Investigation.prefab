@@ -54,6 +54,7 @@ MonoBehaviour:
   selectChara:
   - {fileID: 3792231338784819921}
   - {fileID: 3792231338037839929}
+  select: {fileID: 0}
   listScrollbar: {fileID: 3792231337416106641}
   startAnimationCanvas: {fileID: 1888382352725147890}
   mainCanvas: {fileID: 3792231338663545189}
@@ -478,6 +479,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787d5e3938ddd1f46a4475acddae893b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  research: 0
+  production: 0
+  management: 0
+  investigation: 0
+  name: 
+  age: 0
+  tag: 0
+  characterSprite: {fileID: 0}
+  introduction: 
+  popularityRank: 0
   nameText: {fileID: 3792231337604426324}
   rRank: {fileID: 3792231337495126004}
   pRank: {fileID: 3792231336812657468}

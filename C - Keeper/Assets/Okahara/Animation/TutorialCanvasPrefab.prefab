@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 3715063630727291517}
   - component: {fileID: 3715063630727291516}
   m_Layer: 0
-  m_Name: TutorialCanvas
+  m_Name: TutorialCanvasPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 1438636289383010360}
   - component: {fileID: 1438636289383010361}
   m_Layer: 0
-  m_Name: RecruitCanvas
+  m_Name: RecruitCanvasPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

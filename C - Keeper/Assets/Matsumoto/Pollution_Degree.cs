@@ -17,15 +17,15 @@ public class Pollution_Degree : MonoBehaviour
 
         //ò‰»“x‚ÌÅ‘å’l‚Ìİ’è
         pollutionSlider.maxValue = maxDegree;
-
+        pollutionSlider.value = 0;
     }
 
 
     void Update()
     {
         //islandManager.totalPollutionLevel = pollutionSlider.value;
-
-        pollutionSlider.value = 100 - IslandManager.Instance.totalPollutionLevel;
+        if(IslandManager.Instance.totalPollutionLevel != 0)
+            pollutionSlider.value = 100 - IslandManager.Instance.totalPollutionLevel;
     }
 
 
