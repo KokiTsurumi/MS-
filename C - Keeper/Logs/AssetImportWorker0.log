@@ -1,125 +1,125 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.18f1 (a7d1c678663c) revision 10998214'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19042.1348; Version 2009; 64bit' Language: 'ja' Physical Memory: 32712 MB
+OS: 'Windows 10 Home; OS build 19043.1348; Version 2009; 64bit' Language: 'ja' Physical Memory: 32605 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
-D:\2020.3.18f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2020.3.18f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/4年　MS/C - Keeper
+D:/Folders/4年生科目/AT4C, GP41/GP41/プロジェクト/C - Keeper
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51069
-Successfully changed project path to: D:/4年　MS/C - Keeper
-D:/4年　MS/C - Keeper
+63574
+Successfully changed project path to: D:/Folders/4年生科目/AT4C, GP41/GP41/プロジェクト/C - Keeper
+D:/Folders/4年生科目/AT4C, GP41/GP41/プロジェクト/C - Keeper
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 84.08 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 87.24 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.18f1 (a7d1c678663c)
-[Subsystems] Discovering subsystems at path D:/2020.3.18f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/4年　MS/C - Keeper/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Folders/4年生科目/AT4C, GP41/GP41/プロジェクト/C - Keeper/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1080 Ti (ID=0x1b06)
+    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
     Vendor:   
-    VRAM:     11127 MB
-    Driver:   30.0.14.7212
+    VRAM:     5991 MB
+    Driver:   30.0.14.9676
 Initialize mono
-Mono path[0] = 'D:/2020.3.18f1/Editor/Data/Managed'
-Mono path[1] = 'D:/2020.3.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'D:/2020.3.18f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56440
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56836
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/2020.3.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001396 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001721 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 90.32 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 88.77 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.967 seconds
+- Completed reload, in  1.014 seconds
 Domain Reload Profiling:
-	ReloadAssembly (967ms)
-		BeginReloadAssembly (49ms)
+	ReloadAssembly (1014ms)
+		BeginReloadAssembly (50ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (431ms)
-			LoadAssemblies (49ms)
+		EndReloadAssembly (425ms)
+			LoadAssemblies (48ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (144ms)
+			SetupTypeCache (131ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (29ms)
-			SetupLoadedEditorAssemblies (197ms)
+			SetupLoadedEditorAssemblies (200ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (90ms)
-				BeforeProcessingInitializeOnLoad (15ms)
-				ProcessInitializeOnLoadAttributes (63ms)
-				ProcessInitializeOnLoadMethodAttributes (23ms)
+				RefreshPlugins (89ms)
+				BeforeProcessingInitializeOnLoad (14ms)
+				ProcessInitializeOnLoadAttributes (69ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004591 seconds.
+Registered in 0.003947 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Folders\4年生科目\AT4C, GP41\GP41\プロジェクト\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Folders\4年生科目\AT4C, GP41\GP41\プロジェクト\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.974 seconds
+- Completed reload, in  0.988 seconds
 Domain Reload Profiling:
-	ReloadAssembly (975ms)
-		BeginReloadAssembly (141ms)
+	ReloadAssembly (988ms)
+		BeginReloadAssembly (127ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (787ms)
-			LoadAssemblies (80ms)
+		EndReloadAssembly (807ms)
+			LoadAssemblies (77ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (287ms)
+			SetupTypeCache (295ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (41ms)
-			SetupLoadedEditorAssemblies (299ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (308ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (100ms)
+				BeforeProcessingInitializeOnLoad (105ms)
 				ProcessInitializeOnLoadAttributes (188ms)
 				ProcessInitializeOnLoadMethodAttributes (4ms)
-				AfterProcessingInitializeOnLoad (2ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 1.13 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3037 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 196.8 MB.
-System memory in use after: 197.1 MB.
+System memory in use before: 111.8 MB.
+System memory in use after: 112.0 MB.
 
-Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 3487.
-Total: 2.878100 ms (FindLiveObjects: 0.285600 ms CreateObjectMapping: 0.111400 ms MarkObjects: 2.459400 ms  DeleteObjects: 0.020600 ms)
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 3467.
+Total: 2.958400 ms (FindLiveObjects: 0.262600 ms CreateObjectMapping: 0.107100 ms MarkObjects: 2.486800 ms  DeleteObjects: 0.101000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -128,142 +128,200 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Project/Textures/(仮)海/d37fe2d86ce733d9.png
-  artifactKey: Guid(455cfa6cfc72ce84cb0808e61e5b8341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/(仮)海/d37fe2d86ce733d9.png using Guid(455cfa6cfc72ce84cb0808e61e5b8341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3cdad87fb5a758e1e330abbb2e521b9') in 0.197417 seconds 
-  Import took 0.201699 seconds .
+  path: Assets/Suzuki/Scripts/Character/CharacterBase.cs
+  artifactKey: Guid(37a7b6bdb470a014c88e0a0202cde3d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Suzuki/Scripts/Character/CharacterBase.cs using Guid(37a7b6bdb470a014c88e0a0202cde3d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '213cf43628449e636ff2e94c15196dad') in 0.100767 seconds 
+  Import took 0.105269 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 3.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.9 MB.
+System memory in use after: 52.1 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3467.
+Total: 3.063300 ms (FindLiveObjects: 0.288400 ms CreateObjectMapping: 0.161400 ms MarkObjects: 2.590700 ms  DeleteObjects: 0.021600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003868 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Folders\4年生科目\AT4C, GP41\GP41\プロジェクト\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Folders\4年生科目\AT4C, GP41\GP41\プロジェクト\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.970 seconds
+Domain Reload Profiling:
+	ReloadAssembly (970ms)
+		BeginReloadAssembly (103ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (812ms)
+			LoadAssemblies (77ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (326ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (279ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (175ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3030 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.5 MB.
+System memory in use after: 111.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3470.
+Total: 3.173300 ms (FindLiveObjects: 0.274100 ms CreateObjectMapping: 0.126100 ms MarkObjects: 2.752100 ms  DeleteObjects: 0.020000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 172.902168 seconds.
+  path: Assets/Suzuki/Scripts/Island/IslandBase.cs
+  artifactKey: Guid(6a28a1849b7b503448e5d0d9fe39e08b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Suzuki/Scripts/Island/IslandBase.cs using Guid(6a28a1849b7b503448e5d0d9fe39e08b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6c09606131ba631c609380b75139dab') in 0.009498 seconds 
+  Import took 0.014068 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.467135 seconds.
-  path: Assets/Project/Textures/(仮)海/背景1.png
-  artifactKey: Guid(01e2dd90e25293f42b5bd3b25de8f0ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/(仮)海/背景1.png using Guid(01e2dd90e25293f42b5bd3b25de8f0ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc591c3f2c4a0b2aa300b941eea91448') in 0.021411 seconds 
-  Import took 0.027157 seconds .
+  Time since last request: 7.797909 seconds.
+  path: Assets/Suzuki/Scripts/Robot/RobotBase.cs
+  artifactKey: Guid(481d116985755d747830a49be06523fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Suzuki/Scripts/Robot/RobotBase.cs using Guid(481d116985755d747830a49be06523fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecb218f6c069681ccdfa97983fd3b092') in 0.029693 seconds 
+  Import took 0.050092 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000295 seconds.
-  path: Assets/Project/Textures/(仮)海/背景1　雲.png
-  artifactKey: Guid(25c783eca18fcc04d837c514ce392d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/(仮)海/背景1　雲.png using Guid(25c783eca18fcc04d837c514ce392d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bba344ea0872aa6c2a3105593c6cd743') in 0.021413 seconds 
-  Import took 0.025778 seconds .
+  Time since last request: 2.057587 seconds.
+  path: Assets/Suzuki/Scripts/Robot/RobotManager.cs
+  artifactKey: Guid(07a45089c504c244fb75bd8a5d619042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Suzuki/Scripts/Robot/RobotManager.cs using Guid(07a45089c504c244fb75bd8a5d619042) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7340e6717a3bc029b55abbf3a26f516e') in 0.036889 seconds 
+  Import took 0.041185 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000284 seconds.
-  path: Assets/Project/Textures/(仮)海/背景2.png
-  artifactKey: Guid(c645261ab965445419d28306edd5c8b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/(仮)海/背景2.png using Guid(c645261ab965445419d28306edd5c8b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2226b6379df0598f023f260fbca1bf6b') in 0.019026 seconds 
-  Import took 0.023961 seconds .
+  Time since last request: 1186.416663 seconds.
+  path: Assets/Project/Scripts/Action/Canvas/CleaningCanvas.cs
+  artifactKey: Guid(9bd4c48b5e8dcd543ae26c699293a6f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Scripts/Action/Canvas/CleaningCanvas.cs using Guid(9bd4c48b5e8dcd543ae26c699293a6f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca05dc2100aeab830cfabdb36edda3fe') in 0.008377 seconds 
+  Import took 0.046269 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000211 seconds.
-  path: Assets/Project/Textures/(仮)海/背景2　雲.png
-  artifactKey: Guid(6f07dc66324e5d848ba60d0d6bded42f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/(仮)海/背景2　雲.png using Guid(6f07dc66324e5d848ba60d0d6bded42f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bd16c94d87d1603513a7a1c29f8750e') in 0.012588 seconds 
-  Import took 0.017442 seconds .
+  Time since last request: 8.601455 seconds.
+  path: Assets/Project/Scripts/Action/Canvas/CleaningCanvas.cs
+  artifactKey: Guid(9bd4c48b5e8dcd543ae26c699293a6f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Scripts/Action/Canvas/CleaningCanvas.cs using Guid(9bd4c48b5e8dcd543ae26c699293a6f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '914e170d703aee292f512feddb506bd6') in 0.003553 seconds 
+  Import took 0.023947 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 171.355632 seconds.
-  path: Assets/Project/Textures/ロボ/オールマイティロボ.png
-  artifactKey: Guid(09fe4d78a06e77f47a571f153326bdf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/オールマイティロボ.png using Guid(09fe4d78a06e77f47a571f153326bdf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1b53b7b3ef9d2f5d939b09fc95f23c7') in 0.017921 seconds 
-  Import took 0.024695 seconds .
+  Time since last request: 15.607463 seconds.
+  path: Assets/Suzuki/Resources/IslandManager.prefab
+  artifactKey: Guid(7e75971a548b2cc4ea9b23a9d98d606a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Suzuki/Resources/IslandManager.prefab using Guid(7e75971a548b2cc4ea9b23a9d98d606a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4804e56f2f6639bc9528edc6113068b3') in 0.049743 seconds 
+  Import took 0.074093 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000318 seconds.
-  path: Assets/Project/Textures/ロボ/プラスチック専用ロボ.png
-  artifactKey: Guid(08aca0301f6c4e34dbe8b75c745ff146) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/プラスチック専用ロボ.png using Guid(08aca0301f6c4e34dbe8b75c745ff146) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1300857e3de74fccec8022fba6afd381') in 0.016218 seconds 
-  Import took 0.020950 seconds .
+  Time since last request: 0.157579 seconds.
+  path: Assets/Suzuki/Resources/RobotManager.prefab
+  artifactKey: Guid(d5b06c769e7670e4c8a73a5b47f39f6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Suzuki/Resources/RobotManager.prefab using Guid(d5b06c769e7670e4c8a73a5b47f39f6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03af7b508cf9c472343d5bad3d348df0') in 0.034693 seconds 
+  Import took 0.039423 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000216 seconds.
-  path: Assets/Project/Textures/ロボ/ロボ　ノーマル2.png
-  artifactKey: Guid(89ef4ff0690c82742ac26fa68c74f9c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/ロボ　ノーマル2.png using Guid(89ef4ff0690c82742ac26fa68c74f9c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cb89d139209803a7934568debc1a3c7') in 0.014151 seconds 
-  Import took 0.018986 seconds .
+  Time since last request: 0.308372 seconds.
+  path: Assets/Suzuki/Resources/testcharacterobj.prefab
+  artifactKey: Guid(690fa8144969da5478c777869f43b1e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Suzuki/Resources/testcharacterobj.prefab using Guid(690fa8144969da5478c777869f43b1e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17f4282964811cd7ba448284aa148941') in 0.076796 seconds 
+  Import took 0.092559 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000207 seconds.
-  path: Assets/Project/Textures/ロボ/ロボ　ノーマル１.png
-  artifactKey: Guid(7b55b5b1d01b64d42a4ccfc09c12b555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/ロボ　ノーマル１.png using Guid(7b55b5b1d01b64d42a4ccfc09c12b555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab6daef3c26fa35fbbd5df768896b1fc') in 0.015662 seconds 
-  Import took 0.021100 seconds .
+  Time since last request: 0.000275 seconds.
+  path: Assets/Suzuki/Resources/WorldManager.prefab
+  artifactKey: Guid(4e8f61be784010f41b6b4c1329e16560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Suzuki/Resources/WorldManager.prefab using Guid(4e8f61be784010f41b6b4c1329e16560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab9b43c74c43a35e13623a664551fbb4') in 0.010343 seconds 
+  Import took 0.014132 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000264 seconds.
-  path: Assets/Project/Textures/ロボ/油回収ロボ.png
-  artifactKey: Guid(ab6e73e5aa4bf954b9efedf639de843d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/油回収ロボ.png using Guid(ab6e73e5aa4bf954b9efedf639de843d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73b3b6e6fa6f140e6f698f6435aae488') in 0.015095 seconds 
-  Import took 0.019428 seconds .
+  Time since last request: 3.445810 seconds.
+  path: Assets/Project/Resources/CleaningSelectRobotUI.prefab
+  artifactKey: Guid(e72cc3a8ac4d83a45b3e1b5aba176210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Resources/CleaningSelectRobotUI.prefab using Guid(e72cc3a8ac4d83a45b3e1b5aba176210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27b505e82bab07b579a0495f574f2a41') in 0.024483 seconds 
+  Import took 0.029671 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000309 seconds.
-  path: Assets/Project/Textures/ロボ/清掃特化ロボ.png
-  artifactKey: Guid(2a1835f2b0a74b04ebf3507afaeff635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/清掃特化ロボ.png using Guid(2a1835f2b0a74b04ebf3507afaeff635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddc3ff588bc5e4be93cb963937e41ee1') in 0.015133 seconds 
-  Import took 0.019522 seconds .
+  Time since last request: 0.000293 seconds.
+  path: Assets/Project/Resources/InvestigationSelectCharacterUI.prefab
+  artifactKey: Guid(4138f95cefb01914dab579fb33a05dd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Resources/InvestigationSelectCharacterUI.prefab using Guid(4138f95cefb01914dab579fb33a05dd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a009674f9310f39f6350a90a535601ee') in 0.010467 seconds 
+  Import took 0.015226 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000250 seconds.
-  path: Assets/Project/Textures/ロボ/完璧調査員ロボ.png
-  artifactKey: Guid(3eaca8b5f7761d04f9113c39150ccbb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/完璧調査員ロボ.png using Guid(3eaca8b5f7761d04f9113c39150ccbb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bab9f9f96254c7aec9ff57680d46e914') in 0.012337 seconds 
-  Import took 0.016754 seconds .
+  Time since last request: 0.000242 seconds.
+  path: Assets/Project/Resources/ProductionSelectRobotUI.prefab
+  artifactKey: Guid(ae220d8f8f573ee47989c2137098d188) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Resources/ProductionSelectRobotUI.prefab using Guid(ae220d8f8f573ee47989c2137098d188) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1197135e26e210debd3332af9006fadf') in 0.012142 seconds 
+  Import took 0.017738 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000253 seconds.
-  path: Assets/Project/Textures/ロボ/大容量バッテリーロボ.png
-  artifactKey: Guid(e31de1a9368dbdc4bbe5346248134a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Textures/ロボ/大容量バッテリーロボ.png using Guid(e31de1a9368dbdc4bbe5346248134a77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff1befd5c8e3c5d03258964fd8b8bb7c') in 0.013269 seconds 
-  Import took 0.017258 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.722631 seconds.
-  path: Assets/Project/Prefabs/Character.prefab
-  artifactKey: Guid(931f8c5affdc4354eaa48ba9713a651b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Prefabs/Character.prefab using Guid(931f8c5affdc4354eaa48ba9713a651b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a688bb40c7532e9e84bea4209d17e61') in 0.016899 seconds 
-  Import took 0.021846 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000323 seconds.
-  path: Assets/Project/Prefabs/WorldManager.prefab
-  artifactKey: Guid(d82e1a36ef8c8eb498112161dd5ba499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Prefabs/WorldManager.prefab using Guid(d82e1a36ef8c8eb498112161dd5ba499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1577b84ac91b5e6cbc4ccb8519b2df90') in 0.008459 seconds 
-  Import took 0.013190 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000307 seconds.
-  path: Assets/Project/Prefabs/Character.prefab
-  artifactKey: Guid(931f8c5affdc4354eaa48ba9713a651b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Prefabs/Character.prefab using Guid(931f8c5affdc4354eaa48ba9713a651b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a688bb40c7532e9e84bea4209d17e61') in 0.004804 seconds 
-  Import took 0.010998 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000311 seconds.
-  path: Assets/Project/Prefabs/NameValue.prefab
-  artifactKey: Guid(1521195fef85c4541b6f8fda87e0eb09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Prefabs/NameValue.prefab using Guid(1521195fef85c4541b6f8fda87e0eb09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4be85c77e98c2f0235f9e1e70567170') in 0.016203 seconds 
-  Import took 0.022234 seconds .
+  Time since last request: 3.257144 seconds.
+  path: Assets/Project/Resources/ロボ
+  artifactKey: Guid(cac7509dd36a7714197c3ed6926e0c5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Resources/ロボ using Guid(cac7509dd36a7714197c3ed6926e0c5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '264c6d695128d302700fce3b5ce27b21') in 0.039204 seconds 
+  Import took 0.043971 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

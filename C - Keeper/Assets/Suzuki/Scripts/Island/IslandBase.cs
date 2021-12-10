@@ -59,10 +59,11 @@ public class IslandBase : MonoBehaviour
     }
 
     /// <summary>
-    /// 島の除去率を計算する関数
+    /// 島の汚染度を計算する関数
     /// </summary>
-    /// <returns>汚染除去率</returns>
-    public int CalcRemoveRate()
+    /// <param name="isTutorial">チュートリアル用ならtrue</param>
+    /// <returns>除去率</returns>
+    public int CalcRemoveRate(bool isTutorial)
     {
         int robotEffectRate = 0;                                                                // ロボットの影響率
         removeRate = 0;                                                                         // 除去率
@@ -199,6 +200,10 @@ public class IslandBase : MonoBehaviour
         else
             removeRate = 5;
 
+        // チュートリアル用
+        if (isTutorial)
+            removeRate = 100;
+
         return removeRate;
     }
 
@@ -216,9 +221,10 @@ public class IslandBase : MonoBehaviour
     /// 調査開始関数
     /// </summary>
     /// <param name="time">時間</param>
-    public void StartInvestigate(float time)
+    /// <param name="callback">コールバック関数</param>
+    public void StartInvestigate(float time, Timer.CallBack callback)
     {
-        timer.GetComponent<Timer>().TimerStart(time, FinishInvestigate);
+        timer.GetComponent<Timer>().TimerStart(time, FinishInvestigate, callback);
         state = STATE_ISLAND.STATE_INVESTIGATING;
         timer.SetActive(true);
     }
@@ -239,6 +245,7 @@ public class IslandBase : MonoBehaviour
     /// 清掃開始関数
     /// </summary>
     /// <param name="time">時間</param>
+    /// <param name="callback">コールバック関数</param>
     public void StartClean(float time, Timer.CallBack callback)
     {
         timer.GetComponent<Timer>().TimerStart(time, FinishClean, callback);
@@ -253,7 +260,7 @@ public class IslandBase : MonoBehaviour
     private void FinishClean()
     {
         timer.SetActive(false);
-        CalcRemoveRate();
+        CalcRemoveRate(false);
         RemovePollution(removeRate);
         pollutionLevelText.gameObject.SetActive(true);
 
@@ -265,6 +272,7 @@ public class IslandBase : MonoBehaviour
     /// 生産開始関数
     /// </summary>
     /// <param name="time">時間</param>
+    /// <param name="callback">コールバック関数</param>
     public void StartProduction(float time, Timer.CallBack callback)
     {
         timer.GetComponent<Timer>().TimerStart(time, callback);
@@ -278,7 +286,7 @@ public class IslandBase : MonoBehaviour
     private void FinishProduction()
     {
         timer.SetActive(false);
-        CalcRemoveRate();
+        CalcRemoveRate(false);
         RemovePollution(removeRate);
         pollutionLevelText.gameObject.SetActive(true);
     }
