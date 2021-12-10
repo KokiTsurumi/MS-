@@ -34,13 +34,13 @@ public class InvestigationCanvas : SelectCanvasInterface
 
             if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Investigation)
             {
-                target.GetComponent<IslandBase>().StartInvestigate(2.0f);//ŒÅ’è
+                target.GetComponent<IslandBase>().StartInvestigate(2.0f,null);//ŒÅ’è
 
                 Destroy(this.gameObject);
             }
             else
             {
-                target.GetComponent<IslandBase>().StartInvestigate(time);
+                target.GetComponent<IslandBase>().StartInvestigate(time,null);
 
                 //ƒJƒƒ‰ˆÚ“®
                 StartCoroutine(ActionEnd());

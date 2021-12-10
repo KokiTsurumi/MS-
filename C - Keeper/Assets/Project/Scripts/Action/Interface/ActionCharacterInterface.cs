@@ -19,8 +19,8 @@ public class ActionCharacterInterface : CharacterData
 
     //継承元の関数を上書きすることでキャラ生成時のランダムパラメータの生成を防ぐ
     //CharacterDataを上書き
-    void Start(){}
-    void Update(){}
+    new void Start(){}
+    new void Update(){}
 
     public void SetData(CharacterData data)
     {

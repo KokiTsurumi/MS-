@@ -100,7 +100,7 @@ public class CleaningCanvas : MonoBehaviour
         RobotManager.Instance.selectedRobot = selectRobot.GetComponent<SelectRobotData>().GetOriginal();
 
         GameObject island = IslandManager.Instance.GetCurrentIsland();
-        int removeRate = island.GetComponent<IslandBase>().CalcRemoveRate();
+        int removeRate = island.GetComponent<IslandBase>().CalcRemoveRate(true);
 
         cleaningCanvas.SetActive(false);
         selectCanvas.SetActive(false);
