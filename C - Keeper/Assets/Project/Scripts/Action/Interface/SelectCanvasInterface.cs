@@ -4,45 +4,35 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// キャラクター選択　UI　インターフェース　クラス
+/// </summary>
 public class SelectCanvasInterface : MonoBehaviour
 {
-    [SerializeField]
-    GameObject charaSimpleDataUI;//キャラデータ簡易表示UI
+    [SerializeField] GameObject charaSimpleDataUI;//キャラデータ簡易表示UI
 
-    [SerializeField]
-    GameObject charaPrefab;
+    [SerializeField] GameObject charaPrefab;
 
-    [SerializeField]
-    GameObject charaListParent;
+    [SerializeField] GameObject charaListParent;
+
+    [SerializeField] protected GameObject ListUI;
+
+    [SerializeField] protected GameObject startButton;
+
+    [SerializeField] protected GameObject[] selectChara = new GameObject[2];
+
+    [SerializeField] GameObject select = null;
+
+    [SerializeField] protected SelectScrollbar listScrollbar;
+
+    [SerializeField] protected GameObject startAnimationCanvas;
+
+    [SerializeField] protected GameObject mainCanvas;
 
 
-    [SerializeField]
-    protected GameObject ListUI;
-
-    [SerializeField]
-    protected GameObject startButton;
 
     List<GameObject> CharaList;
-
-
-    [SerializeField]
-    protected GameObject[] selectChara = new GameObject[2];
-    
     int selectFrag;//0→一人目、1→二人目
-
-
-    [SerializeField]
-    GameObject select = null;
-
-    [SerializeField]
-    protected SelectScrollbar listScrollbar;
-
-    [SerializeField]
-    protected GameObject startAnimationCanvas;
-
-    [SerializeField]
-    protected GameObject mainCanvas;
-
     protected CameraController cameraController;
 
     virtual public void Initialize()
@@ -50,7 +40,6 @@ public class SelectCanvasInterface : MonoBehaviour
         cameraController = Camera.main.GetComponent<CameraController>();
 
         CharaList = new List<GameObject>();
-        //CharaList = CharacterManager.Instance.characterList;
 
         CreateCharaList();
 
@@ -72,29 +61,13 @@ public class SelectCanvasInterface : MonoBehaviour
     }
 
 
-
     public void Selected_1(){ selectFrag = 0; }
-
     public void Selected_2(){ selectFrag = 1; }
-
 
     virtual public void CharacterDicision()
     {
         if (select == null) return;
         int frag = (selectFrag == 0) ? 1 : 0;
-        //if (selectChara[frag].GetComponent<SelectCharacterDataInterface>().GetSelectGameObject() != null)
-        //{
-        //    if(select != null)
-        //    {
-        //        if(selectChara[frag].GetComponent<SelectCharacterDataInterface>().GetSelectGameObject()
-        //            ==
-        //            select.GetComponent<SelectCharacterDataInterface>().GetSelectGameObject())
-        //        {
-        //            Debug.Log("キャラ重複");
-        //            return;
-        //        }
-        //    }
-        //}
         if (selectChara[frag].GetComponent<SelectCharacterDataInterface>().GetSelectGameObject() != null 
             &&
             select == selectChara[frag].GetComponent<SelectCharacterDataInterface>().GetSelectGameObject())
@@ -102,12 +75,6 @@ public class SelectCanvasInterface : MonoBehaviour
             //重複
             return;
         }
-
-
-        //else if(selectChara[selectFrag].GetComponent<SelectCharacterDataInterface>().GetSelectGameObject() != null)
-        //{
-
-        //}
 
         SetCharactarData();
 
@@ -128,7 +95,6 @@ public class SelectCanvasInterface : MonoBehaviour
         //データセット
         setChara.GetComponent<SelectCharacterDataInterface>().SetData(ref select);
 
-
         SimpleCharaDataDisplay();
     }
 
@@ -142,13 +108,6 @@ public class SelectCanvasInterface : MonoBehaviour
         SelectCharacterDataInterface data = selectChara[selectFrag].GetComponent<SelectCharacterDataInterface>();
         if (data.GetSelectGameObject() == null) return;
 
-        //string name = data.data.GetName;
-        //int r = data.data.GetResearch;
-        //int p = data.data.GetProduction;
-        //int m = data.data.GetManagement;
-        //int inv = data.data.GetInvestigation;
-        //Sprite sprite = data.data.GetSprite;
-
         charaSimpleDataUI.GetComponent<ActionCharacterInterface>().SetData(data.data);
     }
 
@@ -158,30 +117,14 @@ public class SelectCanvasInterface : MonoBehaviour
 
     public void CreateCharaList()
     {
-        //CharaList = CharacterManager.Instance.characterList;
-
         //リスト生成
         for (int i = 0; i < CharacterManager.Instance.characterList.Count; i++)
         {
             GameObject obj = Instantiate(charaPrefab);
-            //obj.name = obj.name.Replace("(Clone)", "");
-            //obj.name += " " + i;
-
-            //CharacterData data = CharacterManager.Instance.characterList[i].GetComponent<CharacterData>();
 
             obj.transform.SetParent(charaListParent.transform,false);
             obj.gameObject.name = "CharaData[" + CharacterManager.Instance.characterList[i].GetComponent<CharacterData>().name + "]";
-
-
-            //int r = CharacterManager.Instance.characterList[i].GetComponent<CharacterData>().research;
-            //int p = CharacterManager.Instance.characterList[i].GetComponent<CharacterData>().production;
-            //int m = CharacterManager.Instance.characterList[i].GetComponent<CharacterData>().management;
-            //int inv = CharacterManager.Instance.characterList[i].GetComponent<CharacterData>().investigation;
-            //string name = CharacterManager.Instance.characterList[i].GetComponent<CharacterData>().name;
-            //Sprite sprite = CharacterManager.Instance.characterList[i].GetComponent<CharacterData>().characterSprite;
-
             obj.GetComponent<ActionCharacterInterface>().Create(CharacterManager.Instance.characterList[i]);
-            //obj.GetComponent<ActionCharacterInterface>().Create();
 
             CharaList.Add(obj);
         }

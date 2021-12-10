@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// ロボット選択　決定ロボット　UI　インターフェース　クラス　
+/// </summary>
 public class SelectRobotData : MonoBehaviour
 {
     protected GameObject selectGameObject = null;
-
     protected GameObject beforeSelectGameObject = null;
 
     ActionRobotInterface data;

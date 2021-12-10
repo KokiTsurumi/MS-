@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// 　チュートリアル　シングルトン　クラス
+/// </summary>
 public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 {
 
-    [SerializeField]
-    bool tutorialStart = false;
-
+    [SerializeField] bool tutorialStart = false;
 
     [SerializeField] GameObject tutorialCanvasPrefab;
     [SerializeField] GameObject recruitCanvasPrefab;
@@ -17,9 +18,8 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     [SerializeField] GameObject productionCanvasPrefab;
     [SerializeField] GameObject cleaningCanvasPrefab;
 
+    [SerializeField] GameObject informationPopPrefab;
 
-    [SerializeField]
-    GameObject informationPopPrefab;
 
     GameObject navigatorText;
     GameObject tutorialCanvas;
@@ -66,7 +66,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     StepList stepList;
 
 
-
     delegate void UpdateFunc();
     UpdateFunc updateFunc;
 
@@ -74,23 +73,9 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void Start()
     {
-
         //なぜか違う文字がちらつくバグも修正する
-        //チュートリアル開始
-        //StartCoroutine(CoroutineTimer(0.5f,TutorialStart));
-
-
-
 
         updateFunc = TutorialUpdateNull;
-
-
-        //文章を表示
-        //関数を実行
-        //それを一つの変数に入れたい
-        //数字をインクリメントしてステップ進行
-
-
     }
 
     void Update()
@@ -101,21 +86,18 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
             tutorialStart = false;
         }
 
-
         updateFunc();
     }
 
 
     
-
+    //DummyFunction
     void TutorialUpdateNull()
-    {
-      
+    {   
     }
 
     void TutorialStart()
     {
-        //tutorialCanvas.SetActive(true);
         GameObject canvas = (GameObject)Instantiate(tutorialCanvasPrefab);
         canvas.transform.SetParent(this.transform);
 
@@ -130,7 +112,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.AddListFunc(InvestigationZoomIn);
         stepList.AddListFunc(InvestigationStart);
         stepList.AddListFunc(InvestigationEnd);
-
         stepList.AddListText("調査　完了　次　島　住人　声　聞いてみる");
         stepList.AddListFunc(InformationStart);
         stepList.AddListFunc(Information);
@@ -163,9 +144,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
         //最初に選択する人材を生成
         //CharacterManager.Instance.CreateCandidateCharacter();
-
-
-        
     }
 
     void RecruitStart()
@@ -191,8 +169,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         tutorialCanvas.SetActive(false);
         tutorialState = TutorialState.Investigation;
         Camera.main.GetComponent<CameraController>().ZoomIn();
-
-        //stepList.Next();
     }
 
     void InvestigationStart()

@@ -3,61 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// キャラクター選択　UI　インターフェース　クラス
+/// </summary>
 public class ActionCharacterInterface : CharacterData
 {
     SelectCanvasInterface canvas;
 
-    [SerializeField]
-    protected Text nameText, rRank, pRank, mRank, iRank;
-    [SerializeField]
-    Image charaImage;
+    [SerializeField] protected Text nameText, rRank, pRank, mRank, iRank;
+    [SerializeField] Image charaImage;
 
-    [System.NonSerialized]
-    public GameObject originalGameObject;
-
-    //string charaName;
-    //int research;//研究
-    //int production;//生産
-    //int management;//管理
-    //int investigation;//調査
+    [System.NonSerialized] public GameObject originalGameObject;
 
     public bool isSelected { get; set; } = false;
 
-    //[System.NonSerialized]
-    //public string GetName => charaName;
-    //public int GetResearch => research;
-    //public int GetProduction => production;
-    //public int GetManagement => management;
-    //public int GetInvestigation => investigation;
-    //public Sprite GetSprite => charaImage.sprite;
-
-   
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
-    //public void SetData(string n, int r, int p, int m, int inv,GameObject original,Sprite sprite)
-    //{
-    //    research = r;
-    //    production = p;
-    //    management = m;
-    //    investigation = inv;
-    //    charaName = n;
-
-    //    rRank.text = CharacterManager.Instance.RankTransfer(r);
-    //    pRank.text = CharacterManager.Instance.RankTransfer(p);
-    //    mRank.text = CharacterManager.Instance.RankTransfer(m);
-    //    iRank.text = CharacterManager.Instance.RankTransfer(inv);
-    //    nameText.text = charaName;
-    //    charaImage.sprite = sprite;
-    //    originalGameObject = original;
-    //}
+    //継承元の関数を上書きすることでキャラ生成時のランダムパラメータの生成を防ぐ
+    //CharacterDataを上書き
+    void Start(){}
+    void Update(){}
 
     public void SetData(CharacterData data)
     {
@@ -74,14 +37,12 @@ public class ActionCharacterInterface : CharacterData
             pRank.text = CharacterManager.Instance.RankTransfer(production);
             mRank.text = CharacterManager.Instance.RankTransfer(management);
             iRank.text = CharacterManager.Instance.RankTransfer(investigation);
-            //profileText.text = data.introduction;
             nameText.text = data.name;
         }
 
         if (charaImage != null)
         {
             charaImage.sprite = data.characterSprite;
-
         }
 
     }
@@ -115,11 +76,4 @@ public class ActionCharacterInterface : CharacterData
     {
         canvas.CharaDataBack();
     }
-
-    //public void Create() 
-    //{
-        
-    //}
-
-
 }

@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// キャラクター選択　決定キャラクター　UI　インターフェース
+/// </summary>
 public class SelectCharacterDataInterface : MonoBehaviour
 {
     protected GameObject selectGameObject = null;
     protected GameObject beforeSelectGameObject = null;
 
-    [System.NonSerialized]
-    public ActionCharacterInterface data;
+    [System.NonSerialized] public ActionCharacterInterface data;
 
 
     virtual public void SetData(ref GameObject obj)

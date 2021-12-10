@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// マウス入力制御　シングルトン　クラス
+/// <para>・MouseInput方式、Raycast方式、EventSystem方式</para>
+/// <oara>・Click、・DoubleClick、・Enter、・Exit</oara>
+/// </summary>
 public class MouseManager : SingletonMonoBehaviour<MouseManager>
 {
     [SerializeField] GameObject cursorOnGameObject;
@@ -144,7 +149,6 @@ public class MouseManager : SingletonMonoBehaviour<MouseManager>
 
 
         RaycastHit2D hit = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction,15.0f);
-        //RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
         if (hit.collider != null)
         {

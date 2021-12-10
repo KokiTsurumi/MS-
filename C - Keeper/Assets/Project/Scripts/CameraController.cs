@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// カメラコントロール　クラス
+/// <para>・ZoomIn、Out、カメラ移動、アクションUI管理　等</para>
+/// </summary>
 public class CameraController : MonoBehaviour
 {
     Animator actionCanvasAnimator;
 
-    [SerializeField]
-    GameObject centerIsland;
+    [SerializeField] GameObject centerIsland;
 
-    [SerializeField]
-    public GameObject backButton;
+    [SerializeField] public GameObject backButton;
 
     float zoomSpeed = 1.0f;
     float zoomTime = 0.5f;
@@ -32,7 +34,6 @@ public class CameraController : MonoBehaviour
     Vector3 endPos;
 
     
-
     enum ZoomState
     {
         DEFAULT,
@@ -50,22 +51,15 @@ public class CameraController : MonoBehaviour
         CHOICE,
     }
 
-    [SerializeField]
-    ZoomState zoomState = ZoomState.DEFAULT;
+    [SerializeField] ZoomState zoomState = ZoomState.DEFAULT;
+    [SerializeField] TransState transState = TransState.CENTER;
 
-    [SerializeField]
-    TransState transState = TransState.CENTER;
 
- 
+    [SerializeField]  bool action = false;
 
-    [SerializeField]
-    bool action = false;
+    [SerializeField] GameObject actionGameObject;
 
-    [SerializeField]
-    GameObject actionGameObject;
-
-    [SerializeField]
-    Canvas gameMaimCanvas;
+    [SerializeField] Canvas gameMaimCanvas;
 
     void Start()
     {
@@ -120,9 +114,6 @@ public class CameraController : MonoBehaviour
 
     void UpdateZoomIn()
     {
-        //拠点島をクリックしたとき
-        //各島を選択して、移動した後
-
         if (zoomState != ZoomState.IN) return;
         if (transState == TransState.CHOICE)
         {
@@ -156,9 +147,6 @@ public class CameraController : MonoBehaviour
 
     void UpdateZoomOut()
     {
-        //BackGroundを押したとき
-        //各島で作業完了後、完了UI表示後
-
         if (zoomState != ZoomState.OUT) return;
 
         if (actionCanvasAnimator.GetBool("popOut"))
@@ -186,7 +174,6 @@ public class CameraController : MonoBehaviour
 
     void UpdateTranslation()
     {
-        //各島押されたとき
         if (transState != TransState.TRANSLATE_ISLAND) return;
 
 
@@ -289,7 +276,7 @@ public class CameraController : MonoBehaviour
 
 
             
-            transState = TransState.TRANSLATE_ISLAND;
+        transState = TransState.TRANSLATE_ISLAND;
 
         IslandManager.Instance.SetCurrentIsland(island);
         Vector3 tarPos = IslandManager.Instance.GetCurrentIsland().transform.position;
@@ -301,7 +288,6 @@ public class CameraController : MonoBehaviour
 
     public void OnClickCenterIsland()
     {
-        //transState = TransState.TRANSLATE_CENTER;
         if (!MouseManager.Instance.OnDoubleClickGameObject()) return;
         if (MouseManager.Instance.GetCurrentSelectedGameObject() != null) return;
         IslandManager.Instance.SetCurrentIsland(MouseManager.Instance.GetCursorOnObject());

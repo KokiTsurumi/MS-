@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-/*
- *　イージング関数群　クラス
- *　
- *　t：経過時間、totaltime：変化時間、min：開始値、max：目標値
- *　変化率の分かり易いグラフ↓
- *　https://easings.net/ja
- */
-
+/// <summary>
+/// イージング関数群　クラス
+/// <para>　t：経過時間、totaltime：変化時間、min：開始値、max：目標値</para>
+/// 
+/// 変化率の分かり易いグラフ
+/// https://easings.net/ja
+/// </summary>
 public class Easing : MonoBehaviour
 {
     public static float QuadIn(float t, float totaltime, float min, float max)

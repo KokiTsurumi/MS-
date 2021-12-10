@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// ロボット選択　UI　インターフェース　クラス
+/// </summary>
 public class ActionRobotInterface : MonoBehaviour
 {
-    [SerializeField]
-    Text nameText, cRank, bRank, skillText, skillName;
+    [SerializeField] Text nameText, cRank, bRank, skillText, skillName;
 
     CleaningCanvas canvas;
 
