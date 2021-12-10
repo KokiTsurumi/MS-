@@ -120,6 +120,21 @@ public class RobotBase : MonoBehaviour
         name = name1 + name2;
     }
 
+    /// <summary>
+    /// ロボットの画像を設定する関数
+    /// </summary>
+    public void SetCharacterSprite()
+    {
+        string directoryPath = "ロボ";  // ロボット画像の入ったパスを指定
+        Sprite[] spriteList;            // 取得したロボット画像を保持するリスト
+
+        spriteList = Resources.LoadAll<Sprite>(directoryPath);   // ロボット画像を全て取得
+
+        // キャラクター画像をランダムで決定
+        int index = Random.Range(0, spriteList.Length);
+        robotSprite = spriteList[index];
+    }
+
 
 
     // Start is called before the first frame update

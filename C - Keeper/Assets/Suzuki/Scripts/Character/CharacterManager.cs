@@ -184,6 +184,9 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
         candidateList.Remove(character1);
         candidateList.Remove(character2);
 
+        character1.transform.parent = list.transform;
+        character2.transform.parent = list.transform;
+
         characterList.Add(character1);  // 1人目
         characterList.Add(character2);  // 2人目
 
