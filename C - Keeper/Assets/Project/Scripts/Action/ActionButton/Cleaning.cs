@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 清掃ボタン　クラス
+/// </summary>
 public class Cleaning : ActionButtonInterface
 {
-    [SerializeField]
-    GameObject cleaningUI;
-
+    [SerializeField] GameObject cleaningUI;
 
     override public void ActionStart()
     {
@@ -20,7 +21,6 @@ public class Cleaning : ActionButtonInterface
         cameraController.backButton.SetActive(true);
         canvas = (GameObject)Instantiate(cleaningUI);
         canvas.transform.GetComponent<CleaningCanvas>().Initialize();
-
     }
 
     public override void ActionEnd()
@@ -29,7 +29,6 @@ public class Cleaning : ActionButtonInterface
 
         //カメラを拠点島に戻す
         cameraController.TranslateCenterIsland();
-
 
         Destroy(canvas);
     }

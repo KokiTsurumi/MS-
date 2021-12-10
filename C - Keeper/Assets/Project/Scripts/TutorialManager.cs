@@ -12,14 +12,22 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
 
     [SerializeField] GameObject tutorialCanvasPrefab;
-    [SerializeField] GameObject recruitCanvas;
-    [SerializeField] GameObject investigationCanvas;
-    [SerializeField] GameObject productionCanvas;
-    [SerializeField] GameObject cleaningCanvas;
+    [SerializeField] GameObject recruitCanvasPrefab;
+    [SerializeField] GameObject investigationCanvasPrefab;
+    [SerializeField] GameObject productionCanvasPrefab;
+    [SerializeField] GameObject cleaningCanvasPrefab;
+
+
+    [SerializeField]
+    GameObject informationPopPrefab;
 
     GameObject navigatorText;
     GameObject tutorialCanvas;
-
+    GameObject recruitCanvas;
+    GameObject investigationCanvas;
+    GameObject productionCanvas;
+    GameObject cleaningCanvas;
+    GameObject informationPop;
 
     public enum TutorialState
     {
@@ -28,9 +36,17 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         /// </summary>
         No,
         /// <summary>
+        /// 人材選択
+        /// </summary>
+        Recruit,
+        /// <summary>
         /// 調査中
         /// </summary>
         Investigation,
+        /// <summary>
+        /// 住人の声を聴く
+        /// </summary>
+        Information,
         /// <summary>
         /// 生産中
         /// </summary>
@@ -38,7 +54,11 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         /// <summary>
         /// 清掃中
         /// </summary>
-        Cleanning
+        Cleanning,
+        /// <summary>
+        /// ランクアップ後の人材選択   
+        /// </summary>
+        RankUpRecruit,
     }
     public TutorialState tutorialState = TutorialState.No;
 
@@ -69,7 +89,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         //関数を実行
         //それを一つの変数に入れたい
         //数字をインクリメントしてステップ進行
-
 
 
     }
@@ -111,16 +130,24 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.AddListFunc(InvestigationZoomIn);
         stepList.AddListFunc(InvestigationStart);
         stepList.AddListFunc(InvestigationEnd);
-        stepList.AddListText("調査完了です\n次は生産を行いましょうw");
+
+        stepList.AddListText("調査　完了　次　島　住人　声　聞いてみる");
+        stepList.AddListFunc(InformationStart);
+        stepList.AddListFunc(Information);
+        stepList.AddListFunc(InformationEnd);
+        stepList.AddListText("次は生産を行いましょうw");
         stepList.AddListFunc(ProductionPopOut);
         stepList.AddListFunc(ProductionStart);
         stepList.AddListFunc(ProductionEnd);
         stepList.AddListText("清掃を行います");
         stepList.AddListFunc(CleaningPopOut);
         stepList.AddListFunc(CleaningStart);
+        stepList.AddListFunc(CleaningEnd);
         stepList.AddListFunc(RankUp);
-        stepList.AddListText("知名度ランク上がったよ");
-        
+        stepList.AddListText("知名度ランク上がったよ\nｲｪｰｲ");
+        stepList.AddListText("さらに人材選択");
+        stepList.AddListFunc(RankUpRecruitStart);
+        stepList.AddListFunc(RankUpRecruitEnd);
         
 
         //EventTriggerセット
@@ -135,16 +162,21 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.Step();
 
         //最初に選択する人材を生成
-        CharacterManager.Instance.CreateCandidateCharacter();
+        //CharacterManager.Instance.CreateCandidateCharacter();
+
+
+        
     }
 
     void RecruitStart()
     {
         tutorialCanvas.SetActive(false);
 
+        CharacterManager.Instance.CreateCandidateCharacter();
+        tutorialState = TutorialState.Recruit;
 
-        recruitCanvas.GetComponent<RecruitCanvas>().DisplayRecruitCharacterList();
-        recruitCanvas.SetActive(true);
+        recruitCanvas = Instantiate(recruitCanvasPrefab);
+        recruitCanvas.GetComponent<RecruitCanvas>();
     }
 
     void RecruitEnd()
@@ -165,8 +197,8 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void InvestigationStart()
     {
-        Instantiate(investigationCanvas).GetComponent<InvestigationCanvas>().Initialize();
-
+        investigationCanvas = Instantiate(investigationCanvasPrefab);
+        investigationCanvas.GetComponent<InvestigationCanvas>().Initialize();
         updateFunc = InvestigationUpdate;
     }
 
@@ -193,6 +225,28 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     }
 
+    void InformationStart()
+    {
+        tutorialCanvas.SetActive(false);
+        tutorialState = TutorialState.Information;
+        Camera.main.GetComponent<CameraController>().ZoomIn();
+    }
+
+    void Information()
+    {
+        //IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.SetActive(true);
+
+        informationPop = Instantiate(informationPopPrefab);
+        
+    }
+
+    void InformationEnd()
+    {
+        //IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.SetActive(true);
+        tutorialCanvas.SetActive(true);
+        NextStep();
+    }
+
     void ProductionPopOut()
     {
         tutorialCanvas.SetActive(false);
@@ -202,8 +256,8 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void ProductionStart()
     {
-
-        Instantiate(productionCanvas).GetComponent<ProductionCanvas>().Initialize();
+        productionCanvas = Instantiate(productionCanvasPrefab);
+        productionCanvas.GetComponent<ProductionCanvas>().Initialize();
     }
 
     void ProductionEnd()
@@ -216,6 +270,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void CleaningPopOut()
     {
+        tutorialState = TutorialState.Cleanning;
         tutorialCanvas.SetActive(false);
         tutorialState = TutorialState.Cleanning;
         Camera.main.GetComponent<CameraController>().ZoomIn();
@@ -223,7 +278,8 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void CleaningStart()
     {
-        Instantiate(cleaningCanvas).GetComponent<CleaningCanvas>().Initialize();
+        cleaningCanvas = Instantiate(cleaningCanvasPrefab);
+        cleaningCanvas.GetComponent<CleaningCanvas>().Initialize();
     }
     
     void CleaningEnd()
@@ -235,13 +291,39 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void RankUp()
     {
+        //知名度ランク１Up
+        WorldManager.Instance.IncreasePopularityRank();
         Name_Value.Instance.PlusCleaningCount();
         Name_Value.Instance.PlusPlacementCountt();
         Name_Value.Instance.PlusProductionCount();
         Name_Value.Instance.PlusResearchCount();
+        Name_Value.Instance.RankConfirm();
 
+        Camera.main.GetComponent<CameraController>().ZoomOut();
         NextStep();
+        
     }
+
+    void RankUpRecruitStart()
+    {
+        tutorialCanvas.SetActive(false);
+
+        CharacterManager.Instance.CreateCandidateCharacter();
+        tutorialState = TutorialState.RankUpRecruit;
+
+        recruitCanvas = Instantiate(recruitCanvasPrefab);
+        recruitCanvas.GetComponent<RecruitCanvas>();
+    }
+
+    void RankUpRecruitEnd()
+    {
+        tutorialCanvas.SetActive(true);
+        stepList.Next();
+        stepList.Step();
+    }
+
+
+
 
     IEnumerator CoroutineTimer(float time,Coroutine coroutine)
     {

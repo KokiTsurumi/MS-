@@ -4,38 +4,32 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// 清掃　UI　クラス
+/// </summary>
 public class CleaningCanvas : MonoBehaviour
 {
-    [SerializeField]
-    GameObject robotSimpleDataUI;//キャラデータ簡易表示UI
+    [SerializeField]GameObject robotSimpleDataUI;//キャラデータ簡易表示UI
 
-    [SerializeField]
-    GameObject robotPrefab;
+    [SerializeField] GameObject robotPrefab;
 
-    [SerializeField]
-    GameObject robotListParent;
+    [SerializeField] GameObject robotListParent;
 
+    [SerializeField] GameObject ListUI;
 
-    [SerializeField]
-    protected GameObject ListUI;
+    [SerializeField] GameObject startButton;
 
-    [SerializeField]
-    protected GameObject startButton;
+    [SerializeField] List<GameObject> RobotList;
 
-    [SerializeField]
-    List<GameObject> RobotList;
+    [SerializeField] GameObject selectRobot;
 
+    [SerializeField] SelectScrollbar listScrollbar;
 
-    [SerializeField]
-    GameObject selectRobot;
+    [SerializeField] GameObject cleaningCanvas;
+    [SerializeField] GameObject selectCanvas;
 
-
-    [SerializeField]
 
     GameObject select = null;
-
-    [SerializeField]
-    protected SelectScrollbar listScrollbar;
 
     public void Initialize()
     {
@@ -56,8 +50,6 @@ public class CleaningCanvas : MonoBehaviour
 
         listScrollbar.ScrollbarPositionReset();
     }
-
-
 
 
     public void RobotDicision()
@@ -110,13 +102,14 @@ public class CleaningCanvas : MonoBehaviour
         GameObject island = IslandManager.Instance.GetCurrentIsland();
         int removeRate = island.GetComponent<IslandBase>().CalcRemoveRate();
 
+        cleaningCanvas.SetActive(false);
+        selectCanvas.SetActive(false);
 
         if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Cleanning)
         {
-            island.GetComponent<IslandBase>().StartClean(3.0f,null);
-            //this.gameObject.SetActive(false);
-            Destroy(this.gameObject);
-            TutorialManager.Instance.NextStep();
+
+            island.GetComponent<IslandBase>().StartClean(3.0f,TutorialCleaningEnd);
+           
         }
         else
         {
@@ -174,6 +167,21 @@ public class CleaningCanvas : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         //base.StartButton();
+
+    }
+
+    public void TutorialCleaningEnd()
+    {
+        Debug.Log("cleaning end ");
+        StartCoroutine(CleaningEnd());
+        
+    }
+
+    IEnumerator CleaningEnd()
+    {
+        yield return new WaitForSeconds(1.0f);
+        TutorialManager.Instance.NextStep();
+        Destroy(this.gameObject);
 
     }
 }

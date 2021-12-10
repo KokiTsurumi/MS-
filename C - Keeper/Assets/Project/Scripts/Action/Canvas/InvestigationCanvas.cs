@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// 調査　UI　クラス
+/// </summary>
 public class InvestigationCanvas : SelectCanvasInterface
 {
     bool endToggle = false;
@@ -18,27 +21,23 @@ public class InvestigationCanvas : SelectCanvasInterface
             endToggle = true;
             startAnimationCanvas.SetActive(false);
 
-            //島のスクリプト内にある調査済みのboolをture（汚染度表示に利用）
             GameObject target = IslandManager.Instance.GetCurrentIsland();
 
-            //キャラクターセット
             CharacterManager.Instance.characterList[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
-            CharacterManager.Instance.characterList[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;            //タッグ計算処理
+            CharacterManager.Instance.characterList[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
+            CharacterManager.Instance.UseCharacter();
+
             float time = CharacterManager.Instance.CalcInvestigationTime();
 
-            CharacterManager.Instance.UseCharacter();
 
             if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Investigation)
             {
-                //タイマー計算処理
                 target.GetComponent<IslandBase>().StartInvestigate(2.0f);//固定
-                Destroy(this.gameObject);
 
-                //TutorialManager.Instance.NextStep();
+                Destroy(this.gameObject);
             }
             else
             {
-                //タイマー計算処理
                 target.GetComponent<IslandBase>().StartInvestigate(time);
 
                 //カメラ移動
@@ -51,26 +50,18 @@ public class InvestigationCanvas : SelectCanvasInterface
     public override void StartButton()
     {
         
-
-        //キャンバス非表示
-        //cameraController.GetActionCanvas().SetActive(false);
         mainCanvas.SetActive(false);
         cameraController.backButton.SetActive(false);
 
         //調査開始UI表示
         startAnimationCanvas.SetActive(true);
-
-
-        
         
     }
 
     IEnumerator ActionEnd()
     {
-        //数秒後にカメラを戻す
         yield return new WaitForSeconds(1.0f);
 
-        //base.StartButton();
         cameraController.ActionEnd();
     }
 }

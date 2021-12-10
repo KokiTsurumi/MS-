@@ -14,7 +14,15 @@ public class SelectRobotData : MonoBehaviour
 
     virtual public void SetData(ref GameObject obj)
     {
-        data = obj.GetComponent<ActionRobotInterface>();
+        if (obj == null) return;
+        if (obj.GetComponent<ActionRobotInterface>() != null)
+            data = obj.GetComponent<ActionRobotInterface>();
+        else
+        {
+            Debug.Log("Error:オブジェクト未選択");
+            return;
+        }
+
 
         //前回選択してたキャラを未選択にする
         if (beforeSelectGameObject != null)

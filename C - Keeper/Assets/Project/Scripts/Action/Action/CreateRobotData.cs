@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 生産フロー　ロボットパラメータUI　クラス
+/// </summary>
 public class CreateRobotData : MonoBehaviour
 {
-    [SerializeField]
-    Text nameText;
+    [SerializeField] Text nameText;
 
-    [SerializeField]
-    Text seisouRankText;
+    [SerializeField] Text seisouRankText;
 
-    [SerializeField]
-    Text seinouRankText;
+    [SerializeField] Text seinouRankText;
 
-    [SerializeField]
-    Text skillText;
+    [SerializeField] Text skillText;
 
-    [SerializeField]
-    Image robotImage;
+    [SerializeField] Image robotImage;
 
     public void SetData(string name,int seisou,int seinou,RobotBase.SPECIALSKILL_LIST skill,Sprite sprite)
     {

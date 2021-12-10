@@ -15,11 +15,13 @@ public class SelectCharacterDataInterface : MonoBehaviour
 
     virtual public void SetData(ref GameObject obj)
     {
-        if(obj.GetComponent<ActionCharacterInterface>())
+        if (obj == null) return;
+        if(obj.GetComponent<ActionCharacterInterface>() != null)
             data = obj.GetComponent<ActionCharacterInterface>();
         else
         {
             Debug.Log("Error:オブジェクト未選択");
+            return;
         }
 
         //前回選択してたキャラを未選択にする
