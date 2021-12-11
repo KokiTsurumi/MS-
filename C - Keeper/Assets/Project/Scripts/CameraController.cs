@@ -88,27 +88,39 @@ public class CameraController : MonoBehaviour
 
         //カメラが俯瞰の時、Timer、Icon、海開放アニメーションを突っ込む
         //タイマー非表示
-        //if (transState == TransState.CENTER && zoomState == ZoomState.DEFAULT)
-        //{
-        //    GameObject island = IslandManager.Instance.GetCurrentIsland();
+        if (zoomState == ZoomState.IN)
+        {
+            //GameObject island = IslandManager.Instance.GetCurrentIsland();
+            centerIsland.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = false;
 
-        //    //if(island.GetComponent<IslandBase>().state == IslandBase.STATE_ISLAND.STATE_INVESTIGATED)
+            foreach (GameObject obj in IslandManager.Instance.islandList)
+            {
+                obj.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
+                obj.GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = true;
+            }
+        }
+        else if (zoomState == ZoomState.OUT)
+        {
+            centerIsland.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
 
-        //    //タイマー表示
-        //    //for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
-        //    //{
-        //    //    GameObject island = IslandManager.Instance.islandList[i];
-        //    //    island.transform.GetChild(0).GetComponent<Canvas>().enabled = true;
-        //    //}
-        //}
-        //else
-        //{
-        //    for (int i = 0; i < IslandManager.Instance.islandList.Count; i++)
-        //    {
-        //        GameObject island = IslandManager.Instance.islandList[i];
-        //        island.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
-        //    }
-        //}
+            foreach (GameObject obj in IslandManager.Instance.islandList)
+            {
+                obj.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
+                obj.GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = true;
+            }
+        }
+        else if(zoomState == ZoomState.DEFAULT)
+        {
+            //海清掃アニメーション
+            foreach (GameObject obj in IslandManager.Instance.islandList)
+            {
+                if(obj.GetComponent<IslandBase>().GetPollutionLevel() <= 0)
+                {
+                    if(obj.transform.GetChild(0).GetComponent<SeaDizolve>()!= null)
+                        obj.transform.GetChild(0).GetComponent<SeaDizolve>().start = true;
+                }
+            }
+        }
 
     }
 
@@ -236,7 +248,11 @@ public class CameraController : MonoBehaviour
                 Debug.Log(island.name + "まだ調査が完了していません");
                 return;
             }
-
+            else if (actionGameObject.name == "Information")
+            {
+                Debug.Log(island.name + "は調査をしていないため、情報がありません");
+                return;
+            }
         }
         //調査中
         else if (state <= IslandBase.STATE_ISLAND.STATE_INVESTIGATING)
@@ -251,7 +267,13 @@ public class CameraController : MonoBehaviour
                 Debug.Log(island.name + "は調査中です");
                 return;
             }
-        }//調査済
+            else if(actionGameObject.name == "Information")
+            {
+                Debug.Log(island.name + "は調査をしていないため、情報がありません");
+                return;
+            }
+        }
+        //調査済
         else if(state < IslandBase.STATE_ISLAND.STATE_CLEANING)
         {
             if(actionGameObject.name == "Investigation")

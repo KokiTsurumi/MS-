@@ -32,11 +32,11 @@ public class Pollution_Degree : MonoBehaviour
     /*=====================Debug=======================*/
     public void Method()
     {
-        Debug.Log("現在値：" + pollutionSlider.value);
+        //Debug.Log("現在値：" + pollutionSlider.value);
 
         if (pollutionSlider.value >= 100)
         {
-            Debug.Log("浄化されました。");
+            //Debug.Log("浄化されました。");
         }
 
     }

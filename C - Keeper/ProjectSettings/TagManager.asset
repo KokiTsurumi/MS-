@@ -51,3 +51,6 @@ TagManager:
   - name: Island
     uniqueID: 937352405
     locked: 0
+  - name: Mask
+    uniqueID: 1668864525
+    locked: 0

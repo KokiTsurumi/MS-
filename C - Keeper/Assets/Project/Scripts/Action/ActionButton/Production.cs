@@ -23,8 +23,8 @@ public class Production : ActionButtonInterface
     {
         cameraController.backButton.SetActive(false);
 
-        Destroy(canvas);
-        cameraController.ActionButtonRepop();
+        //Destroy(canvas);
+        //cameraController.ActionButtonRepop();
     }
 
 }

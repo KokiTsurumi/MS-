@@ -21,7 +21,7 @@ public class RecruitSelectCanvas : MonoBehaviour
 
     int dispListNumber = 0;
 
-    List<GameObject> recruitList;
+    List<GameObject> recruitList = new List<GameObject>();
 
     public GameObject GetDisplayCharacter => recruitList[dispListNumber];
 
@@ -29,10 +29,8 @@ public class RecruitSelectCanvas : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Recruit Select Canvas Start");
 
 
-        Debug.Log(CharacterManager.Instance.candidateList.Count);
         for (int i = 0; i < CharacterManager.Instance.candidateList.Count; i++)
         {
             GameObject recruitChara = (GameObject)Instantiate(recruitCharacterPrefab);

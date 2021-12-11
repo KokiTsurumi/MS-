@@ -1153,7 +1153,6 @@ MonoBehaviour:
   recruitCharacterPrefab: {fileID: 1140392178638372115, guid: 500771b4050960d4c91d93a1878e244f, type: 3}
   charactersParent: {fileID: 4742258395300693936}
   displayCharacter: {fileID: 6617322089726368666}
-  recruitList: []
   mainCanvas: {fileID: 7878296335690030154}
   button: {fileID: 1438636288351906462}
 --- !u!1 &4742258397044194742
@@ -1872,7 +1871,6 @@ MonoBehaviour:
   iRank: {fileID: 6617322089307051499}
   profileText: {fileID: 6617322089017242250}
   charaImage: {fileID: 6617322089859339160}
-  original: {fileID: 0}
 --- !u!1 &6617322089737265843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,7 +2652,6 @@ MonoBehaviour:
   iRank: {fileID: 0}
   profileText: {fileID: 0}
   charaImage: {fileID: 7878296335855623818}
-  original: {fileID: 0}
 --- !u!1 &7878296335252962297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,7 +2951,6 @@ MonoBehaviour:
   iRank: {fileID: 0}
   profileText: {fileID: 0}
   charaImage: {fileID: 7878296335252962247}
-  original: {fileID: 0}
 --- !u!1 &7878296335690030154
 GameObject:
   m_ObjectHideFlags: 0
@@ -3361,7 +3357,6 @@ MonoBehaviour:
   iRank: {fileID: 7878296336769844914}
   profileText: {fileID: 1438636289420717905}
   charaImage: {fileID: 49520730226945393}
-  original: {fileID: 0}
 --- !u!1 &7878296335946167215
 GameObject:
   m_ObjectHideFlags: 0

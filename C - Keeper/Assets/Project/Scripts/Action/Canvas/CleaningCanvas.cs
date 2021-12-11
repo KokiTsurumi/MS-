@@ -100,30 +100,27 @@ public class CleaningCanvas : MonoBehaviour
         RobotManager.Instance.selectedRobot = selectRobot.GetComponent<SelectRobotData>().GetOriginal();
 
         GameObject island = IslandManager.Instance.GetCurrentIsland();
-        int removeRate = island.GetComponent<IslandBase>().CalcRemoveRate(true);
+        
 
         cleaningCanvas.SetActive(false);
         selectCanvas.SetActive(false);
 
-        if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Cleanning)
-        {
+        island.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
 
-            island.GetComponent<IslandBase>().StartClean(3.0f,TutorialCleaningEnd);
+
+        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Cleanning)
+        {
+            Debug.Log("チュートリアル清掃開始");
+            island.GetComponent<IslandBase>().StartClean(3.0f,TutorialCleaning);
            
         }
         else
         {
             float time = RobotManager.Instance.CalcCleanTime();
 
-            island.GetComponent<IslandBase>().StartClean(time,null);
+            island.GetComponent<IslandBase>().StartClean(time,CleaningEnd);
 
-            //もし清掃が100％完了していたら
-            //"!"アイコン表示→クリックされたらカメラ移動→海開放アニメーション
-            if (island.GetComponent<IslandBase>().GetPollutionLevel() >= 100)
-            {
-                Debug.Log("島　清掃　完了　！！");
-            }
-
+           
             StartCoroutine(ActionEnd());
 
         }
@@ -170,18 +167,41 @@ public class CleaningCanvas : MonoBehaviour
 
     }
 
-    public void TutorialCleaningEnd()
+    public void TutorialCleaning()
     {
-        Debug.Log("cleaning end ");
-        StartCoroutine(CleaningEnd());
+        GameObject island = IslandManager.Instance.GetCurrentIsland();
+        int level = island.GetComponent<IslandBase>().CalcRemoveRate(true);
+        Debug.Log("レベル" + level);
+        island.GetComponent<IslandBase>().RemovePollution(level);
+
+        StartCoroutine(TutorialCleaningEnd());
         
     }
 
-    IEnumerator CleaningEnd()
+    IEnumerator TutorialCleaningEnd()
     {
-        yield return new WaitForSeconds(1.0f);
+        GameObject island = IslandManager.Instance.GetCurrentIsland();
+        Camera.main.GetComponent<CameraController>().ZoomOut();
+        yield return new WaitForSeconds(0.3f);
+        island.transform.GetChild(0).GetComponent<SeaDizolve>().start = true;
+        yield return new WaitForSeconds(3.0f);
+
         TutorialManager.Instance.NextStep();
         Destroy(this.gameObject);
+
+    }
+
+    public void CleaningEnd()
+    {
+        GameObject island = IslandManager.Instance.GetCurrentIsland();
+        int level = island.GetComponent<IslandBase>().CalcRemoveRate(false);
+        Debug.Log("レベル" + level);
+        island.GetComponent<IslandBase>().RemovePollution(level);
+        //if (island.GetComponent<IslandBase>().GetPollutionLevel() <= 0)
+        //{
+        //    Debug.Log("島　清掃　完了　！！");
+        //    island.transform.GetChild(0).GetComponent<SeaDizolve>().start = true;
+        //}
 
     }
 }

@@ -23,14 +23,13 @@ public class InvestigationCanvas : SelectCanvasInterface
 
             GameObject target = IslandManager.Instance.GetCurrentIsland();
 
-            CharacterManager.Instance.characterList[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
-            CharacterManager.Instance.characterList[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
-            Debug.Log("使われたキャラは" + CharacterManager.Instance.characterList[0].GetComponent<CharacterData>().name);
-            Debug.Log("使われたキャラは" + CharacterManager.Instance.characterList[1].GetComponent<CharacterData>().name);
+            CharacterManager.Instance.selectedCharacter[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
+            CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
+            float time = CharacterManager.Instance.CalcInvestigationTime();
             CharacterManager.Instance.UseCharacter();
 
-            float time = CharacterManager.Instance.CalcInvestigationTime();
 
+            target.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
 
             if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Investigation)
             {
@@ -66,4 +65,6 @@ public class InvestigationCanvas : SelectCanvasInterface
 
         cameraController.ActionEnd();
     }
+
+
 }

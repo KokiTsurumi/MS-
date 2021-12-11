@@ -25,7 +25,7 @@ public class RecruitCanvas : MonoBehaviour
     /// <summary>
     /// originalデータのポインタ
     /// </summary>
-    GameObject[] dispCharacter;
+    GameObject[] dispCharacter = new GameObject[2];
 
 
     void Start()
@@ -85,6 +85,16 @@ public class RecruitCanvas : MonoBehaviour
         {
             Destroy(this.gameObject);
             TutorialManager.Instance.NextStep();
+        }
+        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.RankUpRecruit)
+        {
+            Destroy(this.gameObject);
+            TutorialManager.Instance.NextStep();
+        }
+
+        //新しく人材を迎えたよ！てきなUI表示
+        {
+
         }
     }
 }

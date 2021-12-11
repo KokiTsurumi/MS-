@@ -67,7 +67,7 @@
     <Compile Include="Assets\Suzuki\Scripts\tmp\PanelManager.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\SelectScrollbar.cs" />
     <Compile Include="Assets\Kawano\Script\kariMoveobutu.cs" />
-    <Compile Include="Assets\Project\Scripts\Action\Action\ExMarkIcon.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\Action\MarkIcon.cs" />
     <Compile Include="Assets\Project\Scripts\TextFader\CharLimiter.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Action\InformationPop.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\SelectRobotData.cs" />
@@ -113,6 +113,7 @@
     <Compile Include="Assets\Project\Scripts\TextFader\CharFader.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
     <Compile Include="Assets\Kawano\Script\Test.cs" />
+    <Compile Include="Assets\Okahara\New Folder\SeaDizolve.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Kawano\Script\NewSurfaceShader.shader" />

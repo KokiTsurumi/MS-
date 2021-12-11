@@ -23,6 +23,6 @@ public class Island_Pollution_Degree : MonoBehaviour
         GameObject island = IslandManager.Instance.GetCurrentIsland();
         int level = island.GetComponent<IslandBase>().GetPollutionLevel();
         islandPollutionSlider.value = level;
-        Debug.Log("島の現在値：" + islandPollutionSlider.value);
+        //Debug.Log("島の現在値：" + islandPollutionSlider.value);
     }
 }

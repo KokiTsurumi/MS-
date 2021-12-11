@@ -9,6 +9,9 @@ using UnityEngine.UI;
 public class Information : ActionButtonInterface
 {
 
+    [SerializeField]
+    GameObject informationPopPrefab;
+
     override public void ActionStart()
     {
         cameraController.ZoomOut();
@@ -32,16 +35,31 @@ public class Information : ActionButtonInterface
     }
     public override void DisplayUI()
     {
+        cameraController.backButton.SetActive(false);
 
-        //調査完了済かつ未確認の状態
-        //if()
+        GameObject island = IslandManager.Instance.GetCurrentIsland();
+
+        if(island.GetComponent<IslandBase>().icon.GetComponent<MarkIcon>().GetWatched == false)
         {
-            //Icon表示
-            //IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().//Icon表示
+            island.GetComponent<IslandBase>().icon.GetComponent<MarkIcon>().SetWatched();
         }
 
 
-        cameraController.backButton.SetActive(true);
+        //調査完了済かつ未確認の状態
+        if (island.GetComponent<IslandBase>().state >= IslandBase.STATE_ISLAND.STATE_INVESTIGATED)
+        {
+            
+            string pollutionType = island.GetComponent<IslandBase>().problem.ToString();
+            int level = island.GetComponent<IslandBase>().GetPollutionLevel();
+            //Icon表示
+            GameObject obj = Instantiate(informationPopPrefab);
+            obj.transform.position = island.GetComponent<IslandBase>().transform.position;
+
+            obj.GetComponent<InformationPop>().Create("海にごみ捨てまくって汚れちゃったよ。きれいにしてちょ\n【島が抱えている問題】\n" + pollutionType, level);
+            island.GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = false;
+        }
+
+
     }
 
     public override void ActionEnd()

@@ -40,7 +40,7 @@ Shader "Custom/NewSurfaceShader"
 					float4 c = tex2D(_MainTex, i.uv);
 					float val = tex2D(_DissolveTex, i.uv).r;
 
-					c.a *= step(_Time.x*8, val);//1.01~0@1.01‚ª“§–¾
+					c.a *= step(_Threshold, val);//1.01~0@1.01‚ª“§–¾
 					return c;
 				}
 				ENDCG

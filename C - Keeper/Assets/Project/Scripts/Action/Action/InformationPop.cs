@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// 情報表示Ui　クラス
@@ -8,14 +9,26 @@ using UnityEngine;
 /// </summary>
 public class InformationPop : MonoBehaviour
 {
+    [SerializeField] Text text;
+    [SerializeField] Slider pollutionSlider;
+
+
     void Start()
-    {　
-        
+    {
+        //浄化度の最大値の設定
+        pollutionSlider.maxValue = 100;
+        pollutionSlider.value = 0;
     }
 
     void Update()
     {
         
+    }
+
+    public void Create(string text, int pollutionLevel)
+    {
+        this.text.text = text;
+        pollutionSlider.value = pollutionLevel;
     }
 
     public void OnClickClose()
@@ -26,8 +39,12 @@ public class InformationPop : MonoBehaviour
         {
             TutorialManager.Instance.NextStep();
         }
-
+        else
+        {
+            Camera.main.GetComponent<CameraController>().ActionEnd();
+        }
 
         Destroy(this.gameObject);
+
     }
 }

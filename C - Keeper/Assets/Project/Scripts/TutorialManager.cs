@@ -116,20 +116,22 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.AddListFunc(InformationStart);
         stepList.AddListFunc(Information);
         stepList.AddListFunc(InformationEnd);
-        stepList.AddListText("次は生産を行いましょうw");
+        stepList.AddListText("次は生産を行いましょうw                    ");
         stepList.AddListFunc(ProductionPopOut);
         stepList.AddListFunc(ProductionStart);
         stepList.AddListFunc(ProductionEnd);
-        stepList.AddListText("清掃を行います");
+        stepList.AddListText("清掃を行います          ");
         stepList.AddListFunc(CleaningPopOut);
         stepList.AddListFunc(CleaningStart);
         stepList.AddListFunc(CleaningEnd);
         stepList.AddListFunc(RankUp);
-        stepList.AddListText("知名度ランク上がったよ\nｲｪｰｲ");
-        stepList.AddListText("さらに人材選択");
+        stepList.AddListText("拠点となる島がきれいになったよ\n知名度ランク上るよ\nｲｪｰｲ");
+        stepList.AddListText("ランクが上がったのでさらに人材を雇うことができます      ");
         stepList.AddListFunc(RankUpRecruitStart);
         stepList.AddListFunc(RankUpRecruitEnd);
-        
+        stepList.AddListText("以上でチュートリアルを終了します");
+        stepList.AddListText("周囲にある4つの島を清掃してきれいな海にしましょう");
+        stepList.AddListFunc(TutorialEnd);
 
         //EventTriggerセット
         EventTrigger.Entry entry = new EventTrigger.Entry();
@@ -213,6 +215,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         //IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.SetActive(true);
 
         informationPop = Instantiate(informationPopPrefab);
+        informationPop.GetComponent<InformationPop>().Create("チュートリアル", 0);
         
     }
 
@@ -248,7 +251,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
         tutorialState = TutorialState.Cleanning;
         tutorialCanvas.SetActive(false);
-        tutorialState = TutorialState.Cleanning;
         Camera.main.GetComponent<CameraController>().ZoomIn();
     }
 
@@ -275,7 +277,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         Name_Value.Instance.PlusResearchCount();
         Name_Value.Instance.RankConfirm();
 
-        Camera.main.GetComponent<CameraController>().ZoomOut();
         NextStep();
         
     }
@@ -298,7 +299,11 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.Step();
     }
 
-
+    void TutorialEnd()
+    {
+        //Destroy(this.gameObject);//これでもいい
+        tutorialCanvas.SetActive(false);
+    }
 
 
     IEnumerator CoroutineTimer(float time,Coroutine coroutine)
