@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     Animator actionCanvasAnimator;
 
     [SerializeField] GameObject centerIsland;
+    public GameObject GetCenterIsland => centerIsland;
 
     [SerializeField] public GameObject backButton;
 
@@ -56,10 +57,11 @@ public class CameraController : MonoBehaviour
 
 
     [SerializeField]  bool action = false;
+    public bool GetActionBool => action;
 
     [SerializeField] GameObject actionGameObject;
 
-    [SerializeField] Canvas gameMaimCanvas;
+    [SerializeField] Canvas gameMainCanvas;
 
     void Start()
     {
@@ -95,22 +97,14 @@ public class CameraController : MonoBehaviour
 
             foreach (GameObject obj in IslandManager.Instance.islandList)
             {
-                obj.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
-                obj.GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = true;
-            }
-        }
-        else if (zoomState == ZoomState.OUT)
-        {
-            centerIsland.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
-
-            foreach (GameObject obj in IslandManager.Instance.islandList)
-            {
-                obj.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
-                obj.GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = true;
+                obj.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = false;
+                obj.GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = false;
             }
         }
         else if(zoomState == ZoomState.DEFAULT)
         {
+            centerIsland.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
+
             //海清掃アニメーション
             foreach (GameObject obj in IslandManager.Instance.islandList)
             {
@@ -118,7 +112,14 @@ public class CameraController : MonoBehaviour
                 {
                     if(obj.transform.GetChild(0).GetComponent<SeaDizolve>()!= null)
                         obj.transform.GetChild(0).GetComponent<SeaDizolve>().start = true;
+
+
                 }
+
+                obj.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
+
+                if(obj.GetComponent<IslandBase>().icon.GetComponent<MarkIcon>().GetWatched != true)
+                    obj.GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = true;
             }
         }
 
@@ -133,7 +134,7 @@ public class CameraController : MonoBehaviour
             action = false;
         }
 
-        gameMaimCanvas.enabled = false;
+        gameMainCanvas.enabled = false;
 
         zoomCurrentTime += Time.deltaTime * zoomSpeed;
 
@@ -179,7 +180,7 @@ public class CameraController : MonoBehaviour
             if (transState == TransState.ISLAND)
                 transState = TransState.TRANSLATE_CENTER;
 
-            gameMaimCanvas.enabled = true;
+            gameMainCanvas.enabled = true;
 
         }
     }
@@ -255,7 +256,7 @@ public class CameraController : MonoBehaviour
             }
         }
         //調査中
-        else if (state <= IslandBase.STATE_ISLAND.STATE_INVESTIGATING)
+        else if (state == IslandBase.STATE_ISLAND.STATE_INVESTIGATING)
         {
             if(actionGameObject.name == "Investigation")
             {
@@ -274,11 +275,26 @@ public class CameraController : MonoBehaviour
             }
         }
         //調査済
-        else if(state < IslandBase.STATE_ISLAND.STATE_CLEANING)
+        else if (state == IslandBase.STATE_ISLAND.STATE_INVESTIGATED)
+        {
+            if (actionGameObject.name == "Investigation")
+            {
+                Debug.Log(island.name + "は調査済です");
+                return;
+            }
+        }
+        //清掃
+        else if(state == IslandBase.STATE_ISLAND.STATE_CLEANING)
         {
             if(actionGameObject.name == "Investigation")
             {
                 Debug.Log(island.name + "は調査済です");
+                return;
+            }
+            else if(actionGameObject.name == "Cleaning" 
+                && island.GetComponent<IslandBase>().timer.GetComponent<Timer>().GetCurrentTime() >= 0)
+            {
+                Debug.Log(island.name + "は清掃中です");
                 return;
             }
         }
@@ -288,10 +304,12 @@ public class CameraController : MonoBehaviour
             if(actionGameObject.name == "Investigation")
             {
                 Debug.Log("清掃が完了しました");
+                return;
             }
             else if(actionGameObject.name == "Cleaning")
             {
                 Debug.Log("清掃が完了しました");
+                return;
             }
         }
 
@@ -367,6 +385,7 @@ public class CameraController : MonoBehaviour
 
     public void ActionStart()
     {
+
         TutorialManager.TutorialState tutorialState = TutorialManager.Instance.tutorialState;
         if (tutorialState != TutorialManager.TutorialState.No)
         {

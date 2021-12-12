@@ -93,6 +93,7 @@
     <Compile Include="Assets\Project\Scripts\Action\Interface\ActionButtonInterface.cs" />
     <Compile Include="Assets\Project\Scripts\Timer\Timer.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Canvas\CleaningCanvas.cs" />
+    <Compile Include="Assets\Okahara\New Folder\SeaDizolve.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\ActionCharacterInterface.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Island\IslandData.cs" />
     <Compile Include="Assets\Matsumoto\CurrentSelected.cs" />
@@ -113,7 +114,8 @@
     <Compile Include="Assets\Project\Scripts\TextFader\CharFader.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
     <Compile Include="Assets\Kawano\Script\Test.cs" />
-    <Compile Include="Assets\Okahara\New Folder\SeaDizolve.cs" />
+    <Compile Include="Assets\Project\Scripts\CleanedUI.cs" />
+    <Compile Include="Assets\Project\Scripts\RankUpUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Kawano\Script\NewSurfaceShader.shader" />

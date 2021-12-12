@@ -13,7 +13,7 @@ public class ActionCharacterInterface : CharacterData
     [SerializeField] protected Text nameText, rRank, pRank, mRank, iRank;
     [SerializeField] Image charaImage;
 
-    [System.NonSerialized] public GameObject originalGameObject;
+    [SerializeField] public GameObject originalGameObject;
 
     public bool isSelected { get; set; } = false;
 

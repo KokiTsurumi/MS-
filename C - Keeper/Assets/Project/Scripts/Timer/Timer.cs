@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
 
     private bool start;
 
-    float currentTime;
+    [SerializeField] float currentTime;
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class Timer : MonoBehaviour
         if(currentTime <=0 )
         {
             start = false;
-
+            this.gameObject.SetActive(false);
             if (callBack != null)
                 callBack();
         }

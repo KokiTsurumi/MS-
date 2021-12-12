@@ -214,6 +214,10 @@ public class IslandBase : MonoBehaviour
     public void RemovePollution(int removeRate)
     {
         pollutionLevel -= removeRate;
+
+        if (pollutionLevel < 0)
+            pollutionLevel = 0;
+
         IslandManager.Instance.CheckTotalPollutionLevel();
     }
 
@@ -234,7 +238,7 @@ public class IslandBase : MonoBehaviour
     /// </summary>
     private void FinishInvestigate()
     {
-        timer.SetActive(false);
+        //timer.SetActive(false);
         state = STATE_ISLAND.STATE_INVESTIGATED;
         checkInvestigated = true;
         InvestigateCompleteText.gameObject.SetActive(true);
@@ -259,7 +263,7 @@ public class IslandBase : MonoBehaviour
     /// </summary>
     private void FinishClean()
     {
-        timer.SetActive(false);
+        //timer.SetActive(false);
         CalcRemoveRate(false);
         RemovePollution(removeRate);
         pollutionLevelText.gameObject.SetActive(true);
@@ -285,7 +289,7 @@ public class IslandBase : MonoBehaviour
     /// </summary>
     private void FinishProduction()
     {
-        timer.SetActive(false);
+        //timer.SetActive(false);
         CalcRemoveRate(false);
         RemovePollution(removeRate);
         pollutionLevelText.gameObject.SetActive(true);

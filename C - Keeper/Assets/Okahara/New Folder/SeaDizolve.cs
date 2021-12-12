@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SeaDizolve : MonoBehaviour
 {
+    [SerializeField] GameObject cleanedUIPrefab;
+
     public bool start = false;
 
     [SerializeField]
@@ -36,8 +38,17 @@ public class SeaDizolve : MonoBehaviour
         totalTime += Time.deltaTime * speed;
 
         if (totalTime >= 1)
-            Destroy(this.gameObject);
+            DisplayCleanedUI();
 
         rend.material.SetFloat("_Threshold", totalTime);
+
+    }
+
+    void DisplayCleanedUI()
+    {
+        Destroy(this.gameObject);
+        GameObject island = transform.root.gameObject;
+        Instantiate(cleanedUIPrefab).GetComponent<CleanedUI>().Create(island);
+        
     }
 }

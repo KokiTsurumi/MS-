@@ -74,7 +74,7 @@ public class Name_Value : SingletonMonoBehaviour<Name_Value>
         if (myRank == 1)
         {
             
-            if ((placementCount == 1) && (researchCount == 1) && (cleaningCount == 1) && (productionCount == 1))
+            if ((placementCount >= 1) && (researchCount >= 1) && (cleaningCount >= 1) && (productionCount >= 1))
             {
                 //sprite = Resources.Load<Sprite>("character2");
                 //image = this.GetComponent<Image>();
@@ -88,7 +88,7 @@ public class Name_Value : SingletonMonoBehaviour<Name_Value>
         if (myRank == 2)
         {
             
-            if ((infoCount == 1) && (placementCount == 2) && (researchCount == 2) && (cleaningCount == 2))
+            if ((productionCount >= 2) && (cleaningCount >= 3))
             {
                 //sprite = Resources.Load<Sprite>("character3");
                 //image = this.GetComponent<Image>();
@@ -104,7 +104,7 @@ public class Name_Value : SingletonMonoBehaviour<Name_Value>
         if (myRank == 3)
         {
             
-            if ((placementCount == 4) &&  (cleaningCount == 4) && (productionCount == 3))
+            if ((cleaningCount >= 5) && (researchCount >= 3))
             {
                 //sprite = Resources.Load<Sprite>("character4");
                 //image = this.GetComponent<Image>();
@@ -120,7 +120,7 @@ public class Name_Value : SingletonMonoBehaviour<Name_Value>
         if (myRank == 4)
         {
             
-            if ((placementCount == 7) && (productionCount == 6))
+            if ((cleaningCount >= 6))
             {
                 //sprite = Resources.Load<Sprite>("character5");
                 //image = this.GetComponent<Image>();

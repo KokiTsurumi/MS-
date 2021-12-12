@@ -86,7 +86,7 @@ public class RecruitCanvas : MonoBehaviour
             Destroy(this.gameObject);
             TutorialManager.Instance.NextStep();
         }
-        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.RankUpRecruit)
+        else if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.RankUpRecruit)
         {
             Destroy(this.gameObject);
             TutorialManager.Instance.NextStep();
@@ -94,7 +94,10 @@ public class RecruitCanvas : MonoBehaviour
 
         //新しく人材を迎えたよ！てきなUI表示
         {
+            //RankUpUI.Instance.RankUpCheck();//ランクが上がっていたらさらに人材選択
 
+
+            Destroy(this.gameObject);
         }
     }
 }

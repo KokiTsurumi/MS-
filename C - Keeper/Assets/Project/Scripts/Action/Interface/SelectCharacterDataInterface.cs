@@ -7,19 +7,24 @@ using UnityEngine.EventSystems;
 /// <summary>
 /// キャラクター選択　決定キャラクター　UI　インターフェース
 /// </summary>
-public class SelectCharacterDataInterface : MonoBehaviour
+public class SelectCharacterDataInterface : ActionCharacterInterface
 {
     protected GameObject selectGameObject = null;
     protected GameObject beforeSelectGameObject = null;
 
-    [System.NonSerialized] public ActionCharacterInterface data;
 
+    new void Start() { }
+    new void Update() { }
 
-    virtual public void SetData(ref GameObject obj)
+    public void SetData(GameObject obj)
     {
         if (obj == null) return;
-        if(obj.GetComponent<ActionCharacterInterface>() != null)
-            data = obj.GetComponent<ActionCharacterInterface>();
+        if (obj.GetComponent<ActionCharacterInterface>() != null)
+        {
+            base.SetData(obj.GetComponent<ActionCharacterInterface>());
+            originalGameObject = obj.GetComponent<ActionCharacterInterface>().originalGameObject;
+
+        }
         else
         {
             Debug.Log("Error:オブジェクト未選択");
@@ -34,15 +39,6 @@ public class SelectCharacterDataInterface : MonoBehaviour
 
         selectGameObject = obj;
 
-        GameObject characterImage = selectGameObject.transform.GetChild(0).gameObject;
-
-        //バックグラウンド
-        GetComponent<Image>().color = characterImage.transform.GetChild(0).GetComponent<Image>().color;
-
-        //キャラクター
-        transform.GetChild(0).GetComponent<Image>().sprite = characterImage.transform.GetChild(1).GetComponent<Image>().sprite;
-
-        //isSelected = true;
         selectGameObject.GetComponent<ActionCharacterInterface>().isSelected = true;
 
         selectGameObject.GetComponent<Button>().interactable = false;

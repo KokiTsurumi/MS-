@@ -23,8 +23,8 @@ public class InvestigationCanvas : SelectCanvasInterface
 
             GameObject target = IslandManager.Instance.GetCurrentIsland();
 
-            CharacterManager.Instance.selectedCharacter[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
-            CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
+            CharacterManager.Instance.selectedCharacter[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().originalGameObject;
+            CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().originalGameObject;
             float time = CharacterManager.Instance.CalcInvestigationTime();
             CharacterManager.Instance.UseCharacter();
 
@@ -39,7 +39,7 @@ public class InvestigationCanvas : SelectCanvasInterface
             }
             else
             {
-                target.GetComponent<IslandBase>().StartInvestigate(time,null);
+                target.GetComponent<IslandBase>().StartInvestigate(time, InvestigationEnd);
 
                 //カメラ移動
                 StartCoroutine(ActionEnd());
@@ -56,7 +56,6 @@ public class InvestigationCanvas : SelectCanvasInterface
 
         //調査開始UI表示
         startAnimationCanvas.SetActive(true);
-        
     }
 
     IEnumerator ActionEnd()
@@ -66,5 +65,11 @@ public class InvestigationCanvas : SelectCanvasInterface
         cameraController.ActionEnd();
     }
 
+    public void InvestigationEnd()
+    {
+        Name_Value.Instance.PlusResearchCount();
+        Name_Value.Instance.RankConfirm();
+        RankUpUI.Instance.RankUpCheck();
 
+    }
 }

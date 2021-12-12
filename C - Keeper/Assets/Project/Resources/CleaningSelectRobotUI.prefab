@@ -150,11 +150,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f314c6073c2b25f47a209f3e4bd09ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clean: 0
+  battery: 0
+  specialSkill: 0
+  name: 
+  robotSprite: {fileID: 0}
   nameText: {fileID: 6062705430170487074}
   cRank: {fileID: 6062705431708131146}
   bRank: {fileID: 6062705430631652312}
   skillText: {fileID: 9092402718701204980}
   skillName: {fileID: 7145645758000928944}
+  robotImage: {fileID: 3727413099698760835}
   originalGameObject: {fileID: 0}
 --- !u!1 &3727413099323511621
 GameObject:
@@ -296,7 +302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a2e74cf1952770d438cfbb6c8cbdc801, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -44,6 +44,10 @@ public class InformationPop : MonoBehaviour
             Camera.main.GetComponent<CameraController>().ActionEnd();
         }
 
+        Name_Value.Instance.PlusInfoCount();
+        Name_Value.Instance.RankConfirm();
+        RankUpUI.Instance.RankUpCheck();
+
         Destroy(this.gameObject);
 
     }

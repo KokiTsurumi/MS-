@@ -55,8 +55,9 @@ public class Information : ActionButtonInterface
             GameObject obj = Instantiate(informationPopPrefab);
             obj.transform.position = island.GetComponent<IslandBase>().transform.position;
 
-            obj.GetComponent<InformationPop>().Create("海にごみ捨てまくって汚れちゃったよ。きれいにしてちょ\n【島が抱えている問題】\n" + pollutionType, level);
+            obj.GetComponent<InformationPop>().Create("【 " +island.GetComponent<IslandBase>().name + "】\n海にごみ捨てまくって汚れちゃったよ。きれいにしてちょ\n【島が抱えている問題】\n" + pollutionType, level);
             island.GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = false;
+
         }
 
 

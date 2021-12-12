@@ -7,18 +7,24 @@ using UnityEngine.EventSystems;
 /// <summary>
 /// ロボット選択　決定ロボット　UI　インターフェース　クラス　
 /// </summary>
-public class SelectRobotData : MonoBehaviour
+public class SelectRobotData : ActionRobotInterface
 {
     protected GameObject selectGameObject = null;
     protected GameObject beforeSelectGameObject = null;
 
-    ActionRobotInterface data;
+    //ActionRobotInterface data;
 
-    virtual public void SetData(ref GameObject obj)
+    new void Start() { }
+    new void Update() { }
+
+    virtual public void SetData(GameObject obj)
     {
         if (obj == null) return;
         if (obj.GetComponent<ActionRobotInterface>() != null)
-            data = obj.GetComponent<ActionRobotInterface>();
+        {
+            base.SetData(obj.GetComponent<ActionRobotInterface>());
+            originalGameObject = obj.GetComponent<ActionRobotInterface>().originalGameObject;
+        }
         else
         {
             Debug.Log("Error:オブジェクト未選択");
@@ -34,15 +40,7 @@ public class SelectRobotData : MonoBehaviour
 
         selectGameObject = obj;
 
-        GameObject characterImage = selectGameObject.transform.GetChild(0).gameObject;
-
-        //バックグラウンド
-        GetComponent<Image>().color = characterImage.transform.GetChild(0).GetComponent<Image>().color;
-
-        //キャラクター
-        transform.GetChild(0).GetComponent<Image>().sprite = characterImage.transform.GetChild(1).GetComponent<Image>().sprite;
-
-        //isSelected = true;
+        
         selectGameObject.GetComponent<ActionRobotInterface>().isSelected = true;
 
         selectGameObject.GetComponent<Button>().interactable = false;
@@ -54,28 +52,5 @@ public class SelectRobotData : MonoBehaviour
         return selectGameObject;
     }
 
-    public string GetName()
-    {
-        return data.GetName;
-    }
-
-    public int GetClean()
-    {
-        return data.GetClean;
-    }
-
-    public int GetBattery()
-    {
-        return data.GetBattery;
-    }
-
-    public RobotBase.SPECIALSKILL_LIST GetSkill()
-    {
-        return data.GetSkill;
-    }
-
-    public GameObject GetOriginal()
-    {
-        return data.originalGameObject;
-    }
+  
 }

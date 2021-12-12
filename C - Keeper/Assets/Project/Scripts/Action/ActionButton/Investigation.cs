@@ -21,7 +21,6 @@ public class Investigation : ActionButtonInterface
         cameraController.backButton.SetActive(true);
         canvas = (GameObject)Instantiate(investigationUI);
         canvas.transform.GetComponent<InvestigationCanvas>().Initialize();
-
     }
 
     public override void ActionEnd()

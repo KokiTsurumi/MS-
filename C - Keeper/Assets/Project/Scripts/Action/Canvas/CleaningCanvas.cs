@@ -34,7 +34,7 @@ public class CleaningCanvas : MonoBehaviour
     public void Initialize()
     {
 
-        RobotList = RobotManager.Instance.robotList;
+        RobotList = new List<GameObject>();
 
         CreateRobotList();
 
@@ -69,7 +69,7 @@ public class CleaningCanvas : MonoBehaviour
         GameObject setChara = selectRobot;
 
         //データセット
-        setChara.GetComponent<SelectRobotData>().SetData(ref select);
+        setChara.GetComponent<SelectRobotData>().SetData(select);
 
 
         SimpleRobotDataDisplay();
@@ -85,19 +85,14 @@ public class CleaningCanvas : MonoBehaviour
         SelectRobotData data = selectRobot.GetComponent<SelectRobotData>();
         if (data.GetSelectGameObject() == null) return;
 
-        string name = data.GetName();
-        int c = data.GetClean();
-        int b = data.GetBattery();
-        RobotBase.SPECIALSKILL_LIST skl = data.GetSkill();
-
-        robotSimpleDataUI.GetComponent<ActionRobotInterface>().SetData(name, c,b,skl,null);
+        robotSimpleDataUI.GetComponent<ActionRobotInterface>().SetData(data);
     }
 
     public void StartButton()
     {
 
 
-        RobotManager.Instance.selectedRobot = selectRobot.GetComponent<SelectRobotData>().GetOriginal();
+        RobotManager.Instance.selectedRobot = selectRobot.GetComponent<SelectRobotData>().originalGameObject;
 
         GameObject island = IslandManager.Instance.GetCurrentIsland();
         
@@ -110,7 +105,7 @@ public class CleaningCanvas : MonoBehaviour
 
         if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Cleanning)
         {
-            Debug.Log("チュートリアル清掃開始");
+            //Debug.Log("チュートリアル清掃開始");
             island.GetComponent<IslandBase>().StartClean(3.0f,TutorialCleaning);
            
         }
@@ -132,33 +127,45 @@ public class CleaningCanvas : MonoBehaviour
 
     public void CreateRobotList()
     {
-        RobotList = RobotManager.Instance.robotList;
+        //RobotList = RobotManager.Instance.robotList;
 
         //リスト生成
-        for (int i = 0; i < RobotList.Count; i++)
+        //for (int i = 0; i < RobotManager.Instance.robotList.Count; i++)
+        //{
+        //    GameObject obj = (GameObject)Instantiate(robotPrefab);
+
+
+        //    //RobotData data = RobotList[i].GetComponent<RobotData>();
+
+        //    obj.transform.SetParent(robotListParent.transform,false);
+        //    obj.name = "RobotData[" + RobotManager.Instance.robotList[i].GetComponent<RobotData>().name + "]";
+
+        //    obj.GetComponent<ActionRobotInterface>().Create(RobotManager.Instance.robotList[i]);
+
+        //    RobotList.Add(obj);
+        //}
+        foreach(GameObject original in RobotManager.Instance.robotList)
         {
+            if (original.transform.position.x == 1) continue;
+
             GameObject obj = (GameObject)Instantiate(robotPrefab);
-            
-
-            RobotData data = RobotList[i].GetComponent<RobotData>();
-
-            obj.transform.SetParent(robotListParent.transform);
-            obj.name = "RobotData[" + data.name + "]";
 
 
-            string name = data.name;
-            int c = data.clean;
-            int b = data.battery;
-            RobotBase.SPECIALSKILL_LIST skl = data.specialSkill;
+            //RobotData data = RobotList[i].GetComponent<RobotData>();
 
-            obj.GetComponent<ActionRobotInterface>().SetData(name, c,b,skl,RobotManager.Instance.robotList[i].gameObject);
-            obj.GetComponent<ActionRobotInterface>().Create();
+            obj.transform.SetParent(robotListParent.transform, false);
+            obj.name = "RobotData[" + original.GetComponent<RobotData>().name + "]";
+
+            obj.GetComponent<ActionRobotInterface>().Create(original);
+
+            RobotList.Add(obj);
         }
     }
 
     IEnumerator ActionEnd()
     {
-        Camera.main.GetComponent<CameraController>().GetCurrntAction().ActionEnd();
+        //Camera.main.GetComponent<CameraController>().GetCurrntAction().ActionEnd();
+        Camera.main.GetComponent<CameraController>().ActionEnd();
 
         //数秒後にカメラを戻す
         yield return new WaitForSeconds(1.0f);
@@ -171,7 +178,7 @@ public class CleaningCanvas : MonoBehaviour
     {
         GameObject island = IslandManager.Instance.GetCurrentIsland();
         int level = island.GetComponent<IslandBase>().CalcRemoveRate(true);
-        Debug.Log("レベル" + level);
+        //Debug.Log("レベル" + level);
         island.GetComponent<IslandBase>().RemovePollution(level);
 
         StartCoroutine(TutorialCleaningEnd());
@@ -186,7 +193,7 @@ public class CleaningCanvas : MonoBehaviour
         island.transform.GetChild(0).GetComponent<SeaDizolve>().start = true;
         yield return new WaitForSeconds(3.0f);
 
-        TutorialManager.Instance.NextStep();
+        //TutorialManager.Instance.NextStep();
         Destroy(this.gameObject);
 
     }
@@ -195,8 +202,11 @@ public class CleaningCanvas : MonoBehaviour
     {
         GameObject island = IslandManager.Instance.GetCurrentIsland();
         int level = island.GetComponent<IslandBase>().CalcRemoveRate(false);
-        Debug.Log("レベル" + level);
+        //Debug.Log("レベル" + level);
         island.GetComponent<IslandBase>().RemovePollution(level);
+        Name_Value.Instance.PlusCleaningCount();
+        Name_Value.Instance.RankConfirm();
+        RankUpUI.Instance.RankUpCheck();
         //if (island.GetComponent<IslandBase>().GetPollutionLevel() <= 0)
         //{
         //    Debug.Log("島　清掃　完了　！！");

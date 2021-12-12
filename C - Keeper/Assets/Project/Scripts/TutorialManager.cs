@@ -29,6 +29,8 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     GameObject cleaningCanvas;
     GameObject informationPop;
 
+    bool textFadeSkip = false;
+
     public enum TutorialState
     {
         /// <summary>
@@ -82,9 +84,20 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
         if (tutorialStart)
         {
-            StartCoroutine(CoroutineTimer(0.5f, TutorialStart));
+            //StartCoroutine(CoroutineTimer(0.0f, TutorialStart));
+            TutorialStart();
             tutorialStart = false;
         }
+
+        if(tutorialCanvas != null)
+        {
+            if (tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<TextFader>().enabled == true)
+                tutorialCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().enabled = false;
+            else
+                tutorialCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().enabled = true;
+        }
+       
+
 
         updateFunc();
     }
@@ -136,7 +149,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         //EventTriggerセット
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerClick;
-        entry.callback.AddListener((eventDate) => NextStep());
+        entry.callback.AddListener((eventDate) => TextNextStep());
         canvas.transform.GetChild(1).GetComponent<EventTrigger>().triggers.Add(entry);
 
         tutorialCanvas = canvas;
@@ -216,7 +229,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
         informationPop = Instantiate(informationPopPrefab);
         informationPop.GetComponent<InformationPop>().Create("チュートリアル", 0);
-        
+        IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = false;
     }
 
     void InformationEnd()
@@ -269,13 +282,13 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void RankUp()
     {
-        //知名度ランク１Up
-        WorldManager.Instance.IncreasePopularityRank();
+        //知名度ランク１Upのための調節
         Name_Value.Instance.PlusCleaningCount();
         Name_Value.Instance.PlusPlacementCountt();
-        Name_Value.Instance.PlusProductionCount();
+        //Name_Value.Instance.PlusProductionCount();
         Name_Value.Instance.PlusResearchCount();
         Name_Value.Instance.RankConfirm();
+
 
         NextStep();
         
@@ -303,6 +316,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
         //Destroy(this.gameObject);//これでもいい
         tutorialCanvas.SetActive(false);
+        tutorialState = TutorialState.No;
     }
 
 
@@ -316,6 +330,24 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
         stepList.Next();
         stepList.Step();
+    }
+
+    public void TextNextStep()
+    {
+
+        //フェーディング中
+        if (tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<TextFader>().enabled == true)
+        {
+            tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<TextFader>().enabled = false;
+
+        }
+        //フェーディング済
+        else
+        {
+            stepList.Next();
+            stepList.Step();
+
+        }
     }
 
 }

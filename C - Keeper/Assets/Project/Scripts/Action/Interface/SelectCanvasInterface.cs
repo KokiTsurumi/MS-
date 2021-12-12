@@ -93,7 +93,7 @@ public class SelectCanvasInterface : MonoBehaviour
         GameObject setChara = selectChara[selectFrag];
 
         //データセット
-        setChara.GetComponent<SelectCharacterDataInterface>().SetData(ref select);
+        setChara.GetComponent<SelectCharacterDataInterface>().SetData(select);
 
         SimpleCharaDataDisplay();
     }
@@ -108,7 +108,7 @@ public class SelectCanvasInterface : MonoBehaviour
         SelectCharacterDataInterface data = selectChara[selectFrag].GetComponent<SelectCharacterDataInterface>();
         if (data.GetSelectGameObject() == null) return;
 
-        charaSimpleDataUI.GetComponent<ActionCharacterInterface>().SetData(data.data);
+        charaSimpleDataUI.GetComponent<ActionCharacterInterface>().SetData(data);
     }
 
     virtual public void StartButton(){}

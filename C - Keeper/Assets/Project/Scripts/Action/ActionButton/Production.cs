@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,23 +9,237 @@ using UnityEngine.UI;
 /// </summary>
 public class Production : ActionButtonInterface
 {
-    [SerializeField] GameObject productionUI;
+    [SerializeField] GameObject productionUIPrefab;
+    [SerializeField] GameObject robotCanvas;
+    [SerializeField] GameObject checkMarkIcon;
 
+ 
+    [SerializeField]
+    GameObject createRobot;
+
+    //[SerializeField]
+    //GameObject robotCanvas;
+
+    [SerializeField]
+    bool creating = false;
+    [SerializeField]
+    bool createEnd = false;
+
+    //[SerializeField]
+    //bool doing = false;
+
+
+    bool watched = false;
+
+    new private void Start()
+    {
+        base.Start();
+        //RobotCanvas.SetActive(false);
+        checkMarkIcon.SetActive(false);
+    }
 
     override public void ActionStart()
     {
+        //doing = true;
+        if (creating)
+        {
+            Camera.main.GetComponent<CameraController>().GetCenterIsland.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
+            cameraController.ActionEnd();
+            return;
+        }
+        else if (createEnd)
+        {
+            //createRobotCanvas.SetActive(true);
+            //checkMarkIcon.SetActive(true);
+
+            return;
+        }
+        //{
+        //    IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
+        //}
+
         cameraController.backButton.SetActive(true);
 
-        canvas = (GameObject)Instantiate(productionUI);
+        canvas = (GameObject)Instantiate(productionUIPrefab);
         canvas.transform.GetComponent<ProductionCanvas>().Initialize();
     }
 
     public override void ActionEnd()
     {
+        //doing = false;
         cameraController.backButton.SetActive(false);
+
+        if (creating)
+        {
+            cameraController.ZoomOut();
+            return;
+        }
+        
+        if(canvas != null)
+        {
+            if (canvas.GetComponent<ProductionCanvas>().createStart == true)
+            {
+                canvas.GetComponent<ProductionCanvas>().createStart = false;
+
+                GameObject island = Camera.main.GetComponent<CameraController>().GetCenterIsland;
+
+                if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
+                {
+                    //タイマー計算処理
+                    island.GetComponent<IslandBase>().StartProduction(0, CreateRobotCanvas);
+                    Debug.Log("チュートリアル　生産");
+                }
+                else
+                {
+                    //タイマー計算処理
+                    float time = CharacterManager.Instance.CalcProductionTime();
+                    island.GetComponent<IslandBase>().StartProduction(time, CreateRobotCanvas);
+                    CreateRobotStart();
+
+
+                    //cameraController.ActionEnd();
+                    cameraController.ZoomOut();
+
+
+                }
+
+                //ロボットを生成
+                createRobot = RobotManager.Instance.GenerateRobot();
+
+
+                //時間を待たずして使用可能になってしまうため、
+                //清掃ロボットリスト生成時に使用不可にできる条件分を加える
+                createRobot.transform.position = new Vector3(1, 0, 0);
+
+
+                CharacterManager.Instance.UseCharacter();
+
+
+
+            }
+            else
+            {
+                Destroy(canvas);
+                cameraController.ZoomOut();
+
+            }
+        }
+   
 
         //Destroy(canvas);
         //cameraController.ActionButtonRepop();
     }
 
+    private void CreateRobotStart()
+    {
+        Camera.main.GetComponent<CameraController>().GetCenterIsland.GetComponent<IslandBase>().timer.SetActive(true);
+        //IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;   
+        creating = true;
+    }
+
+    private void Update()
+    {
+        if (true)
+        {
+            if(createEnd && watched == false)
+            {
+                //チェック表示
+                //createRobotCanvas.SetActive(true);
+                checkMarkIcon.SetActive(true);
+                Camera.main.GetComponent<CameraController>().GetCenterIsland.GetComponent<IslandBase>().timer.SetActive(false);
+
+
+            }
+        }
+    }
+
+    //public void CreateStart()
+    //{
+    //    createStart = true;
+    //}
+
+    //public void CloseRobotCanvas()
+    //{
+
+    //    if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
+    //    {
+    //        //RobotCanvas.SetActive(false);
+
+    //        StartCoroutine(TutorialCloseRobotCanvas());
+
+    //    }
+    //    else
+    //    {
+    //    }
+
+    //}
+
+    public void TutorialSetCanvas(GameObject canvas)
+    {
+        this.canvas = canvas;
+    }
+
+
+    IEnumerator TutorialCloseRobotCanvas()
+    {
+        yield return new WaitForSeconds(0.5f);
+        cameraController.ZoomOut();
+        TutorialManager.Instance.NextStep();
+        Destroy(this.gameObject);
+
+    }
+
+    public void CheckIconDisplay()
+    {
+
+    }
+
+    public void CreateRobotCanvas()
+    {
+        //Action　がProductionの時チェックボタン表示→クリックでキャンバス表示
+
+
+
+        Camera.main.GetComponent<CameraController>().GetCenterIsland.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = false;
+
+
+        createEnd = true;
+        creating = false;
+        Destroy(canvas);
+
+        //robotCanvas = Instantiate(robotCanvasPrefab);
+        //createRobot.SetActive(true);
+        robotCanvas.transform.GetChild(2).GetComponent<ActionRobotInterface>().Create(createRobot);
+        createRobot.transform.position = new Vector3(0, 0, 0);
+
+        //checkMarkIcon.SetActive(false);
+    }
+
+    public void OnClickCheckMarkIcon()
+    {
+        cameraController.ZoomOut();
+        checkMarkIcon.SetActive(false);
+        //checkMarkIcon.GetComponent<MarkIcon>().SetWatched();
+
+        robotCanvas.SetActive(true);
+        watched = true;
+    }
+
+    public void OnClickClossButton()
+    {
+        if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
+        {
+            TutorialManager.Instance.NextStep();
+            //return;
+        }
+        Destroy(canvas);
+
+        robotCanvas.SetActive(false);
+        watched = false;
+        creating = false;
+        createEnd = false;
+        Name_Value.Instance.PlusProductionCount();
+        Name_Value.Instance.RankConfirm();
+        RankUpUI.Instance.RankUpCheck();
+    }
 }

@@ -9,17 +9,18 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class ProductionCanvas : SelectCanvasInterface
 {
-    [SerializeField] GameObject RobotCanvas;
 
-    [SerializeField] CreateRobotData setRobot;
+    //[SerializeField] CreateRobotData setRobot;
 
     bool endToggle = false;
 
-    GameObject originalRobot;
+    //GameObject originalRobot = null;
+
+    public bool createStart = false;
 
     private void Start()
     {
-        RobotCanvas.SetActive(false);
+        
     }
 
     private void Update()
@@ -33,30 +34,29 @@ public class ProductionCanvas : SelectCanvasInterface
             startAnimationCanvas.SetActive(false);
 
 
-            RobotData data = originalRobot.GetComponent<RobotData>();
+            //RobotData data = originalRobot.GetComponent<RobotData>();
 
-            setRobot.SetData(data.name, data.clean, data.battery, data.specialSkill, null);
+            //setRobot.SetData(data.name, data.clean, data.battery, data.specialSkill, null);
 
+            createStart = true;
 
-            GameObject island = IslandManager.Instance.GetCurrentIsland();
-
-            if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
+            if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
             {
-                //タイマー計算処理
-                island.GetComponent<IslandBase>().StartProduction(0, CreateRobotCanvas);
+                GameObject obj = GameObject.Find("Production");
+
+                Debug.Log(obj.name);
+
+                obj.GetComponent<Production>().TutorialSetCanvas(this.gameObject);
+                obj.GetComponent<Production>().ActionEnd();
             }
             else
             {
-                //タイマー計算処理
-                float time = CharacterManager.Instance.CalcProductionTime();
-                island.GetComponent<IslandBase>().StartProduction(time, CreateRobotCanvas);
                 cameraController.ActionEnd();
-                cameraController.ZoomOut();
-
-
             }
 
 
+            this.gameObject.SetActive(false);
+     
         }
     }
 
@@ -69,47 +69,15 @@ public class ProductionCanvas : SelectCanvasInterface
 
 
         //研究値から生産できるロボットを計算
-        CharacterManager.Instance.selectedCharacter[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
-        CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().data.originalGameObject;
+        CharacterManager.Instance.selectedCharacter[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().originalGameObject;
+        CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().originalGameObject;
 
-        //ロボットを生成
-        originalRobot = RobotManager.Instance.GenerateRobot();
-            CharacterManager.Instance.UseCharacter();
-
+ 
 
         startAnimationCanvas.SetActive(true);
     }
 
 
 
-    public void CloseRobotCanvas()
-    {
-        
-        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
-        {
-            RobotCanvas.SetActive(false);
-
-            StartCoroutine(TutorialCloseRobotCanvas());
-            
-        }
-        else
-        {
-        }
-
-    }
-
-
-    IEnumerator TutorialCloseRobotCanvas()
-    {
-        yield return new WaitForSeconds(0.5f);
-        cameraController.ZoomOut();
-        TutorialManager.Instance.NextStep();
-        Destroy(this.gameObject);
-
-    }
-    public void CreateRobotCanvas()
-    {
-        IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().timer.SetActive(false);
-        RobotCanvas.SetActive(true);
-    }
+    
 }
