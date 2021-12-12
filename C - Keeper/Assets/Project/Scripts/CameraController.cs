@@ -360,7 +360,9 @@ public class CameraController : MonoBehaviour
 
     public void ZoomOut()
     {
-        zoomState = ZoomState.OUT;
+        if(zoomState != ZoomState.DEFAULT)
+           zoomState = ZoomState.OUT;
+        Debug.Log("画面ズームアウト");
     }
 
     public void ZoomIn()

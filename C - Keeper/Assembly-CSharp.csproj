@@ -85,11 +85,13 @@
     <Compile Include="Assets\Matsumoto\Pollution_Degree.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Character\CharacterManager.cs" />
     <Compile Include="Assets\Project\Scripts\Action\ActionButton\Cleaning.cs" />
+    <Compile Include="Assets\Project\Scripts\CleanedUI.cs" />
     <Compile Include="Assets\Project\Scripts\AnimationCallBack.cs" />
     <Compile Include="Assets\Project\Scripts\BGScroll\tesScloole.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Action\RecruitCharacterData.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Canvas\RecruitCanvas.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Robot\RobotBase.cs" />
+    <Compile Include="Assets\Project\Scripts\RankUpUI.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\ActionButtonInterface.cs" />
     <Compile Include="Assets\Project\Scripts\Timer\Timer.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Canvas\CleaningCanvas.cs" />
@@ -112,10 +114,9 @@
     <Compile Include="Assets\Project\Scripts\Action\Interface\SelectCanvasInterface.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Robot\RobotData.cs" />
     <Compile Include="Assets\Project\Scripts\TextFader\CharFader.cs" />
+    <Compile Include="Assets\Project\Scripts\Action\Action\ExMarkIcon.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
     <Compile Include="Assets\Kawano\Script\Test.cs" />
-    <Compile Include="Assets\Project\Scripts\CleanedUI.cs" />
-    <Compile Include="Assets\Project\Scripts\RankUpUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Kawano\Script\NewSurfaceShader.shader" />
