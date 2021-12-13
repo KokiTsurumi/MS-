@@ -83,7 +83,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8384425337221096515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +122,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6662205851393706147}
-  - component: {fileID: 6939958791158734538}
   - component: {fileID: 1658333178786200889}
   - component: {fileID: 6913471861080854122}
   m_Layer: 5
@@ -151,18 +150,6 @@ RectTransform:
   m_AnchoredPosition: {x: -60, y: 60}
   m_SizeDelta: {x: 850, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6939958791158734538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8730065958828856512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6955a455b6dabbb43acdc2f98818e3bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &1658333178786200889
 CanvasRenderer:
   m_ObjectHideFlags: 0
