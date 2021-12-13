@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// カメラコントロール　クラス
@@ -389,6 +390,7 @@ public class CameraController : MonoBehaviour
 
     public void ActionStart()
     {
+        if (MouseManager.Instance.GetCurrentSelectedGameObject() == null) return;
 
         TutorialManager.TutorialState tutorialState = TutorialManager.Instance.tutorialState;
         if (tutorialState != TutorialManager.TutorialState.No)
