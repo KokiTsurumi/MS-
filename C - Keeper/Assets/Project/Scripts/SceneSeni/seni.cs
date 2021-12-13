@@ -29,6 +29,8 @@ public class seni : MonoBehaviour
     private void FadeOut()
     {
         fadeImage.color = Color.clear;
+        fadeImage.enabled = true;
+
         isFadeOut = true;
         
         
@@ -36,14 +38,18 @@ public class seni : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    FadeOut();
+        //}
+        //if (Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    FadeIn();
+        //}
+
+        if (Input.GetMouseButton(0) && SceneManager.GetActiveScene().name != "GameMainScene")
             FadeOut();
-        }
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            FadeIn();
-        }
+
         if (isFadeIn)
         {
             
@@ -54,6 +60,7 @@ public class seni : MonoBehaviour
             if (alpha <= 0.0f)
             {
                 isFadeIn = false;
+                fadeImage.enabled = false;
                 alpha = 0.0f;
             }
 

@@ -22,7 +22,7 @@ public class SeaDizolve : MonoBehaviour
 
     Renderer rend;
 
-    void Start()
+    void Awake()
     {
         rend = GetComponent<Renderer>();
 

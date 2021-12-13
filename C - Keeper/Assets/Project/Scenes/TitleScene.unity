@@ -638,6 +638,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4267368214781287670, guid: 792787db402a4ed4f987f17d418aab94, type: 3}
+      propertyPath: NextSceanName
+      value: GameMainScene
+      objectReference: {fileID: 0}
     - target: {fileID: 4267368215864312937, guid: 792787db402a4ed4f987f17d418aab94, type: 3}
       propertyPath: m_Pivot.x
       value: 0
