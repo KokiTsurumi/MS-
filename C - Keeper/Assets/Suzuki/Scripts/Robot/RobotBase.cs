@@ -189,8 +189,8 @@ public class RobotBase : MonoBehaviour
         {
             Sprite[] normalRobotList = Resources.LoadAll<Sprite>("通常ロボ");   // 通常ロボットの画像を全て取得;
 
-            int index = Random.Range(0, spriteList.Length);
-            robotSprite = spriteList[index];
+            int index = Random.Range(0, normalRobotList.Length);
+            robotSprite = normalRobotList[index];
         }
     }
 
