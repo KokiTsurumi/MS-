@@ -180,7 +180,15 @@ public class MouseManager : SingletonMonoBehaviour<MouseManager>
 
     public GameObject GetCurrentSelectedGameObject()
     {
-        currentSelectedGameObject = EventSystem.current.currentSelectedGameObject;
+        if (EventSystem.current.currentSelectedGameObject != null)
+        {
+            currentSelectedGameObject = EventSystem.current.currentSelectedGameObject;
+        }
+        else
+        {
+            currentSelectedGameObject = null;
+        }
+
         return currentSelectedGameObject;
     }
 }

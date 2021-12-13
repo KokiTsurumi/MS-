@@ -18,6 +18,8 @@ public class RankUpUI : SingletonMonoBehaviour<RankUpUI>
 
     int rankUp = 1;
 
+    public bool pollutionRecruitCanvas = false;
+
     void Start()
     {
         rankUICanvas.SetActive(false);
@@ -49,8 +51,13 @@ public class RankUpUI : SingletonMonoBehaviour<RankUpUI>
 
     public void RankUpCheck()
     {
-       
-        if(rankUp < Name_Value.Instance.myRank)
+        //汚染度0％のときの人材選択中はランクアップさせない
+        if (pollutionRecruitCanvas)
+            return;
+
+        Name_Value.Instance.RankConfirm();
+
+        if (rankUp < Name_Value.Instance.myRank)
         {
             Create();
             rankUp = Name_Value.Instance.myRank;

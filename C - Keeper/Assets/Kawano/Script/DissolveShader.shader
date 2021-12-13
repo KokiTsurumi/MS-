@@ -1,4 +1,4 @@
-Shader "Custom/NewSurfaceShader"
+Shader "Custom/DissolveShader"
 {
 	Properties{
 		[PerRendererData] _MainTex("Main texture", 2D) = "white" {}

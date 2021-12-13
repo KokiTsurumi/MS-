@@ -68,8 +68,8 @@ public class InvestigationCanvas : SelectCanvasInterface
     public void InvestigationEnd()
     {
         Name_Value.Instance.PlusResearchCount();
-        Name_Value.Instance.RankConfirm();
-        RankUpUI.Instance.RankUpCheck();
+        //Name_Value.Instance.RankConfirm();
+        //RankUpUI.Instance.RankUpCheck();
 
     }
 }

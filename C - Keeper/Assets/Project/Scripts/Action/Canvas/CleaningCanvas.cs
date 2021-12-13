@@ -190,7 +190,7 @@ public class CleaningCanvas : MonoBehaviour
         GameObject island = IslandManager.Instance.GetCurrentIsland();
         Camera.main.GetComponent<CameraController>().ZoomOut();
         yield return new WaitForSeconds(0.3f);
-        island.transform.GetChild(0).GetComponent<SeaDizolve>().start = true;
+        island.transform.GetChild(0).GetComponent<SeaDizolve>().DissolveStart();
         yield return new WaitForSeconds(3.0f);
 
         //TutorialManager.Instance.NextStep();
@@ -205,8 +205,8 @@ public class CleaningCanvas : MonoBehaviour
         //Debug.Log("レベル" + level);
         island.GetComponent<IslandBase>().RemovePollution(level);
         Name_Value.Instance.PlusCleaningCount();
-        Name_Value.Instance.RankConfirm();
-        RankUpUI.Instance.RankUpCheck();
+        //Name_Value.Instance.RankConfirm();
+        //RankUpUI.Instance.RankUpCheck();
         //if (island.GetComponent<IslandBase>().GetPollutionLevel() <= 0)
         //{
         //    Debug.Log("島　清掃　完了　！！");

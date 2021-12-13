@@ -30,7 +30,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     GameObject cleaningCanvas;
     GameObject informationPop;
 
-    bool textFadeSkip = false;
+    //bool textFadeSkip = false;
 
     public enum TutorialState
     {

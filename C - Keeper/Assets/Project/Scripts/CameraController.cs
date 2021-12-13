@@ -111,7 +111,7 @@ public class CameraController : MonoBehaviour
                 if(obj.GetComponent<IslandBase>().GetPollutionLevel() <= 0)
                 {
                     if(obj.transform.GetChild(0).GetComponent<SeaDizolve>()!= null)
-                        obj.transform.GetChild(0).GetComponent<SeaDizolve>().start = true;
+                        obj.transform.GetChild(0).GetComponent<SeaDizolve>().DissolveStart();
 
 
                 }
@@ -121,6 +121,8 @@ public class CameraController : MonoBehaviour
                 if(obj.GetComponent<IslandBase>().icon.GetComponent<MarkIcon>().GetWatched != true)
                     obj.GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = true;
             }
+
+            RankUpUI.Instance.RankUpCheck();
         }
 
     }

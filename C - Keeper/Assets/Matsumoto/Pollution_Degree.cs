@@ -9,7 +9,7 @@ public class Pollution_Degree : MonoBehaviour
     Slider pollutionSlider;
     //IslandManager islandManager;
     float maxDegree = 100.0f;   //ò‰»“x100%
-    float nowDegree = 50.0f;     //Œ»İ‚Ìò‰»“x
+    //float nowDegree = 50.0f;     //Œ»İ‚Ìò‰»“x
 
     void Start()
     {

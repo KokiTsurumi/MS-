@@ -7,7 +7,7 @@ public class SeaDizolve : MonoBehaviour
 {
     [SerializeField] GameObject cleanedUIPrefab;
 
-    public bool start = false;
+    bool start = false;
 
     [SerializeField]
     float speed = 01.0f;
@@ -22,11 +22,11 @@ public class SeaDizolve : MonoBehaviour
 
     Renderer rend;
 
-    void Awake()
+    void Start()
     {
         rend = GetComponent<Renderer>();
 
-        rend.material.shader = Shader.Find("Custom/NewSurfaceShader");
+        rend.material.shader = Shader.Find("Custom/DissolveShader");
         //rend.material.SetTexture("_MainTex", mainTexture);
         rend.material.SetTexture("_DissolveTex", dissolvTexture);
     }
@@ -49,6 +49,12 @@ public class SeaDizolve : MonoBehaviour
         Destroy(this.gameObject);
         GameObject island = transform.root.gameObject;
         Instantiate(cleanedUIPrefab).GetComponent<CleanedUI>().Create(island);
-        
+    }
+
+    public void DissolveStart()
+    {
+        start = true;
+        RankUpUI.Instance.pollutionRecruitCanvas = true;
+
     }
 }

@@ -92,6 +92,10 @@ public class RecruitCanvas : MonoBehaviour
             TutorialManager.Instance.NextStep();
         }
 
+
+        RankUpUI.Instance.pollutionRecruitCanvas = false;
+
+
         //新しく人材を迎えたよ！てきなUI表示
         {
             //RankUpUI.Instance.RankUpCheck();//ランクが上がっていたらさらに人材選択

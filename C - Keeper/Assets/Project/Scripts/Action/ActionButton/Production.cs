@@ -239,7 +239,7 @@ public class Production : ActionButtonInterface
         creating = false;
         createEnd = false;
         Name_Value.Instance.PlusProductionCount();
-        Name_Value.Instance.RankConfirm();
-        RankUpUI.Instance.RankUpCheck();
+        //Name_Value.Instance.RankConfirm();
+        //RankUpUI.Instance.RankUpCheck();
     }
 }

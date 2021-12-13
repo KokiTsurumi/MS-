@@ -45,8 +45,8 @@ public class InformationPop : MonoBehaviour
         }
 
         Name_Value.Instance.PlusInfoCount();
-        Name_Value.Instance.RankConfirm();
-        RankUpUI.Instance.RankUpCheck();
+        //Name_Value.Instance.RankConfirm();
+        //RankUpUI.Instance.RankUpCheck();
 
         Destroy(this.gameObject);
 
