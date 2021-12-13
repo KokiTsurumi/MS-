@@ -16,8 +16,8 @@ public class InformationPop : MonoBehaviour
     void Start()
     {
         //èÚâªìxÇÃç≈ëÂílÇÃê›íË
-        pollutionSlider.maxValue = 100;
-        pollutionSlider.value = 0;
+        //pollutionSlider.maxValue = 100;
+        //pollutionSlider.value = 0;
     }
 
     void Update()
@@ -27,6 +27,7 @@ public class InformationPop : MonoBehaviour
 
     public void Create(string text, int pollutionLevel)
     {
+        Debug.Log("pollutionLevelÇÕ" + pollutionLevel);
         this.text.text = text;
         pollutionSlider.value = pollutionLevel;
     }

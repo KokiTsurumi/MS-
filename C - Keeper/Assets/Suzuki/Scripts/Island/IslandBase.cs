@@ -256,6 +256,7 @@ public class IslandBase : MonoBehaviour
         state = STATE_ISLAND.STATE_CLEANING;
         timer.SetActive(true);
         pollutionLevelText.gameObject.SetActive(false);
+        InvestigateCompleteText.gameObject.SetActive(false);
     }
 
     /// <summary>

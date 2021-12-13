@@ -151,12 +151,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787d5e3938ddd1f46a4475acddae893b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  research: 0
+  production: 0
+  management: 0
+  investigation: 0
+  name: 
+  age: 0
+  tag: 0
+  characterSprite: {fileID: 0}
+  introduction: 
+  popularityRank: 0
   nameText: {fileID: 6062705430170487074}
   rRank: {fileID: 6062705431708131146}
   pRank: {fileID: 6062705430631652312}
   mRank: {fileID: 6062705431637923206}
   iRank: {fileID: 6062705430126051857}
   charaImage: {fileID: 3727413099698760835}
+  originalGameObject: {fileID: 0}
 --- !u!1 &3727413099323511621
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +707,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u958B\u767A"
+  m_Text: "\u751F\u7523"
 --- !u!1 &6062705430914676108
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +821,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: -35}
+  m_AnchoredPosition: {x: 100, y: -35}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6062705431100110131
@@ -1136,7 +1147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -35}
+  m_AnchoredPosition: {x: 175, y: -35}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6062705431849966430
