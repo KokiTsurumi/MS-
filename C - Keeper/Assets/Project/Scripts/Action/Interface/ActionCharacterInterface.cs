@@ -42,6 +42,7 @@ public class ActionCharacterInterface : CharacterData
 
         if (charaImage != null)
         {
+            charaImage.color = new Color(1,1,1,1);
             charaImage.sprite = data.characterSprite;
         }
 

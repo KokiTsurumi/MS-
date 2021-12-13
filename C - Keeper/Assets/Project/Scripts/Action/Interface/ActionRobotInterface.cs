@@ -46,7 +46,14 @@ public class ActionRobotInterface : RobotData
         {
             cRank.text = RobotManager.Instance.RankTransfer(clean);
             bRank.text = RobotManager.Instance.RankTransfer(battery);
-            skillName.text = specialSkill.ToString();
+            if(specialSkill != SPECIALSKILL_LIST.SPECIALSKILL_NULL)
+            {
+                skillName.text = specialSkill.ToString();
+            }
+            else
+            {
+                skillName.text = "なし";
+            }
             nameText.text = data.name;
 
         }

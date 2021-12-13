@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /// </summary>
 public class RecruitCharacterData : CharacterData
 {
-    [SerializeField] Text nameText, rRank, pRank, mRank, iRank;
+    [SerializeField] Text nameText, rRank, pRank, mRank, iRank,ageText,tagText;
 
     [SerializeField] Text profileText;
 
@@ -38,19 +38,30 @@ public class RecruitCharacterData : CharacterData
         investigation = data.investigation;
         name = data.name;
         characterSprite = data.characterSprite;
-
+        tag = data.tag;
         if(rRank != null)
         {
             rRank.text = CharacterManager.Instance.RankTransfer(research);
             pRank.text = CharacterManager.Instance.RankTransfer(production);
             mRank.text = CharacterManager.Instance.RankTransfer(management);
             iRank.text = CharacterManager.Instance.RankTransfer(investigation);
+            if(tag != TAG_LIST.TAG_NULL)
+            {
+                tagText.text = data.tag.ToString();
+
+            }
+            else
+            {
+                tagText.text = "‚È‚µ";
+            }
             profileText.text = data.introduction;
+            ageText.text = data.age.ToString();
             nameText.text = data.name;
         }
 
         if(charaImage != null)
         {
+            charaImage.color = new Color(1, 1, 1, 1);
             charaImage.sprite = data.characterSprite;
         }
 
@@ -67,6 +78,8 @@ public class RecruitCharacterData : CharacterData
         production = originalData.production;
         management = originalData.management;
         investigation = originalData.investigation;
+        introduction = originalData.introduction;
+        age = originalData.age;
         nameText.text = originalData.name;
         profileText.text = originalData.introduction;
         characterSprite = originalData.characterSprite;
@@ -76,7 +89,16 @@ public class RecruitCharacterData : CharacterData
         pRank.text = CharacterManager.Instance.RankTransfer(production);
         mRank.text = CharacterManager.Instance.RankTransfer(management);
         iRank.text = CharacterManager.Instance.RankTransfer(investigation);
-
+        ageText.text = originalData.age.ToString();
+        tag = originalData.tag;
+        if (tag != TAG_LIST.TAG_NULL)
+        {
+            tagText.text = originalData.tag.ToString();
+        }
+        else
+        {
+            tagText.text = "‚È‚µ";
+        }
         original = originalGameObject;
     }
 }

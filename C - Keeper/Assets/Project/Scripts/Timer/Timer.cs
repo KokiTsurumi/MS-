@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         currentTime = countTime;
-        Gage = transform.GetChild(0).GetComponent<Image>();
+        Gage = transform.GetChild(1).GetComponent<Image>();
     }
 
     void Update()
