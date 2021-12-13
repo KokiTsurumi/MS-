@@ -16,7 +16,7 @@ public class RankUpUI : SingletonMonoBehaviour<RankUpUI>
     [SerializeField]
     GameObject rankUICanvas;
 
-    int rankUp = 2;
+    int rankUp = 1;
 
     void Start()
     {

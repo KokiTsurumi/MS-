@@ -2156,6 +2156,7 @@ GameObject:
   - component: {fileID: 475031548}
   - component: {fileID: 475031547}
   - component: {fileID: 475031546}
+  - component: {fileID: 475031549}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2211,6 +2212,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &475031549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475031545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2ade4094094e0449ceb315f4d9d035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextSceanName: 
 --- !u!1 &528161201
 GameObject:
   m_ObjectHideFlags: 0
@@ -6686,7 +6700,7 @@ MonoBehaviour:
   tutorialCanvasPrefab: {fileID: 3715063630727291506, guid: 42bd4c08ad5adeb4abdea19a45e01c50, type: 3}
   recruitCanvasPrefab: {fileID: 1438636289383010366, guid: 23eb1934a0f84ec4682814da760951b8, type: 3}
   investigationCanvasPrefab: {fileID: 1689519780328768828, guid: 6c7c02f7685a72a4583665316dbb984d, type: 3}
-  productionCanvasPrefab: {fileID: 560584640535415387, guid: ad8133ccd871a7943b5e73b0e3ab8cc4, type: 3}
+  productionCanvasPrefab: {fileID: 560584640535415387, guid: 4965564e48f55ef44a0b3e59bd70d071, type: 3}
   cleaningCanvasPrefab: {fileID: 1689519780328768828, guid: 6dea4c906eed11344b554331d6cdfe11, type: 3}
   informationPopPrefab: {fileID: 6109585837084878682, guid: 0434bdffcaeeef949891ae1fd32049f8, type: 3}
   tutorialState: 0

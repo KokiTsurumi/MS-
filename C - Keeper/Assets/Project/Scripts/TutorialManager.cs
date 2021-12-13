@@ -11,6 +11,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 {
 
     [SerializeField] bool tutorialStart = false;
+    bool startBool = true;
 
     [SerializeField] GameObject tutorialCanvasPrefab;
     [SerializeField] GameObject recruitCanvasPrefab;
@@ -78,16 +79,33 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         //Ç»Ç∫Ç©à·Ç§ï∂éöÇ™ÇøÇÁÇ¬Ç≠ÉoÉOÇ‡èCê≥Ç∑ÇÈ
 
         updateFunc = TutorialUpdateNull;
+
+        
     }
 
     void Update()
     {
-        if (tutorialStart)
+       
+
+        if(startBool)
         {
-            //StartCoroutine(CoroutineTimer(0.0f, TutorialStart));
-            TutorialStart();
-            tutorialStart = false;
+            if (!tutorialStart)
+            {
+                Name_Value.Instance.PlusCleaningCount();
+                Name_Value.Instance.PlusPlacementCountt();
+                Name_Value.Instance.PlusProductionCount();
+                Name_Value.Instance.PlusResearchCount();
+                Name_Value.Instance.RankConfirm();
+                RankUpUI.Instance.RankUpCheck();
+            }
+            else
+            {
+                TutorialStart();
+            }
+
+            startBool = false;
         }
+
 
         if(tutorialCanvas != null)
         {
