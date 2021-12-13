@@ -17,6 +17,7 @@ public class RobotBase : MonoBehaviour
         SPECIALSKILL_PLASTIC_ONLY,              // プラスチック専用
         SPECIALSKILL_LARGE_CAPACITY_BATTERY,    // 大容量バッテリー
         SPECIALSKILL_PERFECT_INVESTIGATOR,      // 完璧調査機
+        SPECIALSKILL_ALMIGHTY,                  // 全能
     }
 
 
@@ -75,6 +76,10 @@ public class RobotBase : MonoBehaviour
         {
             specialSkill = SPECIALSKILL_LIST.SPECIALSKILL_PERFECT_INVESTIGATOR;     // 完璧調査機
         }
+        else if (tag1 == CharacterBase.TAG_LIST.TAG_CLEANING && tag2 == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH || tag1 == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH && tag2 == CharacterBase.TAG_LIST.TAG_CLEANING)    // ロボット工学 & バッテリー製造
+        {
+            specialSkill = SPECIALSKILL_LIST.SPECIALSKILL_ALMIGHTY;                 // オールマイティ
+        }
         else
         {
             specialSkill = SPECIALSKILL_LIST.SPECIALSKILL_NULL;                     // 特殊技能無し
@@ -99,6 +104,8 @@ public class RobotBase : MonoBehaviour
             name1 = "LCB・";
         else if (specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_PERFECT_INVESTIGATOR)   // 完璧調査機
             name1 = "PNS・";
+        else if (specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_ALMIGHTY)               // オールマイティ
+            name1 = "AGY・";
         else                                                                            // 特殊技能無し
             name1 = "IHN・";
 
@@ -125,14 +132,66 @@ public class RobotBase : MonoBehaviour
     /// </summary>
     public void SetCharacterSprite()
     {
-        string directoryPath = "ロボ";  // ロボット画像の入ったパスを指定
-        Sprite[] spriteList;            // 取得したロボット画像を保持するリスト
+        string directoryPath = "特殊ロボ";  // 特殊ロボットの画像が入ったパスを指定
+        Sprite[] spriteList;                // 取得したロボット画像を保持するリスト
 
-        spriteList = Resources.LoadAll<Sprite>(directoryPath);   // ロボット画像を全て取得
+        spriteList = Resources.LoadAll<Sprite>(directoryPath);   // 特殊ロボットの画像を全て取得
+        
+        if(specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_SPECIALIZED_FOR_CLEANING)     // 清掃特化
+        {
+            foreach(Sprite sprite in spriteList)
+            {
+                if (sprite.name == "清掃特化ロボ")
+                    robotSprite = sprite;
+            }
+        }
+        else if(specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_OIL_COLLECTION)          // 油回収
+        {
+            foreach (Sprite sprite in spriteList)
+            {
+                if (sprite.name == "油回収ロボ")
+                    robotSprite = sprite;
+            }
+        }
+        else if (specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_PLASTIC_ONLY)           // プラスチック専用
+        {
+            foreach (Sprite sprite in spriteList)
+            {
+                if (sprite.name == "プラスチック専用ロボ")
+                    robotSprite = sprite;
+            }
+        }
+        else if (specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_LARGE_CAPACITY_BATTERY) // 大容量バッテリー
+        {
+            foreach (Sprite sprite in spriteList)
+            {
+                if (sprite.name == "大容量バッテリーロボ")
+                    robotSprite = sprite;
+            }
+        }
+        else if (specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_PERFECT_INVESTIGATOR)   // 完璧調査機
+        {
+            foreach (Sprite sprite in spriteList)
+            {
+                if (sprite.name == "完璧調査員ロボ")
+                    robotSprite = sprite;
+            }
+        }
+        else if (specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_ALMIGHTY)               // オールマイティ
+        {
+            foreach (Sprite sprite in spriteList)
+            {
+                if (sprite.name == "オールマイティロボ")
+                    robotSprite = sprite;
+            }
+        }
+        else                                                                            // 特殊技能なし
+        {
+            Sprite[] normalRobotList = Resources.LoadAll<Sprite>("通常ロボ");   // 通常ロボットの画像を全て取得;
 
-        // キャラクター画像をランダムで決定
-        int index = Random.Range(0, spriteList.Length);
-        robotSprite = spriteList[index];
+            int index = Random.Range(0, spriteList.Length);
+            robotSprite = spriteList[index];
+        }
     }
 
 
@@ -143,6 +202,7 @@ public class RobotBase : MonoBehaviour
         ParamGenerator();
         SpecialSkillGenerator();
         NameGenerator();
+        SetCharacterSprite();
 
         // デバッグ用
         Debug.Log("清掃    ：" + RobotManager.Instance.RankTransfer(clean) + "  |  Parameter：" + clean);
