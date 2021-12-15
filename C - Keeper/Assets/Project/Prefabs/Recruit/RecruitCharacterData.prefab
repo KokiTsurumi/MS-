@@ -662,7 +662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e97d3d9170912f3409252d2a92dbf9af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2b52a7dabd5eb6439ee00694c397756, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -800,15 +800,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dac346fdae36884cb1d1b8bb32a5541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  research: 0
+  production: 0
+  management: 0
+  investigation: 0
+  name: 
+  age: 0
+  tag: 0
+  characterSprite: {fileID: 0}
+  introduction: 
+  popularityRank: 0
   nameText: {fileID: 1278856390045099533}
   rRank: {fileID: 7103819613830180936}
   pRank: {fileID: 1071544790566572664}
   mRank: {fileID: 6857979236694630939}
   iRank: {fileID: 7068172595944865949}
+  ageText: {fileID: 0}
+  tagText: {fileID: 0}
   profileText: {fileID: 3110743242820445242}
   charaImage: {fileID: 5636278701487363420}
-  selected: 0
-  toggle: {fileID: 6652930261126608683}
 --- !u!1 &7251435514833730441
 GameObject:
   m_ObjectHideFlags: 0
