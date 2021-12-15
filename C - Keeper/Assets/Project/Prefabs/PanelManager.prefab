@@ -852,6 +852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterManager: {fileID: 0}
+  rank: 5
 --- !u!1 &3783356931117830085
 GameObject:
   m_ObjectHideFlags: 0

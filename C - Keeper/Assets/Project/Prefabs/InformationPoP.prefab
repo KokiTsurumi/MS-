@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 8657575634445811685}
   - component: {fileID: 6109585837084878683}
   m_Layer: 0
-  m_Name: Information_PoP
+  m_Name: InformationPoP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -679,7 +679,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

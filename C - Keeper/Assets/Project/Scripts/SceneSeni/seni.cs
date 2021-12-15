@@ -26,7 +26,8 @@ public class seni : MonoBehaviour
         isFadeIn = true;
 
     }
-    private void FadeOut()
+
+    public void FadeOut()
     {
         fadeImage.color = Color.clear;
         fadeImage.enabled = true;
