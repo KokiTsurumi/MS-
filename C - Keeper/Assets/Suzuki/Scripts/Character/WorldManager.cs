@@ -5,9 +5,9 @@ using UnityEngine;
 public class WorldManager : SingletonMonoBehaviour<WorldManager>
 {
     [SerializeField, Range(1, 5)] private int popularityRank = 1;   // 知名度ランク
-    [SerializeField] private float roopTime;                        // ゲーム内1か月の時間
-    [SerializeField] private float currentTime;                     // 現在の時間
-    [SerializeField] private int month = 0;                         // ゲーム内経過月
+    public float roopTime;                                          // ゲーム内1か月の時間
+    public float currentTime;                                       // 現在の時間
+    public int month = 0;                                           // ゲーム内経過月
 
 
 
@@ -62,12 +62,11 @@ public class WorldManager : SingletonMonoBehaviour<WorldManager>
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         currentTime += Time.deltaTime;
 
-        if(currentTime >= roopTime)
+        if (currentTime >= roopTime)
         {
             month++;
             currentTime = 0;
