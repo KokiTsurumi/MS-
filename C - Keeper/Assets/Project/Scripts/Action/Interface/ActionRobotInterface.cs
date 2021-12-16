@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /// </summary>
 public class ActionRobotInterface : RobotData
 {
-    [SerializeField] Text nameText, cRank, bRank, skillText, skillName;
+    [SerializeField] Text nameText, cRank, bRank, skillName;
     [SerializeField] Image robotImage;
 
     CleaningCanvas canvas;
@@ -86,6 +86,17 @@ public class ActionRobotInterface : RobotData
 
         bRank.text = RobotManager.Instance.RankTransfer(battery);
         bRank.color = SetRankColor(bRank.text);
+
+        specialSkill = data.specialSkill;
+
+        if (specialSkill != SPECIALSKILL_LIST.SPECIALSKILL_NULL)
+        {
+            skillName.text = specialSkill.ToString();
+        }
+        else
+        {
+            skillName.text = "なし";
+        }
 
         nameText.text = name;
         robotSprite = robotImage.sprite = data.robotSprite;

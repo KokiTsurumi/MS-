@@ -56,8 +56,13 @@ public class SeaDizolve : MonoBehaviour
 
     public void DissolveStart()
     {
+        //ˆê“x‚¾‚¯‚µ‚©Às‚³‚¹‚È‚¢
+        if (start) return;//‚·‚Å‚Étrue‚Å‚ ‚ê‚Î‰½‚à‚µ‚È‚¢
+
+        if (RankUpUI.Instance.useCanvas == true) return;
+
         start = true;
-        RankUpUI.Instance.pollutionRecruitCanvas = true;
+        RankUpUI.Instance.useCanvas = true;
 
     }
 }

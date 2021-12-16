@@ -246,10 +246,10 @@ public class Production : ActionButtonInterface
         if(TutorialManager.Instance.tutorialState != TutorialManager.TutorialState.No)
         {
             TutorialManager.Instance.NextStep();
-            robotCanvas.SetActive(false);
-            Destroy(canvas);
+            //robotCanvas.SetActive(false);
+            //Destroy(canvas);
 
-            return;
+            //return;
         }
         Destroy(canvas);
 

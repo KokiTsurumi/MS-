@@ -296,8 +296,7 @@ MonoBehaviour:
   nameText: {fileID: 3828871751256023907}
   cRank: {fileID: 1728599408581784610}
   bRank: {fileID: 6291324432027082781}
-  skillText: {fileID: 2403459800036213622}
-  skillName: {fileID: 0}
+  skillName: {fileID: 2403459800036213622}
   robotImage: {fileID: 8855349542208498002}
   originalGameObject: {fileID: 0}
 --- !u!1 &2717492521636230804
@@ -1118,7 +1117,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30D7\u30E9\u30B9\u30C1\u30C3\u30AF\u7279\u5316"
+  m_Text: 
 --- !u!1 &7168912823475208235
 GameObject:
   m_ObjectHideFlags: 0

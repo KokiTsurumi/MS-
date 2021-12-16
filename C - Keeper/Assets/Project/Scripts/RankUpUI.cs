@@ -18,7 +18,10 @@ public class RankUpUI : SingletonMonoBehaviour<RankUpUI>
 
     int rankUp = 1;
 
-    public bool pollutionRecruitCanvas = false;
+    //汚染度とランクアップのキャンバスがかぶらないようにするセマフォ
+    //public bool pollutionRecruitCanvas = false;
+    //public bool rankUpRecruitCanvas = false;
+    public bool useCanvas = false;//排他制御
 
     void Start()
     {
@@ -52,8 +55,15 @@ public class RankUpUI : SingletonMonoBehaviour<RankUpUI>
     public void RankUpCheck()
     {
         //汚染度0％のときの人材選択中はランクアップさせない
-        if (pollutionRecruitCanvas)
+        //if (pollutionRecruitCanvas)
+        //    return;
+        if (TutorialManager.Instance.tutorialState != TutorialManager.TutorialState.No)
+        {
+            rankUp = 2;
             return;
+        }
+
+        if (useCanvas) return;
 
         Name_Value.Instance.RankConfirm();
 
@@ -61,6 +71,7 @@ public class RankUpUI : SingletonMonoBehaviour<RankUpUI>
         {
             Create();
             rankUp = Name_Value.Instance.myRank;
+            useCanvas = true;
         }
 
     }

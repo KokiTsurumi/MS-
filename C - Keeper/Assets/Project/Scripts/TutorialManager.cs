@@ -116,9 +116,16 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         if(tutorialCanvas != null)
         {
             if (tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<TextFader>().enabled == true)
+            {
                 tutorialCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().enabled = false;
+
+            }
             else
+            {
                 tutorialCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().enabled = true;
+                tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<AudioSource>().Stop();
+            }
+
         }
        
 
@@ -147,7 +154,8 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.AddListText("それでは最初にこの組織で働いてもらう人員を雇いましょう！");
         stepList.AddListFunc(RecruitStart);
         stepList.AddListFunc(RecruitEnd);
-        stepList.AddListText("中々いい人材を選びましたね！(クリックして別のセリフに)それでは早速この2人に仕事を割り振りましょう！");
+        stepList.AddListText("中々いい人材を選びましたね！");
+        stepList.AddListText("それでは早速この2人に仕事を割り振りましょう！");
         stepList.AddListText("まず最初に島の状況を把握しましょう！");
         stepList.AddListText("島をクリックしてください！");
         stepList.AddListFunc(InvestigationZoomIn);
@@ -330,7 +338,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         //IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.SetActive(true);
         tutorialState = TutorialState.Information;
         informationPop = Instantiate(informationPopPrefab);
-        informationPop.GetComponent<InformationPop>().Create("チュートリアル", 100);
+        informationPop.GetComponent<InformationPop>().Create(IslandManager.Instance.GetCurrentIsland());
         IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = false;
         NextStep();
         tutorialCanvas.SetActive(true);
@@ -526,6 +534,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         if (tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<TextFader>().enabled == true)
         {
             tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<TextFader>().enabled = false;
+            tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<AudioSource>().Stop();
 
         }
         //フェーディング済
@@ -593,6 +602,9 @@ class StepText : StepInterface
         //表示
         text.GetComponent<Text>().text = str;
         text.GetComponent<TextFader>().enabled = true;
+
+        //音再生
+        text.GetComponent<AudioSource>().Play();
     }
 }
 

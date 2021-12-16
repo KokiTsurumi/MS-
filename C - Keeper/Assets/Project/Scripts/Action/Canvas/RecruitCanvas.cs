@@ -93,7 +93,7 @@ public class RecruitCanvas : MonoBehaviour
         }
 
 
-        RankUpUI.Instance.pollutionRecruitCanvas = false;
+        RankUpUI.Instance.useCanvas = false;
 
 
         //新しく人材を迎えたよ！てきなUI表示

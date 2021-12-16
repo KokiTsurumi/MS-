@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
 
     float zoomSpeed = 1.0f;
     float zoomTime = 0.5f;
-    float cameraZoomSize = 2.5f;
+    float cameraZoomSize = 4.0f;
 
     float cameraOrthSizeDefault;
     float zoomCurrentTime = 0;

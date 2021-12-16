@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30B9\u30AD\u30EB\u8AAC\u660E"
+  m_Text: 
 --- !u!1 &1689519780328768828
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +403,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A
+  m_Text: 
 --- !u!1 &3792231336870392953
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,8 +465,7 @@ MonoBehaviour:
   nameText: {fileID: 3792231337604426324}
   cRank: {fileID: 3792231337495126004}
   bRank: {fileID: 3792231336812657468}
-  skillText: {fileID: 7447010052326672864}
-  skillName: {fileID: 2166514235993259428}
+  skillName: {fileID: 7447010052326672864}
   robotImage: {fileID: 0}
   originalGameObject: {fileID: 0}
 --- !u!1 &3792231337004457735
@@ -1342,7 +1341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A
+  m_Text: 
 --- !u!1 &3792231337504466411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1480,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: 
 --- !u!1 &3792231337735847572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,7 +2515,6 @@ MonoBehaviour:
   nameText: {fileID: 0}
   cRank: {fileID: 0}
   bRank: {fileID: 0}
-  skillText: {fileID: 0}
   skillName: {fileID: 0}
   robotImage: {fileID: 3792231338429804264}
   originalGameObject: {fileID: 0}

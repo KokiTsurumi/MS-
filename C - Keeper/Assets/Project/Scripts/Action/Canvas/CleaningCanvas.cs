@@ -28,7 +28,7 @@ public class CleaningCanvas : MonoBehaviour
     [SerializeField] GameObject cleaningCanvas;
     [SerializeField] GameObject selectCanvas;
 
-
+    GameObject island;
     GameObject select = null;
 
     public void Initialize()
@@ -40,6 +40,8 @@ public class CleaningCanvas : MonoBehaviour
 
         startButton.SetActive(false);
         ListUI.SetActive(false);
+
+        island = IslandManager.Instance.GetCurrentIsland();
     }
 
     public void DisplayCharaList()
@@ -94,8 +96,6 @@ public class CleaningCanvas : MonoBehaviour
 
         RobotManager.Instance.selectedRobot = selectRobot.GetComponent<SelectRobotData>().originalGameObject;
 
-        GameObject island = IslandManager.Instance.GetCurrentIsland();
-        
 
         cleaningCanvas.SetActive(false);
         selectCanvas.SetActive(false);
@@ -128,23 +128,7 @@ public class CleaningCanvas : MonoBehaviour
 
     public void CreateRobotList()
     {
-        //RobotList = RobotManager.Instance.robotList;
-
-        //リスト生成
-        //for (int i = 0; i < RobotManager.Instance.robotList.Count; i++)
-        //{
-        //    GameObject obj = (GameObject)Instantiate(robotPrefab);
-
-
-        //    //RobotData data = RobotList[i].GetComponent<RobotData>();
-
-        //    obj.transform.SetParent(robotListParent.transform,false);
-        //    obj.name = "RobotData[" + RobotManager.Instance.robotList[i].GetComponent<RobotData>().name + "]";
-
-        //    obj.GetComponent<ActionRobotInterface>().Create(RobotManager.Instance.robotList[i]);
-
-        //    RobotList.Add(obj);
-        //}
+       
         foreach(GameObject original in RobotManager.Instance.robotList)
         {
             if (original.transform.position.x == 1) continue;
@@ -177,7 +161,6 @@ public class CleaningCanvas : MonoBehaviour
 
     public void TutorialCleaningStart()
     {
-        GameObject island = IslandManager.Instance.GetCurrentIsland();
         int level = island.GetComponent<IslandBase>().CalcRemoveRate(true);
         //Debug.Log("レベル" + level);
         island.GetComponent<IslandBase>().RemovePollution(level);
@@ -189,7 +172,6 @@ public class CleaningCanvas : MonoBehaviour
 
     IEnumerator TutorialCleaningEnd()
     {
-        GameObject island = IslandManager.Instance.GetCurrentIsland();
         Camera.main.GetComponent<CameraController>().ZoomOut();
         yield return new WaitForSeconds(0.3f);
         island.transform.GetChild(0).GetComponent<SeaDizolve>().DissolveStart();
@@ -202,7 +184,6 @@ public class CleaningCanvas : MonoBehaviour
 
     public void CleaningEnd()
     {
-        GameObject island = IslandManager.Instance.GetCurrentIsland();
         int level = island.GetComponent<IslandBase>().CalcRemoveRate(false);
         //Debug.Log("レベル" + level);
         island.GetComponent<IslandBase>().RemovePollution(level);
@@ -219,7 +200,6 @@ public class CleaningCanvas : MonoBehaviour
 
     public void TutorialCleaning()
     {
-        GameObject island = IslandManager.Instance.GetCurrentIsland();
         island.GetComponent<IslandBase>().StartClean(2.0f, TutorialCleaningStart);
     }
 }

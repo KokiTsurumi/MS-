@@ -12,6 +12,11 @@ public class InformationPop : MonoBehaviour
     [SerializeField] Text text;
     [SerializeField] Slider pollutionSlider;
 
+    class JsonInformationText
+    {
+        public string[] InformationBeforeList;
+        public string[] InformationAfterList;
+    }
 
     void Start()
     {
@@ -25,11 +30,64 @@ public class InformationPop : MonoBehaviour
         
     }
 
-    public void Create(string text, int pollutionLevel)
+    public void Create(GameObject island)
     {
-        Debug.Log("pollutionLevelは" + pollutionLevel);
-        this.text.text = text;
-        pollutionSlider.value = pollutionLevel;
+
+        string str = Resources.Load<TextAsset>("jsonFiles/jsonInformationList").ToString();
+        JsonInformationText jsonText = JsonUtility.FromJson<JsonInformationText>(str);
+
+        if (island.GetComponent<IslandBase>().GetPollutionLevel() > 0)
+        {
+            switch (island.gameObject.name)
+            {
+                case "Island_center":
+                    this.text.text = jsonText.InformationBeforeList[0];
+                    break;
+                case "Island_2":
+                    this.text.text = jsonText.InformationBeforeList[1];
+                    break;
+                case "Island_3":
+                    this.text.text = jsonText.InformationBeforeList[2];
+                    break;
+                case "Island_4":
+                    this.text.text = jsonText.InformationBeforeList[3];
+                    break;
+                case "Island_5":
+                    this.text.text = jsonText.InformationBeforeList[4];
+                    break;
+                default:
+                    text.text = "オブジェクトが見つかりませんでした";
+                    break;
+            }
+        }
+        else
+        {
+            switch (island.gameObject.name)
+            {
+                case "Island_center":
+                    this.text.text = jsonText.InformationAfterList[0];
+                    break;
+                case "Island_2":
+                    this.text.text = jsonText.InformationAfterList[1];
+                    break;
+                case "Island_3":
+                    this.text.text = jsonText.InformationAfterList[2];
+                    break;
+                case "Island_4":
+                    this.text.text = jsonText.InformationAfterList[3];
+                    break;
+                case "Island_5":
+                    this.text.text = jsonText.InformationAfterList[4];
+                    break;
+                default:
+                    text.text = "オブジェクトが見つかりませんでした";
+                    break;
+            }
+        }
+
+        
+
+        pollutionSlider.value = island.GetComponent<IslandBase>().GetPollutionLevel();
     }
 
     public void OnClickClose()
