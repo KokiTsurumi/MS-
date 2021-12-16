@@ -16,6 +16,10 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] public GameObject backButton;
 
+    public AudioClip sound1;
+    AudioSource audioSource;
+
+
     float zoomSpeed = 1.0f;
     float zoomTime = 0.5f;
     float cameraZoomSize = 2.5f;
@@ -66,7 +70,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
         cameraZ = transform.position.z;
         cameraOrthSizeDefault = Camera.main.orthographicSize;
         
@@ -389,6 +393,7 @@ public class CameraController : MonoBehaviour
 
     public void ActionStart()
     {
+        audioSource.PlayOneShot(sound1);
         if (MouseManager.Instance.GetCurrentSelectedGameObject() == null) return;
 
         TutorialManager.TutorialState tutorialState = TutorialManager.Instance.tutorialState;

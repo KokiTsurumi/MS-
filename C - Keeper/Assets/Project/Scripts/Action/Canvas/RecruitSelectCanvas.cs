@@ -18,6 +18,8 @@ public class RecruitSelectCanvas : MonoBehaviour
 
     [SerializeField] Button button;
 
+    public AudioClip sound1;
+    AudioSource audioSource;
 
     int dispListNumber = 0;
 
@@ -29,7 +31,7 @@ public class RecruitSelectCanvas : MonoBehaviour
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
 
         for (int i = 0; i < CharacterManager.Instance.candidateList.Count; i++)
         {
@@ -48,7 +50,7 @@ public class RecruitSelectCanvas : MonoBehaviour
 
     public void OnClickLeftButton()
     {
-
+        audioSource.PlayOneShot(sound1);
         if (dispListNumber != 0)
             dispListNumber -= 1;
         else
@@ -60,6 +62,7 @@ public class RecruitSelectCanvas : MonoBehaviour
 
     public void OnClickRightButton()
     {
+        audioSource.PlayOneShot(sound1);
         if (dispListNumber != recruitList.Count - 1)
             dispListNumber += 1;
         else
@@ -72,7 +75,7 @@ public class RecruitSelectCanvas : MonoBehaviour
 
     public void OnClickSelectButton()
     {
-
+        
         recruitList[dispListNumber].GetComponent<RecruitCharacterData>().selected = true;
 
         displayCharacter.GetComponent<RecruitCharacterData>().SetCharacterData(recruitList[dispListNumber].GetComponent<RecruitCharacterData>());

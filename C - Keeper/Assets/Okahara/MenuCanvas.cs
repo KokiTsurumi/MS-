@@ -8,10 +8,14 @@ public class MenuCanvas : MonoBehaviour
     [SerializeField] GameObject listCanvas;
     [SerializeField] seni sceneChange;
 
+    public AudioClip sound1;
+    AudioSource audioSource;
+
     void Start()
     {
         menuButton.SetActive(true);
         listCanvas.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -23,30 +27,31 @@ public class MenuCanvas : MonoBehaviour
     {
         menuButton.SetActive(false);
         listCanvas.SetActive(true);
-
+        audioSource.PlayOneShot(sound1);
         //ÉQÅ[ÉÄì‡éûä‘í‚é~
     }
 
     public void OnClickConfigButton()
     {
-
+        audioSource.PlayOneShot(sound1);
     }
 
     public void OnClickExplanationButton()
     {
-
+        audioSource.PlayOneShot(sound1);
     }
 
     public void OnClickBackButton()
     {
         menuButton.SetActive(true);
         listCanvas.SetActive(false);
+        audioSource.PlayOneShot(sound1);
         //ÉQÅ[ÉÄì‡éûä‘äJén
     }
 
     public void OnClickEndGameButton()
     {
-
+        
     }
 
     public void OnClickTitleButton()
