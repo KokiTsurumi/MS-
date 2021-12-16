@@ -5,17 +5,21 @@ using UnityEngine.UI;
 
 public class ButtonAnimation : MonoBehaviour
 {
+
     public Animator animator;
     
     public void OnEnterButton()
     {
+
         animator.SetBool("Start",true);
-        
+
     }
 
     public void OnExitButton()
     {
+
         animator.SetBool("Start", false);
+
     }
 
     // Start is called before the first frame update

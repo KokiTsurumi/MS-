@@ -17,10 +17,10 @@ public class TextFader : MonoBehaviour
 	int currentLetterIndex;
 	float currentCharFadeTime;
 
-	void OnEnable()
+    void OnEnable()
 	{
-
-		if (CharLimiter == null)
+        
+        if (CharLimiter == null)
 			CharLimiter = gameObject.AddComponent<CharLimiter>();
 
 		if (CharFader == null)
@@ -30,18 +30,19 @@ public class TextFader : MonoBehaviour
 		CharFader.enabled = true;
 
 		text = GetComponent<Text>();
-
-		if (StartOnEnable)
+        
+        if (StartOnEnable)
 		{
-			PerformAnimation();
-		}
+            
+            PerformAnimation();
+        }
 	}
 
 	void OnDisable()
 	{
 		CharLimiter.enabled = false;
 		CharFader.enabled = false;
-	}
+    }
 
 	public void PerformAnimation()
 	{
@@ -51,8 +52,7 @@ public class TextFader : MonoBehaviour
 
 	void Update()
 	{
-
-		if (IgnoreWhiteSpaces)
+        if (IgnoreWhiteSpaces)
 		{
 			var str = text.text;
 
