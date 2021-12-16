@@ -209,6 +209,21 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
     }
 
     /// <summary>
+    /// キャラクター生成関数(チュートリアル用)
+    /// </summary>
+    /// <param name="r">研究(0～5:E～S)</param>
+    /// <param name="p">生産(0～5:E～S)</param>
+    /// <param name="m">管理(0～5:E～S)</param>
+    /// <param name="i">調査(0～5:E～S)</param>
+    public void GenerateTutorialCharacter(int r, int p, int m, int i)
+    {
+        GameObject obj = Instantiate(characterPrefab);
+        obj.GetComponent<CharacterData>().SetParam(r, p, m, i);
+        obj.transform.parent = list.transform;
+        characterList.Add(obj);
+    }
+
+    /// <summary>
     /// 人材消費関数
     /// </summary>
     public void UseCharacter()

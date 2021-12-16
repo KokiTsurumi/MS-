@@ -110,6 +110,21 @@ public class CharacterBase : MonoBehaviour
     }
 
     /// <summary>
+    /// パラメータセット関数
+    /// </summary>
+    /// <param name="r">研究(0～5:E～S)</param>
+    /// <param name="p">生産(0～5:E～S)</param>
+    /// <param name="m">管理(0～5:E～S)</param>
+    /// <param name="i">調査(0～5:E～S)</param>
+    public void SetParam(int r, int p, int m, int i)
+    {
+        research        = Mathf.Clamp(r, 0, 5);
+        production      = Mathf.Clamp(p, 0, 5);
+        management      = Mathf.Clamp(m, 0, 5);
+        investigation   = Mathf.Clamp(i, 0, 5);
+    }
+
+    /// <summary>
     /// 名前生成関数
     /// </summary>
     public void NameGenerator()
