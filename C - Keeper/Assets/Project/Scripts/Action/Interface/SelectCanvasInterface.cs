@@ -48,7 +48,9 @@ public class SelectCanvasInterface : MonoBehaviour
         if(startAnimationCanvas != null)
             startAnimationCanvas.SetActive(false);
         ListUI.SetActive(false);
-        
+
+        if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.No)
+            cameraController.GetComponent<CameraController>().backButton.SetActive(true);
     }
 
     public void DisplayCharaList()
@@ -56,6 +58,9 @@ public class SelectCanvasInterface : MonoBehaviour
         if (!MouseManager.Instance.OnDoubleClickUI()) return;
 
         ListUI.SetActive(true);
+
+        if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.No)
+            cameraController.GetComponent<CameraController>().backButton.SetActive(false);
 
         listScrollbar.ScrollbarPositionReset();
     }
@@ -79,6 +84,9 @@ public class SelectCanvasInterface : MonoBehaviour
         SetCharactarData();
 
         ListUI.SetActive(false);
+
+        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.No)
+            cameraController.GetComponent<CameraController>().backButton.SetActive(true);
 
         if (selectChara[0].GetComponent<SelectCharacterDataInterface>().GetSelectGameObject() != null
             &&
@@ -113,7 +121,14 @@ public class SelectCanvasInterface : MonoBehaviour
 
     virtual public void StartButton(){}
 
-    public void SelectCancel(){ ListUI.SetActive(false);}
+    public void SelectCancel()
+    {
+        ListUI.SetActive(false);
+
+        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.No)
+            cameraController.GetComponent<CameraController>().backButton.SetActive(true);
+
+    }
 
     public void CreateCharaList()
     {

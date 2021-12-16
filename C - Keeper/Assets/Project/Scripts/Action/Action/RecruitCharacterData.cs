@@ -42,10 +42,19 @@ public class RecruitCharacterData : CharacterData
         if(rRank != null)
         {
             rRank.text = CharacterManager.Instance.RankTransfer(research);
+            rRank.color = SetRankColor(rRank.text);
+
             pRank.text = CharacterManager.Instance.RankTransfer(production);
+            pRank.color = SetRankColor(pRank.text);
+
             mRank.text = CharacterManager.Instance.RankTransfer(management);
+            mRank.color = SetRankColor(mRank.text);
+
             iRank.text = CharacterManager.Instance.RankTransfer(investigation);
-            if(tag != TAG_LIST.TAG_NULL)
+            iRank.color = SetRankColor(iRank.text);
+
+
+            if (tag != TAG_LIST.TAG_NULL)
             {
                 tagText.text = data.tag.ToString();
 
@@ -86,9 +95,18 @@ public class RecruitCharacterData : CharacterData
         name = originalData.name;
 
         rRank.text = CharacterManager.Instance.RankTransfer(research);
+        rRank.color = SetRankColor(rRank.text);
+
         pRank.text = CharacterManager.Instance.RankTransfer(production);
+        pRank.color = SetRankColor(pRank.text);
+
         mRank.text = CharacterManager.Instance.RankTransfer(management);
+        mRank.color = SetRankColor(mRank.text);
+
         iRank.text = CharacterManager.Instance.RankTransfer(investigation);
+        iRank.color = SetRankColor(iRank.text);
+
+
         ageText.text = originalData.age.ToString();
         tag = originalData.tag;
         if (tag != TAG_LIST.TAG_NULL)
@@ -100,5 +118,36 @@ public class RecruitCharacterData : CharacterData
             tagText.text = "‚È‚µ";
         }
         original = originalGameObject;
+    }
+
+    Color SetRankColor(string rank)
+    {
+        Color color = Color.white;
+        switch (rank)
+        {
+            case "A":
+                color = Color.red;
+                break;
+            case "B":
+                color = Color.green;
+                break;
+            case "C":
+                color = Color.blue;
+                break;
+            case "D":
+                color = Color.magenta;
+                break;
+            case "E":
+                color = Color.black;
+                break;
+            case "S":
+                color = Color.yellow;
+                break;
+            default:
+                color = Color.black;
+                break;
+        }
+
+        return color;
     }
 }

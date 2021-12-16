@@ -86,7 +86,8 @@ public class Production : ActionButtonInterface
                 if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
                 {
                     //タイマー計算処理
-                    island.GetComponent<IslandBase>().StartProduction(0, CreateRobotCanvas);
+                    island.GetComponent<IslandBase>().StartProduction(2.0f, CreateRobotCanvas);
+                    CreateRobotStart();
                     Debug.Log("チュートリアル　生産");
                 }
                 else
@@ -145,8 +146,23 @@ public class Production : ActionButtonInterface
             {
                 //チェック表示
                 //createRobotCanvas.SetActive(true);
-                checkMarkIcon.SetActive(true);
-                Camera.main.GetComponent<CameraController>().GetCenterIsland.GetComponent<IslandBase>().timer.SetActive(false);
+
+                if(TutorialManager.Instance.tutorialState != TutorialManager.TutorialState.No)
+                {
+                    if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
+                    {
+                        TutorialManager.Instance.tutorialState = TutorialManager.TutorialState.ProductionRobotCreate;
+                        Camera.main.GetComponent<CameraController>().GetCenterIsland.GetComponent<IslandBase>().timer.SetActive(false);
+                        checkMarkIcon.SetActive(true);
+                        TutorialManager.Instance.NextStep();
+                    }
+                }
+                else
+                {
+                    checkMarkIcon.SetActive(true);
+                    Camera.main.GetComponent<CameraController>().GetCenterIsland.GetComponent<IslandBase>().timer.SetActive(false);
+                }
+
 
 
             }
@@ -180,14 +196,14 @@ public class Production : ActionButtonInterface
     }
 
 
-    IEnumerator TutorialCloseRobotCanvas()
-    {
-        yield return new WaitForSeconds(0.5f);
-        cameraController.ZoomOut();
-        TutorialManager.Instance.NextStep();
-        Destroy(this.gameObject);
+    //IEnumerator TutorialCloseRobotCanvas()
+    //{
+    //    yield return new WaitForSeconds(0.5f);
+    //    cameraController.ZoomOut();
+    //    TutorialManager.Instance.NextStep();
+    //    //Destroy(this.gameObject);
 
-    }
+    //}
 
     public void CheckIconDisplay()
     {
@@ -227,10 +243,13 @@ public class Production : ActionButtonInterface
 
     public void OnClickClossButton()
     {
-        if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
+        if(TutorialManager.Instance.tutorialState != TutorialManager.TutorialState.No)
         {
             TutorialManager.Instance.NextStep();
-            //return;
+            robotCanvas.SetActive(false);
+            Destroy(canvas);
+
+            return;
         }
         Destroy(canvas);
 

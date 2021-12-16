@@ -46,6 +46,9 @@ public class SeaDizolve : MonoBehaviour
 
     void DisplayCleanedUI()
     {
+        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Cleanning)
+            TutorialManager.Instance.NextStep();
+
         Destroy(this.gameObject);
         GameObject island = transform.root.gameObject;
         Instantiate(cleanedUIPrefab).GetComponent<CleanedUI>().Create(island);

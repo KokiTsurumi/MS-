@@ -45,15 +45,18 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         /// <summary>
         /// 調査中
         /// </summary>
+        InvestigationStart,
         Investigation,
         /// <summary>
         /// 住人の声を聴く
         /// </summary>
+        //InformationStart,
         Information,
         /// <summary>
         /// 生産中
         /// </summary>
         Production,
+        ProductionRobotCreate,
         /// <summary>
         /// 清掃中
         /// </summary>
@@ -71,6 +74,9 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     delegate void UpdateFunc();
     UpdateFunc updateFunc;
+
+    public delegate void DelegateFunc();
+    public DelegateFunc delegateFunc;
 
     delegate void Coroutine();
 
@@ -136,32 +142,61 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList = new StepList(navigatorText);
 
         stepList.AddListFunc(TutorialStart);
-        stepList.AddListText("人材を選択します");
+        stepList.AddListText("はじめまして！これからこの組織の秘書を努めます(秘書子)です！");
+        stepList.AddListText("この組織は、汚れてしまった海域を綺麗にし、居なくなった魚たちを呼び戻す組織です！");
+        stepList.AddListText("それでは最初にこの組織で働いてもらう人員を雇いましょう！");
         stepList.AddListFunc(RecruitStart);
         stepList.AddListFunc(RecruitEnd);
-        stepList.AddListText("次は調査を行います");
+        stepList.AddListText("中々いい人材を選びましたね！(クリックして別のセリフに)それでは早速この2人に仕事を割り振りましょう！");
+        stepList.AddListText("まず最初に島の状況を把握しましょう！");
+        stepList.AddListText("島をクリックしてください！");
         stepList.AddListFunc(InvestigationZoomIn);
+        stepList.AddListFunc(InvestigationTextStart);
+        stepList.AddListText("次にコマンド調査を選択してください");
+        stepList.AddListFunc(InvestigationTextEnd);
         stepList.AddListFunc(InvestigationStart);
+        stepList.AddListText("空きをクリックすると人材が配置できますよ！");
+        stepList.AddListFunc(InvestigationSelectText);
+        stepList.AddListText("人材配置完了です！");
+        stepList.AddListText("調査や清掃を行うと時間がかかるので、完了まで少々お待ちくださいね！");
+        stepList.AddListFunc(InvestigationTimerStart);
         stepList.AddListFunc(InvestigationEnd);
-        stepList.AddListText("調査　完了　次　島　住人　声　聞いてみる");
+        stepList.AddListText("完了しました！                  ");
+        stepList.AddListText("調査を行うと、その島はどれだけ汚染されているのかと住民の声を聞く事が出来ます！");
         stepList.AddListFunc(InformationStart);
         stepList.AddListFunc(Information);
+        stepList.AddListText("この島ではゴミ問題に悩まされているようですね・・・");
+        stepList.AddListFunc(InformationText);
         stepList.AddListFunc(InformationEnd);
-        stepList.AddListText("次は生産を行いましょうw                    ");
+        stepList.AddListText("それではロボットを生産してそれを使って清掃しましょう！");
+        stepList.AddListText("先程のコマンドから生産をクリックしてください！");
         stepList.AddListFunc(ProductionPopOut);
         stepList.AddListFunc(ProductionStart);
+        stepList.AddListText("空いている場所をクリックして人材を配置してください！");
+        stepList.AddListFunc(ProductionSelectText);
+        stepList.AddListText("生産の配置完了です！ロボットが生産されるまで少々お待ちください！");
+        stepList.AddListFunc(ProductionTimerStart);
         stepList.AddListFunc(ProductionEnd);
-        stepList.AddListText("清掃を行います          ");
+        stepList.AddListText("ロボットが完成しました！島をクリックしてロボットを見てみましょう");
+        stepList.AddListFunc(ProductionTextEnd);
+        stepList.AddListFunc(CleaningTextStart);
+        stepList.AddListText("それではロボットを配置して清掃を開始しましょう！、まずは清掃のコマンドを選択してください！");
         stepList.AddListFunc(CleaningPopOut);
         stepList.AddListFunc(CleaningStart);
+        stepList.AddListText("清掃開始です、しばらくお待ちください！");
+        stepList.AddListFunc(CleaningTimerStart);
         stepList.AddListFunc(CleaningEnd);
+        stepList.AddListFunc(SeaDissolveStart);
+        stepList.AddListFunc(SeaDissolveEnd);
+        stepList.AddListText("清掃が終わりました！、汚染度は、情報をクリックした後に島をクリックすればわかるようになっています！");
+        stepList.AddListText("そしてこの島の汚染度が0%になり、きれいな海に戻りました！");
         stepList.AddListFunc(RankUp);
-        stepList.AddListText("拠点となる島がきれいになったよ\n知名度ランク上るよ\nｲｪｰｲ");
-        stepList.AddListText("ランクが上がったのでさらに人材を雇うことができます      ");
+        stepList.AddListText("知名度ランクが上がりました！");
+        stepList.AddListText("知名度が上がったことで、組織に入りたいと言っている方が来ています！誰を雇いますか？");
         stepList.AddListFunc(RankUpRecruitStart);
         stepList.AddListFunc(RankUpRecruitEnd);
-        stepList.AddListText("以上でチュートリアルを終了します");
-        stepList.AddListText("周囲にある4つの島を清掃してきれいな海にしましょう");
+        stepList.AddListText("いいと思います！これで準備は完了しました！");
+        stepList.AddListText("この海域の汚染を全て取り除けば、生態系は元に戻ります！それでは、頑張って下さい！");
         stepList.AddListFunc(TutorialEnd);
 
         //EventTriggerセット
@@ -200,16 +235,48 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     void InvestigationZoomIn()
     {
         tutorialCanvas.SetActive(false);
+        //tutorialState = TutorialState.Investigation;
+        tutorialState = TutorialState.InvestigationStart;
+        //Camera.main.GetComponent<CameraController>().ZoomIn();
+    }
+
+
+    void InvestigationTextStart()
+    {
+        Camera.main.GetComponent<CameraController>().ActionButtonRepop();
+        StartCoroutine(CoroutineTimer(1.0f, InvestigationText));
+        
+    }
+
+    void InvestigationText()
+    {
         tutorialState = TutorialState.Investigation;
-        Camera.main.GetComponent<CameraController>().ZoomIn();
+        tutorialCanvas.SetActive(true);
+        NextStep();
+    }
+
+    void InvestigationTextEnd()
+    {
+        tutorialCanvas.SetActive(false);
+        //NextStep();
     }
 
     void InvestigationStart()
     {
+        tutorialCanvas.SetActive(true);
+        tutorialState = TutorialState.Investigation;
         investigationCanvas = Instantiate(investigationCanvasPrefab);
         investigationCanvas.GetComponent<InvestigationCanvas>().Initialize();
         updateFunc = InvestigationUpdate;
+        NextStep();
     }
+
+    void InvestigationSelectText()
+    {
+        tutorialCanvas.SetActive(false);
+
+    }
+
 
     void InvestigationUpdate()
     {
@@ -228,31 +295,68 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void InvestigationEnd()
     {
+        Destroy(investigationCanvas);
         stepList.Next();
         stepList.Step();
         tutorialCanvas.SetActive(true);
+        Camera.main.GetComponent<CameraController>().ZoomOut();
+    }
 
+
+    public void InvestigationTimerSet(DelegateFunc func)
+    {
+        delegateFunc = func;
+        tutorialCanvas.SetActive(true);
+        NextStep();
+    }
+
+    void InvestigationTimerStart()
+    {
+        tutorialCanvas.SetActive(false);
+        delegateFunc();
+        
     }
 
     void InformationStart()
     {
         tutorialCanvas.SetActive(false);
         tutorialState = TutorialState.Information;
-        Camera.main.GetComponent<CameraController>().ZoomIn();
+        //tutorialState = TutorialState.InformationStart;
+        //Camera.main.GetComponent<CameraController>().ZoomIn();
     }
 
     void Information()
     {
         //IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.SetActive(true);
-
+        tutorialState = TutorialState.Information;
         informationPop = Instantiate(informationPopPrefab);
-        informationPop.GetComponent<InformationPop>().Create("チュートリアル", 0);
+        informationPop.GetComponent<InformationPop>().Create("チュートリアル", 100);
         IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = false;
+        NextStep();
+        tutorialCanvas.SetActive(true);
+    }
+
+    //void InformationText()
+    //{
+    //    tutorialCanvas.SetActive(false);
+    //    NextStep();
+    //}
+
+    void InformationText()
+    {
+        //IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.SetActive(true);
+        tutorialCanvas.SetActive(false);
+        //NextStep();
     }
 
     void InformationEnd()
     {
-        //IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.SetActive(true);
+        Camera.main.GetComponent<CameraController>().ZoomOut();
+        StartCoroutine(CoroutineTimer(0.8f, InformationEndTimer));
+    }
+
+    void InformationEndTimer()
+    {
         tutorialCanvas.SetActive(true);
         NextStep();
     }
@@ -268,19 +372,55 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
         productionCanvas = Instantiate(productionCanvasPrefab);
         productionCanvas.GetComponent<ProductionCanvas>().Initialize();
+        tutorialCanvas.SetActive(true);
+        NextStep();
+    }
+
+    void ProductionSelectText()
+    {
+        tutorialCanvas.SetActive(false);
+
+
+    }
+
+    public void ProductionTimerSet(DelegateFunc func)
+    {
+        delegateFunc = func;
+        tutorialCanvas.SetActive(true);
+        NextStep();
+    }
+
+    void ProductionTimerStart()
+    {
+        tutorialCanvas.SetActive(false);
+        delegateFunc();
     }
 
     void ProductionEnd()
     {
-        stepList.Next();
-        stepList.Step();
+        //NextStep();
         tutorialCanvas.SetActive(true);
-
+        NextStep();
     }
+
+    void ProductionTextEnd()
+    {
+        //Destroy(productionCanvas);
+        tutorialCanvas.SetActive(false);
+        //NextStep();
+    }
+
+    void CleaningTextStart()
+    {
+        //Camera.main.GetComponent<CameraController>().ZoomOut();
+        NextStep();
+        tutorialCanvas.SetActive(true);
+        tutorialState = TutorialState.Cleanning;
+    }
+
 
     void CleaningPopOut()
     {
-        tutorialState = TutorialState.Cleanning;
         tutorialCanvas.SetActive(false);
         Camera.main.GetComponent<CameraController>().ZoomIn();
     }
@@ -290,11 +430,39 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         cleaningCanvas = Instantiate(cleaningCanvasPrefab);
         cleaningCanvas.GetComponent<CleaningCanvas>().Initialize();
     }
-    
+
+    public void CleaningTimerSet(DelegateFunc func)
+    {
+        delegateFunc = func;
+        tutorialCanvas.SetActive(true);
+        NextStep();
+    }
+
+    void CleaningTimerStart()
+    {
+        tutorialCanvas.SetActive(false);
+        delegateFunc();
+
+
+    }
+
     void CleaningEnd()
     {
         stepList.Next();
         stepList.Step();
+        //tutorialCanvas.SetActive(true);
+    }
+
+    void SeaDissolveStart()
+    {
+        GameObject island = IslandManager.Instance.GetCurrentIsland();
+        island.transform.GetChild(0).GetComponent<SeaDizolve>().DissolveStart();
+
+    }
+
+    void SeaDissolveEnd()
+    {
+        NextStep();
         tutorialCanvas.SetActive(true);
     }
 
@@ -335,6 +503,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         //Destroy(this.gameObject);//これでもいい
         tutorialCanvas.SetActive(false);
         tutorialState = TutorialState.No;
+        Camera.main.GetComponent<CameraController>().ZoomOut();
     }
 
 

@@ -106,7 +106,8 @@ public class CleaningCanvas : MonoBehaviour
         if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Cleanning)
         {
             //Debug.Log("チュートリアル清掃開始");
-            island.GetComponent<IslandBase>().StartClean(3.0f,TutorialCleaning);
+            TutorialManager.Instance.CleaningTimerSet(TutorialCleaning);
+            
            
         }
         else
@@ -174,15 +175,16 @@ public class CleaningCanvas : MonoBehaviour
 
     }
 
-    public void TutorialCleaning()
+    public void TutorialCleaningStart()
     {
         GameObject island = IslandManager.Instance.GetCurrentIsland();
         int level = island.GetComponent<IslandBase>().CalcRemoveRate(true);
         //Debug.Log("レベル" + level);
         island.GetComponent<IslandBase>().RemovePollution(level);
+        Camera.main.GetComponent<CameraController>().ZoomOut();
+        island.transform.GetChild(0).GetComponent<SeaDizolve>().DissolveStart();
+        //StartCoroutine(TutorialCleaningEnd());
 
-        StartCoroutine(TutorialCleaningEnd());
-        
     }
 
     IEnumerator TutorialCleaningEnd()
@@ -213,5 +215,11 @@ public class CleaningCanvas : MonoBehaviour
         //    island.transform.GetChild(0).GetComponent<SeaDizolve>().start = true;
         //}
 
+    }
+
+    public void TutorialCleaning()
+    {
+        GameObject island = IslandManager.Instance.GetCurrentIsland();
+        island.GetComponent<IslandBase>().StartClean(2.0f, TutorialCleaningStart);
     }
 }

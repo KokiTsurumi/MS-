@@ -24,7 +24,8 @@ public class Timer : MonoBehaviour
         Gage = transform.GetChild(1).GetComponent<Image>();
     }
 
-    void Update()
+    //ƒQ[ƒ€ˆê’â~‚Å~‚Ü‚é‚æ‚¤‚É‚·‚é‚Ì‚ÅFixedUpdate
+    void FixedUpdate()
     {
         if (!start) return;
 

@@ -33,9 +33,9 @@ public class InvestigationCanvas : SelectCanvasInterface
 
             if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Investigation)
             {
-                target.GetComponent<IslandBase>().StartInvestigate(2.0f,null);//ŒÅ’è
+                TutorialManager.Instance.InvestigationTimerSet(TutorialInvestigationTimerStart);
 
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
             }
             else
             {
@@ -71,5 +71,11 @@ public class InvestigationCanvas : SelectCanvasInterface
         //Name_Value.Instance.RankConfirm();
         //RankUpUI.Instance.RankUpCheck();
 
+    }
+
+    public void TutorialInvestigationTimerStart()
+    {
+        GameObject target = IslandManager.Instance.GetCurrentIsland();
+        target.GetComponent<IslandBase>().StartInvestigate(2.0f, TutorialManager.Instance.NextStep);
     }
 }

@@ -22,8 +22,43 @@ public class CreateRobotData : MonoBehaviour
     {
         nameText.text = name;
         seinouRankText.text = RobotManager.Instance.RankTransfer(seinou);
+        seinouRankText.color = SetRankColor(seinouRankText.text);
+
         seisouRankText.text = RobotManager.Instance.RankTransfer(seisou);
+        seisouRankText.color = SetRankColor(seisouRankText.text);
+
         skillText.text = skill.ToString();
         robotImage.sprite = sprite;
+    }
+
+    Color SetRankColor(string rank)
+    {
+        Color color = Color.white;
+        switch (rank)
+        {
+            case "A":
+                color = Color.red;
+                break;
+            case "B":
+                color = Color.green;
+                break;
+            case "C":
+                color = Color.blue;
+                break;
+            case "D":
+                color = Color.magenta;
+                break;
+            case "E":
+                color = Color.black;
+                break;
+            case "S":
+                color = Color.yellow;
+                break;
+            default:
+                color = Color.black;
+                break;
+        }
+
+        return color;
     }
 }

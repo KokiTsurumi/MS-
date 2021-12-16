@@ -94,7 +94,8 @@ public class CameraController : MonoBehaviour
         if (zoomState == ZoomState.IN)
         {
             //GameObject island = IslandManager.Instance.GetCurrentIsland();
-            centerIsland.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = false;
+            if(TutorialManager.Instance.tutorialState != TutorialManager.TutorialState.Production)
+                centerIsland.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = false;
 
             foreach (GameObject obj in IslandManager.Instance.islandList)
             {
@@ -152,7 +153,13 @@ public class CameraController : MonoBehaviour
 
             //ポップアップ表示非表示
             if (transState == TransState.CENTER)
-                actionCanvasAnimator.SetBool("popOut", true);
+            {
+                if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.InvestigationStart)
+                    TutorialManager.Instance.NextStep();
+                else
+                    actionCanvasAnimator.SetBool("popOut", true);
+
+            }
             else if (transState == TransState.ISLAND)
                 DisplayUI();
 

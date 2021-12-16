@@ -45,7 +45,12 @@ public class ActionRobotInterface : RobotData
         if(cRank != null)
         {
             cRank.text = RobotManager.Instance.RankTransfer(clean);
+            cRank.color = SetRankColor(cRank.text);
+
             bRank.text = RobotManager.Instance.RankTransfer(battery);
+            bRank.color = SetRankColor(bRank.text);
+
+
             if(specialSkill != SPECIALSKILL_LIST.SPECIALSKILL_NULL)
             {
                 skillName.text = specialSkill.ToString();
@@ -77,7 +82,11 @@ public class ActionRobotInterface : RobotData
         name = data.name;
 
         cRank.text = RobotManager.Instance.RankTransfer(clean);
+        cRank.color = SetRankColor(cRank.text);
+
         bRank.text = RobotManager.Instance.RankTransfer(battery);
+        bRank.color = SetRankColor(bRank.text);
+
         nameText.text = name;
         robotSprite = robotImage.sprite = data.robotSprite;
 
@@ -89,4 +98,34 @@ public class ActionRobotInterface : RobotData
         canvas.RobotDataBack();
     }
 
+    Color SetRankColor(string rank)
+    {
+        Color color = Color.white;
+        switch (rank)
+        {
+            case "A":
+                color = Color.red;
+                break;
+            case "B":
+                color = Color.green;
+                break;
+            case "C":
+                color = Color.blue;
+                break;
+            case "D":
+                color = Color.magenta;
+                break;
+            case "E":
+                color = Color.black;
+                break;
+            case "S":
+                color = Color.yellow;
+                break;
+            default:
+                color = Color.black;
+                break;
+        }
+
+        return color;
+    }
 }

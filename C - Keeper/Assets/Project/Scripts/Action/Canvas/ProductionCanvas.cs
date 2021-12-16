@@ -42,12 +42,9 @@ public class ProductionCanvas : SelectCanvasInterface
 
             if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
             {
-                GameObject obj = GameObject.Find("Production");
 
-                Debug.Log(obj.name);
-
-                obj.GetComponent<Production>().TutorialSetCanvas(this.gameObject);
-                obj.GetComponent<Production>().ActionEnd();
+                TutorialManager.Instance.ProductionTimerSet(TutorialProductionStart);
+               
             }
             else
             {
@@ -78,6 +75,12 @@ public class ProductionCanvas : SelectCanvasInterface
     }
 
 
-
+    public void TutorialProductionStart()
+    {
+        //CameraControllerÇÃÅ@action Ç falseÇ…Ç∑ÇÈ
+        GameObject obj = GameObject.Find("Production");
+        obj.GetComponent<Production>().TutorialSetCanvas(this.gameObject);
+        obj.GetComponent<Production>().ActionEnd();
+    }
     
 }
