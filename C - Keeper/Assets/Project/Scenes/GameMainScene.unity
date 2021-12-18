@@ -1816,7 +1816,7 @@ SpriteRenderer:
   m_SortingLayerID: 937352405
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: de153a976a1ca1247b8070d2ecd83a5f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c6d4a9233efac9429d692bd073409fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7587,7 +7587,7 @@ SpriteRenderer:
   m_SortingLayerID: 937352405
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e6535f22c8ca0764590ee2d882d5b2d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6ee1a75f853b004eb1a837fe72243be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10205,7 +10205,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 856031617828985576, guid: 6c619c9fabf0764458abfa2bca946adb, type: 3}
       propertyPath: tutorialStart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 856031617828985578, guid: 6c619c9fabf0764458abfa2bca946adb, type: 3}
       propertyPath: m_Name
