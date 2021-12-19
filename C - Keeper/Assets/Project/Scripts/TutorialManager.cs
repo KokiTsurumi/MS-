@@ -169,8 +169,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.AddListText("調査や清掃を行うと時間がかかるので、完了まで少々お待ちくださいね！");
         stepList.AddListFunc(InvestigationTimerStart);
         stepList.AddListFunc(InvestigationEnd);
-        stepList.AddListText("完了しました！                  ");
-        stepList.AddListText("調査を行うと、その島はどれだけ汚染されているのかと住民の声を聞く事が出来ます！");
+        stepList.AddListText("完了しました！\n調査を行うと、その島はどれだけ汚染されているのかと住民の声を聞く事が出来ます！");
         stepList.AddListText("島をクリックして、情報を選択しましょう！");
         stepList.AddListFunc(InformationStart);
         stepList.AddListFunc(Information);

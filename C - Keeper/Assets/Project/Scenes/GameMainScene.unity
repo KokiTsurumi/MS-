@@ -10660,7 +10660,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 856031617828985576, guid: 6c619c9fabf0764458abfa2bca946adb, type: 3}
       propertyPath: tutorialStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 856031617828985578, guid: 6c619c9fabf0764458abfa2bca946adb, type: 3}
       propertyPath: m_Name
