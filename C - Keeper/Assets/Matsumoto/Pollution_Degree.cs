@@ -17,7 +17,7 @@ public class Pollution_Degree : MonoBehaviour
 
         //èÚâªìxÇÃç≈ëÂílÇÃê›íË
         pollutionSlider.maxValue = maxDegree;
-        pollutionSlider.value = 0;
+        pollutionSlider.value = 100;
     }
 
 
@@ -25,7 +25,7 @@ public class Pollution_Degree : MonoBehaviour
     {
         //islandManager.totalPollutionLevel = pollutionSlider.value;
         if(IslandManager.Instance.totalPollutionLevel != 0)
-            pollutionSlider.value = 100 - IslandManager.Instance.totalPollutionLevel;
+            pollutionSlider.value = IslandManager.Instance.totalPollutionLevel;
     }
 
 

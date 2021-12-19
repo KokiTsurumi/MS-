@@ -34,12 +34,14 @@ public class MouseManager : SingletonMonoBehaviour<MouseManager>
     [SerializeField]
     GameObject test;
 
+    float mouseDoubleClickTime = 0.4f;
+
     void Update()
     {
         if(isDoubleClickStart)
         {
             doubleClickTime += Time.deltaTime;
-            if(doubleClickTime < 0.3f)
+            if(doubleClickTime < mouseDoubleClickTime)
             {
                 if (Input.GetMouseButtonDown(0)){
 
@@ -68,7 +70,7 @@ public class MouseManager : SingletonMonoBehaviour<MouseManager>
         if (isDoubleClickUIStart)
         {
             doubleClickUITime += Time.deltaTime;
-            if (doubleClickUITime < 0.3f)
+            if (doubleClickUITime < mouseDoubleClickTime)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -102,7 +104,7 @@ public class MouseManager : SingletonMonoBehaviour<MouseManager>
         if (isDoubleClickGameObjectStart)
         {
             doubleClickGameObjectTime += Time.deltaTime;
-            if (doubleClickGameObjectTime < 0.3f)
+            if (doubleClickGameObjectTime < mouseDoubleClickTime)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
