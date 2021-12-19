@@ -11,7 +11,11 @@ public class RecruitCanvas : MonoBehaviour
 {
     [SerializeField] GameObject charaSimpleDataUI;//キャラデータ簡易表示UI
 
-    [SerializeField] GameObject recruitCharacterListUI;
+    [SerializeField] GameObject recruitCanvas;
+
+    [SerializeField] GameObject mainCanvas;
+
+    [SerializeField] GameObject navigatorCanvas;
 
     [SerializeField] GameObject startButton;
 
@@ -19,8 +23,6 @@ public class RecruitCanvas : MonoBehaviour
     [SerializeField] GameObject[] selectChara = new GameObject[2];
 
     [System.NonSerialized] public int selectFrag;//0→一人目、1→二人目
-
-    [SerializeField] GameObject mainCanvas;
 
     /// <summary>
     /// originalデータのポインタ
@@ -31,13 +33,16 @@ public class RecruitCanvas : MonoBehaviour
     void Start()
     {
         startButton.SetActive(false);
+        recruitCanvas.SetActive(false);
+        mainCanvas.SetActive(false);
+        navigatorCanvas.SetActive(true);
     }
 
     public void DisplayCharaList()
     {
         if (!MouseManager.Instance.OnDoubleClickUI()) return;
 
-        recruitCharacterListUI.SetActive(true);
+        recruitCanvas.SetActive(true);
     }
 
 
@@ -52,14 +57,14 @@ public class RecruitCanvas : MonoBehaviour
             dispCharacter[selectFrag].GetComponent<RecruitCharacterData>().selected = false;
         }
 
-        dispCharacter[selectFrag] = recruitCharacterListUI.GetComponent<RecruitSelectCanvas>().GetDisplayCharacter;
+        dispCharacter[selectFrag] = recruitCanvas.GetComponent<RecruitSelectCanvas>().GetDisplayCharacter;
         selectChara[selectFrag].GetComponent<RecruitCharacterData>().SetCharacterData(dispCharacter[selectFrag].GetComponent<RecruitCharacterData>());
         dispCharacter[selectFrag].GetComponent<RecruitCharacterData>().selected = true;
 
         
         SimpleCharaDataDisplay();
 
-        recruitCharacterListUI.SetActive(false);
+        recruitCanvas.SetActive(false);
 
         if(dispCharacter[0] != null 
            &&
@@ -81,16 +86,14 @@ public class RecruitCanvas : MonoBehaviour
     {
         CharacterManager.Instance.HireCharacter(dispCharacter[0].GetComponent<RecruitCharacterData>().GetOriginal, dispCharacter[1].GetComponent<RecruitCharacterData>().GetOriginal);
 
-        if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Recruit)
-        {
-            Destroy(this.gameObject);
-            TutorialManager.Instance.NextStep();
-        }
-        else if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.RankUpRecruit)
-        {
-            Destroy(this.gameObject);
-            TutorialManager.Instance.NextStep();
-        }
+        //if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Recruit)
+        //{
+        //    TutorialManager.Instance.NextStep();
+        //}
+        //else if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.RankUpRecruit)
+        //{
+        //    TutorialManager.Instance.NextStep();
+        //}
 
 
         RankUpUI.Instance.useCanvas = false;
@@ -101,7 +104,12 @@ public class RecruitCanvas : MonoBehaviour
             //RankUpUI.Instance.RankUpCheck();//ランクが上がっていたらさらに人材選択
 
 
-            Destroy(this.gameObject);
         }
+
+        mainCanvas.SetActive(false);
+        navigatorCanvas.GetComponent<RecruitNavigatorCanvas>().RecruitEnd();
+        //Destroy(this.gameObject);
     }
+
+
 }

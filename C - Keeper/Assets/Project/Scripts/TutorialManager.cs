@@ -171,6 +171,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.AddListFunc(InvestigationEnd);
         stepList.AddListText("完了しました！                  ");
         stepList.AddListText("調査を行うと、その島はどれだけ汚染されているのかと住民の声を聞く事が出来ます！");
+        stepList.AddListText("島をクリックして、情報を選択しましょう！");
         stepList.AddListFunc(InformationStart);
         stepList.AddListFunc(Information);
         stepList.AddListText("この島ではゴミ問題に悩まされているようですね・・・");
