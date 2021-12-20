@@ -255,7 +255,7 @@ public class IslandBase : MonoBehaviour
         timer.GetComponent<Timer>().TimerStart(time, FinishClean, callback);
         state = STATE_ISLAND.STATE_CLEANING;
         timer.SetActive(true);
-        pollutionLevelText.gameObject.SetActive(false);
+        //pollutionLevelText.gameObject.SetActive(false);
         InvestigateCompleteText.gameObject.SetActive(false);
     }
 
@@ -267,7 +267,7 @@ public class IslandBase : MonoBehaviour
         //timer.SetActive(false);
         CalcRemoveRate(false);
         RemovePollution(removeRate);
-        pollutionLevelText.gameObject.SetActive(true);
+        //pollutionLevelText.gameObject.SetActive(true);
 
         if (pollutionLevel <= 0)
             state = STATE_ISLAND.STATE_CLEANED;
@@ -300,6 +300,7 @@ public class IslandBase : MonoBehaviour
     // Start is called before the first frame update
     protected void Start()
     {
+        pollutionLevelText.gameObject.SetActive(false);
         InvestigateCompleteText.gameObject.SetActive(false);
         icon.SetActive(false);
     }
@@ -307,9 +308,6 @@ public class IslandBase : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
-        if (checkInvestigated)// ’²¸Ï
-            pollutionLevelText.text = "ŠC—m‰˜õ“xF" + pollutionLevel.ToString() + "%";
-        else// –¢’²¸
-            pollutionLevelText.text = "ŠC—m‰˜õ“xF---%";
+        
     }
 }

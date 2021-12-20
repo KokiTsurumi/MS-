@@ -69,7 +69,7 @@ public class WorldManager : SingletonMonoBehaviour<WorldManager>
         if (currentTime >= roopTime)
         {
             month++;
-            currentTime = 0;
+            currentTime = 1;
         }
     }
 }
