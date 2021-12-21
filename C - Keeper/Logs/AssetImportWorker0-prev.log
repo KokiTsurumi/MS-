@@ -15,11 +15,11 @@ D:/4年　MS/C - Keeper
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52052
+57779
 Successfully changed project path to: D:/4年　MS/C - Keeper
 D:/4年　MS/C - Keeper
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 115.80 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 92.18 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.18f1 (a7d1c678663c)
 [Subsystems] Discovering subsystems at path D:/2020.3.18f1/Editor/Data/Resources/UnitySubsystems
@@ -35,74 +35,74 @@ Initialize mono
 Mono path[0] = 'D:/2020.3.18f1/Editor/Data/Managed'
 Mono path[1] = 'D:/2020.3.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/2020.3.18f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56500
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56796
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/2020.3.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000992 seconds.
+Registered in 0.001485 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 97.94 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 93.25 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.159 seconds
+- Completed reload, in  0.924 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1159ms)
-		BeginReloadAssembly (51ms)
+	ReloadAssembly (924ms)
+		BeginReloadAssembly (46ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (511ms)
-			LoadAssemblies (50ms)
+		EndReloadAssembly (420ms)
+			LoadAssemblies (45ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (212ms)
+			SetupTypeCache (131ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (28ms)
-			SetupLoadedEditorAssemblies (212ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (197ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (98ms)
-				BeforeProcessingInitializeOnLoad (15ms)
-				ProcessInitializeOnLoadAttributes (66ms)
-				ProcessInitializeOnLoadMethodAttributes (29ms)
+				RefreshPlugins (93ms)
+				BeforeProcessingInitializeOnLoad (14ms)
+				ProcessInitializeOnLoadAttributes (63ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.077029 seconds.
+Registered in 0.004385 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.85 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.052 seconds
+- Completed reload, in  0.934 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1056ms)
-		BeginReloadAssembly (130ms)
+	ReloadAssembly (934ms)
+		BeginReloadAssembly (128ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (15ms)
-		EndReloadAssembly (878ms)
-			LoadAssemblies (78ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (758ms)
+			LoadAssemblies (83ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (284ms)
+			SetupTypeCache (288ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (43ms)
-			SetupLoadedEditorAssemblies (394ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (275ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (86ms)
-				ProcessInitializeOnLoadAttributes (296ms)
+				ProcessInitializeOnLoadAttributes (178ms)
 				ProcessInitializeOnLoadMethodAttributes (4ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
@@ -116,10 +116,10 @@ Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2938 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 192.8 MB.
-System memory in use after: 193.0 MB.
+System memory in use after: 193.1 MB.
 
 Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 3388.
-Total: 2.428300 ms (FindLiveObjects: 0.233600 ms CreateObjectMapping: 0.117900 ms MarkObjects: 2.059500 ms  DeleteObjects: 0.016400 ms)
+Total: 2.650000 ms (FindLiveObjects: 0.296100 ms CreateObjectMapping: 0.099000 ms MarkObjects: 2.219300 ms  DeleteObjects: 0.034700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -133,58 +133,1852 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Project/Animations/行動アイコン　生産
-  artifactKey: Guid(197cc5a484a34c34ab077442b8e9bc29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Animations/行動アイコン　生産 using Guid(197cc5a484a34c34ab077442b8e9bc29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00c622d138b00cfead1f54a7512ad468') in 0.025919 seconds 
-  Import took 0.030169 seconds .
+  path: Assets/Project/Scenes/GameMainScene.unity
+  artifactKey: Guid(0b4b4b75d727dde47936962805e0157b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Scenes/GameMainScene.unity using Guid(0b4b4b75d727dde47936962805e0157b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78a555364d57fb8c4f6a5e289c79aca3') in 0.014852 seconds 
+  Import took 0.019044 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000312 seconds.
+  path: Assets/Project/Scenes/TitleScene.unity
+  artifactKey: Guid(b7ee025495b1d894b8b7f5cd728e187f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Scenes/TitleScene.unity using Guid(b7ee025495b1d894b8b7f5cd728e187f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '574f85f159717d9e8580d29c2ecf3c55') in 0.026544 seconds 
+  Import took 0.030366 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.938759 seconds.
+  path: Assets/Project/Animations/Title.anim
+  artifactKey: Guid(fd855f49374174a46b939852ddef5919) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/Title.anim using Guid(fd855f49374174a46b939852ddef5919) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c2a907284143a4330363de76f22d513') in 0.045075 seconds 
+  Import took 0.049492 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.470963 seconds.
+  path: Assets/Project/Animations/Title.controller
+  artifactKey: Guid(a3712324d62736d408cff82270a69471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/Title.controller using Guid(a3712324d62736d408cff82270a69471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85a49e458d161b0ab80058687b432519') in 0.003897 seconds 
+  Import took 0.008334 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009280 seconds.
+  path: Assets/Project/Animations/Title.controller
+  artifactKey: Guid(a3712324d62736d408cff82270a69471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/Title.controller using Guid(a3712324d62736d408cff82270a69471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85a49e458d161b0ab80058687b432519') in 0.002530 seconds 
+  Import took 0.007358 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 649.721284 seconds.
+  path: Assets/Project/Animations/タイトル
+  artifactKey: Guid(8d8ac8d5ae02ae24ebb142006ed7030e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル using Guid(8d8ac8d5ae02ae24ebb142006ed7030e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8a2a919e32030b02d466079f43c63b5') in 0.006844 seconds 
+  Import took 0.012039 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.045686 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00000.png
+  artifactKey: Guid(a96f27eab3ee7e14aaf64b80b406db63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00000.png using Guid(a96f27eab3ee7e14aaf64b80b406db63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a73d45bb62a11c789398e2f858b9934') in 0.102828 seconds 
+  Import took 0.107794 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00013.png
+  artifactKey: Guid(6c1ad13b370fcdb45978f8070de55ea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00013.png using Guid(6c1ad13b370fcdb45978f8070de55ea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72317e440eb64390914d9a6e9b1116c9') in 0.035588 seconds 
+  Import took 0.039653 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000342 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00006.png
+  artifactKey: Guid(25b0523644e732240b455303419ce983) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00006.png using Guid(25b0523644e732240b455303419ce983) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '443352886aa8efbe51fd150b798b3ff4') in 0.012784 seconds 
+  Import took 0.017278 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00064.png
+  artifactKey: Guid(d513917555e2c7946a568d220ce0858a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00064.png using Guid(d513917555e2c7946a568d220ce0858a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e6d2bdb122f78de2352d5775b5934c1') in 0.011482 seconds 
+  Import took 0.015601 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00045.png
+  artifactKey: Guid(561170772fff61048b7744ebe7f9feda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00045.png using Guid(561170772fff61048b7744ebe7f9feda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '569a3bbc39ad5806bec0ab63f4689bb5') in 0.015575 seconds 
+  Import took 0.021342 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000154 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00020.png
+  artifactKey: Guid(b5c3ad361e3dc6046a8dd71e9075a1be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00020.png using Guid(b5c3ad361e3dc6046a8dd71e9075a1be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '731b26997b48918be425b326219ef0a3') in 0.013670 seconds 
+  Import took 0.018694 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00033.png
+  artifactKey: Guid(53dc16047e9721740b7d96bf1ca1e948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00033.png using Guid(53dc16047e9721740b7d96bf1ca1e948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef7774d356494208a1f6acf8714caf09') in 0.012423 seconds 
+  Import took 0.018157 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00024.png
+  artifactKey: Guid(b8eee46cd9c6ed74d8ed2caa75df9cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00024.png using Guid(b8eee46cd9c6ed74d8ed2caa75df9cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23e6da56f2771d031cbebfcb531c92f3') in 0.014624 seconds 
+  Import took 0.019195 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00019.png
+  artifactKey: Guid(03fe7fe6ccf1c30498d1d1cdba952170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00019.png using Guid(03fe7fe6ccf1c30498d1d1cdba952170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0de9d6c38dcfea6883d355d6cf72ecf7') in 0.014299 seconds 
+  Import took 0.018582 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00055.png
+  artifactKey: Guid(41a77fafae1caa347882e0451847a196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00055.png using Guid(41a77fafae1caa347882e0451847a196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20779ce0329b4bf0a87d25575a993fe9') in 0.012806 seconds 
+  Import took 0.017148 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00040.png
+  artifactKey: Guid(b7d09bd9505dabc40b0f57a26720fa1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00040.png using Guid(b7d09bd9505dabc40b0f57a26720fa1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5a157105f1b5a191cf661c5492dc8f9') in 0.013212 seconds 
+  Import took 0.018093 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00029.png
+  artifactKey: Guid(aa9d07fe8aff2c0478ea84381afd72d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00029.png using Guid(aa9d07fe8aff2c0478ea84381afd72d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c610c6fa79f6052a4a22d33f9f39f35b') in 0.013314 seconds 
+  Import took 0.018646 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00047.png
+  artifactKey: Guid(2415fb973ece4004fb00352b4a8a5189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00047.png using Guid(2415fb973ece4004fb00352b4a8a5189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ca31ecde855d2776fd6b5e1377a3d6d') in 0.012925 seconds 
+  Import took 0.017456 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00039.png
+  artifactKey: Guid(86d9c291f61dee5478053c3642d89a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00039.png using Guid(86d9c291f61dee5478053c3642d89a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f528eaeae23c80ddd62879b9e2af03c') in 0.013222 seconds 
+  Import took 0.018024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00002.png
+  artifactKey: Guid(f383b35eee73fda4a9076d81ac5646ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00002.png using Guid(f383b35eee73fda4a9076d81ac5646ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c4df105b4916a6f03806a6cc796e3f7') in 0.012951 seconds 
+  Import took 0.017886 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00022.png
+  artifactKey: Guid(48db5ac885a15d54dac6f5d90041f1fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00022.png using Guid(48db5ac885a15d54dac6f5d90041f1fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '466125609d734904d43bf6c6adb54d26') in 0.014704 seconds 
+  Import took 0.019156 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00065.png
+  artifactKey: Guid(ab8857b71aa57ad4aa7755538b917e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00065.png using Guid(ab8857b71aa57ad4aa7755538b917e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e31673ab6aabe5d326d87543f4c704ef') in 0.013679 seconds 
+  Import took 0.018677 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00007.png
+  artifactKey: Guid(abb19e184ce7add44a4b4627fcad90a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00007.png using Guid(abb19e184ce7add44a4b4627fcad90a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7c3aeb4a843beff2f4f717bbc2d7584') in 0.012857 seconds 
+  Import took 0.018111 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00066.png
+  artifactKey: Guid(2ce4b5c3870c16f4e80fc9369ff5a0d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00066.png using Guid(2ce4b5c3870c16f4e80fc9369ff5a0d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af35e06798c81d8ac91fb417ab0bc209') in 0.015379 seconds 
+  Import took 0.020456 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00046.png
+  artifactKey: Guid(683d0dd72ac3175478d7e0ccbf066d21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00046.png using Guid(683d0dd72ac3175478d7e0ccbf066d21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62f1e253e81040e2df72fa581c6cd16a') in 0.013056 seconds 
+  Import took 0.017373 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00069.png
+  artifactKey: Guid(3d79fe1fdd71cb648bada5364f0035c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00069.png using Guid(3d79fe1fdd71cb648bada5364f0035c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c76d106515e63618fa965c2e1d2804b6') in 0.013107 seconds 
+  Import took 0.017598 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00059.png
+  artifactKey: Guid(a665a11a7561f9948a5b73f618d80aa3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00059.png using Guid(a665a11a7561f9948a5b73f618d80aa3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '354ee480dba34bddba7eec05f1a05b57') in 0.014989 seconds 
+  Import took 0.021004 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00004.png
+  artifactKey: Guid(5669a06bec5a07d4b889c6b65b184847) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00004.png using Guid(5669a06bec5a07d4b889c6b65b184847) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbfc612a0ef0350502d609f93a34085a') in 0.014062 seconds 
+  Import took 0.018503 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00038.png
+  artifactKey: Guid(5b0d0264ab73d4844a34ab9a039ebf24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00038.png using Guid(5b0d0264ab73d4844a34ab9a039ebf24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83192d8495915e75cd0c412d47442c13') in 0.013431 seconds 
+  Import took 0.017841 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00014.png
+  artifactKey: Guid(49f806f36d4b439469de5a154c2f90aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00014.png using Guid(49f806f36d4b439469de5a154c2f90aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40c62d683ac03cc7a630968875fa593a') in 0.013273 seconds 
+  Import took 0.017696 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00023.png
+  artifactKey: Guid(9361015ce703d8647a5fd5307d4c4795) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00023.png using Guid(9361015ce703d8647a5fd5307d4c4795) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '996d343bc8684d2ff7809fd165407d1b') in 0.014264 seconds 
+  Import took 0.019674 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00032.png
+  artifactKey: Guid(096a0841e9a681c47ba898bb04cd5278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00032.png using Guid(096a0841e9a681c47ba898bb04cd5278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14e34841a0e18d0309450fd549624d7f') in 0.014318 seconds 
+  Import took 0.018738 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00012.png
+  artifactKey: Guid(e387fae89ea99b5468c6324a2db6bde4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00012.png using Guid(e387fae89ea99b5468c6324a2db6bde4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ae8f6601936e31d2f67c75354adf5a9') in 0.014053 seconds 
+  Import took 0.018308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00005.png
+  artifactKey: Guid(4ba5687fc126fe54f9c2b7b10e5bbada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00005.png using Guid(4ba5687fc126fe54f9c2b7b10e5bbada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca6ec3b5e48d1a9782dceaa978f49c1a') in 0.013636 seconds 
+  Import took 0.017750 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00015.png
+  artifactKey: Guid(b222c26b48fca5945b1ad8d3a71a7e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00015.png using Guid(b222c26b48fca5945b1ad8d3a71a7e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eecbbebcfe4573114b745216082b5649') in 0.013443 seconds 
+  Import took 0.018009 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00026.png
+  artifactKey: Guid(ac4e7d49f21ed0b4e830ce42ac3b90e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00026.png using Guid(ac4e7d49f21ed0b4e830ce42ac3b90e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a243e74102f8c7f7653d928fd4e42c2') in 0.012558 seconds 
+  Import took 0.017006 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00025.png
+  artifactKey: Guid(516f839fdd86a744d9dc6dd4c1f198e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00025.png using Guid(516f839fdd86a744d9dc6dd4c1f198e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1faf8105409e95fd98935d357035d3db') in 0.012661 seconds 
+  Import took 0.017311 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00037.png
+  artifactKey: Guid(368b778517a242343aa1dabd4e5aa148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00037.png using Guid(368b778517a242343aa1dabd4e5aa148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5e82efe1f8f678736b7ad56e00630cd') in 0.013417 seconds 
+  Import took 0.017955 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00052.png
+  artifactKey: Guid(685f5a6419d59914cb6e2131f97418eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00052.png using Guid(685f5a6419d59914cb6e2131f97418eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8689b75f9abcd540a7b417038a57f25') in 0.013639 seconds 
+  Import took 0.018159 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000322 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00021.png
+  artifactKey: Guid(489fe89c95da576409866e0c6b8ae574) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00021.png using Guid(489fe89c95da576409866e0c6b8ae574) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '521b5b1ee52adc30f96de3f4f03f1782') in 0.014217 seconds 
+  Import took 0.018663 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00027.png
+  artifactKey: Guid(c421dfaed3db6c84497322359a339256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00027.png using Guid(c421dfaed3db6c84497322359a339256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f9e34b1ba31c8963c4fa0affc2c2889') in 0.013546 seconds 
+  Import took 0.018382 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00049.png
+  artifactKey: Guid(8032f111e1b55f84c9bf06bba8ea409e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00049.png using Guid(8032f111e1b55f84c9bf06bba8ea409e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a936d2f91de97486d785291ffd178ca') in 0.014015 seconds 
+  Import took 0.018054 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00043.png
+  artifactKey: Guid(c5bfaa0019a44ce419b846943f75df63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00043.png using Guid(c5bfaa0019a44ce419b846943f75df63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b656682b1681891a613bbf9104cf394') in 0.013563 seconds 
+  Import took 0.018046 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00063.png
+  artifactKey: Guid(e5469fad2d2712644b68a5935eeea20f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00063.png using Guid(e5469fad2d2712644b68a5935eeea20f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f107b39981d1e1b0c014313cfe8815de') in 0.016841 seconds 
+  Import took 0.025090 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00067.png
+  artifactKey: Guid(b9cc7efc48212ae4bbe90f1b5ce3f82e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00067.png using Guid(b9cc7efc48212ae4bbe90f1b5ce3f82e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6012005c261be3a039cf16beef71d14c') in 0.019570 seconds 
+  Import took 0.027543 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00048.png
+  artifactKey: Guid(8095109ca6f9d8a47ac094b4b2c4ba0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00048.png using Guid(8095109ca6f9d8a47ac094b4b2c4ba0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9a16572e296a721405cc34d95a38b8a') in 0.022426 seconds 
+  Import took 0.031072 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00011.png
+  artifactKey: Guid(e9b7990ccc1dcfc4ca167307d6ea1a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00011.png using Guid(e9b7990ccc1dcfc4ca167307d6ea1a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bbe2ebc19f9d58e63af30bc2637f011') in 0.017360 seconds 
+  Import took 0.024161 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00057.png
+  artifactKey: Guid(d3b223cb9e7eb72419a0b9b279fc0541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00057.png using Guid(d3b223cb9e7eb72419a0b9b279fc0541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c4b01b36224420b8231749479b2657f') in 0.016706 seconds 
+  Import took 0.023983 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000451 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00062.png
+  artifactKey: Guid(e89cb36394c1959439b30be1419ef5d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00062.png using Guid(e89cb36394c1959439b30be1419ef5d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef643a5c9ff2815b26b184265c898ba8') in 0.011739 seconds 
+  Import took 0.017087 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00016.png
+  artifactKey: Guid(5bd191093f157be46b179ff81bfeb5a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00016.png using Guid(5bd191093f157be46b179ff81bfeb5a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61bb8651a440780519327e4f1fc5037d') in 0.011050 seconds 
+  Import took 0.015556 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00050.png
+  artifactKey: Guid(fb117de2466fc2e40891e7ac354ecc92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00050.png using Guid(fb117de2466fc2e40891e7ac354ecc92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dded0087247f12e6946b55961656df0d') in 0.011905 seconds 
+  Import took 0.016424 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000319 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00061.png
+  artifactKey: Guid(51b095156ad44c34ca438eb9414ebe08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00061.png using Guid(51b095156ad44c34ca438eb9414ebe08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '478548335ecbb0656be5dde7adc78c8b') in 0.012295 seconds 
+  Import took 0.018128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00028.png
+  artifactKey: Guid(26df13447cf3a8b42afcf793a9052456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00028.png using Guid(26df13447cf3a8b42afcf793a9052456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96975e68e81cfdd8a0d93cd7d103ee68') in 0.011421 seconds 
+  Import took 0.015310 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00053.png
+  artifactKey: Guid(a69f7ddb474964742a778983e78844b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00053.png using Guid(a69f7ddb474964742a778983e78844b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c40e26faf05e7a1f3347eeeddd377fef') in 0.010927 seconds 
+  Import took 0.015344 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00068.png
+  artifactKey: Guid(6113bb640eef1d54881105e6661afcbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00068.png using Guid(6113bb640eef1d54881105e6661afcbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a384c7c4b2288917d6cee776ccef2a74') in 0.011851 seconds 
+  Import took 0.016517 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00073.png
+  artifactKey: Guid(d114a168da5256e4e8a3664d7c91710d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00073.png using Guid(d114a168da5256e4e8a3664d7c91710d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8db5cf9d439648e4d708ba2e49555ce3') in 0.012940 seconds 
+  Import took 0.017516 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00009.png
+  artifactKey: Guid(a4941ac157d030b4a9f9e5dbc3ba2b80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00009.png using Guid(a4941ac157d030b4a9f9e5dbc3ba2b80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04177d325e8338d26538df390d8f87a5') in 0.011340 seconds 
+  Import took 0.015730 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00001.png
+  artifactKey: Guid(8a0b1fa9f2e4e954cbc38437aa75db02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00001.png using Guid(8a0b1fa9f2e4e954cbc38437aa75db02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfe6cb2d86c686ffdd84b24971933840') in 0.010670 seconds 
+  Import took 0.014913 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00071.png
+  artifactKey: Guid(cb3de3379556c334f948e756daf5051a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00071.png using Guid(cb3de3379556c334f948e756daf5051a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1843019aea1ab965ca40e76c6bcebe6') in 0.011102 seconds 
+  Import took 0.015697 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00003.png
+  artifactKey: Guid(af3b17998addaa146b54dcaf4934898c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00003.png using Guid(af3b17998addaa146b54dcaf4934898c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '927259b135ea6b12bb19845aadfd5b2b') in 0.010528 seconds 
+  Import took 0.014992 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00054.png
+  artifactKey: Guid(1df55df957da6c944a208c5305d0cd40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00054.png using Guid(1df55df957da6c944a208c5305d0cd40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '486ff9b82f8ca4ea63e9ed2deb2f0d87') in 0.011896 seconds 
+  Import took 0.016692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000362 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00074.png
+  artifactKey: Guid(c5177fb3216b02f49a21911552bb6e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00074.png using Guid(c5177fb3216b02f49a21911552bb6e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f329e065e9bd2befbfd6346039a9c17f') in 0.012187 seconds 
+  Import took 0.017013 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00041.png
+  artifactKey: Guid(47328fd432d597a48beb769b37ce3b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00041.png using Guid(47328fd432d597a48beb769b37ce3b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4d5e16acbfa845ab8962baa54c09a93') in 0.013125 seconds 
+  Import took 0.017396 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00072.png
+  artifactKey: Guid(05f0311441b70214fb5dff435560b61d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00072.png using Guid(05f0311441b70214fb5dff435560b61d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cc04dac28e00b8b518611d13e8d782b') in 0.011917 seconds 
+  Import took 0.016074 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00044.png
+  artifactKey: Guid(b689cb6f05910bd47a215c356b5a909f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00044.png using Guid(b689cb6f05910bd47a215c356b5a909f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e598398dba64fcfa6aea52ccca1d6424') in 0.012842 seconds 
+  Import took 0.017658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00076.png
+  artifactKey: Guid(bf3443443ce289a408f5cffc4c381277) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00076.png using Guid(bf3443443ce289a408f5cffc4c381277) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79dee2b2f02a1e87c9487557de1df158') in 0.015231 seconds 
+  Import took 0.019824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000341 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00070.png
+  artifactKey: Guid(6432c617b7b37954ca4404eb46b1ead1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00070.png using Guid(6432c617b7b37954ca4404eb46b1ead1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30eabf7d8d0f8cf117307dd2edfbea55') in 0.012030 seconds 
+  Import took 0.016480 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00034.png
+  artifactKey: Guid(0e917a392114aa242948ece62a0b1389) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00034.png using Guid(0e917a392114aa242948ece62a0b1389) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38ad1454163e896a0dbfe78a41cf9ec2') in 0.013331 seconds 
+  Import took 0.018263 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00008.png
+  artifactKey: Guid(552e80fac40b1b94cb16e668a7aa9fd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00008.png using Guid(552e80fac40b1b94cb16e668a7aa9fd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd327b45b4a6c61a36ccf37896712a71b') in 0.011475 seconds 
+  Import took 0.017053 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00010.png
+  artifactKey: Guid(8cfab13a02b3c824eab2c34cf9d89a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00010.png using Guid(8cfab13a02b3c824eab2c34cf9d89a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6066f85ab135a46b4802909e0b7e7a21') in 0.013163 seconds 
+  Import took 0.017923 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00035.png
+  artifactKey: Guid(652aeb2da8b289f4ab91ce7ea317fa8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00035.png using Guid(652aeb2da8b289f4ab91ce7ea317fa8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebff0c2ab8ce2acfac8092c7976790d5') in 0.011089 seconds 
+  Import took 0.015271 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00036.png
+  artifactKey: Guid(b55064b726804f440b1207d97e2a2f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00036.png using Guid(b55064b726804f440b1207d97e2a2f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72cf1af8c932ed0ba463710e1fdbfdfd') in 0.013161 seconds 
+  Import took 0.018051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00075.png
+  artifactKey: Guid(43674119e4c875144b86bb56c1ecd87e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00075.png using Guid(43674119e4c875144b86bb56c1ecd87e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d8f5d05d7d9c9dcbf92cac08d24c083') in 0.013004 seconds 
+  Import took 0.018125 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00030.png
+  artifactKey: Guid(f2eef8e23b35b5d488a327ee467239a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00030.png using Guid(f2eef8e23b35b5d488a327ee467239a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e9ea523b2672ddc636069387b78589d') in 0.012757 seconds 
+  Import took 0.017533 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00017.png
+  artifactKey: Guid(b8aee94a7036a3142b8eda4e74f49e0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00017.png using Guid(b8aee94a7036a3142b8eda4e74f49e0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de612f86fa1addd06888744a2d94ad46') in 0.011834 seconds 
+  Import took 0.016949 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00051.png
+  artifactKey: Guid(ce9fb2b145e33454fb4dc9c5791b2eec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00051.png using Guid(ce9fb2b145e33454fb4dc9c5791b2eec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77acec7d515ec6db344845474a57cbb5') in 0.013231 seconds 
+  Import took 0.017921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00056.png
+  artifactKey: Guid(a73f042fe96ac32439843eb778d9496b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00056.png using Guid(a73f042fe96ac32439843eb778d9496b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '412970dd46790e9cc7434f8ac53d581b') in 0.012362 seconds 
+  Import took 0.017064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00060.png
+  artifactKey: Guid(bb53b47707c115f459931c94c0c3007d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00060.png using Guid(bb53b47707c115f459931c94c0c3007d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4f7b2093d53c2842b009914ef57d583') in 0.012641 seconds 
+  Import took 0.017239 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000297 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00058.png
+  artifactKey: Guid(4036bb1b513d4fe4598378b332299aa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00058.png using Guid(4036bb1b513d4fe4598378b332299aa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c16bd5dc2f033c44ff30db6837d651c3') in 0.014738 seconds 
+  Import took 0.019510 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00018.png
+  artifactKey: Guid(d029fb9514328cd4491a5ad1862152ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00018.png using Guid(d029fb9514328cd4491a5ad1862152ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bc67a28c80e097c722b431d2bca222b') in 0.014075 seconds 
+  Import took 0.019070 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00031.png
+  artifactKey: Guid(6af2c31e9168cdf4a940d20e50e0bde2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00031.png using Guid(6af2c31e9168cdf4a940d20e50e0bde2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '096b03381b1abec94c910be2e537f720') in 0.012679 seconds 
+  Import took 0.017297 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00042.png
+  artifactKey: Guid(d80be65bb3597d74bbeed21c1e89969a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00042.png using Guid(d80be65bb3597d74bbeed21c1e89969a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e45095372f2000a94d3241316a6b9b19') in 0.012339 seconds 
+  Import took 0.017352 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.016467 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00077.png
+  artifactKey: Guid(a7474f7fecdd2b247ac56ec750885563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00077.png using Guid(a7474f7fecdd2b247ac56ec750885563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2aeb48744b532fcbd3f927a9a7ea7a23') in 0.015289 seconds 
+  Import took 0.020841 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00084.png
+  artifactKey: Guid(cf898b4aaac24474fbeb82290a04033c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00084.png using Guid(cf898b4aaac24474fbeb82290a04033c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c21751393a3e4df23e2c3f573bab277') in 0.013350 seconds 
+  Import took 0.017739 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00094.png
+  artifactKey: Guid(c750bc416e9a9be4a854ead6db2b1cec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00094.png using Guid(c750bc416e9a9be4a854ead6db2b1cec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc73448abf1d78941b32326f0d5741d7') in 0.044910 seconds 
+  Import took 0.049026 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00179.png
+  artifactKey: Guid(9a31b1103311c5b4ba3af5733439be6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00179.png using Guid(9a31b1103311c5b4ba3af5733439be6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4560afc4df97dc0312f293bd038bf0e8') in 0.012846 seconds 
+  Import took 0.017026 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00160.png
+  artifactKey: Guid(91cb2a95835cc07489d66c7f3ff73ae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00160.png using Guid(91cb2a95835cc07489d66c7f3ff73ae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c6b126f32240dc26ff3cca5c66ee6d1') in 0.013243 seconds 
+  Import took 0.017828 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00145.png
+  artifactKey: Guid(8cfe07cdb7106484e9e7d7298b4ffbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00145.png using Guid(8cfe07cdb7106484e9e7d7298b4ffbc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c50d2092ffa85caecb0ae421edf922a7') in 0.011958 seconds 
+  Import took 0.017124 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00156.png
+  artifactKey: Guid(8099d01b8247f9241b9aa3570951cee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00156.png using Guid(8099d01b8247f9241b9aa3570951cee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3f8b3343869f3fca211d04a4b0d1447') in 0.011106 seconds 
+  Import took 0.015783 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00176.png
+  artifactKey: Guid(11cce22e39712e84ca98a4fd540e27bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00176.png using Guid(11cce22e39712e84ca98a4fd540e27bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8f943b099edd4667fa7f9c548aafb56') in 0.012236 seconds 
+  Import took 0.017177 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00085.png
+  artifactKey: Guid(6ef43f119b4066b4c9de154fee1bfccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00085.png using Guid(6ef43f119b4066b4c9de154fee1bfccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79aecdf23cb04d1110c706676626be88') in 0.013340 seconds 
+  Import took 0.018042 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000427 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00164.png
+  artifactKey: Guid(fa1da03db3a2ad44289fa9fd29967b52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00164.png using Guid(fa1da03db3a2ad44289fa9fd29967b52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b06e8bc78b4ba18012624f205bf0b78f') in 0.011625 seconds 
+  Import took 0.016080 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00087.png
+  artifactKey: Guid(17c1a69b89383a94bb1ef7a351e61822) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00087.png using Guid(17c1a69b89383a94bb1ef7a351e61822) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d586f46b78cb495085ab64b26322c0c') in 0.011966 seconds 
+  Import took 0.016125 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00178.png
+  artifactKey: Guid(8c1fd580b960f284ebb297395fae9a38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00178.png using Guid(8c1fd580b960f284ebb297395fae9a38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e040942404f37fa6b87f6700b6a124f8') in 0.012818 seconds 
+  Import took 0.016891 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00161.png
+  artifactKey: Guid(c86156aa278ec5842b482323c5b9b5eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00161.png using Guid(c86156aa278ec5842b482323c5b9b5eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59cd3c8235eed1a6363b2902820063a3') in 0.011435 seconds 
+  Import took 0.015528 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00126.png
+  artifactKey: Guid(b16e49f9fa5b89e4b868cfed17851421) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00126.png using Guid(b16e49f9fa5b89e4b868cfed17851421) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0272a494b0a3856d8f10fe0de705bb8') in 0.010462 seconds 
+  Import took 0.014458 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00125.png
+  artifactKey: Guid(4585eb0fd3e768c4ba2e7767134ec7f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00125.png using Guid(4585eb0fd3e768c4ba2e7767134ec7f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47634e9f4c091a379ae2440d70347b06') in 0.010874 seconds 
+  Import took 0.014830 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00089.png
+  artifactKey: Guid(5dd1e722aaa07dd41b64ee85d4e99244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00089.png using Guid(5dd1e722aaa07dd41b64ee85d4e99244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e706db4810db28bd04b6f3f1404fda53') in 0.013020 seconds 
+  Import took 0.017130 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00078.png
+  artifactKey: Guid(3f96b9f213a893844bd8640af32b5088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00078.png using Guid(3f96b9f213a893844bd8640af32b5088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e80de093fdfa104f57a88cff3b6074ec') in 0.013066 seconds 
+  Import took 0.017625 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00152.png
+  artifactKey: Guid(5bcf6313191a3bf45985d22baa556433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00152.png using Guid(5bcf6313191a3bf45985d22baa556433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc8c7a104425e7016a3746fedf15c3ec') in 0.012201 seconds 
+  Import took 0.016994 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00170.png
+  artifactKey: Guid(80f51d04dc3a30445b8b821f266362b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00170.png using Guid(80f51d04dc3a30445b8b821f266362b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbbdc8226896fc63f23546a85dcd8ceb') in 0.011957 seconds 
+  Import took 0.016314 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00157.png
+  artifactKey: Guid(05caa5f0113d2f44c824436b6a1b3348) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00157.png using Guid(05caa5f0113d2f44c824436b6a1b3348) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de68cfaeea9201b85de2f22627ce4d84') in 0.012348 seconds 
+  Import took 0.017440 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00165.png
+  artifactKey: Guid(f2095d1891a511941a9546cae4814610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00165.png using Guid(f2095d1891a511941a9546cae4814610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb2cb10d016dee9e400466432fdb313b') in 0.012467 seconds 
+  Import took 0.016800 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000281 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00098.png
+  artifactKey: Guid(dee82bec4dc16b0449f1b4a967f6b207) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00098.png using Guid(dee82bec4dc16b0449f1b4a967f6b207) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b896ad632f66d069fcf407501bba46bf') in 0.011886 seconds 
+  Import took 0.016743 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00122.png
+  artifactKey: Guid(ecd7c39b41da6c549a4585e979f0cb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00122.png using Guid(ecd7c39b41da6c549a4585e979f0cb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '438a0faf95c0e22b2550b108ed6031f5') in 0.011385 seconds 
+  Import took 0.016203 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00169.png
+  artifactKey: Guid(28a566f16fdd5aa4b9e60de66c34cb23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00169.png using Guid(28a566f16fdd5aa4b9e60de66c34cb23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1fab9a081e87dd4885d6432684057db') in 0.012571 seconds 
+  Import took 0.018049 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000379 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00101.png
+  artifactKey: Guid(320581f018997124086802e638454949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00101.png using Guid(320581f018997124086802e638454949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1ffbb7dc6859ccb6e5b1fc126ace0bf') in 0.013332 seconds 
+  Import took 0.017799 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00109.png
+  artifactKey: Guid(9b03ef1ceecb880419daeff5ec52d841) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00109.png using Guid(9b03ef1ceecb880419daeff5ec52d841) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1479c4effaaa6564839c84e150fa13e') in 0.011077 seconds 
+  Import took 0.015763 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00158.png
+  artifactKey: Guid(e0a336665cf34eb4b8bfc26164194805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00158.png using Guid(e0a336665cf34eb4b8bfc26164194805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd753ccdb56a5bda843ec1948d9a9fb1') in 0.013774 seconds 
+  Import took 0.018435 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00096.png
+  artifactKey: Guid(aef2634901a6d2e458e3a764f52e85ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00096.png using Guid(aef2634901a6d2e458e3a764f52e85ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c132200972684d181422149969fef0c') in 0.013237 seconds 
+  Import took 0.018557 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00135.png
+  artifactKey: Guid(e614dbb27ddf65641940c34a67a1cbb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00135.png using Guid(e614dbb27ddf65641940c34a67a1cbb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f530123d478b1969ade158658414390') in 0.012207 seconds 
+  Import took 0.017716 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00081.png
+  artifactKey: Guid(96d555e20b588104f91e8c12ef110278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00081.png using Guid(96d555e20b588104f91e8c12ef110278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f71bcf935851c799a736fd095cd69211') in 0.012232 seconds 
+  Import took 0.016852 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00082.png
+  artifactKey: Guid(6a907151a03a484488592180a6b2b4f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00082.png using Guid(6a907151a03a484488592180a6b2b4f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64885953d93498a53eed05f5ba6bf0bc') in 0.012447 seconds 
+  Import took 0.017296 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00173.png
+  artifactKey: Guid(6d480443d1ad29d45a3edaaadf184d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00173.png using Guid(6d480443d1ad29d45a3edaaadf184d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9419f1f22a79d4d97ae83fb136f64f09') in 0.012014 seconds 
+  Import took 0.017122 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00137.png
+  artifactKey: Guid(c13ec724abaf50b428db92c30949e1bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00137.png using Guid(c13ec724abaf50b428db92c30949e1bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33130655acff14e6ffecd66592c93424') in 0.012327 seconds 
+  Import took 0.017005 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00159.png
+  artifactKey: Guid(345bd3612c17a1f4db171f7beef43740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00159.png using Guid(345bd3612c17a1f4db171f7beef43740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e68d62542c33476a7064af796d88ba3c') in 0.012556 seconds 
+  Import took 0.017925 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00166.png
+  artifactKey: Guid(f3ebbebeb303d4f4ca20c1a778104132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00166.png using Guid(f3ebbebeb303d4f4ca20c1a778104132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88c92a82a675e0887a38919e76f56743') in 0.013337 seconds 
+  Import took 0.017646 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000453 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00175.png
+  artifactKey: Guid(0a3d3e30f2ec47b46bab67e03bd4031d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00175.png using Guid(0a3d3e30f2ec47b46bab67e03bd4031d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86540cf56c3ce6b64f4d1432b8efdb19') in 0.012212 seconds 
+  Import took 0.017080 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000320 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00107.png
+  artifactKey: Guid(a534852bf9554af4fb51da32f4a320bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00107.png using Guid(a534852bf9554af4fb51da32f4a320bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ced57c66ea3c7f01f2cf6bffee1dfad7') in 0.012526 seconds 
+  Import took 0.017857 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00114.png
+  artifactKey: Guid(5d8c5f863635e0146ac228b10b3f2e68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00114.png using Guid(5d8c5f863635e0146ac228b10b3f2e68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afebe035e883837d26dcd40adeb0610f') in 0.012627 seconds 
+  Import took 0.017719 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00090.png
+  artifactKey: Guid(01569571d01112044864f167e3872211) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00090.png using Guid(01569571d01112044864f167e3872211) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd194f30ab62a96740b3c14b21066284f') in 0.011303 seconds 
+  Import took 0.015512 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00163.png
+  artifactKey: Guid(702d2418c10194f4da36133e7fb7cb46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00163.png using Guid(702d2418c10194f4da36133e7fb7cb46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65dc0d88eb20fb53d262de9943418aea') in 0.011752 seconds 
+  Import took 0.016035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00134.png
+  artifactKey: Guid(c67eaf67bd2ccef4a85398bae749dc93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00134.png using Guid(c67eaf67bd2ccef4a85398bae749dc93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71fc59d705a93debe5124a5099f0ffd4') in 0.012702 seconds 
+  Import took 0.018483 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00104.png
+  artifactKey: Guid(6a2e92bd2f51f1d4e8b8f1abb3d3e6f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00104.png using Guid(6a2e92bd2f51f1d4e8b8f1abb3d3e6f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a5384ddcfeedc796e822b0d95e7a29f') in 0.012689 seconds 
+  Import took 0.017167 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00168.png
+  artifactKey: Guid(ecb3ac02a1c20b744b9235aa7d2d3dee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00168.png using Guid(ecb3ac02a1c20b744b9235aa7d2d3dee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd39ab70e167de3df241f0e474f358541') in 0.012215 seconds 
+  Import took 0.016539 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000373 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00129.png
+  artifactKey: Guid(4eea9f2b427e58f4b98dd573f81aab50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00129.png using Guid(4eea9f2b427e58f4b98dd573f81aab50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '945fe448be61764f1f618f690c37dd75') in 0.011873 seconds 
+  Import took 0.016824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00108.png
+  artifactKey: Guid(3f8ffe19814990948874074e268c00cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00108.png using Guid(3f8ffe19814990948874074e268c00cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4694e4597ab586440aee95d193856fbb') in 0.011646 seconds 
+  Import took 0.016997 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00086.png
+  artifactKey: Guid(cc40c10d03e82fd498fd653c1f40fced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00086.png using Guid(cc40c10d03e82fd498fd653c1f40fced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8181ea48ad58c26546d463e94fddd423') in 0.012050 seconds 
+  Import took 0.016704 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00141.png
+  artifactKey: Guid(b5c1651b65c2d1446b128f27c27a3890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00141.png using Guid(b5c1651b65c2d1446b128f27c27a3890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e71e5a5bc919f32ca950d68a0857c37b') in 0.011156 seconds 
+  Import took 0.015730 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00139.png
+  artifactKey: Guid(cee0c8a4fa6a6b043a04e4d33d667455) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00139.png using Guid(cee0c8a4fa6a6b043a04e4d33d667455) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '301ad061ca5b0af5d93d5561e2e8fe36') in 0.012459 seconds 
+  Import took 0.017061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000352 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00080.png
+  artifactKey: Guid(7255e145bdc1a0142963edd295e4450e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00080.png using Guid(7255e145bdc1a0142963edd295e4450e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe2e5c771dbb9dc87d36963d954a42b7') in 0.012014 seconds 
+  Import took 0.016659 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00143.png
+  artifactKey: Guid(67f79e3181871524d96214fa332a11c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00143.png using Guid(67f79e3181871524d96214fa332a11c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '446cad8b806077b988c1564180b82b92') in 0.012097 seconds 
+  Import took 0.016937 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00112.png
+  artifactKey: Guid(7a4b4612b5a98f6488c556913fcc04f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00112.png using Guid(7a4b4612b5a98f6488c556913fcc04f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3d994761b300a081575b242199fbfb7') in 0.011050 seconds 
+  Import took 0.016065 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00153.png
+  artifactKey: Guid(85df051cb571eba48bd97ff47e2fbb98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00153.png using Guid(85df051cb571eba48bd97ff47e2fbb98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c12604c81bcad90faea106cdd34bbce') in 0.011999 seconds 
+  Import took 0.016553 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00097.png
+  artifactKey: Guid(3d8b8d2f3845d0e48949eeab515a12ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00097.png using Guid(3d8b8d2f3845d0e48949eeab515a12ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '114efaca8c5be14c18695f865104c9ca') in 0.011236 seconds 
+  Import took 0.015136 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00151.png
+  artifactKey: Guid(e581c08e83315d84c8fb7e0e1d3a129b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00151.png using Guid(e581c08e83315d84c8fb7e0e1d3a129b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33eaf4224db3b08a109ddb98cb218c12') in 0.010417 seconds 
+  Import took 0.014882 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00093.png
+  artifactKey: Guid(953203221db67af488d26e85dfac42a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00093.png using Guid(953203221db67af488d26e85dfac42a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89a09b73943963dabb24e9c9656c0500') in 0.012654 seconds 
+  Import took 0.017166 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00124.png
+  artifactKey: Guid(8fd0f570fa21f31469e1f892272cad70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00124.png using Guid(8fd0f570fa21f31469e1f892272cad70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '900191c902d96f2447f557b3078833a9') in 0.041896 seconds 
+  Import took 0.046619 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00146.png
+  artifactKey: Guid(724ac9b34d4e3bd4eab89c9b4c772f39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00146.png using Guid(724ac9b34d4e3bd4eab89c9b4c772f39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f971d207d434197b4f23b6cfc5efea29') in 0.011627 seconds 
+  Import took 0.016386 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00155.png
+  artifactKey: Guid(62e8c3a7b1209994a9baf02f4ac67783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00155.png using Guid(62e8c3a7b1209994a9baf02f4ac67783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7d5fdae15dce0857b56c1053858eb9c') in 0.011797 seconds 
+  Import took 0.232811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000358 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00131.png
+  artifactKey: Guid(775e9d5a977a2ae4381ebc639efe9d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00131.png using Guid(775e9d5a977a2ae4381ebc639efe9d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da00229680529ffbf2f20092fcb93e2f') in 0.012845 seconds 
+  Import took 0.017197 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000395 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00127.png
+  artifactKey: Guid(82372bbc7c26c7449ad66e55f9aaa539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00127.png using Guid(82372bbc7c26c7449ad66e55f9aaa539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b380c79860a3cf78c0c3cc34661819a') in 0.013299 seconds 
+  Import took 0.017683 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000405 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00106.png
+  artifactKey: Guid(f5eb9d20c08cd524eb96e263278c07dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00106.png using Guid(f5eb9d20c08cd524eb96e263278c07dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08ba16c9a170434263affbdf1346a240') in 0.011716 seconds 
+  Import took 0.016785 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00133.png
+  artifactKey: Guid(f1ede3ac7c754fa4da183ba8c601a5a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00133.png using Guid(f1ede3ac7c754fa4da183ba8c601a5a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ed5551ddf7d507561740ed32a02c39f') in 0.011962 seconds 
+  Import took 0.016401 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000327 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00144.png
+  artifactKey: Guid(c9f9c152bfca388499e4f5fb4f6b2d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00144.png using Guid(c9f9c152bfca388499e4f5fb4f6b2d65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91aa6af322026bbbf0a17f0e822208c2') in 0.011704 seconds 
+  Import took 0.017238 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00130.png
+  artifactKey: Guid(d41821871b0090f40bb3d45d3672ef86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00130.png using Guid(d41821871b0090f40bb3d45d3672ef86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed69697b6c5284746b487b69f156ee92') in 0.012948 seconds 
+  Import took 0.017937 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00142.png
+  artifactKey: Guid(2eb2985b3252c744a95c3e22dee0cfc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00142.png using Guid(2eb2985b3252c744a95c3e22dee0cfc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69a491c0f531989e23f1a79832c0a172') in 0.011334 seconds 
+  Import took 0.015447 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00149.png
+  artifactKey: Guid(e29eb7bbc11191640996b059016d21a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00149.png using Guid(e29eb7bbc11191640996b059016d21a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a0682c89d1d35589e68a92eb520f144') in 0.011740 seconds 
+  Import took 0.015896 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00115.png
+  artifactKey: Guid(240cc8c38f3ffd9439f32a9b76de3c45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00115.png using Guid(240cc8c38f3ffd9439f32a9b76de3c45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74f3020a1ba7d9bad44ea73590ecd2df') in 0.010533 seconds 
+  Import took 0.014839 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00103.png
+  artifactKey: Guid(5a56c3b379a01e94fbfc0ab12f5dbf72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00103.png using Guid(5a56c3b379a01e94fbfc0ab12f5dbf72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ea9c3ee310ed3a5faae8adb97051675') in 0.011714 seconds 
+  Import took 0.015593 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00105.png
+  artifactKey: Guid(558fb287e736517498dd5b3b21d369e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00105.png using Guid(558fb287e736517498dd5b3b21d369e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bd505298a33e71b5d14bf4e164e71c0') in 0.012082 seconds 
+  Import took 0.015949 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00116.png
+  artifactKey: Guid(aa45f04199d40634cb583b5861285e4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00116.png using Guid(aa45f04199d40634cb583b5861285e4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51e7f7118cce93ec53f0537b95829af6') in 0.010681 seconds 
+  Import took 0.014905 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00118.png
+  artifactKey: Guid(f20af265033c08247b9516c682b6e7ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00118.png using Guid(f20af265033c08247b9516c682b6e7ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e992ad1737f95ec7619c35a92262c804') in 0.012640 seconds 
+  Import took 0.016780 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00140.png
+  artifactKey: Guid(bf188e1d8a6eaf348b3d2d0f8083a2be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00140.png using Guid(bf188e1d8a6eaf348b3d2d0f8083a2be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73b03d983b1a8a27de69a080228420b7') in 0.013934 seconds 
+  Import took 0.018778 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00162.png
+  artifactKey: Guid(08ba05e59e96ec047b1da79ec069980a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00162.png using Guid(08ba05e59e96ec047b1da79ec069980a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0e0fe3ebfb90076ddad7ed3b7552304') in 0.012228 seconds 
+  Import took 0.016309 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00138.png
+  artifactKey: Guid(254e9e61f4a30f24f9f397f640041ceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00138.png using Guid(254e9e61f4a30f24f9f397f640041ceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a994a9013123fe23fcd528df52aaee1') in 0.011346 seconds 
+  Import took 0.015756 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00099.png
+  artifactKey: Guid(d4b7c47792077c64a89bd62d61a74b18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00099.png using Guid(d4b7c47792077c64a89bd62d61a74b18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd264dd38110f570ca1797791887948e6') in 0.011649 seconds 
+  Import took 0.016867 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00154.png
+  artifactKey: Guid(700e6dc98423301499c538a478a3290f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00154.png using Guid(700e6dc98423301499c538a478a3290f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0de915562a895230f6a16cc8f96a7b1') in 0.013142 seconds 
+  Import took 0.018198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00091.png
+  artifactKey: Guid(c29cbde2a2523aa41a6891d2fb32b9af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00091.png using Guid(c29cbde2a2523aa41a6891d2fb32b9af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05fa9b621c7a56fc29483eb05ed64daa') in 0.012026 seconds 
+  Import took 0.016522 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00111.png
+  artifactKey: Guid(be81071da5e2e044394396db81d7644c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00111.png using Guid(be81071da5e2e044394396db81d7644c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69f7ec7d448f55dd2f3aed8b0bafb9e7') in 0.011711 seconds 
+  Import took 0.015920 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00121.png
+  artifactKey: Guid(4902eb4056e55a546bf0875a61eaabed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00121.png using Guid(4902eb4056e55a546bf0875a61eaabed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed4d3180d4e4733d4829a8a92c6dbc02') in 0.012868 seconds 
+  Import took 0.017804 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000329 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00171.png
+  artifactKey: Guid(776af96771f4c444ea952c74952a2ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00171.png using Guid(776af96771f4c444ea952c74952a2ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '897291b68ceab8d78af34e92163383d1') in 0.013138 seconds 
+  Import took 0.018735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00172.png
+  artifactKey: Guid(57513734493df864db4afc86e6023c7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00172.png using Guid(57513734493df864db4afc86e6023c7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '593bf05f55291a4b69a592f628872994') in 0.012556 seconds 
+  Import took 0.017151 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00092.png
+  artifactKey: Guid(5e9ab5bc202c0614780de73a3b1eb0b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00092.png using Guid(5e9ab5bc202c0614780de73a3b1eb0b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '047d146ef827751916699e0b9db9e7af') in 0.011915 seconds 
+  Import took 0.016711 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00120.png
+  artifactKey: Guid(2f7eaeba393f74046803a198a002f035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00120.png using Guid(2f7eaeba393f74046803a198a002f035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86ec808b257bd4fa2457320837bb5918') in 0.012666 seconds 
+  Import took 0.017802 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00113.png
+  artifactKey: Guid(e8c251efbb971064cbe530bd68a599f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00113.png using Guid(e8c251efbb971064cbe530bd68a599f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '166868b0f912a274303229dc896eb1bb') in 0.012841 seconds 
+  Import took 0.017754 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00147.png
+  artifactKey: Guid(77bbd8490aea0e14c8666861ed800b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00147.png using Guid(77bbd8490aea0e14c8666861ed800b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd67709e2c39e4262305a564a17d50fee') in 0.011166 seconds 
+  Import took 0.015622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00132.png
+  artifactKey: Guid(fdf4a8491e979594fbafc56171e00c14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00132.png using Guid(fdf4a8491e979594fbafc56171e00c14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2acf13c11c9074875a36d162a69a83c') in 0.011154 seconds 
+  Import took 0.015868 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00174.png
+  artifactKey: Guid(d9e3c2e0ec0790746abd5d66d7824c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00174.png using Guid(d9e3c2e0ec0790746abd5d66d7824c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24a480131a7c01656db3b66d550d4cac') in 0.013132 seconds 
+  Import took 0.017937 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00117.png
+  artifactKey: Guid(599a921912438314098f0ad6f471aa6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00117.png using Guid(599a921912438314098f0ad6f471aa6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24dacd69ba426bcb3c9fa355c942e452') in 0.012637 seconds 
+  Import took 0.016858 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000350 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00119.png
+  artifactKey: Guid(dc207ae398f7cd24a8ce60ec4ddeb029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00119.png using Guid(dc207ae398f7cd24a8ce60ec4ddeb029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8c956dceec47b1345b64f5db8ebc375') in 0.011159 seconds 
+  Import took 0.016062 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00100.png
+  artifactKey: Guid(3259fc8f08f9af247932cb229582a226) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00100.png using Guid(3259fc8f08f9af247932cb229582a226) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd41e382220444ef67907857f173d7cb0') in 0.011403 seconds 
+  Import took 0.015834 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00083.png
+  artifactKey: Guid(b08b2c11fd93d15469943b1d071838cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00083.png using Guid(b08b2c11fd93d15469943b1d071838cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30cdf4fbce00d72a605c12557eb7fcb3') in 0.012757 seconds 
+  Import took 0.018635 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00123.png
+  artifactKey: Guid(6d1f2f9137496644abc78c957deff69a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00123.png using Guid(6d1f2f9137496644abc78c957deff69a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d86c1e0dc71df70735778847b1e2745') in 0.012527 seconds 
+  Import took 0.017821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00102.png
+  artifactKey: Guid(2bc2ab560ddc72e41b2e46f4bd66d6f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00102.png using Guid(2bc2ab560ddc72e41b2e46f4bd66d6f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5db623452c9b7677bd5f33eef34d7e82') in 0.011564 seconds 
+  Import took 0.016211 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00150.png
+  artifactKey: Guid(3525317dda2593841974bac3438fc2b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00150.png using Guid(3525317dda2593841974bac3438fc2b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7306631036884142782a7d3e4799aed2') in 0.011418 seconds 
+  Import took 0.015757 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00177.png
+  artifactKey: Guid(023994a5a99c8b44fbf8bd4b7f444994) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00177.png using Guid(023994a5a99c8b44fbf8bd4b7f444994) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4d13bbe9f0b9a907e6c6c3350498254') in 0.011885 seconds 
+  Import took 0.016161 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00136.png
+  artifactKey: Guid(fee0db3f97b40e54f8291c76402131e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00136.png using Guid(fee0db3f97b40e54f8291c76402131e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6416e8f71f9224c028f03815615723c') in 0.010568 seconds 
+  Import took 0.014648 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00167.png
+  artifactKey: Guid(2b3f5d528179b764591972d02565235f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00167.png using Guid(2b3f5d528179b764591972d02565235f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f25d921d42d0851aafa90371e63ee2ec') in 0.011324 seconds 
+  Import took 0.015465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00079.png
+  artifactKey: Guid(a36547ff795917e43ba2f97fd9db18fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00079.png using Guid(a36547ff795917e43ba2f97fd9db18fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd50c7f042d0a2dd1fab703cd62dd3a02') in 0.012804 seconds 
+  Import took 0.017479 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00128.png
+  artifactKey: Guid(77fca581d762eb94ea42fbabab079535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00128.png using Guid(77fca581d762eb94ea42fbabab079535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e38bc71e3803c58cf810eafb7e16951b') in 0.013561 seconds 
+  Import took 0.018491 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00110.png
+  artifactKey: Guid(7a983f2e5b755f44c92125923cbbe2aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00110.png using Guid(7a983f2e5b755f44c92125923cbbe2aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b66f2236df763b8cd2bccdf5338fba4') in 0.011568 seconds 
+  Import took 0.015800 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00088.png
+  artifactKey: Guid(c877a86981efccd4eb8c7db83d350577) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00088.png using Guid(c877a86981efccd4eb8c7db83d350577) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4c2ca415f4629864ef1440df65202d1') in 0.012248 seconds 
+  Import took 0.016874 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00095.png
+  artifactKey: Guid(cbf150a304420694695f84155328a8f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00095.png using Guid(cbf150a304420694695f84155328a8f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '488a1a252d26cea624cd67a9762c708e') in 0.013144 seconds 
+  Import took 0.018013 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Project/Animations/タイトル/タイトル1_00148.png
+  artifactKey: Guid(67c25b1947cb62a4c9934ca3d78efbc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/タイトル/タイトル1_00148.png using Guid(67c25b1947cb62a4c9934ca3d78efbc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01d0d98f5050a916e7ecf308877e3cae') in 0.014391 seconds 
+  Import took 0.019473 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.007210 seconds.
+Registered in 0.004809 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.138 seconds
+- Completed reload, in  0.844 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1139ms)
-		BeginReloadAssembly (125ms)
+	ReloadAssembly (844ms)
+		BeginReloadAssembly (102ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (695ms)
+			LoadAssemblies (77ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (275ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (233ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (65ms)
+				ProcessInitializeOnLoadAttributes (157ms)
+				ProcessInitializeOnLoadMethodAttributes (3ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2932 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 195.8 MB.
+System memory in use after: 196.1 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3396.
+Total: 2.520200 ms (FindLiveObjects: 0.265900 ms CreateObjectMapping: 0.107100 ms MarkObjects: 2.132500 ms  DeleteObjects: 0.014100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004482 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.865 seconds
+Domain Reload Profiling:
+	ReloadAssembly (866ms)
+		BeginReloadAssembly (99ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (46ms)
-		EndReloadAssembly (946ms)
-			LoadAssemblies (100ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (719ms)
+			LoadAssemblies (75ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (374ms)
+			SetupTypeCache (273ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (40ms)
-			SetupLoadedEditorAssemblies (338ms)
+			RebuildScriptCaches (37ms)
+			SetupLoadedEditorAssemblies (245ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (101ms)
-				ProcessInitializeOnLoadAttributes (221ms)
-				ProcessInitializeOnLoadMethodAttributes (5ms)
+				BeforeProcessingInitializeOnLoad (68ms)
+				ProcessInitializeOnLoadAttributes (164ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
 				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (1ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.08 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2932 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 192.7 MB.
-System memory in use after: 193.0 MB.
+System memory in use before: 195.9 MB.
+System memory in use after: 196.1 MB.
 
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3390.
-Total: 3.640900 ms (FindLiveObjects: 0.385200 ms CreateObjectMapping: 0.226600 ms MarkObjects: 2.997800 ms  DeleteObjects: 0.029900 ms)
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3398.
+Total: 2.614000 ms (FindLiveObjects: 0.294000 ms CreateObjectMapping: 0.108800 ms MarkObjects: 2.193900 ms  DeleteObjects: 0.016300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004666 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.96 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.872 seconds
+Domain Reload Profiling:
+	ReloadAssembly (872ms)
+		BeginReloadAssembly (92ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (733ms)
+			LoadAssemblies (79ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (284ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (246ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (72ms)
+				ProcessInitializeOnLoadAttributes (162ms)
+				ProcessInitializeOnLoadMethodAttributes (3ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2932 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 195.9 MB.
+System memory in use after: 196.2 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3400.
+Total: 2.746500 ms (FindLiveObjects: 0.292100 ms CreateObjectMapping: 0.108200 ms MarkObjects: 2.330300 ms  DeleteObjects: 0.015200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006185 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.230 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1230ms)
+		BeginReloadAssembly (116ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (1044ms)
+			LoadAssemblies (109ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (424ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (72ms)
+			SetupLoadedEditorAssemblies (316ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (93ms)
+				ProcessInitializeOnLoadAttributes (208ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.17 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2932 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 195.9 MB.
+System memory in use after: 196.2 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3402.
+Total: 3.314100 ms (FindLiveObjects: 0.286600 ms CreateObjectMapping: 0.130700 ms MarkObjects: 2.877600 ms  DeleteObjects: 0.018100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 272.981061 seconds.
+  path: Assets/Project/Animations/Title.controller
+  artifactKey: Guid(a3712324d62736d408cff82270a69471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/Title.controller using Guid(a3712324d62736d408cff82270a69471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1c21626156fd803fc1a7b55c8d7644d') in 0.015696 seconds 
+  Import took 0.020316 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005338 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.850 seconds
+Domain Reload Profiling:
+	ReloadAssembly (851ms)
+		BeginReloadAssembly (93ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (709ms)
+			LoadAssemblies (79ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (274ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (242ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (66ms)
+				ProcessInitializeOnLoadAttributes (165ms)
+				ProcessInitializeOnLoadMethodAttributes (3ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2932 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.0 MB.
+System memory in use after: 196.2 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3404.
+Total: 2.699500 ms (FindLiveObjects: 0.271400 ms CreateObjectMapping: 0.101500 ms MarkObjects: 2.292800 ms  DeleteObjects: 0.032900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 8.775582 seconds.
+  path: Assets/Project/Animations/Title.controller
+  artifactKey: Guid(a3712324d62736d408cff82270a69471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/Title.controller using Guid(a3712324d62736d408cff82270a69471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '426dc21cdae2fa4590058f5b3929075c') in 0.013546 seconds 
+  Import took 0.018235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012660 seconds.
+  path: Assets/Project/Animations/Title.controller
+  artifactKey: Guid(a3712324d62736d408cff82270a69471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Project/Animations/Title.controller using Guid(a3712324d62736d408cff82270a69471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '426dc21cdae2fa4590058f5b3929075c') in 0.003566 seconds 
+  Import took 0.008487 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004520 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\4年　MS\C - Keeper\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.849 seconds
+Domain Reload Profiling:
+	ReloadAssembly (849ms)
+		BeginReloadAssembly (94ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (705ms)
+			LoadAssemblies (79ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (281ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (236ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (67ms)
+				ProcessInitializeOnLoadAttributes (159ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2932 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.0 MB.
+System memory in use after: 196.2 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3406.
+Total: 2.675300 ms (FindLiveObjects: 0.230000 ms CreateObjectMapping: 0.104300 ms MarkObjects: 2.325400 ms  DeleteObjects: 0.014700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
