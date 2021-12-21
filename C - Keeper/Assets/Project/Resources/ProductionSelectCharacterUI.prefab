@@ -159,6 +159,7 @@ MonoBehaviour:
   name: 
   age: 0
   tag: 0
+  tagName: 
   characterSprite: {fileID: 0}
   introduction: 
   popularityRank: 0
@@ -204,7 +205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 103.70001, y: 24}
+  m_AnchoredPosition: {x: -52.9, y: -12.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3727413099323511621
@@ -1302,8 +1303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 94, y: 0}
-  m_SizeDelta: {x: 150, y: 30}
+  m_AnchoredPosition: {x: 97.125, y: 0}
+  m_SizeDelta: {x: 143.75, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6202828286319030185
 CanvasRenderer:
@@ -1335,7 +1336,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0

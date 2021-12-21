@@ -30,7 +30,7 @@ public class ActionCharacterInterface : CharacterData
         investigation = data.investigation;
         name = data.name;
         characterSprite = data.characterSprite;
-        tag = data.tag;
+        tagName = data.tagName;
 
         if(rRank != null)
         {
@@ -46,7 +46,7 @@ public class ActionCharacterInterface : CharacterData
             iRank.text = CharacterManager.Instance.RankTransfer(investigation);
             iRank.color = SetRankColor(iRank.text);
 
-            tagText.text = tag.ToString();
+            tagText.text = tagName;
 
 
             nameText.text = data.name;
@@ -74,7 +74,7 @@ public class ActionCharacterInterface : CharacterData
         management = data.management;
         investigation = data.investigation;
         name = data.name;
-        tag = data.tag;
+        tagName = data.tagName;
 
         rRank.text = CharacterManager.Instance.RankTransfer(research);
         rRank.color = SetRankColor(rRank.text);
@@ -88,7 +88,7 @@ public class ActionCharacterInterface : CharacterData
         iRank.text = CharacterManager.Instance.RankTransfer(investigation);
         iRank.color = SetRankColor(iRank.text);
 
-        tagText.text = tag.ToString();
+        tagText.text = tagName;
 
         nameText.text = name;
         characterSprite = charaImage.sprite = data.characterSprite;

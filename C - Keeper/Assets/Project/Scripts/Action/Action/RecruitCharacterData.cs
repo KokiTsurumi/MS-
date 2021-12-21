@@ -38,7 +38,7 @@ public class RecruitCharacterData : CharacterData
         investigation = data.investigation;
         name = data.name;
         characterSprite = data.characterSprite;
-        tag = data.tag;
+        tagName = data.tagName;
         if(rRank != null)
         {
             rRank.text = CharacterManager.Instance.RankTransfer(research);
@@ -54,15 +54,18 @@ public class RecruitCharacterData : CharacterData
             iRank.color = SetRankColor(iRank.text);
 
 
-            if (tag != TAG_LIST.TAG_NULL)
-            {
-                tagText.text = data.tag.ToString();
+            //if (tag != TAG_LIST.TAG_NULL)
+            //{
+            //    tagText.text = data.tagName;
 
-            }
-            else
-            {
-                tagText.text = "‚È‚µ";
-            }
+            //}
+            //else
+            //{
+            //    tagText.text = "‚È‚µ";
+            //}
+
+            tagText.text = tagName;
+
             profileText.text = data.introduction;
             ageText.text = data.age.ToString();
             nameText.text = data.name;
@@ -93,6 +96,8 @@ public class RecruitCharacterData : CharacterData
         profileText.text = originalData.introduction;
         characterSprite = originalData.characterSprite;
         name = originalData.name;
+        tagName = originalData.tagName;
+
 
         rRank.text = CharacterManager.Instance.RankTransfer(research);
         rRank.color = SetRankColor(rRank.text);
@@ -108,15 +113,19 @@ public class RecruitCharacterData : CharacterData
 
 
         ageText.text = originalData.age.ToString();
-        tag = originalData.tag;
-        if (tag != TAG_LIST.TAG_NULL)
-        {
-            tagText.text = originalData.tag.ToString();
-        }
-        else
-        {
-            tagText.text = "‚È‚µ";
-        }
+        tagText.text = tagName;
+
+        //if (tag != TAG_LIST.TAG_NULL)
+        //{
+        //    tagText.text = originalData.tag.ToString();
+        //}
+        //else
+        //{
+        //    tagText.text = "‚È‚µ";
+        //}
+
+        tagText.text = originalData.tagName;
+
         original = originalGameObject;
     }
 

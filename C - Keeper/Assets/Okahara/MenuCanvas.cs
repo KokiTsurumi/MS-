@@ -32,6 +32,8 @@ public class MenuCanvas : SingletonMonoBehaviour<MenuCanvas>
         listCanvas.SetActive(true);
         audioSource.PlayOneShot(sound1);
         //ƒQ[ƒ€“àŠÔ’â~
+        WorldManager.Instance.TimeStop(true);
+
     }
 
     public void OnClickConfigButton()
@@ -49,7 +51,11 @@ public class MenuCanvas : SingletonMonoBehaviour<MenuCanvas>
         menuButton.SetActive(true);
         listCanvas.SetActive(false);
         audioSource.PlayOneShot(sound1);
+
         //ƒQ[ƒ€“àŠÔŠJn
+        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.No)
+            WorldManager.Instance.TimeStop(false);
+
     }
 
     public void OnClickEndGameButton()

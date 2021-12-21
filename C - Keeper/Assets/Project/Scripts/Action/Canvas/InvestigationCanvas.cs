@@ -61,7 +61,9 @@ public class InvestigationCanvas : SelectCanvasInterface
         CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().originalGameObject;
 
         //タッグ演出
-        if(CharacterManager.Instance.selectedCharacter[0].tag == CharacterManager.Instance.selectedCharacter[1].tag)
+        if(CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().tagName == CharacterManager.Instance.selectedCharacter[1].GetComponent<CharacterBase>().tagName
+            &&
+           CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().tagName != "なし")
         {
             tagAnimationCanvas.SetActive(true);
             

@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
     void FixedUpdate()
     {
         if (!start) return;
-
+        //WorldManager.Instance
 
         currentTime -= Time.deltaTime;
 

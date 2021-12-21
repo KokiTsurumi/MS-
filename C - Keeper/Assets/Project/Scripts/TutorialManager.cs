@@ -22,6 +22,10 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     [SerializeField] GameObject informationPopPrefab;
 
 
+    //[SerializeField] Image face;
+    [SerializeField] Sprite smileFace;
+    [SerializeField] Sprite sadFace;
+
     GameObject navigatorText;
     GameObject tutorialCanvas;
     GameObject recruitCanvas;
@@ -107,14 +111,14 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
         if(tutorialCanvas != null)
         {
-            if (tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<TextFader>().enabled == true)
+            if (tutorialCanvas.transform.GetChild(2).GetChild(1).GetComponent<TextFader>().enabled == true)
             {
-                tutorialCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().enabled = false;
+                tutorialCanvas.transform.GetChild(2).GetChild(2).GetComponent<Image>().enabled = false;
             }
             else
             {
-                tutorialCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().enabled = true;
-                tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<AudioSource>().Stop();
+                tutorialCanvas.transform.GetChild(2).GetChild(2).GetComponent<Image>().enabled = true;
+                tutorialCanvas.transform.GetChild(2).GetChild(1).GetComponent<AudioSource>().Stop();
             }
 
         }
@@ -133,7 +137,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         GameObject canvas = (GameObject)Instantiate(tutorialCanvasPrefab);
         canvas.transform.SetParent(this.transform);
 
-        navigatorText = canvas.transform.GetChild(1).GetChild(1).gameObject;
+        navigatorText = canvas.transform.GetChild(2).GetChild(1).gameObject;
         stepList = new StepList(navigatorText);
 
         stepList.AddListFunc(TutorialStart);
@@ -199,12 +203,14 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerClick;
         entry.callback.AddListener((eventDate) => TextNextStep());
-        canvas.transform.GetChild(1).GetComponent<EventTrigger>().triggers.Add(entry);
+        canvas.transform.GetChild(2).GetComponent<EventTrigger>().triggers.Add(entry);
 
         tutorialCanvas = canvas;
 
         stepList.Next();
         stepList.Step();
+
+        MenuCanvas.Instance.menuButtonEnabled = false;  
 
     }
 
@@ -296,6 +302,9 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         tutorialCanvas.SetActive(false);
         tutorialState = TutorialState.Information;
         Camera.main.GetComponent<CameraController>().ZoomIn();
+
+        //困っている表情
+        tutorialCanvas.gameObject.transform.GetChild(1).GetChild(3).GetComponent<Image>().sprite = sadFace;
     }
 
     void Information()
@@ -317,6 +326,9 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
         Camera.main.GetComponent<CameraController>().ZoomOut();
         StartCoroutine(CoroutineTimer(0.8f, InformationEndTimer));
+
+        //笑っている表情に戻す
+        tutorialCanvas.gameObject.transform.GetChild(1).GetChild(3).GetComponent<Image>().sprite = smileFace;
     }
 
     void InformationEndTimer()
@@ -459,6 +471,8 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void TutorialEnd()
     {
+        MenuCanvas.Instance.menuButtonEnabled = true;
+
         //Destroy(this.gameObject);//これでもいい
         tutorialCanvas.SetActive(false);
         tutorialState = TutorialState.No;
@@ -482,10 +496,10 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
 
         //フェーディング中
-        if (tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<TextFader>().enabled == true)
+        if (tutorialCanvas.transform.GetChild(2).GetChild(1).GetComponent<TextFader>().enabled == true)
         {
-            tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<TextFader>().enabled = false;
-            tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<AudioSource>().Stop();
+            tutorialCanvas.transform.GetChild(2).GetChild(1).GetComponent<TextFader>().enabled = false;
+            tutorialCanvas.transform.GetChild(2).GetChild(1).GetComponent<AudioSource>().Stop();
 
         }
         //フェーディング済
