@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuCanvas : MonoBehaviour
+public class MenuCanvas : SingletonMonoBehaviour<MenuCanvas>
 {
     [SerializeField] GameObject menuButton;
     [SerializeField] GameObject listCanvas;
@@ -12,6 +12,8 @@ public class MenuCanvas : MonoBehaviour
     public AudioClip sound1;
     AudioSource audioSource;
 
+    public bool menuButtonEnabled = true;
+
     void Start()
     {
         menuButton.SetActive(true);
@@ -19,17 +21,13 @@ public class MenuCanvas : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    void Update()
-    {
-        //if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.No)
-        //    menuButton.GetComponent<Image>().enabled = false;
-        //else
-        //    menuButton.GetComponent<Image>().enabled = true;
-
-    }
+    //public void 
+  
 
     public void OnClickMenuButton()
     {
+        if (!menuButtonEnabled) return;
+
         menuButton.SetActive(false);
         listCanvas.SetActive(true);
         audioSource.PlayOneShot(sound1);
@@ -56,7 +54,7 @@ public class MenuCanvas : MonoBehaviour
 
     public void OnClickEndGameButton()
     {
-        
+        Application.Quit();
     }
 
     public void OnClickTitleButton()

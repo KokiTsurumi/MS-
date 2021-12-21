@@ -122,6 +122,10 @@
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
     <Compile Include="Assets\Okahara\WorldTimerMonth.cs" />
     <Compile Include="Assets\Kawano\Script\Test.cs" />
+<<<<<<< HEAD
+    <Compile Include="Assets\Okahara\RankUpComment.cs" />
+=======
+>>>>>>> 0acf65a54681aa71c89ac1af52ac3476ce7ed7b3
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Kawano\Script\DissolveShader.shader" />

@@ -16,6 +16,7 @@ public class InvestigationCanvas : SelectCanvasInterface
         if (endToggle) return;
 
         //アニメ終了時
+        
         if (startAnimationCanvas.GetComponent<AnimationCallBack>().GetCallBack == true)
         {
             endToggle = true;
@@ -23,8 +24,6 @@ public class InvestigationCanvas : SelectCanvasInterface
 
             GameObject target = IslandManager.Instance.GetCurrentIsland();
 
-            CharacterManager.Instance.selectedCharacter[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().originalGameObject;
-            CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().originalGameObject;
             float time = CharacterManager.Instance.CalcInvestigationTime();
             CharacterManager.Instance.UseCharacter();
 
@@ -46,6 +45,10 @@ public class InvestigationCanvas : SelectCanvasInterface
             }
 
         }
+        else if (tagAnimationCanvas.GetComponent<AnimationCallBack>().GetCallBack == true)
+        {
+            startAnimationCanvas.SetActive(true);
+        }
     }
 
     public override void StartButton()
@@ -54,8 +57,21 @@ public class InvestigationCanvas : SelectCanvasInterface
         mainCanvas.SetActive(false);
         cameraController.backButton.SetActive(false);
 
-        //調査開始UI表示
-        startAnimationCanvas.SetActive(true);
+        CharacterManager.Instance.selectedCharacter[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().originalGameObject;
+        CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().originalGameObject;
+
+        //タッグ演出
+        if(CharacterManager.Instance.selectedCharacter[0].tag == CharacterManager.Instance.selectedCharacter[1].tag)
+        {
+            tagAnimationCanvas.SetActive(true);
+            
+        }
+        else
+        {
+            //調査開始UI表示
+            startAnimationCanvas.SetActive(true);
+        }
+
     }
 
     IEnumerator ActionEnd()
@@ -68,9 +84,6 @@ public class InvestigationCanvas : SelectCanvasInterface
     public void InvestigationEnd()
     {
         Name_Value.Instance.PlusResearchCount();
-        //Name_Value.Instance.RankConfirm();
-        //RankUpUI.Instance.RankUpCheck();
-
     }
 
     public void TutorialInvestigationTimerStart()
