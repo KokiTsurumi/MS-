@@ -170,6 +170,9 @@ public class IslandBase : MonoBehaviour
         if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_OIL_COLLECTION && problem == PROBLEM_LIST.PROBLEM_FUELOIL)
             robotEffectRate += 20;  // 油回収＆重油問題
 
+        if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_ALMIGHTY)
+            robotEffectRate += 20;  // オールマイティは無条件で+20
+
         // ロボットの影響率から汚染除去率の設定
         if (robotEffectRate == 120)
             removeRate = 100;
