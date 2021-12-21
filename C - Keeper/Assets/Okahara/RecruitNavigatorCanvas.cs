@@ -61,6 +61,10 @@ public class RecruitNavigatorCanvas : MonoBehaviour
             }
 
             GameObject recruitCanvas = transform.root.gameObject;
+
+            Name_Value.Instance.PlusPlacementCountt();
+            RankUpUI.Instance.useCanvas = false;
+
             Destroy(recruitCanvas);
         }
    

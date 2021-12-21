@@ -21,6 +21,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     [SerializeField] GameObject informationPopPrefab;
 
+    [SerializeField] GameObject cursor;
 
     //[SerializeField] Image face;
     [SerializeField] Sprite smileFace;
@@ -83,6 +84,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void Start()
     {
+        cursor.SetActive(false);
     }
 
     void Update()
