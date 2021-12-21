@@ -170,6 +170,9 @@ public class IslandBase : MonoBehaviour
         if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_OIL_COLLECTION && problem == PROBLEM_LIST.PROBLEM_FUELOIL)
             robotEffectRate += 20;  // 油回収＆重油問題
 
+        if (RobotManager.Instance.selectedRobot.GetComponent<RobotData>().specialSkill == RobotBase.SPECIALSKILL_LIST.SPECIALSKILL_ALMIGHTY)
+            robotEffectRate += 20;  // オールマイティは無条件で+20
+
         // ロボットの影響率から汚染除去率の設定
         if (robotEffectRate == 120)
             removeRate = 100;
@@ -255,7 +258,7 @@ public class IslandBase : MonoBehaviour
         timer.GetComponent<Timer>().TimerStart(time, FinishClean, callback);
         state = STATE_ISLAND.STATE_CLEANING;
         timer.SetActive(true);
-        pollutionLevelText.gameObject.SetActive(false);
+        //pollutionLevelText.gameObject.SetActive(false);
         InvestigateCompleteText.gameObject.SetActive(false);
     }
 
@@ -267,7 +270,7 @@ public class IslandBase : MonoBehaviour
         //timer.SetActive(false);
         CalcRemoveRate(false);
         RemovePollution(removeRate);
-        pollutionLevelText.gameObject.SetActive(true);
+        //pollutionLevelText.gameObject.SetActive(true);
 
         if (pollutionLevel <= 0)
             state = STATE_ISLAND.STATE_CLEANED;
@@ -300,6 +303,7 @@ public class IslandBase : MonoBehaviour
     // Start is called before the first frame update
     protected void Start()
     {
+        pollutionLevelText.gameObject.SetActive(false);
         InvestigateCompleteText.gameObject.SetActive(false);
         icon.SetActive(false);
     }
@@ -307,9 +311,6 @@ public class IslandBase : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
-        if (checkInvestigated)// 調査済
-            pollutionLevelText.text = "海洋汚染度：" + pollutionLevel.ToString() + "%";
-        else// 未調査
-            pollutionLevelText.text = "海洋汚染度：---%";
+        
     }
 }

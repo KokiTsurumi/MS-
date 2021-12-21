@@ -8,7 +8,7 @@ public class WorldManager : SingletonMonoBehaviour<WorldManager>
     public float roopTime;                                          // ƒQ[ƒ€“à1‚©Œ‚ÌŠÔ
     public float currentTime;                                       // Œ»İ‚ÌŠÔ
     public int month = 0;                                           // ƒQ[ƒ€“àŒo‰ßŒ
-
+    private bool timeStop = false;                                  // “à•”ŠÔ‚ª’â~‚µ‚Ä‚¢‚é‚©
 
 
     /// <summary>
@@ -54,6 +54,15 @@ public class WorldManager : SingletonMonoBehaviour<WorldManager>
             return "E";
     }
 
+    /// <summary>
+    /// ƒQ[ƒ€“à•”ŠÔ‚ğ’â~‚³‚¹‚éŠÖ”
+    /// </summary>
+    /// <param name="ts">true = ’â~, false = ÄŠJ</param>
+    public void TimeStop(bool ts)
+    {
+        timeStop = ts;
+    }
+
 
 
     // Start is called before the first frame update
@@ -64,12 +73,15 @@ public class WorldManager : SingletonMonoBehaviour<WorldManager>
 
     private void FixedUpdate()
     {
-        currentTime += Time.deltaTime;
-
-        if (currentTime >= roopTime)
+        if(!timeStop)
         {
-            month++;
-            currentTime = 0;
+            currentTime += Time.deltaTime;
+
+            if (currentTime >= roopTime)
+            {
+                month++;
+                currentTime = 1;
+            }
         }
     }
 }

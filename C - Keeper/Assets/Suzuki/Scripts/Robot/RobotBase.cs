@@ -95,19 +95,19 @@ public class RobotBase : MonoBehaviour
 
         // 機体名
         if (specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_SPECIALIZED_FOR_CLEANING)    // 清掃特化
-            name1 = "CHS・";
+            name1 = "CHS - ";
         else if(specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_OIL_COLLECTION)          // 油回収
-            name1 = "OCO・";
+            name1 = "OCO - ";
         else if (specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_PLASTIC_ONLY)           // プラスチック専用
-            name1 = "PCO・";
+            name1 = "PCO - ";
         else if (specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_LARGE_CAPACITY_BATTERY) // 大容量バッテリー
-            name1 = "LCB・";
+            name1 = "LCB - ";
         else if (specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_PERFECT_INVESTIGATOR)   // 完璧調査機
-            name1 = "PNS・";
+            name1 = "PNS - ";
         else if (specialSkill == SPECIALSKILL_LIST.SPECIALSKILL_ALMIGHTY)               // オールマイティ
-            name1 = "AGY・";
+            name1 = "AGY - ";
         else                                                                            // 特殊技能無し
-            name1 = "IHN・";
+            name1 = "IHN - ";
 
         // 世代名
         if (clean <= 0)             // E

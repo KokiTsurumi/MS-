@@ -791,6 +791,7 @@ GameObject:
   - component: {fileID: 1266317482}
   - component: {fileID: 1266317484}
   - component: {fileID: 1266317483}
+  - component: {fileID: 1266317485}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -855,6 +856,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266317481}
   m_CullTransparentMesh: 1
+--- !u!95 &1266317485
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266317481}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3712324d62736d408cff82270a69471, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4267368214583059943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -953,6 +973,10 @@ PrefabInstance:
     - target: {fileID: 4267368215864312941, guid: 792787db402a4ed4f987f17d418aab94, type: 3}
       propertyPath: m_Name
       value: CanvasFade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267368215864312941, guid: 792787db402a4ed4f987f17d418aab94, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 792787db402a4ed4f987f17d418aab94, type: 3}
