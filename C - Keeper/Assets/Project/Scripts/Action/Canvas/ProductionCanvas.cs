@@ -33,11 +33,6 @@ public class ProductionCanvas : SelectCanvasInterface
             endToggle = true;
             startAnimationCanvas.SetActive(false);
 
-
-            //RobotData data = originalRobot.GetComponent<RobotData>();
-
-            //setRobot.SetData(data.name, data.clean, data.battery, data.specialSkill, null);
-
             createStart = true;
 
             if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
@@ -55,6 +50,10 @@ public class ProductionCanvas : SelectCanvasInterface
             this.gameObject.SetActive(false);
      
         }
+        else if (tagAnimationCanvas.GetComponent<AnimationCallBack>().GetCallBack == true)
+        {
+            startAnimationCanvas.SetActive(true);
+        }
     }
 
 
@@ -69,15 +68,22 @@ public class ProductionCanvas : SelectCanvasInterface
         CharacterManager.Instance.selectedCharacter[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().originalGameObject;
         CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().originalGameObject;
 
- 
+        //タッグ演出
+        if (CharacterManager.Instance.selectedCharacter[0].tag == CharacterManager.Instance.selectedCharacter[1].tag)
+        {
+            tagAnimationCanvas.SetActive(true);
 
-        startAnimationCanvas.SetActive(true);
+        }
+        else
+        {
+            startAnimationCanvas.SetActive(true);
+        }
+
     }
 
 
     public void TutorialProductionStart()
     {
-        //CameraControllerの　action を falseにする
         GameObject obj = GameObject.Find("Production");
         obj.GetComponent<Production>().TutorialSetCanvas(this.gameObject);
         obj.GetComponent<Production>().ActionEnd();

@@ -344,7 +344,7 @@ public class CameraController : MonoBehaviour
     {
         if (!MouseManager.Instance.OnDoubleClickGameObject()) return;
         if (MouseManager.Instance.GetCurrentSelectedGameObject() != null) return;
-        if (RankUpUI.Instance.useCanvas) return;
+        if (RankUpUI.Instance.useCanvas) return;//ランクアップ演出中
         IslandManager.Instance.SetCurrentIsland(MouseManager.Instance.GetCursorOnObject());
 
         if(zoomState == ZoomState.DEFAULT)

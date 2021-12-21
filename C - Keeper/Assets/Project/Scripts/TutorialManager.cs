@@ -72,9 +72,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     StepList stepList;
 
 
-    delegate void UpdateFunc();
-    UpdateFunc updateFunc;
-
     public delegate void DelegateFunc();
     public DelegateFunc delegateFunc;
 
@@ -82,11 +79,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void Start()
     {
-        //なぜか違う文字がちらつくバグも修正する
-
-        updateFunc = TutorialUpdateNull;
-
-        
     }
 
     void Update()
@@ -118,7 +110,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
             if (tutorialCanvas.transform.GetChild(1).GetChild(1).GetComponent<TextFader>().enabled == true)
             {
                 tutorialCanvas.transform.GetChild(1).GetChild(2).GetComponent<Image>().enabled = false;
-
             }
             else
             {
@@ -128,9 +119,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
         }
        
-
-
-        updateFunc();
     }
 
 
@@ -218,8 +206,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.Next();
         stepList.Step();
 
-        //最初に選択する人材を生成
-        //CharacterManager.Instance.CreateCandidateCharacter();
     }
 
     void RecruitStart()
@@ -243,9 +229,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     void InvestigationZoomIn()
     {
         tutorialCanvas.SetActive(false);
-        //tutorialState = TutorialState.Investigation;
         tutorialState = TutorialState.InvestigationStart;
-        //Camera.main.GetComponent<CameraController>().ZoomIn();
     }
 
 
@@ -266,7 +250,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     void InvestigationTextEnd()
     {
         tutorialCanvas.SetActive(false);
-        //NextStep();
     }
 
     void InvestigationStart()
@@ -275,31 +258,14 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         tutorialState = TutorialState.Investigation;
         investigationCanvas = Instantiate(investigationCanvasPrefab);
         investigationCanvas.GetComponent<InvestigationCanvas>().Initialize();
-        updateFunc = InvestigationUpdate;
         NextStep();
     }
 
     void InvestigationSelectText()
     {
         tutorialCanvas.SetActive(false);
-
     }
-
-
-    void InvestigationUpdate()
-    {
-
-        GameObject island = IslandManager.Instance.GetCurrentIsland();
-
-        if (island.GetComponent<IslandBase>().state == IslandBase.STATE_ISLAND.STATE_INVESTIGATED)
-        {
-            updateFunc = TutorialUpdateNull;
-
-
-            stepList.Next();
-            StartCoroutine(CoroutineTimer(0.5f, stepList.Step));
-        }
-    }
+   
 
     void InvestigationEnd()
     {
@@ -329,13 +295,11 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
         tutorialCanvas.SetActive(false);
         tutorialState = TutorialState.Information;
-        //tutorialState = TutorialState.InformationStart;
-        //Camera.main.GetComponent<CameraController>().ZoomIn();
+        Camera.main.GetComponent<CameraController>().ZoomIn();
     }
 
     void Information()
     {
-        //IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.SetActive(true);
         tutorialState = TutorialState.Information;
         informationPop = Instantiate(informationPopPrefab);
         informationPop.GetComponent<InformationPop>().Create(IslandManager.Instance.GetCurrentIsland());
@@ -344,17 +308,9 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         tutorialCanvas.SetActive(true);
     }
 
-    //void InformationText()
-    //{
-    //    tutorialCanvas.SetActive(false);
-    //    NextStep();
-    //}
-
     void InformationText()
     {
-        //IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.SetActive(true);
         tutorialCanvas.SetActive(false);
-        //NextStep();
     }
 
     void InformationEnd()
@@ -413,14 +369,11 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void ProductionTextEnd()
     {
-        //Destroy(productionCanvas);
         tutorialCanvas.SetActive(false);
-        //NextStep();
     }
 
     void CleaningTextStart()
     {
-        //Camera.main.GetComponent<CameraController>().ZoomOut();
         NextStep();
         tutorialCanvas.SetActive(true);
         tutorialState = TutorialState.Cleanning;
@@ -458,7 +411,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
         stepList.Next();
         stepList.Step();
-        //tutorialCanvas.SetActive(true);
     }
 
     void SeaDissolveStart()
@@ -479,7 +431,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         //知名度ランク１Upのための調節
         Name_Value.Instance.PlusCleaningCount();
         Name_Value.Instance.PlusPlacementCountt();
-        //Name_Value.Instance.PlusProductionCount();
         Name_Value.Instance.PlusResearchCount();
         Name_Value.Instance.RankConfirm();
 

@@ -29,6 +29,7 @@ public class SelectCanvasInterface : MonoBehaviour
 
     [SerializeField] protected GameObject mainCanvas;
 
+    [SerializeField] protected GameObject tagAnimationCanvas;
 
 
     List<GameObject> CharaList;
@@ -47,6 +48,10 @@ public class SelectCanvasInterface : MonoBehaviour
 
         if(startAnimationCanvas != null)
             startAnimationCanvas.SetActive(false);
+
+        if (tagAnimationCanvas != null)
+            tagAnimationCanvas.SetActive(false);
+
         ListUI.SetActive(false);
 
         if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.No)
@@ -63,6 +68,8 @@ public class SelectCanvasInterface : MonoBehaviour
             cameraController.GetComponent<CameraController>().backButton.SetActive(false);
 
         listScrollbar.ScrollbarPositionReset();
+
+        startButton.SetActive(false);
     }
 
 
@@ -128,6 +135,12 @@ public class SelectCanvasInterface : MonoBehaviour
         if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.No)
             cameraController.GetComponent<CameraController>().backButton.SetActive(true);
 
+        if (selectChara[0].GetComponent<SelectCharacterDataInterface>().GetSelectGameObject() != null
+            &&
+            selectChara[1].GetComponent<SelectCharacterDataInterface>().GetSelectGameObject() != null)
+        {
+            startButton.SetActive(true);
+        }
     }
 
     public void CreateCharaList()

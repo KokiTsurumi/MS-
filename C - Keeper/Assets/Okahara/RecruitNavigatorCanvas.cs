@@ -25,7 +25,7 @@ public class RecruitNavigatorCanvas : MonoBehaviour
 
     public void RecruitEnd()
     {
-        text.GetComponent<Text>().text = "これでまた一緒に働ける人が増えましたね！！引き続き綺麗にしていきましょう！";
+        //text.GetComponent<Text>().text = "これでまた一緒に働ける人が増えましたね！！引き続き綺麗にしていきましょう！";
         text.GetComponent<TextFader>().enabled = true;
         this.gameObject.SetActive(true);
         start = true;
@@ -45,6 +45,8 @@ public class RecruitNavigatorCanvas : MonoBehaviour
         if (start == false)
         {
             start = true;
+            text.GetComponent<Text>().text = "これでまた一緒に働ける人が増えましたね！！引き続き綺麗にしていきましょう！";
+
             mainCanvas.SetActive(true);   
         }
         else

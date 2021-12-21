@@ -10,7 +10,7 @@ public class ActionCharacterInterface : CharacterData
 {
     SelectCanvasInterface canvas;
 
-    [SerializeField] protected Text nameText, rRank, pRank, mRank, iRank;
+    [SerializeField] protected Text nameText, rRank, pRank, mRank, iRank,tagText;
     [SerializeField] Image charaImage;
 
     [SerializeField] public GameObject originalGameObject;
@@ -30,6 +30,7 @@ public class ActionCharacterInterface : CharacterData
         investigation = data.investigation;
         name = data.name;
         characterSprite = data.characterSprite;
+        tag = data.tag;
 
         if(rRank != null)
         {
@@ -44,6 +45,8 @@ public class ActionCharacterInterface : CharacterData
 
             iRank.text = CharacterManager.Instance.RankTransfer(investigation);
             iRank.color = SetRankColor(iRank.text);
+
+            tagText.text = tag.ToString();
 
 
             nameText.text = data.name;
@@ -71,6 +74,7 @@ public class ActionCharacterInterface : CharacterData
         management = data.management;
         investigation = data.investigation;
         name = data.name;
+        tag = data.tag;
 
         rRank.text = CharacterManager.Instance.RankTransfer(research);
         rRank.color = SetRankColor(rRank.text);
@@ -84,6 +88,7 @@ public class ActionCharacterInterface : CharacterData
         iRank.text = CharacterManager.Instance.RankTransfer(investigation);
         iRank.color = SetRankColor(iRank.text);
 
+        tagText.text = tag.ToString();
 
         nameText.text = name;
         characterSprite = charaImage.sprite = data.characterSprite;
