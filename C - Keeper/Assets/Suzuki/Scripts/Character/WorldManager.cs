@@ -20,9 +20,6 @@ public class WorldManager : SingletonMonoBehaviour<WorldManager>
 
         if (popularityRank >= 5)
             popularityRank = 5;
-
-        // デバッグ
-        Debug.Log(popularityRank);
     }
 
     /// <summary>

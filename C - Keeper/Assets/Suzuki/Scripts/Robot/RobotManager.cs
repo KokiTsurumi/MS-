@@ -121,14 +121,6 @@ public class RobotManager : SingletonMonoBehaviour<RobotManager>
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            GenerateRobot();
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            robotList.Clear();
-        }
+        
     }
 }

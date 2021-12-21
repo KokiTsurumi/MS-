@@ -250,10 +250,6 @@ public class CharacterManager : SingletonMonoBehaviour<CharacterManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            selectedCharacter[0] = characterList[0];
-            selectedCharacter[1] = characterList[1];
-        }
+        
     }
 }

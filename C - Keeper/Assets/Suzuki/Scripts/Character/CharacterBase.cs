@@ -58,6 +58,7 @@ public class CharacterBase : MonoBehaviour
     public string name;                                            // 名前
     public int age;                                                // 年齢
     public TAG_LIST tag = TAG_LIST.TAG_NULL;                       // タッグ機能
+    public string tagName;                                         // タッグの名前
     public Sprite characterSprite;                                 // キャラクターの画像
 
     public string introduction;                                    // 紹介文
@@ -194,6 +195,24 @@ public class CharacterBase : MonoBehaviour
             else
                 tag = TAG_LIST.TAG_NULL;
         }
+
+        // タッグの種類からタッグの名前を設定
+        if (tag == TAG_LIST.TAG_ROBOTICS)
+            tagName = "ロボット工学";
+        else if (tag == TAG_LIST.TAG_CLEANING)
+            tagName = "元清掃員";
+        else if (tag == TAG_LIST.TAG_NATURE_RESEARCH)
+            tagName = "自然調査員";
+        else if (tag == TAG_LIST.TAG_PLASTIC_MANUFACTURE)
+            tagName = "プラスチック製造";
+        else if (tag == TAG_LIST.TAG_FUELOIL_COLLECTION)
+            tagName = "重油回収";
+        else if (tag == TAG_LIST.TAG_PLASTIC_RESEARCH)
+            tagName = "プラスチック研究";
+        else if (tag == TAG_LIST.TAG_BATTERY_MANUFACTURE)
+            tagName = "バッテリー製造";
+        else
+            tagName = "なし";
     }
 
     /// <summary>
@@ -278,39 +297,11 @@ public class CharacterBase : MonoBehaviour
         TagGenerator();
         SetCharacterSprite();
         IntroductionGenerator();
-
-        //// デバッグ用
-        //Debug.Log("研究：" + CharacterManager.Instance.RankTransfer(research) + "  |  Parameter：" + research);
-        //Debug.Log("生産：" + CharacterManager.Instance.RankTransfer(production) + "  |  Parameter：" + production);
-        //Debug.Log("管理：" + CharacterManager.Instance.RankTransfer(management) + "  |  Parameter：" + management);
-        //Debug.Log("調査：" + CharacterManager.Instance.RankTransfer(investigation) + "  |  Parameter：" + investigation);
-        //Debug.Log("名前：" + name);
-        //Debug.Log("年齢：" + age);
-        //Debug.Log("タッグ機能：" + tag);
     }
 
     // Update is called once per frame
     protected void Update()
     {
-        // デバッグ用
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            popularityRank = GameObject.Find("WorldManager").GetComponent<WorldManager>().GetPopularityRank();
-
-            ParamGenerator();
-            NameGenerator();
-            AgeGenerator();
-            TagGenerator();
-            SetCharacterSprite();
-            IntroductionGenerator();
-
-            Debug.Log("研究：" + CharacterManager.Instance.RankTransfer(research) + "  |  Parameter：" + research);
-            Debug.Log("生産：" + CharacterManager.Instance.RankTransfer(production) + "  |  Parameter：" + production);
-            Debug.Log("管理：" + CharacterManager.Instance.RankTransfer(management) + "  |  Parameter：" + management);
-            Debug.Log("調査：" + CharacterManager.Instance.RankTransfer(investigation) + "  |  Parameter：" + investigation);
-            Debug.Log("名前：" + name);
-            Debug.Log("年齢：" + age);
-            Debug.Log("タッグ機能：" + tag);
-        }
+        
     }
 }

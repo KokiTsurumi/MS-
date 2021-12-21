@@ -27,6 +27,7 @@ public class RobotBase : MonoBehaviour
     public int clean, battery;              // パラメータ(clean:清掃, battery:駆動時間)(0～5:E～S)
 
     public SPECIALSKILL_LIST specialSkill;  // 特殊技能
+    public string specialSkillName;         // 特殊技能の名前
     public string name;                     // 名前
 
     public Sprite robotSprite;              // ロボットの画像
@@ -59,31 +60,38 @@ public class RobotBase : MonoBehaviour
         if (tag1 == CharacterBase.TAG_LIST.TAG_ROBOTICS && tag2 == CharacterBase.TAG_LIST.TAG_CLEANING || tag1 == CharacterBase.TAG_LIST.TAG_CLEANING && tag2 == CharacterBase.TAG_LIST.TAG_ROBOTICS)                               // ロボット工学 & 清掃
         {
             specialSkill = SPECIALSKILL_LIST.SPECIALSKILL_SPECIALIZED_FOR_CLEANING; // 清掃特化
+            specialSkillName = "清掃特化";
         }
         else if (tag1 == CharacterBase.TAG_LIST.TAG_ROBOTICS && tag2 == CharacterBase.TAG_LIST.TAG_FUELOIL_COLLECTION || tag1 == CharacterBase.TAG_LIST.TAG_FUELOIL_COLLECTION && tag2 == CharacterBase.TAG_LIST.TAG_ROBOTICS)      // ロボット工学 & 重油回収
         {
             specialSkill = SPECIALSKILL_LIST.SPECIALSKILL_OIL_COLLECTION;           // 油回収
+            specialSkillName = "油回収";
         }
         else if (tag1 == CharacterBase.TAG_LIST.TAG_ROBOTICS && tag2 == CharacterBase.TAG_LIST.TAG_PLASTIC_RESEARCH || tag1 == CharacterBase.TAG_LIST.TAG_PLASTIC_RESEARCH && tag2 == CharacterBase.TAG_LIST.TAG_ROBOTICS)          // ロボット工学 & プラスチック研究
         {
             specialSkill = SPECIALSKILL_LIST.SPECIALSKILL_PLASTIC_ONLY;             // プラスチック専用
+            specialSkillName = "プラスチック専用";
         }
         else if (tag1 == CharacterBase.TAG_LIST.TAG_ROBOTICS && tag2 == CharacterBase.TAG_LIST.TAG_BATTERY_MANUFACTURE || tag1 == CharacterBase.TAG_LIST.TAG_BATTERY_MANUFACTURE && tag2 == CharacterBase.TAG_LIST.TAG_ROBOTICS)    // ロボット工学 & バッテリー製造
         {
             specialSkill = SPECIALSKILL_LIST.SPECIALSKILL_LARGE_CAPACITY_BATTERY;   // 大容量バッテリー
+            specialSkillName = "大容量バッテリー";
         }
         else if (tag1 == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH && tag2 == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH)                                                                                                          // 自然調査員 & 自然調査員
         {
             specialSkill = SPECIALSKILL_LIST.SPECIALSKILL_PERFECT_INVESTIGATOR;     // 完璧調査機
+            specialSkillName = "完璧調査機";
         }
         else if (tag1 == CharacterBase.TAG_LIST.TAG_CLEANING && tag2 == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH || tag1 == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH && tag2 == CharacterBase.TAG_LIST.TAG_CLEANING)    // ロボット工学 & バッテリー製造
         {
             specialSkill = SPECIALSKILL_LIST.SPECIALSKILL_ALMIGHTY;                 // オールマイティ
+            specialSkillName = "オールマイティ";
         }
         else
         {
             specialSkill = SPECIALSKILL_LIST.SPECIALSKILL_NULL;                     // 特殊技能無し
-        }   
+            specialSkillName = "なし";
+        }
     }
 
     /// <summary>
@@ -203,12 +211,6 @@ public class RobotBase : MonoBehaviour
         SpecialSkillGenerator();
         NameGenerator();
         SetCharacterSprite();
-
-        // デバッグ用
-        Debug.Log("清掃    ：" + RobotManager.Instance.RankTransfer(clean) + "  |  Parameter：" + clean);
-        Debug.Log("駆動時間：" + RobotManager.Instance.RankTransfer(battery) + "  |  Parameter：" + battery);
-        Debug.Log("特殊技能：" + specialSkill);
-        Debug.Log("名前    ：" + name);
     }
 
     // Update is called once per frame
