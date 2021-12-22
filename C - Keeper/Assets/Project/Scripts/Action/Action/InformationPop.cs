@@ -12,6 +12,10 @@ public class InformationPop : MonoBehaviour
     [SerializeField] Text text;
     [SerializeField] Slider pollutionSlider;
 
+    [SerializeField] Image resident;
+
+    [SerializeField] Sprite[] residetSprites = new Sprite[2];
+
     class JsonInformationText
     {
         public string[] InformationBeforeList;
@@ -59,6 +63,8 @@ public class InformationPop : MonoBehaviour
                     text.text = "オブジェクトが見つかりませんでした";
                     break;
             }
+
+            resident.sprite = residetSprites[0];
         }
         else
         {
@@ -83,9 +89,13 @@ public class InformationPop : MonoBehaviour
                     text.text = "オブジェクトが見つかりませんでした";
                     break;
             }
+
+            resident.sprite = residetSprites[1];
+            resident.rectTransform.sizeDelta = new Vector2(2048,1980);
+
         }
 
-        
+
 
         pollutionSlider.value = island.GetComponent<IslandBase>().GetPollutionLevel();
     }

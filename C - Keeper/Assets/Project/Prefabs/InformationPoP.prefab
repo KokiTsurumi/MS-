@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 693.5, y: 577}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 58.37805, y: 99.42438}
+  m_SizeDelta: {x: 153.9561, y: 40.6487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1631133207775903795
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 31584dc51bf497645b23674559c1982c, type: 3}
-    m_FontSize: 12
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  m_Text: "\u30C6\u30AD\u30B9\u30C8\u6F22\u5B57\n\u30C6\u30AD\u30B9\u30C8\n\u6F22\u5B57"
 --- !u!1 &407688266924968314
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 640, y: 475.8}
+  m_AnchoredPosition: {x: 7.8999634, y: -7.1000366}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3466696090053360718
@@ -364,8 +364,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5304557929447195918}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -600, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 1417974677164571157}
   - {fileID: 1026652032115889437}
@@ -520,6 +520,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 2720189669714376160}
   pollutionSlider: {fileID: 2687723748618422425}
+  resident: {fileID: 1310842984964332269}
+  residetSprites:
+  - {fileID: 21300000, guid: d5a4f4e0875e0dc4f8b3a615a6d7a096, type: 3}
+  - {fileID: 21300000, guid: dcfa6f33ac0a76d45a368a8cd5f84633, type: 3}
 --- !u!82 &8298826107985443722
 AudioSource:
   m_ObjectHideFlags: 0
@@ -650,7 +654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 540.5, y: 570.7}
+  m_AnchoredPosition: {x: -91.60004, y: 81.8}
   m_SizeDelta: {x: 1536, y: 2048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6664421954303720910
@@ -726,7 +730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 643.9, y: 403.4}
+  m_AnchoredPosition: {x: 11.8, y: -79.5}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2687723748618422425
