@@ -47,6 +47,7 @@ public class InvestigationCanvas : SelectCanvasInterface
         }
         else if (tagAnimationCanvas.GetComponent<AnimationCallBack>().GetCallBack == true)
         {
+            tagAnimationCanvas.SetActive(false);
             startAnimationCanvas.SetActive(true);
         }
     }
@@ -78,6 +79,7 @@ public class InvestigationCanvas : SelectCanvasInterface
             startAnimationCanvas.SetActive(true);
         }
 
+        audioSource.PlayOneShot(startButtonSound);
     }
 
     IEnumerator ActionEnd()

@@ -222,6 +222,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.Step();
 
         MenuCanvas.Instance.menuButtonEnabled = false;
+        MenuCanvas.Instance.tutorialExplanation = false;
         WorldManager.Instance.TimeStop(true);
 
     }

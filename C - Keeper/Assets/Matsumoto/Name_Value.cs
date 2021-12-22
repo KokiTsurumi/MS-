@@ -20,6 +20,9 @@ public class Name_Value : SingletonMonoBehaviour<Name_Value>
     [SerializeField]
     Sprite[] frameSprite = new Sprite[5];
 
+    [SerializeField] AudioClip finishSound;
+
+    AudioSource audioSource;
 
 
     // 最初のランク設定
@@ -33,6 +36,7 @@ public class Name_Value : SingletonMonoBehaviour<Name_Value>
         frameImage.sprite = frameSprite[0];
         myRank = 1;
 
+        audioSource = GetComponent<AudioSource>();
     }
 
     //情報を一通り終えた時に呼び出す関数
@@ -51,6 +55,9 @@ public class Name_Value : SingletonMonoBehaviour<Name_Value>
     public void PlusResearchCount()
     {
         researchCount += 1;
+
+
+        audioSource.PlayOneShot(finishSound);
     }
 
     //清掃を一通り終えた時に呼び出す関数
@@ -63,6 +70,7 @@ public class Name_Value : SingletonMonoBehaviour<Name_Value>
     public void PlusProductionCount()
     {
         productionCount += 1;
+
     }
 
 

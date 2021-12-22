@@ -15,6 +15,8 @@ public class seni : MonoBehaviour
     //フェードしたい時間（8で割ってる）
     private static float fadeTime = 0.2f;
 
+    [SerializeField] AudioSource clickSound;
+
     private void Start()
     {
         FadeIn();
@@ -49,7 +51,10 @@ public class seni : MonoBehaviour
         //}
 
         if (Input.GetMouseButton(0) && SceneManager.GetActiveScene().name != "GameMainScene")
+        {
             FadeOut();
+            clickSound.Play();
+        }
 
         if (isFadeIn)
         {

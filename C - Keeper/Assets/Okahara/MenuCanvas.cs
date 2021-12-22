@@ -108,7 +108,8 @@ public class MenuCanvas : SingletonMonoBehaviour<MenuCanvas>
 
         audioSource = GetComponent<AudioSource>();
 
-        if (! tutorialExplanation)
+        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Menu &&
+            ! tutorialExplanation)
             TutorialManager.Instance.NextStep();
     }
 }

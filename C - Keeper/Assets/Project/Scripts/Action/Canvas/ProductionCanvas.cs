@@ -54,6 +54,7 @@ public class ProductionCanvas : SelectCanvasInterface
         }
         else if (tagAnimationCanvas.GetComponent<AnimationCallBack>().GetCallBack == true)
         {
+            tagAnimationCanvas.SetActive(false);
             startAnimationCanvas.SetActive(true);
         }
     }
@@ -84,6 +85,8 @@ public class ProductionCanvas : SelectCanvasInterface
         }
 
         TutorialCursor.Instance.SetActive(false);
+
+        audioSource.PlayOneShot(startButtonSound);
 
     }
 

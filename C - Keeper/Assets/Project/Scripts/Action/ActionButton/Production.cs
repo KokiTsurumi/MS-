@@ -27,12 +27,18 @@ public class Production : ActionButtonInterface
 
     //[SerializeField]
     //bool doing = false;
+    [SerializeField] AudioClip finishSound;
+    [SerializeField] AudioClip closeSound;
 
+    AudioSource audioSource;
 
     bool watched = false;
 
+    bool soundPlay = false;
+
     new private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         base.Start();
         //RobotCanvas.SetActive(false);
         checkMarkIcon.SetActive(false);
@@ -153,14 +159,25 @@ public class Production : ActionButtonInterface
                         TutorialManager.Instance.tutorialState = TutorialManager.TutorialState.ProductionRobotCreate;
                         Camera.main.GetComponent<CameraController>().GetCenterIsland.GetComponent<IslandBase>().timer.SetActive(false);
                         checkMarkIcon.SetActive(true);
-                       
 
+                        if (soundPlay == false)
+                        {
+                            audioSource.PlayOneShot(finishSound);
+                            soundPlay = true;
+                        }
                         TutorialManager.Instance.NextStep();
                     }
                 }
                 else
                 {
                     checkMarkIcon.SetActive(true);
+                    if (soundPlay == false)
+                    {
+                        audioSource.PlayOneShot(finishSound);
+                        soundPlay = true;
+                    }
+
+
                     Camera.main.GetComponent<CameraController>().GetCenterIsland.GetComponent<IslandBase>().timer.SetActive(false);
                 }
 
@@ -262,6 +279,9 @@ public class Production : ActionButtonInterface
         creating = false;
         createEnd = false;
         Name_Value.Instance.PlusProductionCount();
+
+        audioSource.PlayOneShot(closeSound);
+
         //Name_Value.Instance.RankConfirm();
         //RankUpUI.Instance.RankUpCheck();
     }

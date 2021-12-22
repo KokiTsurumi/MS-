@@ -28,12 +28,17 @@ public class CleaningCanvas : MonoBehaviour
     [SerializeField] GameObject cleaningCanvas;
     [SerializeField] GameObject selectCanvas;
 
+    [SerializeField] AudioClip cancelSound;
+    [SerializeField] AudioClip startSound;
+    [SerializeField] AudioClip cleaningSound;
+    AudioSource audioSource;
+
     GameObject island;
     GameObject select = null;
 
     public void Initialize()
     {
-
+        audioSource = GetComponent<AudioSource>();
         RobotList = new List<GameObject>();
 
         CreateRobotList();
@@ -79,6 +84,8 @@ public class CleaningCanvas : MonoBehaviour
                 TutorialCursor.Instance.SetActive(true);
             }
         }
+
+        audioSource.PlayOneShot(startSound);
     }
 
     virtual public void SetRobotData()
@@ -108,6 +115,7 @@ public class CleaningCanvas : MonoBehaviour
     public void StartButton()
     {
 
+        audioSource.PlayOneShot(cleaningSound);
 
         RobotManager.Instance.selectedRobot = selectRobot.GetComponent<SelectRobotData>().originalGameObject;
 
@@ -137,10 +145,13 @@ public class CleaningCanvas : MonoBehaviour
 
         }
 
-
     }
 
-    public void SelectCancel() { ListUI.SetActive(false); }
+    public void SelectCancel()
+    {
+        audioSource.PlayOneShot(cancelSound);
+        ListUI.SetActive(false);
+    }
 
     public void CreateRobotList()
     {

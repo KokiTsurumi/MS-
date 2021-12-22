@@ -31,13 +31,21 @@ public class SelectCanvasInterface : MonoBehaviour
 
     [SerializeField] protected GameObject tagAnimationCanvas;
 
+    [SerializeField] protected AudioClip cancelButtonSound;
+    [SerializeField] protected AudioClip directionButtonSound;
+    [SerializeField] protected AudioClip startButtonSound;
+    protected AudioSource audioSource;
 
     List<GameObject> CharaList;
     int selectFrag;//0→一人目、1→二人目
     protected CameraController cameraController;
 
+ 
     virtual public void Initialize()
     {
+        audioSource = GetComponent<AudioSource>();
+
+
         cameraController = Camera.main.GetComponent<CameraController>();
 
         CharaList = new List<GameObject>();
@@ -119,6 +127,9 @@ public class SelectCanvasInterface : MonoBehaviour
                 TutorialCursor.Instance.SetActive(true);
             }
         }
+
+        audioSource.PlayOneShot(directionButtonSound);
+
     }
 
     public void SetCharactarData()
@@ -159,6 +170,8 @@ public class SelectCanvasInterface : MonoBehaviour
         {
             startButton.SetActive(true);
         }
+
+        audioSource.PlayOneShot(cancelButtonSound);
     }
 
     public void CreateCharaList()

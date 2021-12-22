@@ -10,9 +10,14 @@ public class AnimationCallBack : MonoBehaviour
     [SerializeField]
     bool callBack = false;
 
+    [SerializeField] AudioSource sound;
+
     void AnimationEndCallBack()
     {
         callBack = true;
+
+        if (sound != null)
+            sound.Play();
     }
 
     public bool GetCallBack => callBack;

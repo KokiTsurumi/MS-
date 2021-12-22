@@ -29,9 +29,13 @@ public class RecruitCanvas : MonoBehaviour
     /// </summary>
     GameObject[] dispCharacter = new GameObject[2];
 
+    [SerializeField] AudioClip recruitButtonSound;
+    [SerializeField] AudioClip startButtonSound;
+    AudioSource audioSource;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         startButton.SetActive(false);
         recruitCanvas.SetActive(false);
         mainCanvas.SetActive(false);
@@ -86,6 +90,8 @@ public class RecruitCanvas : MonoBehaviour
                 TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.characterSelectOkButton);
             }
         }
+
+        audioSource.PlayOneShot(recruitButtonSound);
     }
 
     public void SimpleCharaDataDisplay()
@@ -122,6 +128,8 @@ public class RecruitCanvas : MonoBehaviour
         mainCanvas.SetActive(false);
         navigatorCanvas.GetComponent<RecruitNavigatorCanvas>().RecruitEnd();
         //Destroy(this.gameObject);
+
+        audioSource.PlayOneShot(startButtonSound);
     }
 
 

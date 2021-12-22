@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class RecruitNavigatorCanvas : MonoBehaviour
 {
     [SerializeField] GameObject text;
+    [SerializeField] AudioSource sound;
 
     [SerializeField] GameObject mainCanvas;
 
@@ -15,13 +16,17 @@ public class RecruitNavigatorCanvas : MonoBehaviour
     void Start()
     {
         text.GetComponent<Text>().text = "この島の住人が、団体に是非参加したいと言ってきています！";
+        sound.Play();
     }
 
     //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
+    void Update()
+    {
+        if (text.GetComponent<TextFader>().enabled == false)
+        {
+            sound.Stop();
+        }
+    }
 
     public void RecruitEnd()
     {
@@ -30,6 +35,8 @@ public class RecruitNavigatorCanvas : MonoBehaviour
 
         text.GetComponent<TextFader>().enabled = true;
         this.gameObject.SetActive(true);
+
+        sound.Play();
         start = true;
     }
 
@@ -37,6 +44,7 @@ public class RecruitNavigatorCanvas : MonoBehaviour
     {
         if(text.GetComponent<TextFader>().enabled == true)
         {
+            sound.Stop();
             text.GetComponent<TextFader>().enabled = false;
             return;
         }

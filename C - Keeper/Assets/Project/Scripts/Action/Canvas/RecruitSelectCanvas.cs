@@ -21,6 +21,7 @@ public class RecruitSelectCanvas : MonoBehaviour
     public AudioClip sound1;
     AudioSource audioSource;
 
+
     int dispListNumber = 0;
 
     List<GameObject> recruitList = new List<GameObject>();
@@ -45,7 +46,7 @@ public class RecruitSelectCanvas : MonoBehaviour
 
         displayCharacter.GetComponent<RecruitCharacterData>().SetCharacterData(recruitList[dispListNumber].GetComponent<RecruitCharacterData>());
 
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
     }
 
     public void OnClickLeftButton()
@@ -75,18 +76,17 @@ public class RecruitSelectCanvas : MonoBehaviour
 
     public void OnClickSelectButton()
     {
-        
         recruitList[dispListNumber].GetComponent<RecruitCharacterData>().selected = true;
 
         displayCharacter.GetComponent<RecruitCharacterData>().SetCharacterData(recruitList[dispListNumber].GetComponent<RecruitCharacterData>());
 
         button.enabled = false;
 
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
     }
 
     public void OnClickBackButton()
     {
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
     }
 }
