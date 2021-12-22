@@ -94,6 +94,7 @@
     <Compile Include="Assets\Project\Scripts\Action\Action\RecruitCharacterData.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Canvas\RecruitCanvas.cs" />
     <Compile Include="Assets\Okahara\MenuCanvas.cs" />
+    <Compile Include="Assets\Okahara\TutorialCursor.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Robot\RobotBase.cs" />
     <Compile Include="Assets\Project\Scripts\RankUpUI.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\ActionButtonInterface.cs" />
@@ -123,7 +124,7 @@
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
     <Compile Include="Assets\Okahara\WorldTimerMonth.cs" />
     <Compile Include="Assets\Kawano\Script\Test.cs" />
-    <Compile Include="Assets\Okahara\TutorialCursor.cs" />
+    <Compile Include="Assets\Okahara\ExplanationCanvas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Kawano\Script\DissolveShader.shader" />
@@ -708,6 +709,9 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -746,9 +750,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

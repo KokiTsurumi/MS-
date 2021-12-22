@@ -55,17 +55,29 @@ public class SelectCanvasInterface : MonoBehaviour
         ListUI.SetActive(false);
 
         if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.No)
+        {
             cameraController.GetComponent<CameraController>().backButton.SetActive(true);
+        }
+        
     }
 
     public void DisplayCharaList()
     {
         if (!MouseManager.Instance.OnDoubleClickUI()) return;
 
-        ListUI.SetActive(true);
 
         if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.No)
+        {
             cameraController.GetComponent<CameraController>().backButton.SetActive(false);
+        }
+        else
+        {
+            TutorialCursor.Instance.SetActive(false);
+        }
+
+
+        ListUI.SetActive(true);
+
 
         listScrollbar.ScrollbarPositionReset();
 
@@ -76,7 +88,7 @@ public class SelectCanvasInterface : MonoBehaviour
     public void Selected_1(){ selectFrag = 0; }
     public void Selected_2(){ selectFrag = 1; }
 
-    virtual public void CharacterDicision()
+    public void CharacterDicision()
     {
         if (select == null) return;
         int frag = (selectFrag == 0) ? 1 : 0;
@@ -100,10 +112,16 @@ public class SelectCanvasInterface : MonoBehaviour
             selectChara[1].GetComponent<SelectCharacterDataInterface>().GetSelectGameObject() != null)
         {
             startButton.SetActive(true);
+
+            if (TutorialManager.Instance.tutorialState != TutorialManager.TutorialState.No)
+            {
+                TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.characterSelectOkButton);
+                TutorialCursor.Instance.SetActive(true);
+            }
         }
     }
 
-    virtual public void SetCharactarData()
+    public void SetCharactarData()
     {
         GameObject setChara = selectChara[selectFrag];
 

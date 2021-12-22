@@ -25,7 +25,9 @@ public class RecruitNavigatorCanvas : MonoBehaviour
 
     public void RecruitEnd()
     {
-        //text.GetComponent<Text>().text = "これでまた一緒に働ける人が増えましたね！！引き続き綺麗にしていきましょう！";
+        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Recruit)
+            TutorialCursor.Instance.SetActive(false);
+
         text.GetComponent<TextFader>().enabled = true;
         this.gameObject.SetActive(true);
         start = true;
@@ -42,10 +44,20 @@ public class RecruitNavigatorCanvas : MonoBehaviour
 
         this.gameObject.SetActive(false);
 
+
+        
+
         if (start == false)
         {
             start = true;
             text.GetComponent<Text>().text = "これでまた一緒に働ける人が増えましたね！！引き続き綺麗にしていきましょう！";
+
+            if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Recruit)
+            {
+                TutorialCursor.Instance.SetActive(true);
+                TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.characterSelectSlotelft);
+            }
+
 
             mainCanvas.SetActive(true);   
         }

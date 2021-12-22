@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class AnimationCallBack : MonoBehaviour
 {
+    [SerializeField]
     bool callBack = false;
 
     void AnimationEndCallBack()
@@ -15,4 +16,9 @@ public class AnimationCallBack : MonoBehaviour
     }
 
     public bool GetCallBack => callBack;
+
+    public void AnimationStart()
+    {
+        callBack = false;
+    }
 }

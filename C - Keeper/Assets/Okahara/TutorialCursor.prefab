@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3704173887666987649}
   - component: {fileID: 1288212571781683854}
   - component: {fileID: 5558339012491322350}
+  - component: {fileID: 3496744949422591130}
   m_Layer: 5
   m_Name: TutorialCursor
   m_TagString: Untagged
@@ -100,6 +101,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3496744949422591130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7363096045614259590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfa35c0c0ea0d047b1b513f8e420973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 8682337881290572006}
 --- !u!1 &8682337881290572006
 GameObject:
   m_ObjectHideFlags: 0

@@ -68,6 +68,8 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] Canvas gameMainCanvas;
 
+    GameObject actionCanvas;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -79,6 +81,7 @@ public class CameraController : MonoBehaviour
         centerIslandPos.z = cameraZ;//カメラのZ座標に直す
 
         actionCanvasAnimator = GameObject.Find("ActionCanvas").GetComponent<Animator>();
+        actionCanvas = GameObject.Find("ActionCanvas");
         cameraZ = transform.position.z;
         cameraOrthSizeDefault = Camera.main.orthographicSize;
 
@@ -129,6 +132,25 @@ public class CameraController : MonoBehaviour
             }
 
             RankUpUI.Instance.RankUpCheck();
+        }
+
+        if(actionCanvas.GetComponent<AnimationCallBack>().GetCallBack == true)
+        {
+            if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.InformationStart)
+            {
+                TutorialManager.Instance.tutorialState = TutorialManager.TutorialState.Information;
+                TutorialCursor.Instance.SetActive(true);
+            }
+            else if(TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.ProductionStart)
+            {
+                TutorialManager.Instance.tutorialState = TutorialManager.TutorialState.Production;
+                TutorialCursor.Instance.SetActive(true);
+            }
+            else if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.CleanningStart)
+            {
+                TutorialManager.Instance.tutorialState = TutorialManager.TutorialState.Cleanning;
+                TutorialCursor.Instance.SetActive(true);
+            }
         }
 
     }
@@ -346,10 +368,13 @@ public class CameraController : MonoBehaviour
         if (MouseManager.Instance.GetCurrentSelectedGameObject() != null) return;
         if (RankUpUI.Instance.useCanvas) return;//ランクアップ演出中
         IslandManager.Instance.SetCurrentIsland(MouseManager.Instance.GetCursorOnObject());
+        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Menu) return;
 
         if(zoomState == ZoomState.DEFAULT)
             zoomState = ZoomState.IN;
 
+
+        TutorialCursor.Instance.SetActive(false);
 
         Vector3 tarPos = IslandManager.Instance.GetCurrentIsland().transform.position;
         Vector3 camPos = Camera.main.transform.position;
@@ -404,10 +429,9 @@ public class CameraController : MonoBehaviour
         audioSource.PlayOneShot(sound1);
         if (MouseManager.Instance.GetCurrentSelectedGameObject() == null) return;
 
-        TutorialManager.TutorialState tutorialState = TutorialManager.Instance.tutorialState;
-        if (tutorialState != TutorialManager.TutorialState.No)
+        if (TutorialManager.Instance.tutorialState != TutorialManager.TutorialState.No)
         {
-
+            TutorialCursor.Instance.SetActive(false);
             IslandManager.Instance.SetCurrentIsland(centerIsland);
 
             TutorialStep("Investigation", TutorialManager.TutorialState.Investigation);

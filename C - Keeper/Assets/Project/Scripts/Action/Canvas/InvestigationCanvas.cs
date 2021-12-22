@@ -60,8 +60,12 @@ public class InvestigationCanvas : SelectCanvasInterface
         CharacterManager.Instance.selectedCharacter[0] = selectChara[0].GetComponent<SelectCharacterDataInterface>().originalGameObject;
         CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().originalGameObject;
 
+
+        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Investigation)
+            TutorialCursor.Instance.SetActive(false);
+
         //タッグ演出
-        if(CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().tagName == CharacterManager.Instance.selectedCharacter[1].GetComponent<CharacterBase>().tagName
+        if (CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().tagName == CharacterManager.Instance.selectedCharacter[1].GetComponent<CharacterBase>().tagName
             &&
            CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().tagName != "なし")
         {

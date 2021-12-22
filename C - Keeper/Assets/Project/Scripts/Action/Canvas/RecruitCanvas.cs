@@ -42,7 +42,13 @@ public class RecruitCanvas : MonoBehaviour
     {
         if (!MouseManager.Instance.OnDoubleClickUI()) return;
 
+        if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Recruit)
+            TutorialCursor.Instance.SetActive(false);
+
         recruitCanvas.SetActive(true);
+
+
+        startButton.SetActive(false);
     }
 
 
@@ -61,7 +67,8 @@ public class RecruitCanvas : MonoBehaviour
         selectChara[selectFrag].GetComponent<RecruitCharacterData>().SetCharacterData(dispCharacter[selectFrag].GetComponent<RecruitCharacterData>());
         dispCharacter[selectFrag].GetComponent<RecruitCharacterData>().selected = true;
 
-        
+
+
         SimpleCharaDataDisplay();
 
         recruitCanvas.SetActive(false);
@@ -71,6 +78,13 @@ public class RecruitCanvas : MonoBehaviour
            dispCharacter[1] != null)
         {
             startButton.SetActive(true);
+
+
+            if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Recruit)
+            {
+                TutorialCursor.Instance.SetActive(true);
+                TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.characterSelectOkButton);
+            }
         }
     }
 

@@ -42,6 +42,10 @@ public class CleaningCanvas : MonoBehaviour
         ListUI.SetActive(false);
 
         island = IslandManager.Instance.GetCurrentIsland();
+
+
+        if (TutorialManager.Instance.tutorialState != TutorialManager.TutorialState.No)
+            TutorialCursor.Instance.SetActive(true);
     }
 
     public void DisplayCharaList()
@@ -51,6 +55,11 @@ public class CleaningCanvas : MonoBehaviour
         ListUI.SetActive(true);
 
         listScrollbar.ScrollbarPositionReset();
+
+        if (TutorialManager.Instance.tutorialState != TutorialManager.TutorialState.No)
+        {
+            TutorialCursor.Instance.SetActive(false);
+        }
     }
 
 
@@ -63,6 +72,12 @@ public class CleaningCanvas : MonoBehaviour
         if (selectRobot.GetComponent<SelectRobotData>().GetSelectGameObject() != null)
         {
             startButton.SetActive(true);
+
+            if (TutorialManager.Instance.tutorialState != TutorialManager.TutorialState.No)
+            {
+                TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.characterSelectOkButton);
+                TutorialCursor.Instance.SetActive(true);
+            }
         }
     }
 
@@ -106,6 +121,7 @@ public class CleaningCanvas : MonoBehaviour
         if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Cleanning)
         {
             //Debug.Log("チュートリアル清掃開始");
+            TutorialCursor.Instance.SetActive(false);
             TutorialManager.Instance.CleaningTimerSet(TutorialCleaning);
             
            

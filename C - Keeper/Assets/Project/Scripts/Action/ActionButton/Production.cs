@@ -86,9 +86,8 @@ public class Production : ActionButtonInterface
                 if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Production)
                 {
                     //タイマー計算処理
-                    island.GetComponent<IslandBase>().StartProduction(2.0f, CreateRobotCanvas);
                     CreateRobotStart();
-                    Debug.Log("チュートリアル　生産");
+                    island.GetComponent<IslandBase>().StartProduction(2.0f, CreateRobotCanvas);
                 }
                 else
                 {
@@ -154,6 +153,8 @@ public class Production : ActionButtonInterface
                         TutorialManager.Instance.tutorialState = TutorialManager.TutorialState.ProductionRobotCreate;
                         Camera.main.GetComponent<CameraController>().GetCenterIsland.GetComponent<IslandBase>().timer.SetActive(false);
                         checkMarkIcon.SetActive(true);
+                       
+
                         TutorialManager.Instance.NextStep();
                     }
                 }
@@ -236,6 +237,9 @@ public class Production : ActionButtonInterface
         cameraController.ZoomOut();
         checkMarkIcon.SetActive(false);
         //checkMarkIcon.GetComponent<MarkIcon>().SetWatched();
+
+        if (TutorialManager.Instance.tutorialState != TutorialManager.TutorialState.No)
+            TutorialCursor.Instance.SetActive(false);
 
         robotCanvas.SetActive(true);
         watched = true;

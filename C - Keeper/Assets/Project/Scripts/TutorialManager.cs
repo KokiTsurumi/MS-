@@ -21,9 +21,8 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     [SerializeField] GameObject informationPopPrefab;
 
-    [SerializeField] GameObject cursor;
+    //[SerializeField] GameObject cursor;
 
-    //[SerializeField] Image face;
     [SerializeField] Sprite smileFace;
     [SerializeField] Sprite sadFace;
 
@@ -55,21 +54,27 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         /// <summary>
         /// 住人の声を聴く
         /// </summary>
-        //InformationStart,
+        InformationStart,
         Information,
         /// <summary>
         /// 生産中
         /// </summary>
+        ProductionStart,
         Production,
         ProductionRobotCreate,
         /// <summary>
         /// 清掃中
         /// </summary>
+        CleanningStart,
         Cleanning,
         /// <summary>
         /// ランクアップ後の人材選択   
         /// </summary>
         RankUpRecruit,
+        /// <summary>
+        /// メニュー
+        /// </summary>
+        Menu,
     }
     public TutorialState tutorialState = TutorialState.No;
 
@@ -84,7 +89,8 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
     void Start()
     {
-        cursor.SetActive(false);
+        //cursor.SetActive(false);
+        TutorialCursor.Instance.SetActive(false);
     }
 
     void Update()
@@ -198,6 +204,9 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.AddListFunc(RankUpRecruitStart);
         stepList.AddListFunc(RankUpRecruitEnd);
         stepList.AddListText("いいと思います！これで準備は完了しました！");
+        stepList.AddListText("このゲームの各機能の説明は、メニューの説明に入っています！");
+        stepList.AddListFunc(MenuStart);
+        stepList.AddListFunc(MenuEnd);
         stepList.AddListText("この海域の汚染を全て取り除けば、生態系は元に戻ります！それでは、頑張って下さい！");
         stepList.AddListFunc(TutorialEnd);
 
@@ -212,7 +221,8 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.Next();
         stepList.Step();
 
-        MenuCanvas.Instance.menuButtonEnabled = false;  
+        MenuCanvas.Instance.menuButtonEnabled = false;
+        WorldManager.Instance.TimeStop(true);
 
     }
 
@@ -225,6 +235,9 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
 
         recruitCanvas = Instantiate(recruitCanvasPrefab);
         recruitCanvas.GetComponent<RecruitCanvas>();
+
+        //cursor.SetActive(true);
+        //cursor.GetComponent<TutorialCursor>().SetPosition(TutorialCursor.CursorPositionList.characterSelectSloteft);
     }
 
     void RecruitEnd()
@@ -238,6 +251,10 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
         tutorialCanvas.SetActive(false);
         tutorialState = TutorialState.InvestigationStart;
+
+        TutorialCursor.Instance.SetActive(true);
+        TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.centerIsland);
+
     }
 
 
@@ -258,10 +275,15 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     void InvestigationTextEnd()
     {
         tutorialCanvas.SetActive(false);
+
+        TutorialCursor.Instance.SetActive(true);
+        TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.investigationUI);
     }
 
     void InvestigationStart()
     {
+        TutorialCursor.Instance.SetActive(false);
+
         tutorialCanvas.SetActive(true);
         tutorialState = TutorialState.Investigation;
         investigationCanvas = Instantiate(investigationCanvasPrefab);
@@ -272,6 +294,9 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     void InvestigationSelectText()
     {
         tutorialCanvas.SetActive(false);
+
+        TutorialCursor.Instance.SetActive(true);
+        TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.characterSelectSlotelft);
     }
    
 
@@ -305,18 +330,26 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         tutorialState = TutorialState.Information;
         Camera.main.GetComponent<CameraController>().ZoomIn();
 
+        tutorialState = TutorialState.InformationStart;
+
+        TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.informationUI);
+
+
         //困っている表情
         tutorialCanvas.gameObject.transform.GetChild(1).GetChild(3).GetComponent<Image>().sprite = sadFace;
     }
 
+
     void Information()
     {
-        tutorialState = TutorialState.Information;
+        //tutorialState = TutorialState.Information;
         informationPop = Instantiate(informationPopPrefab);
         informationPop.GetComponent<InformationPop>().Create(IslandManager.Instance.GetCurrentIsland());
         IslandManager.Instance.GetCurrentIsland().GetComponent<IslandBase>().icon.GetComponent<Canvas>().enabled = false;
         NextStep();
         tutorialCanvas.SetActive(true);
+
+        TutorialCursor.Instance.SetActive(false);
     }
 
     void InformationText()
@@ -342,12 +375,17 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     void ProductionPopOut()
     {
         tutorialCanvas.SetActive(false);
-        tutorialState = TutorialState.Production;
+        tutorialState = TutorialState.ProductionStart;
         Camera.main.GetComponent<CameraController>().ZoomIn();
+
+        TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.productionUI);
     }
 
     void ProductionStart()
     {
+        TutorialCursor.Instance.SetActive(false);
+
+
         productionCanvas = Instantiate(productionCanvasPrefab);
         productionCanvas.GetComponent<ProductionCanvas>().Initialize();
         tutorialCanvas.SetActive(true);
@@ -358,7 +396,8 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
         tutorialCanvas.SetActive(false);
 
-
+        TutorialCursor.Instance.SetActive(true);
+        TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.characterSelectSlotelft);
     }
 
     public void ProductionTimerSet(DelegateFunc func)
@@ -384,6 +423,9 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     void ProductionTextEnd()
     {
         tutorialCanvas.SetActive(false);
+
+        TutorialCursor.Instance.SetActive(true);
+        TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.productionCenterIsland);
     }
 
     void CleaningTextStart()
@@ -398,12 +440,17 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
     {
         tutorialCanvas.SetActive(false);
         Camera.main.GetComponent<CameraController>().ZoomIn();
+
+        tutorialState = TutorialState.CleanningStart;
+        TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.cleaningUI);
     }
 
     void CleaningStart()
     {
         cleaningCanvas = Instantiate(cleaningCanvasPrefab);
         cleaningCanvas.GetComponent<CleaningCanvas>().Initialize();
+
+        TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.robotSelectSlotleft);
     }
 
     public void CleaningTimerSet(DelegateFunc func)
@@ -471,9 +518,33 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.Step();
     }
 
+    void MenuStart()
+    {
+        tutorialCanvas.SetActive(false);
+        //NextStep();
+
+        TutorialCursor.Instance.SetActive(true);
+        TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.menuButton);
+        TutorialCursor.Instance.SetScaleChange(-1);
+
+        MenuCanvas.Instance.menuButtonEnabled = true;
+        MenuCanvas.Instance.tutorialExplanation = true;
+
+        tutorialState = TutorialState.Menu;
+
+    }
+
+    void MenuEnd()
+    {
+        TutorialCursor.Instance.SetActive(false);
+        NextStep();
+        tutorialCanvas.SetActive(true);
+        //NextStep();
+    }
+
     void TutorialEnd()
     {
-        MenuCanvas.Instance.menuButtonEnabled = true;
+        WorldManager.Instance.TimeStop(false);
 
         //Destroy(this.gameObject);//これでもいい
         tutorialCanvas.SetActive(false);

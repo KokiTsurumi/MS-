@@ -48,7 +48,9 @@ public class ProductionCanvas : SelectCanvasInterface
 
 
             this.gameObject.SetActive(false);
-     
+
+            Camera.main.GetComponent<CameraController>().GetCenterIsland.GetComponent<IslandBase>().timer.GetComponent<Canvas>().enabled = true;
+
         }
         else if (tagAnimationCanvas.GetComponent<AnimationCallBack>().GetCallBack == true)
         {
@@ -80,6 +82,8 @@ public class ProductionCanvas : SelectCanvasInterface
         {
             startAnimationCanvas.SetActive(true);
         }
+
+        TutorialCursor.Instance.SetActive(false);
 
     }
 
