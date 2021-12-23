@@ -72,17 +72,72 @@ public class ProductionCanvas : SelectCanvasInterface
         CharacterManager.Instance.selectedCharacter[1] = selectChara[1].GetComponent<SelectCharacterDataInterface>().originalGameObject;
 
         //タッグ演出
-        if (CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().tagName == CharacterManager.Instance.selectedCharacter[1].GetComponent<CharacterBase>().tagName
-            &&
-           CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().tagName != "なし")
+        //if (CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().tagName == CharacterManager.Instance.selectedCharacter[1].GetComponent<CharacterBase>().tagName
+        //    &&
+        //   CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().tagName != "なし")
+        //{
+        //    tagAnimationCanvas.SetActive(true);
+
+        //}
+        //else
+        //{
+        //    startAnimationCanvas.SetActive(true);
+        //}
+
+
+
+        bool tagCheck = false;
+
+        CharacterBase.TAG_LIST tag1, tag2;
+        tag1 = CharacterManager.Instance.selectedCharacter[0].GetComponent<CharacterBase>().tag;
+        tag2 = CharacterManager.Instance.selectedCharacter[1].GetComponent<CharacterBase>().tag;
+
+        if (tag1 == CharacterBase.TAG_LIST.TAG_ROBOTICS && tag2 == CharacterBase.TAG_LIST.TAG_CLEANING || tag1 == CharacterBase.TAG_LIST.TAG_CLEANING && tag2 == CharacterBase.TAG_LIST.TAG_ROBOTICS)                               // ロボット工学 & 清掃
+        {
+            tagCheck = true;
+        }
+        else if (tag1 == CharacterBase.TAG_LIST.TAG_ROBOTICS && tag2 == CharacterBase.TAG_LIST.TAG_FUELOIL_COLLECTION || tag1 == CharacterBase.TAG_LIST.TAG_FUELOIL_COLLECTION && tag2 == CharacterBase.TAG_LIST.TAG_ROBOTICS)      // ロボット工学 & 重油回収
+        {
+            tagCheck = true;
+
+        }
+        else if (tag1 == CharacterBase.TAG_LIST.TAG_ROBOTICS && tag2 == CharacterBase.TAG_LIST.TAG_PLASTIC_RESEARCH || tag1 == CharacterBase.TAG_LIST.TAG_PLASTIC_RESEARCH && tag2 == CharacterBase.TAG_LIST.TAG_ROBOTICS)          // ロボット工学 & プラスチック研究
+        {
+            tagCheck = true;
+
+        }
+        else if (tag1 == CharacterBase.TAG_LIST.TAG_ROBOTICS && tag2 == CharacterBase.TAG_LIST.TAG_BATTERY_MANUFACTURE || tag1 == CharacterBase.TAG_LIST.TAG_BATTERY_MANUFACTURE && tag2 == CharacterBase.TAG_LIST.TAG_ROBOTICS)    // ロボット工学 & バッテリー製造
+        {
+            tagCheck = true;
+
+        }
+        else if (tag1 == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH && tag2 == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH)                                                                                                          // 自然調査員 & 自然調査員
+        {
+            tagCheck = true;
+
+        }
+        else if (tag1 == CharacterBase.TAG_LIST.TAG_CLEANING && tag2 == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH || tag1 == CharacterBase.TAG_LIST.TAG_NATURE_RESEARCH && tag2 == CharacterBase.TAG_LIST.TAG_CLEANING)    // ロボット工学 & バッテリー製造
+        {
+            tagCheck = true;
+
+        }
+        else
+        {
+          
+        }
+
+        if(tagCheck)
         {
             tagAnimationCanvas.SetActive(true);
-
         }
         else
         {
             startAnimationCanvas.SetActive(true);
         }
+
+
+
+
 
         TutorialCursor.Instance.SetActive(false);
 

@@ -73,6 +73,7 @@ public class SeaDizolve : MonoBehaviour
         start = true;
         RankUpUI.Instance.useCanvas = true;
         Camera.main.GetComponent<CameraController>().SetAction(false);
+        Camera.main.GetComponent<CameraController>().SetTransState(CameraController.TransState.CENTER);
 
     }
 }

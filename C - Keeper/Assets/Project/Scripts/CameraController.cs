@@ -60,6 +60,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] ZoomState zoomState = ZoomState.DEFAULT;
     [SerializeField] TransState transState = TransState.CENTER;
     public TransState GetTransState => transState;
+    public void SetTransState(TransState set) { transState = set; }
 
     [SerializeField]  bool action = false;
     public bool GetActionBool => action;

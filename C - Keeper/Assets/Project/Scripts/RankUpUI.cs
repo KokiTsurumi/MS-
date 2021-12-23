@@ -8,15 +8,18 @@ public class RankUpUI : SingletonMonoBehaviour<RankUpUI>
     // Start is called before the first frame update
 
     [SerializeField]
-    Text text;
-
-    [SerializeField]
     GameObject recruitCanvasPrefab;
 
     [SerializeField]
     GameObject rankUICanvas;
 
+    [SerializeField] AudioClip rankUpSound;
+
+    AudioSource audioSource;
+
     int rankUp = 1;
+
+    bool go = false;
 
     //汚染度とランクアップのキャンバスがかぶらないようにするセマフォ
     //public bool pollutionRecruitCanvas = false;
@@ -26,6 +29,7 @@ public class RankUpUI : SingletonMonoBehaviour<RankUpUI>
     void Start()
     {
         rankUICanvas.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,19 +41,26 @@ public class RankUpUI : SingletonMonoBehaviour<RankUpUI>
 
     public void Create()
     {
-        text.text ="ランクが上がったよ。\nﾔｯﾀﾈ";
         WorldManager.Instance.IncreasePopularityRank();
 
         CharacterManager.Instance.CreateCandidateCharacter();
         rankUICanvas.SetActive(true);
+
+        audioSource.PlayOneShot(rankUpSound);
+
+        StartCoroutine(DisplayCoroutine());
     }
 
     public void OnClickClose()
     {
+        if (!go) return;
+
         //人材選択UI表示
         GameObject obj = Instantiate(recruitCanvasPrefab);
         obj.GetComponent<RecruitCanvas>();
         rankUICanvas.SetActive(false);
+
+        go = false;
     }
 
     public void RankUpCheck()
@@ -73,7 +84,15 @@ public class RankUpUI : SingletonMonoBehaviour<RankUpUI>
             rankUp = Name_Value.Instance.myRank;
             useCanvas = true;
             Camera.main.GetComponent<CameraController>().SetAction(false);
+            Camera.main.GetComponent<CameraController>().SetTransState(CameraController.TransState.CENTER);
         }
 
+    }
+
+    IEnumerator DisplayCoroutine()
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        go = true;
     }
 }

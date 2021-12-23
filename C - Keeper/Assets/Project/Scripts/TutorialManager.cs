@@ -157,7 +157,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.AddListText("中々いい人材を選びましたね！");
         stepList.AddListText("それでは早速この2人に仕事を割り振りましょう！");
         stepList.AddListText("まず最初に島の状況を把握しましょう！");
-        stepList.AddListText("島をクリックしてください！");
+        stepList.AddListText("島をダブルクリックしてください！");
         stepList.AddListFunc(InvestigationZoomIn);
         stepList.AddListFunc(InvestigationTextStart);
         stepList.AddListText("次にコマンド調査を選択してください");
@@ -170,7 +170,7 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         stepList.AddListFunc(InvestigationTimerStart);
         stepList.AddListFunc(InvestigationEnd);
         stepList.AddListText("完了しました！\n調査を行うと、その島はどれだけ汚染されているのかと住民の声を聞く事が出来ます！");
-        stepList.AddListText("島をクリックして、情報を選択しましょう！");
+        stepList.AddListText("情報を選択しましょう！");
         stepList.AddListFunc(InformationStart);
         stepList.AddListFunc(Information);
         stepList.AddListText("この島ではゴミ問題に悩まされているようですね・・・");

@@ -42,7 +42,9 @@ public class ActionRobotInterface : RobotData
         name = data.name;
         robotSprite = data.robotSprite;
 
-        if(cRank != null)
+        specialSkillName = data.specialSkillName;
+
+        if (cRank != null)
         {
             cRank.text = RobotManager.Instance.RankTransfer(clean);
             cRank.color = SetRankColor(cRank.text);
@@ -50,15 +52,8 @@ public class ActionRobotInterface : RobotData
             bRank.text = RobotManager.Instance.RankTransfer(battery);
             bRank.color = SetRankColor(bRank.text);
 
-
-            if(specialSkill != SPECIALSKILL_LIST.SPECIALSKILL_NULL)
-            {
-                skillName.text = specialSkill.ToString();
-            }
-            else
-            {
-                skillName.text = "なし";
-            }
+            skillName.text = specialSkillName;
+            
             nameText.text = data.name;
 
         }
@@ -89,15 +84,9 @@ public class ActionRobotInterface : RobotData
 
         specialSkill = data.specialSkill;
 
-        if (specialSkill != SPECIALSKILL_LIST.SPECIALSKILL_NULL)
-        {
-            skillName.text = specialSkill.ToString();
-        }
-        else
-        {
-            skillName.text = "なし";
-        }
+        specialSkillName = data.specialSkillName;
 
+        skillName.text = specialSkillName;
         nameText.text = name;
         robotSprite = robotImage.sprite = data.robotSprite;
 
