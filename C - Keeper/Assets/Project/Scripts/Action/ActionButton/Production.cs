@@ -251,6 +251,7 @@ public class Production : ActionButtonInterface
 
     public void OnClickCheckMarkIcon()
     {
+
         cameraController.ZoomOut();
         checkMarkIcon.SetActive(false);
         //checkMarkIcon.GetComponent<MarkIcon>().SetWatched();

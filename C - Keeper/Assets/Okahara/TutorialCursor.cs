@@ -58,7 +58,7 @@ public class TutorialCursor : SingletonMonoBehaviour<TutorialCursor>
 
     public void SetActive(bool set)
     {
-        this.gameObject.SetActive(set);
+        cursor.gameObject.SetActive(set);
     }
 
     public void SetScaleChange(int scale)

@@ -63,6 +63,7 @@ public class CameraController : MonoBehaviour
 
     [SerializeField]  bool action = false;
     public bool GetActionBool => action;
+    public void SetAction(bool set) { action = set; }
 
     [SerializeField] GameObject actionGameObject;
 

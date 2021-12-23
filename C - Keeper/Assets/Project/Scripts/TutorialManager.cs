@@ -237,8 +237,6 @@ public class TutorialManager : SingletonMonoBehaviour<TutorialManager>
         recruitCanvas = Instantiate(recruitCanvasPrefab);
         recruitCanvas.GetComponent<RecruitCanvas>();
 
-        //cursor.SetActive(true);
-        //cursor.GetComponent<TutorialCursor>().SetPosition(TutorialCursor.CursorPositionList.characterSelectSloteft);
     }
 
     void RecruitEnd()

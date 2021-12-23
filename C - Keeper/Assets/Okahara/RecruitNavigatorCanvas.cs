@@ -62,6 +62,7 @@ public class RecruitNavigatorCanvas : MonoBehaviour
 
             if (TutorialManager.Instance.tutorialState == TutorialManager.TutorialState.Recruit)
             {
+                Debug.Log("Recruit");
                 TutorialCursor.Instance.SetActive(true);
                 TutorialCursor.Instance.SetPosition(TutorialCursor.CursorPositionList.characterSelectSlotelft);
             }

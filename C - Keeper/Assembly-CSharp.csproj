@@ -119,13 +119,14 @@
     <Compile Include="Assets\Project\Scripts\Action\Canvas\InvestigationCanvas.cs" />
     <Compile Include="Assets\Project\Scripts\MouseManager.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Interface\SelectCanvasInterface.cs" />
+    <Compile Include="Assets\Okahara\IslandCursor.cs" />
     <Compile Include="Assets\Suzuki\Scripts\Robot\RobotData.cs" />
     <Compile Include="Assets\Project\Scripts\TextFader\CharFader.cs" />
     <Compile Include="Assets\Project\Scripts\Action\Action\ExMarkIcon.cs" />
     <Compile Include="Assets\Suzuki\Scripts\tmp\Title.cs" />
     <Compile Include="Assets\Okahara\WorldTimerMonth.cs" />
     <Compile Include="Assets\Kawano\Script\Test.cs" />
-    <Compile Include="Assets\Okahara\IslandCursor.cs" />
+    <Compile Include="Assets\Okahara\FeedBackCanvas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Kawano\Script\DissolveShader.shader" />

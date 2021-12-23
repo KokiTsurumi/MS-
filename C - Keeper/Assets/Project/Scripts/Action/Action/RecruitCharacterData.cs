@@ -150,7 +150,7 @@ public class RecruitCharacterData : CharacterData
                 color = Color.black;
                 break;
             case "S":
-                color = Color.yellow;
+                color = new Color32(255,165,0,255);
                 break;
             default:
                 color = Color.black;

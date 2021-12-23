@@ -50,6 +50,15 @@ public class SeaDizolve : MonoBehaviour
             TutorialManager.Instance.NextStep();
 
         Destroy(this.gameObject);
+
+
+        if(IslandManager.Instance.totalPollutionLevel <= 0)
+        {
+            FeedBackCanvas.Instance.Feedback();
+            return;
+        }
+
+
         GameObject island = transform.root.gameObject;
         Instantiate(cleanedUIPrefab).GetComponent<CleanedUI>().Create(island);
     }
@@ -63,6 +72,7 @@ public class SeaDizolve : MonoBehaviour
 
         start = true;
         RankUpUI.Instance.useCanvas = true;
+        Camera.main.GetComponent<CameraController>().SetAction(false);
 
     }
 }

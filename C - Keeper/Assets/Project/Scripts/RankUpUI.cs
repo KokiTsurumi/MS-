@@ -72,6 +72,7 @@ public class RankUpUI : SingletonMonoBehaviour<RankUpUI>
             Create();
             rankUp = Name_Value.Instance.myRank;
             useCanvas = true;
+            Camera.main.GetComponent<CameraController>().SetAction(false);
         }
 
     }

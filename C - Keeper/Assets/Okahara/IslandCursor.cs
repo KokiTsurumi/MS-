@@ -19,7 +19,10 @@ public class IslandCursor : MonoBehaviour
     void Update()
     {
         if (cameraController.GetTransState != CameraController.TransState.CHOICE)
+        {
+            islandImage.transform.localScale = new Vector3(1, 1, 1);
             return;
+        }
 
 
 
