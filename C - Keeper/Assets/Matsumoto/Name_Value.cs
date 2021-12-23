@@ -96,7 +96,7 @@ public class Name_Value : SingletonMonoBehaviour<Name_Value>
         if (myRank == 2)
         {
             
-            if ((cleaningCount >= 2) &&(researchCount >= 2) && (productionCount >= 2) && (placementCount >= 2))
+            if ((cleaningCount >= 2) &&(researchCount >= 2) && (productionCount >= 2) && (placementCount >= 3))
             {
                 //sprite = Resources.Load<Sprite>("character3");
                 //image = this.GetComponent<Image>();
