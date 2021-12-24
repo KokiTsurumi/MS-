@@ -42,10 +42,10 @@ public class CameraController : MonoBehaviour
     
     enum ZoomState
     {
-        DEFAULT,
+        DEFAULT,//引き
         IN,
         OUT,
-        STAY
+        STAY//寄り
     }
 
     public enum TransState

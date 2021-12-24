@@ -67,10 +67,12 @@ public class SeaDizolve : MonoBehaviour
 
         if (RankUpUI.Instance.useCanvas == true) return;
 
+        if (Camera.main.GetComponent<CameraController>().GetTransState != CameraController.TransState.CENTER) return;
+
         start = true;
         RankUpUI.Instance.useCanvas = true;
         Camera.main.GetComponent<CameraController>().SetAction(false);
-        Camera.main.GetComponent<CameraController>().SetTransState(CameraController.TransState.CENTER);
+        //Camera.main.GetComponent<CameraController>().SetTransState(CameraController.TransState.CENTER);
 
     }
 }
