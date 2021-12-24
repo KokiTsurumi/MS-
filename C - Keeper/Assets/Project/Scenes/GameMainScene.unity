@@ -14986,6 +14986,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 985549532}
     m_Modifications:
+    - target: {fileID: 4910645060856971662, guid: 909bb9e1225847b4cac7a9a9a345b469, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickButton_8
+      objectReference: {fileID: 0}
     - target: {fileID: 6478625507659191082, guid: 909bb9e1225847b4cac7a9a9a345b469, type: 3}
       propertyPath: m_Name
       value: ExplanationCanvas
