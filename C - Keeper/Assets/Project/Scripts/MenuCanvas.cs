@@ -8,6 +8,7 @@ public class MenuCanvas : SingletonMonoBehaviour<MenuCanvas>
     [SerializeField] GameObject menuButton;
     [SerializeField] GameObject listCanvas;
     [SerializeField] GameObject explanationCanvas;
+    [SerializeField] GameObject configCanvas;
     [SerializeField] seni sceneChange;
 
     public AudioClip sound1;
@@ -23,6 +24,7 @@ public class MenuCanvas : SingletonMonoBehaviour<MenuCanvas>
     {
         menuButton.SetActive(true);
         listCanvas.SetActive(false);
+        configCanvas.SetActive(false);
         explanationCanvas.SetActive(false);
 
         audioSource = GetComponent<AudioSource>();
@@ -55,6 +57,8 @@ public class MenuCanvas : SingletonMonoBehaviour<MenuCanvas>
     {
         if (tutorialExplanation) return;
         audioSource.PlayOneShot(sound1);
+
+        configCanvas.SetActive(true);
     }
 
     public void OnClickExplanationButton()
@@ -105,6 +109,7 @@ public class MenuCanvas : SingletonMonoBehaviour<MenuCanvas>
         menuButton.SetActive(false);
         listCanvas.SetActive(true);
         explanationCanvas.SetActive(false);
+        configCanvas.SetActive(false);
 
         audioSource = GetComponent<AudioSource>();
 
